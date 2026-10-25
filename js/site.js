@@ -1,4 +1,4 @@
-// Theme toggle, mobile menu, hero background, scroll reveal, the Play Store QR code and local prices.
+// Theme toggle, mobile menu, hero background, scroll reveal and local prices.
 (() => {
   const root = document.documentElement;
 
@@ -33,20 +33,6 @@
     entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } });
   }, { rootMargin: "0px 0px -8% 0px" }) : null;
   document.querySelectorAll(".reveal").forEach((el) => io ? io.observe(el) : el.classList.add("in"));
-
-  // QR code pointing at the Play listing, drawn once the small generator library has loaded.
-  const qr = document.querySelector("[data-qr]");
-  if (qr) {
-    const s = document.createElement("script");
-    s.src = "https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js";
-    s.onload = () => {
-      const q = window.qrcode(0, "M");
-      q.addData(qr.dataset.qr);
-      q.make();
-      qr.innerHTML = q.createSvgTag({ cellSize: 4, margin: 0, scalable: true });
-    };
-    document.head.appendChild(s);
-  }
 
   // Prices: rupees for India, dollars elsewhere, matching the Play Console listing.
   const toggle = document.querySelector(".price-toggle");

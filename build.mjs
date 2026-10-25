@@ -90,6 +90,7 @@ function layout({ meta, body, out }) {
     <nav class="nav" aria-label="Main">
       <a class="brand" href="${root}"><img src="${root}assets/img/logo-512.png" alt="" width="30" height="30">${SITE.name}</a>
       <ul class="nav-links">
+        ${navItem("home", "", "Home")}
         ${navItem("features", "features", "Features")}
         ${navItem("security", "security", "Security")}
         ${navItem("how", "how-it-works", "How it works")}
@@ -144,6 +145,13 @@ ${guides.slice(0, 4).map((g) => `        <li><a href="${root}${g.out.replace(/\.
 `;
 }
 
+// Every Google Play button and link carries the Play logo.
+const PLAY_ICON = `<svg class="play-ico" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.3 2.4a1.4 1.4 0 0 0-.6 1.2v16.8c0 .5.2.9.6 1.2l9.5-9.6-9.5-9.6Zm10.6 10.7 2.6 2.6-11 6.3 8.4-8.9Zm3.8-3.4 2.6 1.5c.9.5.9 1.7 0 2.2l-2.7 1.6-2.9-2.8 3-2.5ZM6.5 1.9l11 6.3-2.6 2.7-8.4-9Z"/></svg>`;
+function playIcons(html) {
+  const href = SITE.playUrl.replace(/[.?]/g, "\\$&");
+  return html.replace(new RegExp(`(<a [^>]*href="${href}"[^>]*>)(?!<svg)`, "g"), `$1${PLAY_ICON}`);
+}
+
 function walk(dir) {
   return readdirSync(dir, { withFileTypes: true }).flatMap((e) =>
     e.isDirectory() ? walk(join(dir, e.name)) : e.name.endsWith(".html") ? [join(dir, e.name)] : []);
@@ -155,7 +163,7 @@ for (const file of walk("content")) {
   const out = outPath(rel);
   const { meta, body } = parse(file);
   if (!existsSync(dirname(out)) && dirname(out) !== ".") mkdirSync(dirname(out), { recursive: true });
-  writeFileSync(out, layout({ meta, body, out }));
+  writeFileSync(out, playIcons(layout({ meta, body, out })));
   if (!meta.noindex) pages.push({ out, date: meta.updated || meta.date });
 }
 
