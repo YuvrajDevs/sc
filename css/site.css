@@ -68,14 +68,15 @@ a { color: inherit; }
 /* ---------- Header ---------- */
 .site-header {
   position: sticky; top: 0; z-index: 20;
-  padding: 14px 0;
-  background: color-mix(in srgb, var(--bg-deep) 82%, transparent);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
+  padding: 10px 0;
 }
+/* The bar spans the page like the panels below it, with the page showing through, blurred. */
+.site-header .wrap { width: min(1240px, 100% - 20px); }
 .nav {
   display: flex; align-items: center; gap: 24px;
-  background: var(--surface);
+  background: color-mix(in srgb, var(--surface) 62%, transparent);
+  backdrop-filter: blur(18px) saturate(140%);
+  -webkit-backdrop-filter: blur(18px) saturate(140%);
   border: 1px solid var(--border);
   border-radius: 999px;
   padding: 8px 8px 8px 16px;
@@ -348,6 +349,7 @@ a.card:hover { border-color: var(--accent); transform: translateY(-2px); }
 @media (max-width: 640px) {
   body { font-size: 16px; }
   .panel { border-width: 4px; border-radius: 28px; width: calc(100% - 12px); }
+  .site-header .wrap { width: calc(100% - 12px); }
   .panel-inner { padding: 64px 0; }
   .wrap { width: calc(100% - 32px); }
   .cards, .cards.four, .cards.two, .plans, .steps { grid-template-columns: 1fr; }
