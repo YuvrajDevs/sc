@@ -156,8 +156,20 @@ p { margin: 0; }
 /* ---------- Hero ---------- */
 .hero { min-height: min(860px, calc(100svh - 90px)); display: flex; align-items: center; }
 .hero .bars { position: absolute; inset: 0; z-index: 0; opacity: .55; }
-.hero .bars span { position: absolute; height: 22px; border-radius: 3px; background: var(--bar-a); }
-.hero .bars span.b { background: var(--bar-b); }
+.bars { overflow: hidden; }
+.bars .bar-row { position: absolute; left: 0; width: 200%; height: 22px; animation: stream var(--t) linear infinite; will-change: transform; }
+.bars .bar-row.rev { animation-direction: reverse; }
+.bars span { position: absolute; top: 0; height: 100%; border-radius: 3px; background: var(--bar-a); }
+.bars span.b { background: var(--bar-b); }
+.bars span.f { animation: flicker 3.2s steps(1) var(--d) infinite; }
+@keyframes stream { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+@keyframes flicker {
+  0%, 100% { background: var(--bar-a); }
+  12% { background: color-mix(in srgb, var(--accent) 45%, var(--bar-b)); }
+  18% { background: var(--bar-b); }
+  24% { background: color-mix(in srgb, var(--accent) 25%, var(--bar-a)); }
+  40% { background: var(--bar-a); }
+}
 .hero::after {
   content: ""; position: absolute; inset: 0; z-index: 0;
   background: radial-gradient(ellipse 60% 55% at 50% 50%, var(--bg) 35%, transparent 100%);
@@ -320,7 +332,7 @@ a.card:hover { border-color: var(--accent); transform: translateY(-2px); }
 .js .reveal.in { opacity: 1; transform: none; }
 @media (prefers-reduced-motion: reduce) {
   .js .reveal { opacity: 1; transform: none; transition: none; }
-  .pattern path { animation: none; stroke-dashoffset: 0; }
+  .bars .bar-row, .bars span.f { animation: none; }
   html { scroll-behavior: auto; }
 }
 

@@ -14,17 +14,27 @@
     menu.setAttribute("aria-expanded", String(open));
   });
 
-  // Hero background: rows of soft bars, like encrypted data streaming past.
+  // Background bars: rows of encrypted-looking data that stream sideways at different speeds,
+  // with a few cells flickering as if being rewritten. Each row holds two identical halves so
+  // sliding it by half its width loops without a seam.
   document.querySelectorAll(".bars").forEach((el) => {
     const rows = 26;
     let html = "";
     for (let r = 0; r < rows; r++) {
-      let x = -Math.random() * 10;
-      while (x < 100) {
-        const w = 4 + Math.random() * 18;
-        if (Math.random() > .35) html += `<span class="${Math.random() > .6 ? "b" : ""}" style="top:${(r / rows) * 100}%;left:${x}%;width:${w}%"></span>`;
-        x += w + Math.random() * 6;
+      let half = "";
+      let x = Math.random() * 4;
+      while (x < 96) {
+        const w = 3 + Math.random() * 14;
+        if (Math.random() > .3) {
+          const kind = Math.random() > .6 ? "b" : "";
+          const flick = Math.random() > .9 ? ` f" style="--d:${(Math.random() * 6).toFixed(2)}s;` : `" style="`;
+          half += `<span class="${kind}${flick}left:${x / 2}%;width:${w / 2}%"></span>`;
+        }
+        x += w + 1 + Math.random() * 5;
       }
+      const copy = half.replace(/left:([\d.]+)%/g, (_, v) => `left:${(+v + 50).toFixed(3)}%`);
+      const dur = 40 + Math.random() * 70;
+      html += `<div class="bar-row${r % 2 ? " rev" : ""}" style="top:${(r / rows) * 100}%;--t:${dur.toFixed(1)}s">${half}${copy}</div>`;
     }
     el.innerHTML = html;
   });
