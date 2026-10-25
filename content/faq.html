@@ -1,0 +1,49 @@
+<!--meta {
+  "title": "FAQ",
+  "description": "Answers about Sealcloak: is it really offline, what if I forget my pattern, how backups and new phones work, and what Pro includes.",
+  "nav": "faq",
+  "jsonLd": [{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"Does Sealcloak upload my photos anywhere?","acceptedAnswer":{"@type":"Answer","text":"No. The app has no internet permission, so it cannot upload anything. Your files are encrypted and stay on your phone."}},
+    {"@type":"Question","name":"What if I forget my pattern?","acceptedAnswer":{"@type":"Answer","text":"Tap Use recovery phrase on the pattern screen and type the phrase you saved at setup. Then draw a new pattern."}},
+    {"@type":"Question","name":"What if I lose my pattern and my recovery phrase?","acceptedAnswer":{"@type":"Answer","text":"Then nobody can open that vault, including us. There is no back door. Keep your phrase on paper somewhere safe."}},
+    {"@type":"Question","name":"How do I move my vault to a new phone?","acceptedAnswer":{"@type":"Answer","text":"Export a backup on the old phone, copy the file to the new phone, install Sealcloak and import it with that vault's recovery phrase."}},
+    {"@type":"Question","name":"Is Sealcloak available on iPhone?","acceptedAnswer":{"@type":"Answer","text":"Not yet. Sealcloak is an Android app."}}
+  ]}]
+} -->
+<section class="panel">
+  <div class="panel-inner wrap faq">
+    <div class="section-head">
+      <div class="eyebrow">FAQ</div>
+      <h1 style="margin-top:20px">Questions, answered.</h1>
+    </div>
+
+    <h2 style="font-size:22px;margin:24px 0 4px" class="mono dim">Privacy</h2>
+    <details><summary>Does Sealcloak upload my photos anywhere?</summary><p>No. The app has no internet permission, so it cannot upload anything. Your files are encrypted and stay on your phone.</p></details>
+    <details><summary>Do I need an account?</summary><p>No. No email, no phone number, no sign-in. Your pattern is the only key.</p></details>
+    <details><summary>Can you see my files?</summary><p>No. We have no servers and no copy of your files or keys. Everything is encrypted on your phone.</p></details>
+    <details><summary>Do the photos stay in my gallery?</summary><p>When you add photos, Sealcloak offers to remove the originals from your gallery so they only live in the vault.</p></details>
+
+    <h2 style="font-size:22px;margin:40px 0 4px" class="mono dim">Getting in</h2>
+    <details><summary>What if I forget my pattern?</summary><p>Tap “Use recovery phrase” on the pattern screen and type the phrase you saved at setup. Then draw a new pattern.</p></details>
+    <details><summary>What if I lose my pattern and my recovery phrase?</summary><p>Then nobody can open that vault, including us. There is no back door. Keep your phrase on paper somewhere safe.</p></details>
+    <details><summary>Can I use my fingerprint?</summary><p>Yes. Turn on fingerprint unlock in Settings. Your pattern still works too.</p></details>
+    <details><summary>What is Coerce?</summary><p>A second, harmless-looking vault with its own pattern. If someone forces you to unlock the app, draw that pattern instead.</p><p>It can also erase your other vaults when opened, but that’s off by default and needs you to type PERMIT.</p></details>
+
+    <h2 style="font-size:22px;margin:40px 0 4px" class="mono dim">Backups & phones</h2>
+    <details><summary>How do I move my vault to a new phone?</summary><p>Export a backup on the old phone, copy the file to the new phone, install Sealcloak and import it with that vault’s recovery phrase.</p></details>
+    <details><summary>What happens if I uninstall the app?</summary><p>Its vaults are deleted from the phone. Backup files you exported earlier are kept and can be imported again.</p></details>
+    <details><summary>Are backups encrypted?</summary><p>Yes. A backup file is useless without that vault’s recovery phrase.</p></details>
+    <details><summary>Is Sealcloak available on iPhone?</summary><p>Not yet. Sealcloak is an Android app.</p></details>
+
+    <h2 style="font-size:22px;margin:40px 0 4px" class="mono dim">Pro</h2>
+    <details><summary>What does Pro add?</summary><p>Unlimited vaults and files, plus the calculator disguise and custom icon. See <a href="{{root}}pricing" style="color:var(--accent)">pricing</a>.</p></details>
+    <details><summary>Will I lose files if I stop paying?</summary><p>No. Everything stays and keeps working. You just can’t add more beyond the free limits.</p></details>
+  </div>
+</section>
+
+<section class="panel final">
+  <div class="panel-inner wrap">
+    <h2>Still curious? Try it.</h2>
+    <div class="cta-row"><a class="btn btn-primary btn-lg" href="{{play}}">Get it on Google Play</a></div>
+  </div>
+</section>

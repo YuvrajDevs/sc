@@ -1,0 +1,62 @@
+<!--meta {
+  "title": "Security",
+  "description": "How Sealcloak protects your files: AES-256-GCM encryption, Argon2id key derivation, Android Keystore, no account and no internet permission.",
+  "nav": "security"
+} -->
+<section class="panel">
+  <div class="panel-inner wrap">
+    <div class="section-head">
+      <div class="eyebrow">Security</div>
+      <h1 style="margin-top:20px">Built so that even we can’t look.</h1>
+      <p class="lead">Sealcloak keeps no servers and no accounts, and the app has no permission to use the internet. Your files are encrypted on your phone with keys only your pattern or phrase can unlock.</p>
+    </div>
+    <div class="cards four reveal">
+      <div class="card"><h3>No account</h3><p>No email, phone number or sign-in. Ever.</p></div>
+      <div class="card"><h3>No internet</h3><p>The internet permission is removed from the app entirely.</p></div>
+      <div class="card"><h3>No cloud</h3><p>Files stay on your phone, in encrypted form only.</p></div>
+      <div class="card"><h3>No back door</h3><p>We can’t reset your pattern or open your vault.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="panel">
+  <div class="panel-inner wrap">
+    <div class="split reveal">
+      <div>
+        <div class="eyebrow">Under the hood</div>
+        <h2 style="margin-top:16px">How your files are locked.</h2>
+        <p class="lead" style="margin-top:16px">For people who want the details.</p>
+      </div>
+      <table class="spec">
+        <tr><th>File encryption</th><td>AES-256-GCM. Every file is encrypted before it’s written to storage, and its tag catches any tampering.</td></tr>
+        <tr><th>Vault key</th><td>Each vault has its own random 256-bit master key.</td></tr>
+        <tr><th>Pattern & phrase</th><td>Turned into keys with Argon2id (32 MiB of memory), so guessing is slow even on fast hardware.</td></tr>
+        <tr><th>Hardware</th><td>Pattern data is also wrapped by a key in the Android Keystore, so it can’t be copied off the phone and attacked.</td></tr>
+        <tr><th>Wrong patterns</th><td>Growing wait times after wrong tries. Optional erase after too many.</td></tr>
+        <tr><th>Backups</th><td>Backup files stay encrypted. Each vault’s phrase restores only that vault.</td></tr>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="panel">
+  <div class="panel-inner wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">Honest limits</div>
+      <h2>What Sealcloak can’t do.</h2>
+      <p class="lead">Good security means being clear about this too.</p>
+    </div>
+    <div class="cards reveal">
+      <div class="card"><h3>Forget both, lose all</h3><p>If you forget your pattern and lose your recovery phrase, nobody can open the vault. Not even us.</p></div>
+      <div class="card"><h3>Uninstalling erases</h3><p>Removing the app deletes its vaults. Keep a backup file somewhere safe.</p></div>
+      <div class="card"><h3>An unlocked phone is open</h3><p>While a vault is open, anyone holding the phone can see it. It locks again as soon as you leave the app.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="panel final">
+  <div class="panel-inner wrap">
+    <h2>Private by default.</h2>
+    <div class="cta-row"><a class="btn btn-primary btn-lg" href="{{play}}">Get it on Google Play</a><a class="btn btn-ghost btn-lg" href="{{root}}privacy">Read the privacy policy</a></div>
+  </div>
+</section>
