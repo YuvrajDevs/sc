@@ -155,9 +155,8 @@ p { margin: 0; }
 
 /* ---------- Hero ---------- */
 .hero { min-height: min(860px, calc(100svh - 90px)); display: flex; align-items: center; }
-.hero .bars { position: absolute; inset: 0; z-index: 0; opacity: .55; }
-.bars { overflow: hidden; }
-.bars .bar-row { position: absolute; left: 0; width: 200%; height: 22px; animation: stream var(--t) linear infinite; will-change: transform; }
+.bars { position: absolute; inset: 0; z-index: 0; opacity: .55; overflow: hidden; }
+.bars .bar-row { position: absolute; left: 0; width: 200%; height: 2.4%; animation: stream var(--t) linear infinite; will-change: transform; }
 .bars .bar-row.rev { animation-direction: reverse; }
 .bars span { position: absolute; top: 0; height: 100%; border-radius: 3px; background: var(--bar-a); }
 .bars span.b { background: var(--bar-b); }
@@ -170,7 +169,7 @@ p { margin: 0; }
   24% { background: color-mix(in srgb, var(--accent) 25%, var(--bar-a)); }
   40% { background: var(--bar-a); }
 }
-.hero::after {
+.hero::after, .final::after {
   content: ""; position: absolute; inset: 0; z-index: 0;
   background: radial-gradient(ellipse 60% 55% at 50% 50%, var(--bg) 35%, transparent 100%);
 }
@@ -313,6 +312,7 @@ a.card:hover { border-color: var(--accent); transform: translateY(-2px); }
 
 /* ---------- Final CTA ---------- */
 .final { text-align: center; }
+.final .panel-inner { position: relative; z-index: 1; }
 .final .lead { margin-inline: auto; }
 .final .cta-row { justify-content: center; }
 
