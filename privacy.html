@@ -4,12 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Privacy policy · Sealcloak</title>
-<meta name="description" content="Sealcloak collects no data. No account, no analytics, no ads, no internet permission. Your files stay encrypted on your phone.">
+<meta name="description" content="Sealcloak collects no data. No account, no analytics, no ads and no internet permission. Here is exactly what the app and this website do and don't do.">
 <link rel="canonical" href="https://sealcloak.app/privacy">
 <meta name="theme-color" content="#0B1A1D">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Privacy policy">
-<meta property="og:description" content="Sealcloak collects no data. No account, no analytics, no ads, no internet permission. Your files stay encrypted on your phone.">
+<meta property="og:description" content="Sealcloak collects no data. No account, no analytics, no ads and no internet permission. Here is exactly what the app and this website do and don't do.">
 <meta property="og:url" content="https://sealcloak.app/privacy">
 <meta property="og:image" content="https://sealcloak.app/assets/img/logo-512.png">
 <meta name="twitter:card" content="summary">
@@ -20,7 +20,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300..700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="./css/site.css">
 <script>document.documentElement.classList.add("js");try{var t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
-<script type="application/ld+json">[{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Sealcloak","operatingSystem":"Android","applicationCategory":"UtilitiesApplication","url":"https://sealcloak.app","downloadUrl":"https://play.google.com/store/apps/details?id=com.sealcloak.app","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}},{"@context":"https://schema.org","@type":"Article","headline":"Privacy policy","description":"Sealcloak collects no data. No account, no analytics, no ads, no internet permission. Your files stay encrypted on your phone.","datePublished":"2026-10-25","dateModified":"2026-10-25","author":{"@type":"Organization","name":"Sealcloak"},"mainEntityOfPage":"https://sealcloak.app/privacy"}]</script>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Sealcloak","operatingSystem":"Android","applicationCategory":"UtilitiesApplication","url":"https://sealcloak.app","downloadUrl":"https://play.google.com/store/apps/details?id=com.sealcloak.app","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}},{"@context":"https://schema.org","@type":"Article","headline":"Privacy policy","description":"Sealcloak collects no data. No account, no analytics, no ads and no internet permission. Here is exactly what the app and this website do and don't do.","datePublished":"2026-11-03","dateModified":"2026-11-03","author":{"@type":"Organization","name":"Sealcloak"},"mainEntityOfPage":"https://sealcloak.app/privacy"}]</script>
 </head>
 <body>
 <header class="site-header">
@@ -35,6 +35,7 @@
         <li><a href="./pricing">Pricing</a></li>
         <li><a href="./guides/">Guides</a></li>
         <li><a href="./faq">FAQ</a></li>
+        <li><a href="./support">Support</a></li>
       </ul>
       <div class="nav-actions">
         <button class="icon-btn" id="theme-btn" type="button" aria-label="Switch light or dark theme">
@@ -52,40 +53,65 @@
 <section class="panel">
   <div class="panel-inner wrap">
     <article class="article">
-      <div class="meta">Last updated 25 October 2026</div>
+      <div class="meta">Last updated 3 November 2026</div>
       <h1>Privacy policy</h1>
-      <p class="lead">Short version: Sealcloak collects nothing. Your files stay on your phone, encrypted.</p>
+      <p class="lead">Sealcloak is an offline private vault for Android. Your files are encrypted on your phone under a random key for each vault, and that key can only be unlocked with your pattern or your recovery phrase. We run no service that receives your files, your pattern or your keys.</p>
       <div class="prose">
-        <h2>What we collect</h2>
-        <p><strong>Nothing.</strong> Sealcloak has no account, no analytics, no crash reporting, no advertising and no tracking. The app does not have Android’s internet permission, so it cannot send anything anywhere.</p>
+        <h2>Overview</h2>
+        <p>The Android app does not have the internet permission. We removed it from the app on purpose, so Sealcloak cannot send anything anywhere, even by mistake. There is no account, no analytics, no crash reporting, no advertising and no tracking inside the app.</p>
 
-        <h2>Your files</h2>
-        <p>Photos, videos, documents, audio, notes and scans you add are encrypted on your phone and stored only in the app’s private storage. We never receive them and cannot open them.</p>
+        <h2>What we do not collect</h2>
+        <ul>
+          <li><strong>Your photos, videos, documents, audio, notes or scans.</strong> They are encrypted with AES-256-GCM on your phone and stored only in the app’s private storage. We never receive them.</li>
+          <li><strong>Your pattern.</strong> It is turned into a key on your phone with Argon2id, a slow key-derivation function made to resist guessing. The pattern itself is never stored.</li>
+          <li><strong>Your encryption keys.</strong> Each vault has its own random master key. It is kept wrapped, protected by your pattern and by a key held in Android’s hardware-backed Keystore. Keys are cleared from memory when the vault locks.</li>
+          <li><strong>Your recovery phrase.</strong> It is shown to you once at setup and kept on your phone only in encrypted form. We cannot see it and cannot reset it.</li>
+          <li><strong>An account of any kind.</strong> No email, no phone number, no sign-in.</li>
+          <li><strong>Android cloud backup.</strong> The app opts out of Android’s automatic app backup, so your vault is not copied to Google Drive behind your back.</li>
+        </ul>
 
         <h2>Permissions the app uses</h2>
         <ul>
-          <li><strong>Camera:</strong> for the document scanner and, if you turn it on, intruder photos. Pictures are saved encrypted in your vault only.</li>
-          <li><strong>Fingerprint:</strong> to unlock, if you turn it on. Android handles your fingerprint; the app never sees it.</li>
-          <li><strong>Run at startup:</strong> so scheduled backups keep working after a restart.</li>
+          <li><strong>Camera:</strong> for the in-app camera and document scanner, and for intruder photos if you turn them on. Pictures are saved encrypted inside your vault, never to your gallery.</li>
+          <li><strong>Biometrics:</strong> to unlock with your fingerprint or face, if you turn it on. Android handles the biometric check; the app never sees your fingerprint or face.</li>
+          <li><strong>Run at startup:</strong> so a backup schedule you set keeps working after your phone restarts.</li>
         </ul>
+        <p>The app does not ask for contacts, location, microphone, storage-wide access or the internet. Files you add are picked through Android’s own file and photo pickers, which only give the app the items you choose.</p>
 
-        <h2>Backups</h2>
-        <p>Backup files are created only when you ask, or on a schedule you set, and saved to a folder you choose. They are encrypted. Where they go after that is up to you.</p>
+        <h2>Intruder photos</h2>
+        <p>If you turn this on, the front camera takes a photo after repeated wrong patterns. While the vault is locked the photo is sealed to a public key, so the app can add a photo but cannot read the ones already saved. Only the vault that turned the feature on can open them, after you unlock it. Photos never leave your phone and never appear in a notification. Android shows its normal camera indicator whenever any app uses the camera, and the app cannot hide it.</p>
+
+        <h2>Backups you make</h2>
+        <p>Backups are created only when you ask, or on a weekly or monthly schedule you set, and are saved to a folder you pick. A backup is one file, encrypted with your vault’s recovery phrase or with a passphrase you choose at the time. We do not receive backups and cannot open them. Once a backup is outside the app, how safe it is depends on where you keep it.</p>
+
+        <h2>Disguise features</h2>
+        <p>The calculator disguise and custom icon only change what the app looks like on your phone: the icon, the name and the screen it opens to. The secret code for calculator mode is stored as a slow hash, not as text, and never leaves your phone.</p>
 
         <h2>Purchases</h2>
-        <p>Pro is bought through Google Play. Google processes the payment under <a href="https://policies.google.com/privacy">Google’s privacy policy</a>. The app only learns whether Pro is active; it never receives your payment details.</p>
+        <p>Sealcloak Pro is sold through Google Play as weekly, monthly or annual subscriptions and a one-time lifetime purchase. Google handles the payment, the free trial and refunds under <a href="https://policies.google.com/privacy">Google’s privacy policy</a>. We do not receive your name, card or payment details. The app only asks Google Play whether Pro is active on your account, using Google’s billing service on your device.</p>
 
         <h2>This website</h2>
-        <p>This site has no analytics or cookies. Fonts are loaded from Google Fonts, which may see your IP address when your browser fetches them.</p>
+        <p>This website has no analytics, no advertising pixels and no cookies. It stores one small preference in your browser, light or dark theme, using local storage on your device only. The page fonts load from Google Fonts, which can see your IP address when your browser fetches them. The site is hosted on Vercel, which, like most web hosts, may keep ordinary server logs such as IP address and page requested. If you email us, we receive your email address and your message.</p>
+
+        <h2>Messages you send us</h2>
+        <p>If you write to us for support, we read your message and reply to the address it came from. We use it to help you and to improve the app. We keep it only as long as we need it for that. Please never send your pattern, recovery phrase or backup passphrase. We will never ask for them.</p>
+
+        <h2>Third-party services</h2>
+        <ul>
+          <li><strong>Google Play and Google Play Billing:</strong> to install the app and process purchases.</li>
+          <li><strong>Android Keystore:</strong> on your phone, to protect the keys that wrap your vaults.</li>
+          <li><strong>Google Fonts and Vercel:</strong> only for this website, as described above.</li>
+        </ul>
+        <p>The app itself talks to none of these.</p>
 
         <h2>Children</h2>
-        <p>Sealcloak is not directed at children under 13 and collects no information from anyone.</p>
+        <p>Sealcloak is not directed at children under 13. The app collects no information from anyone, and requires no account.</p>
 
-        <h2>Changes</h2>
-        <p>If this policy changes, we’ll update this page and the date at the top.</p>
+        <h2>Changes to this policy</h2>
+        <p>If this policy changes, we will update this page and the date at the top. If a change affected what the app collects, we would say so in the app’s update notes as well.</p>
 
         <h2>Contact</h2>
-        <p>Questions? Email <a href="mailto:hello@sealcloak.app">hello@sealcloak.app</a>.</p>
+        <p>Questions about this policy? Visit our <a href="./support">support page</a> or email <a href="mailto:hello@sealcloak.app">hello@sealcloak.app</a>.</p>
       </div>
     </article>
   </div>
@@ -112,7 +138,9 @@
       </ul></div>
       <div><h4>Help</h4><ul>
         <li><a href="./faq">FAQ</a></li>
+        <li><a href="./support">Support</a></li>
         <li><a href="./privacy">Privacy policy</a></li>
+        <li><a href="./terms">Terms of use</a></li>
         <li><a href="https://play.google.com/store/apps/details?id=com.sealcloak.app"><svg class="play-ico" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.3 2.4a1.4 1.4 0 0 0-.6 1.2v16.8c0 .5.2.9.6 1.2l9.5-9.6-9.5-9.6Zm10.6 10.7 2.6 2.6-11 6.3 8.4-8.9Zm3.8-3.4 2.6 1.5c.9.5.9 1.7 0 2.2l-2.7 1.6-2.9-2.8 3-2.5ZM6.5 1.9l11 6.3-2.6 2.7-8.4-9Z"/></svg>Google Play</a></li>
       </ul></div>
     </div>

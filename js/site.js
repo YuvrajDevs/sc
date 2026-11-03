@@ -39,6 +39,14 @@
     el.innerHTML = html;
   });
 
+  document.getElementById("copy-email")?.addEventListener("click", (e) => {
+    const btn = e.currentTarget, text = btn.textContent;
+    const done = () => { btn.textContent = "Copied"; setTimeout(() => { btn.textContent = text; }, 1800); };
+    (navigator.clipboard ? navigator.clipboard.writeText(btn.dataset.email) : Promise.reject()).then(done, () => {
+      const r = document.createRange(); r.selectNodeContents(document.getElementById("support-email")); const s = getSelection(); s.removeAllRanges(); s.addRange(r);
+    });
+  });
+
   const io = "IntersectionObserver" in window ? new IntersectionObserver((entries) => {
     entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } });
   }, { rootMargin: "0px 0px -8% 0px" }) : null;

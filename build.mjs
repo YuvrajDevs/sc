@@ -57,6 +57,7 @@ function layout({ meta, body, out }) {
   body = body
     .replaceAll("{{root}}", root)
     .replaceAll("{{play}}", SITE.playUrl)
+    .replaceAll("{{email}}", SITE.email)
     .replace("{{latestGuides}}", guideCards(guides.slice(0, 3), root))
     .replace("{{allGuides}}", guideCards(guides, root));
 
@@ -97,6 +98,7 @@ function layout({ meta, body, out }) {
         ${navItem("pricing", "pricing", "Pricing")}
         ${navItem("guides", "guides/", "Guides")}
         ${navItem("faq", "faq", "FAQ")}
+        ${navItem("support", "support", "Support")}
       </ul>
       <div class="nav-actions">
         <button class="icon-btn" id="theme-btn" type="button" aria-label="Switch light or dark theme">
@@ -132,7 +134,9 @@ ${guides.slice(0, 4).map((g) => `        <li><a href="${root}${g.out.replace(/\.
       </ul></div>
       <div><h4>Help</h4><ul>
         <li><a href="${root}faq">FAQ</a></li>
+        <li><a href="${root}support">Support</a></li>
         <li><a href="${root}privacy">Privacy policy</a></li>
+        <li><a href="${root}terms">Terms of use</a></li>
         <li><a href="${SITE.playUrl}">Google Play</a></li>
       </ul></div>
     </div>

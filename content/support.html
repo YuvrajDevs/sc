@@ -1,0 +1,45 @@
+<!--meta {
+  "title": "Support",
+  "description": "Get help with Sealcloak. Email us, and see what to include so we can help fast. Quick answers for forgotten patterns, backups and purchases.",
+  "nav": "support"
+} -->
+<section class="panel">
+  <div class="panel-inner wrap">
+    <div class="section-head">
+      <div class="eyebrow">Support</div>
+      <h1 style="margin-top:20px">We’re happy to help.</h1>
+      <p class="lead" style="margin-top:16px">Sealcloak has no accounts, so email is the way to reach us. A real person reads every message.</p>
+    </div>
+
+    <div class="cards" style="margin-top:32px">
+      <div class="card">
+        <h3>Email us</h3>
+        <p><a href="mailto:{{email}}?subject=Sealcloak%20support" id="support-email">{{email}}</a></p>
+        <div class="cta-row" style="margin-top:20px">
+          <a class="btn btn-primary" href="mailto:{{email}}?subject=Sealcloak%20support">Write an email</a>
+          <button class="btn btn-ghost" type="button" id="copy-email" data-email="{{email}}">Copy address</button>
+        </div>
+      </div>
+      <div class="card">
+        <h3>Include these, if you can</h3>
+        <p>Your phone model and Android version, the Sealcloak version (on Google Play, under About this app), what you did, and what happened instead. A screenshot helps, but check it first: the app blocks screenshots inside it, so describe those screens in words.</p>
+      </div>
+      <div class="card">
+        <h3>Never send these</h3>
+        <p>Your pattern, recovery phrase, backup passphrase or secret code. We will never ask for them, and we can’t use them: we have no way into your vault.</p>
+      </div>
+    </div>
+
+    <div class="section-head" style="margin-top:72px">
+      <h2>Quick answers</h2>
+    </div>
+    <details><summary>I forgot my pattern.</summary><p>On the pattern screen, tap “Use recovery phrase” and type the phrase you saved at setup. Then draw a new pattern. If you lost both, nobody can open that vault, us included.</p></details>
+    <details><summary>I bought Pro but it isn’t unlocked.</summary><p>Open the Pro screen and tap “Restore purchases”. Make sure you’re signed in to the same Google account that paid. Purchases are handled by Google Play, so for refunds use Google Play’s Payments and subscriptions page.</p></details>
+    <details><summary>How do I cancel my subscription?</summary><p>Open the Google Play app, tap your profile, then Payments and subscriptions, then Subscriptions, and choose Sealcloak. Deleting the app does not cancel it.</p></details>
+    <details><summary>How do I move my files to a new phone?</summary><p>Export a backup in Settings on the old phone and copy the file across. On the new phone, install Sealcloak, choose “Restore from a backup”, and enter that vault’s recovery phrase or the passphrase you set.</p></details>
+    <details><summary>A backup won’t import.</summary><p>Check that you’re using the right recovery words or passphrase, and that the backup came from Sealcloak. If it says the backup was made by a newer version, update the app and try again. If it says it’s incomplete, everything readable is still restored.</p></details>
+    <details><summary>Intruder photos aren’t appearing.</summary><p>Turn them on in Settings and allow the camera. The first two wrong patterns are forgiven; from the third in a row, each wrong attempt takes a photo. View them in Settings, after you unlock.</p></details>
+    <details><summary>I found a bug or a security problem.</summary><p>Please email us the details. For a security issue, say so in the subject line and share enough to reproduce it. We’ll look at it promptly.</p></details>
+    <p style="margin-top:32px" class="dim">More answers are in the <a href="{{root}}faq">FAQ</a>. Also see the <a href="{{root}}privacy">privacy policy</a> and <a href="{{root}}terms">terms of use</a>.</p>
+  </div>
+</section>
