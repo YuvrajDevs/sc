@@ -41,5 +41,5 @@ The plan: publish one high-quality article every 1–2 days, each aimed at one k
 
 - Set the real domain in `site.json`, then rebuild.
 - Make sure the Play link works once the listing is live.
-- Set up the contact email used on the privacy page (`hello@sealcloak.app`).
+- Set up the contact email used on the privacy page (`yssupports@gmail.com`).
 - Submit `sitemap.xml` in Google Search Console.
