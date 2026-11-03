@@ -11,15 +11,19 @@
       <p class="lead" style="margin-top:16px">Sealcloak has no accounts, so email is the way to reach us. A real person reads every message.</p>
     </div>
 
-    <div class="cards" style="margin-top:32px">
-      <div class="card">
-        <h3>Email us</h3>
-        <p><a href="mailto:{{email}}?subject=Sealcloak%20support" id="support-email">{{email}}</a></p>
-        <div class="cta-row" style="margin-top:20px">
-          <a class="btn btn-primary" href="mailto:{{email}}?subject=Sealcloak%20support">Write an email</a>
-          <button class="btn btn-ghost" type="button" id="copy-email" data-email="{{email}}">Copy address</button>
-        </div>
+    <div class="contact-card">
+      <div class="contact-main">
+        <div class="eyebrow">Email us</div>
+        <a class="contact-email" href="mailto:{{email}}?subject=Sealcloak%20support" id="support-email">{{email}}</a>
+        <p>Write to us from any email app. We reply to the address your message comes from.</p>
       </div>
+      <div class="cta-row">
+        <a class="btn btn-primary btn-lg" href="mailto:{{email}}?subject=Sealcloak%20support">Write an email</a>
+        <button class="btn btn-ghost btn-lg" type="button" id="copy-email" data-email="{{email}}">Copy address</button>
+      </div>
+    </div>
+
+    <div class="cards two" style="margin-top:12px">
       <div class="card">
         <h3>Include these, if you can</h3>
         <p>Your phone model and Android version, the Sealcloak version (on Google Play, under About this app), what you did, and what happened instead. A screenshot helps, but check it first: the app blocks screenshots inside it, so describe those screens in words.</p>
