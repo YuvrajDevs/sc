@@ -441,3 +441,29 @@ a.card:hover { border-color: var(--accent); transform: translateY(-2px); }
   .spec th { width: 40%; }
   .compare th, .compare td { padding: 12px 6px; font-size: 14px; }
 }
+
+/* Language menu */
+.lang-menu { position: relative; }
+.lang-menu summary { list-style: none; cursor: pointer; }
+.lang-menu summary::-webkit-details-marker { display: none; }
+.lang-menu ul { position: absolute; top: calc(100% + 8px); inset-inline-end: 0; z-index: 60; min-width: 200px; max-height: 70vh; overflow: auto;
+  list-style: none; margin: 0; padding: 6px; border-radius: 16px; border: 1px solid var(--border);
+  background: color-mix(in srgb, var(--surface) 94%, transparent); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); box-shadow: 0 12px 40px rgba(0,0,0,.25); }
+.lang-menu a { display: block; padding: 10px 12px; border-radius: 10px; color: var(--text); text-decoration: none; font-size: 15px; }
+.lang-menu a:hover { background: color-mix(in srgb, var(--accent) 12%, transparent); }
+.lang-menu a[aria-current] { color: var(--accent); font-weight: 600; }
+
+/* Right-to-left languages (Arabic): mirror the few places that set a side explicitly. Arabic letters must
+   connect, so no letter-spacing there. */
+[dir="rtl"] body, [dir="rtl"] h1, [dir="rtl"] h2, [dir="rtl"] h3, [dir="rtl"] .eyebrow, [dir="rtl"] .btn, [dir="rtl"] .nav-links a { letter-spacing: 0; }
+[dir="rtl"] .prose th, [dir="rtl"] .prose td { text-align: right; }
+[dir="rtl"] .prose ul, [dir="rtl"] .prose ol { padding-left: 0; padding-right: 22px; }
+[dir="rtl"] .cta-card .btn, [dir="rtl"] .sticky-cta .btn { margin-left: 0; margin-right: auto; }
+[dir="rtl"] .card .pro, [dir="rtl"] .article .meta .pro { margin-left: 0; margin-right: 8px; }
+[dir="rtl"] .faq summary { padding: 22px 0 22px 40px; }
+[dir="rtl"] .faq summary::after { right: auto; left: 4px; }
+[dir="rtl"] .plan .badge { left: auto; right: 24px; }
+[dir="rtl"] .spec th { padding-right: 0; padding-left: 24px; }
+/* CJK, Bengali and Arabic read better a touch looser and without forced uppercase tracking. */
+:is([lang="ja"], [lang="ko"], [lang="bn"], [lang="ar"]) .eyebrow { text-transform: none; letter-spacing: .02em; }
+:is([lang="ja"], [lang="ko"]) h1, :is([lang="ja"], [lang="ko"]) h2 { letter-spacing: 0; word-break: keep-all; line-break: strict; }

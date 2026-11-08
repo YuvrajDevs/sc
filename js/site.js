@@ -8,6 +8,11 @@
     try { localStorage.setItem("theme", next); } catch (e) {}
   });
 
+  // Close the language menu when tapping anywhere else.
+  document.addEventListener("click", (e) => {
+    document.querySelectorAll(".lang-menu[open]").forEach((d) => { if (!d.contains(e.target)) d.open = false; });
+  });
+
   const menu = document.getElementById("menu-btn");
   menu?.addEventListener("click", () => {
     const open = menu.closest(".nav").classList.toggle("open");

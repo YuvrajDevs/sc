@@ -4,10 +4,11 @@ Static marketing site for Sealcloak, the offline photo and file vault for Androi
 
 ## Structure
 
-- `content/`: the source of every page. Edit these, never the generated `.html` files in the root.
+- `content/`: the source of every page, in English. Translations live in `content/<lang>/` (see `seo/TRANSLATE.md`).
+- `i18n/`: the site's languages (`langs.json`) and interface text for each (`ui/<lang>.json`).
 - `content/guides/`: SEO articles, one per target keyword.
 - `css/site.css`, `js/site.js`: shared styles and scripts. The colours are the app's own.
-- `build.mjs`: wraps each content file in the shared header and footer. It also writes the guide lists, `sitemap.xml` and `robots.txt`.
+- `build.mjs`: builds every page in every language into `public/`, with the shared header and footer, guide lists, language links, `sitemap.xml` and `robots.txt`. Vercel runs it on every deploy, so `public/` is never committed.
 - `site.json`: the site URL and the Google Play link.
 
 ```bash
@@ -15,7 +16,7 @@ node build.mjs     # build
 node serve.mjs     # preview at http://localhost:4321
 ```
 
-The repo root is the website, so it can be served as-is by GitHub Pages, Netlify or Cloudflare Pages. Run `node build.mjs` and commit the output before pushing.
+Vercel builds the site on every push (`vercel.json`). Only commit sources: `content/`, `i18n/`, `css/`, `js/`, `assets/`.
 
 ## Adding a guide (the SEO routine)
 

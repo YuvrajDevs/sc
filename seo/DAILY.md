@@ -62,10 +62,12 @@ Fix every `FAIL` and run it again until it prints `PASS`. Read the warnings and 
 node build.mjs
 ```
 
-Then:
+Make sure the build succeeds. It writes the site to `public/`, which is never committed because Vercel builds it on deploy. Then:
 - Add `{"date": "YYYY-MM-DD", "slug": "...", "section": "guides|compare|scenarios", "keyword": "...", "score": N}` to `seo/published.json`.
-- Commit everything (the content file, the generated `.html`, `sitemap.xml`, `seo/keywords.json`, `seo/published.json`) with the message `Article: <title>`.
-- Push to `main`. Vercel deploys it in about a minute.
+- Commit the new content file, `seo/keywords.json` and `seo/published.json` with the message `Article: <title>`.
+- Push to `main`. If the push is rejected because someone else pushed, run `git pull --rebase` and push again. Vercel deploys in about a minute.
+
+The new article is English only at first. The translation routine (`seo/TRANSLATE.md`) picks it up and translates it into every site language.
 
 ## 7. Report
 

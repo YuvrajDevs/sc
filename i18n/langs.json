@@ -1,0 +1,13 @@
+[
+  {"code": "en", "hreflang": "en", "hl": "en", "name": "English", "dir": "ltr"},
+  {"code": "es", "hreflang": "es", "hl": "es", "name": "Español", "dir": "ltr"},
+  {"code": "pt-br", "hreflang": "pt-BR", "hl": "pt-BR", "name": "Português (Brasil)", "dir": "ltr"},
+  {"code": "id", "hreflang": "id", "hl": "id", "name": "Bahasa Indonesia", "dir": "ltr"},
+  {"code": "bn", "hreflang": "bn", "hl": "bn", "name": "বাংলা", "dir": "ltr", "font": "Noto Sans Bengali", "fontQuery": "Noto+Sans+Bengali:wght@300..700"},
+  {"code": "ar", "hreflang": "ar", "hl": "ar", "name": "العربية", "dir": "rtl", "font": "Noto Sans Arabic", "fontQuery": "Noto+Sans+Arabic:wght@300..700"},
+  {"code": "tr", "hreflang": "tr", "hl": "tr", "name": "Türkçe", "dir": "ltr"},
+  {"code": "de", "hreflang": "de", "hl": "de", "name": "Deutsch", "dir": "ltr"},
+  {"code": "vi", "hreflang": "vi", "hl": "vi", "name": "Tiếng Việt", "dir": "ltr", "font": "Be Vietnam Pro", "fontQuery": "Be+Vietnam+Pro:wght@300;400;500;600;700", "fontFirst": true},
+  {"code": "ko", "hreflang": "ko", "hl": "ko", "name": "한국어", "dir": "ltr", "font": "Noto Sans KR", "fontQuery": "Noto+Sans+KR:wght@300..700"},
+  {"code": "ja", "hreflang": "ja", "hl": "ja", "name": "日本語", "dir": "ltr", "font": "Noto Sans JP", "fontQuery": "Noto+Sans+JP:wght@300..700"}
+]

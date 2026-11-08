@@ -1,10 +1,11 @@
-// Local preview that serves pages the way GitHub Pages does (/features → features.html). `node serve.mjs`
+// Local preview of the built site in public/, served the way Vercel does (/features → features.html).
+// Run `node build.mjs` first, then `node serve.mjs`.
 import { createServer } from "node:http";
 import { readFile, stat } from "node:fs/promises";
 import { dirname, extname, join, normalize } from "node:path";
 import { fileURLToPath } from "node:url";
 
-process.chdir(dirname(fileURLToPath(import.meta.url)));
+process.chdir(join(dirname(fileURLToPath(import.meta.url)), "public"));
 
 const types = { ".html": "text/html; charset=utf-8", ".css": "text/css", ".js": "text/javascript", ".png": "image/png",
   ".svg": "image/svg+xml", ".ttf": "font/ttf", ".xml": "application/xml", ".txt": "text/plain" };

@@ -10,6 +10,13 @@
   const list = document.getElementById("meta-results");
   if (!drop || !input || !list) return;
 
+  // Interface text in the page's language (set by the build), English otherwise.
+  const T = Object.assign({
+    removed: "Removed {kb} KB of hidden data.", clean: "No hidden data found. It was already clean.", location: "Location",
+    phone: "Phone", taken: "Taken", textChunks: "Text and date chunks", nothing: "Nothing personal found",
+    download: "Download clean copy", unreadable: "This file couldn't be read:",
+    unsupported: "Only JPEG and PNG are supported. HEIC photos: share them as JPEG first, or change your camera to save JPEG.",
+  }, window.SC_TOOL || {});
   const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
 
   // ---- Reading EXIF (just the fields that matter for privacy)
@@ -117,18 +124,18 @@
     if (error) { li.innerHTML = `<div><strong>${esc(file.name)}</strong><p class="dim">${esc(error)}</p></div>`; list.prepend(li); return; }
     const { info, removed, blob } = result;
     const found = [];
-    if (info.lat !== undefined) found.push(`<span class="meta-tag warn">Location ${info.lat.toFixed(5)}, ${info.lon.toFixed(5)}</span>`);
-    if (info.make || info.model) found.push(`<span class="meta-tag">Phone: ${esc([info.make, info.model].filter(Boolean).join(" "))}</span>`);
-    if (info.date) found.push(`<span class="meta-tag">Taken: ${esc(info.date)}</span>`);
-    if (info.text) found.push(`<span class="meta-tag">Text and date chunks</span>`);
+    if (info.lat !== undefined) found.push(`<span class="meta-tag warn">${esc(T.location)} ${info.lat.toFixed(5)}, ${info.lon.toFixed(5)}</span>`);
+    if (info.make || info.model) found.push(`<span class="meta-tag">${esc(T.phone)}: ${esc([info.make, info.model].filter(Boolean).join(" "))}</span>`);
+    if (info.date) found.push(`<span class="meta-tag">${esc(T.taken)}: ${esc(info.date)}</span>`);
+    if (info.text) found.push(`<span class="meta-tag">${esc(T.textChunks)}</span>`);
     const name = file.name.replace(/(\.[a-z0-9]+)?$/i, (ext) => `-clean${ext || ""}`);
     const url = URL.createObjectURL(blob);
     li.innerHTML = `<div>
         <strong>${esc(file.name)}</strong>
-        <p class="dim">${removed ? `Removed ${(removed / 1024).toFixed(1)} KB of hidden data.` : "No hidden data found. It was already clean."}</p>
-        <div class="meta-tags">${found.join("") || '<span class="meta-tag">Nothing personal found</span>'}</div>
+        <p class="dim">${esc(removed ? T.removed.replace("{kb}", (removed / 1024).toFixed(1)) : T.clean)}</p>
+        <div class="meta-tags">${found.join("") || `<span class="meta-tag">${esc(T.nothing)}</span>`}</div>
       </div>
-      <a class="btn btn-primary" href="${url}" download="${esc(name)}">Download clean copy</a>`;
+      <a class="btn btn-primary" href="${url}" download="${esc(name)}">${esc(T.download)}</a>`;
     list.prepend(li);
   }
 
@@ -139,8 +146,8 @@
         const head = new Uint8Array(buf, 0, 4);
         if (head[0] === 0xff && head[1] === 0xd8) row(file, cleanJpeg(buf));
         else if (head[0] === 0x89 && head[1] === 0x50) row(file, cleanPng(buf));
-        else row(file, null, "Only JPEG and PNG are supported. HEIC photos: share them as JPEG first, or change your camera to save JPEG.");
-      } catch (e) { row(file, null, "This file couldn't be read: " + e.message); }
+        else row(file, null, T.unsupported);
+      } catch (e) { row(file, null, T.unreadable + " " + e.message); }
     }
   }
 
