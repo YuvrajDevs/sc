@@ -1,0 +1,53 @@
+<!--meta {
+  "sourceHash": "f2ec391f7b62",
+  "title": "Suporte",
+  "description": "Ajuda com o Sealcloak. Mande um e-mail e veja o que incluir para ajudarmos rápido. Respostas rápidas sobre padrão esquecido, backups e compras.",
+  "nav": "support"
+} -->
+<section class="panel">
+  <div class="panel-inner wrap">
+    <div class="section-head">
+      <div class="eyebrow">Suporte</div>
+      <h1 style="margin-top:20px">Estamos aqui para ajudar.</h1>
+      <p class="lead" style="margin-top:16px">O Sealcloak não tem contas, então o e-mail é o jeito de falar com a gente. Uma pessoa de verdade lê cada mensagem.</p>
+    </div>
+
+    <div class="contact-card">
+      <div class="contact-main">
+        <div class="eyebrow">Mande um e-mail</div>
+        <a class="contact-email" href="mailto:{{email}}?subject=Sealcloak%20support" id="support-email">{{email}}</a>
+        <p>Escreva de qualquer app de e-mail. Respondemos para o endereço de onde sua mensagem veio.</p>
+      </div>
+      <div class="cta-row">
+        <a class="btn btn-primary btn-lg" href="mailto:{{email}}?subject=Sealcloak%20support">Escrever um e-mail</a>
+        <button class="btn btn-ghost btn-lg" type="button" id="copy-email" data-email="{{email}}">Copiar endereço</button>
+      </div>
+    </div>
+
+    <div class="cards two" style="margin-top:12px">
+      <div class="card">
+        <h3>Inclua isto, se puder</h3>
+        <p>O modelo do seu celular e a versão do Android, a versão do Sealcloak (no Google Play, em “Sobre este app”), o que você fez e o que aconteceu no lugar. Uma captura de tela ajuda, mas confira antes: o app bloqueia capturas de tela dentro dele, então descreva essas telas com palavras.</p>
+      </div>
+      <div class="card">
+        <h3>Nunca envie isto</h3>
+        <p>Seu padrão, frase de recuperação, senha de backup ou código secreto. Nunca vamos pedi-los, e não conseguimos usá-los: não temos como entrar no seu cofre.</p>
+      </div>
+    </div>
+
+    <div class="faq" style="margin:72px 0 0">
+    <div class="section-head" style="margin-bottom:12px">
+      <div class="eyebrow">Respostas rápidas</div>
+      <h2 style="margin-top:16px">As dúvidas mais comuns.</h2>
+    </div>
+    <details><summary>Esqueci meu padrão.</summary><p>Na tela do padrão, toque em “Usar frase de recuperação” e digite a frase que você salvou na configuração. Depois desenhe um novo padrão. Se você perdeu os dois, ninguém consegue abrir esse cofre, nem nós.</p></details>
+    <details><summary>Comprei o Pro, mas ele não foi liberado.</summary><p>Abra a tela do Pro e toque em “Restaurar compras”. Confira se você está conectado à mesma conta Google que fez o pagamento. As compras são feitas pelo Google Play, então para reembolsos use a página Pagamentos e assinaturas do Google Play.</p></details>
+    <details><summary>Como cancelo minha assinatura?</summary><p>Abra o app Google Play, toque no seu perfil, depois em Pagamentos e assinaturas, depois em Assinaturas, e escolha o Sealcloak. Apagar o app não cancela a assinatura.</p></details>
+    <details><summary>Como passo meus arquivos para um celular novo?</summary><p>Exporte um backup nas Configurações do celular antigo e copie o arquivo para o novo. No celular novo, instale o Sealcloak, escolha “Restaurar de um backup” e digite a frase de recuperação daquele cofre ou a senha que você definiu.</p></details>
+    <details><summary>Um backup não importa.</summary><p>Confira se você está usando as palavras de recuperação ou a senha certas, e se o backup veio do Sealcloak. Se aparecer que o backup foi feito por uma versão mais nova, atualize o app e tente de novo. Se aparecer que ele está incompleto, tudo o que dá para ler é restaurado mesmo assim.</p></details>
+    <details><summary>As fotos de intrusos não aparecem.</summary><p>Ative o recurso nas Configurações e permita o acesso à câmera. Os dois primeiros padrões errados são perdoados; a partir do terceiro seguido, cada tentativa errada tira uma foto. Veja as fotos nas Configurações, depois de desbloquear.</p></details>
+    <details><summary>Encontrei um bug ou um problema de segurança.</summary><p>Mande os detalhes por e-mail. Se for um problema de segurança, diga isso no assunto e conte o suficiente para reproduzi-lo. Vamos analisar logo.</p></details>
+    <p style="margin-top:32px" class="dim">Mais respostas nas <a href="{{root}}faq">perguntas frequentes</a>. Veja também a <a href="{{root}}privacy">política de privacidade</a> e os <a href="{{root}}terms">termos de uso</a>.</p>
+    </div>
+  </div>
+</section>

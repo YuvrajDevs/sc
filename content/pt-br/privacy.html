@@ -1,0 +1,73 @@
+<!--meta {
+  "sourceHash": "7827b14361db",
+  "title": "Política de privacidade",
+  "description": "O Sealcloak não coleta dados. Sem conta, sem análises, sem anúncios e sem permissão de internet. Veja exatamente o que o app e este site fazem e não fazem.",
+  "nav": "privacy",
+  "date": "2026-11-03"
+} -->
+<section class="panel">
+  <div class="panel-inner wrap">
+    <article class="article">
+      <div class="meta">Atualizada em 3 de novembro de 2026</div>
+      <h1>Política de privacidade</h1>
+      <p class="lead">O Sealcloak é um cofre privado e offline para Android. Seus arquivos são criptografados no seu celular com uma chave aleatória para cada cofre, e essa chave só pode ser desbloqueada com o seu padrão ou a sua frase de recuperação. Não operamos nenhum serviço que receba seus arquivos, seu padrão ou suas chaves.</p>
+      <div class="prose">
+        <h2>Visão geral</h2>
+        <p>O app para Android não tem a permissão de internet. Nós a removemos do app de propósito, então o Sealcloak não consegue enviar nada para lugar nenhum, nem por engano. Não há conta, análises de uso, relatórios de falhas, publicidade nem rastreamento dentro do app.</p>
+
+        <h2>O que não coletamos</h2>
+        <ul>
+          <li><strong>Suas fotos, vídeos, documentos, áudios, notas ou digitalizações.</strong> Eles são criptografados com AES-256-GCM no seu celular e guardados apenas no armazenamento privado do app. Nunca os recebemos.</li>
+          <li><strong>Seu padrão.</strong> Ele é transformado em uma chave no seu celular com o Argon2id, uma função de derivação de chave lenta, feita para resistir a tentativas de adivinhação. O padrão em si nunca é armazenado.</li>
+          <li><strong>Suas chaves de criptografia.</strong> Cada cofre tem sua própria chave mestra aleatória. Ela fica guardada de forma encapsulada, protegida pelo seu padrão e por uma chave mantida no Keystore do Android, com suporte de hardware. As chaves são apagadas da memória quando o cofre é bloqueado.</li>
+          <li><strong>Sua frase de recuperação.</strong> Ela é mostrada a você uma vez na configuração e fica no seu celular apenas de forma criptografada. Não conseguimos vê-la nem redefini-la.</li>
+          <li><strong>Nenhum tipo de conta.</strong> Sem e-mail, sem número de telefone, sem login.</li>
+          <li><strong>Backup em nuvem do Android.</strong> O app fica de fora do backup automático de apps do Android, então seu cofre não é copiado para o Google Drive sem você saber.</li>
+        </ul>
+
+        <h2>Permissões que o app usa</h2>
+        <ul>
+          <li><strong>Câmera:</strong> para a câmera e o scanner de documentos do app, e para as fotos de intrusos se você ativá-las. As fotos são salvas criptografadas dentro do seu cofre, nunca na sua galeria.</li>
+          <li><strong>Biometria:</strong> para desbloquear com digital ou rosto, se você ativar. O Android faz a verificação biométrica; o app nunca vê sua digital ou seu rosto.</li>
+          <li><strong>Executar na inicialização:</strong> para que um backup programado continue funcionando depois que o celular reinicia.</li>
+        </ul>
+        <p>O app não pede acesso a contatos, localização, microfone, armazenamento completo nem internet. Os arquivos que você adiciona são escolhidos pelos seletores de arquivos e fotos do próprio Android, que só entregam ao app os itens que você escolher.</p>
+
+        <h2>Fotos de intrusos</h2>
+        <p>Se você ativar este recurso, a câmera frontal tira uma foto depois de padrões errados repetidos. Enquanto o cofre está bloqueado, a foto é selada com uma chave pública, então o app consegue adicionar uma foto, mas não consegue ler as que já foram salvas. Só o cofre que ativou o recurso pode abri-las, depois que você o desbloqueia. As fotos nunca saem do seu celular e nunca aparecem em notificações. O Android mostra o indicador normal de câmera sempre que qualquer app usa a câmera, e o app não consegue escondê-lo.</p>
+
+        <h2>Backups que você faz</h2>
+        <p>Os backups são criados só quando você pede, ou em uma programação semanal ou mensal que você define, e são salvos em uma pasta que você escolhe. Um backup é um único arquivo, criptografado com a frase de recuperação do seu cofre ou com uma senha que você escolhe na hora. Não recebemos backups e não conseguimos abri-los. Depois que o backup sai do app, a segurança dele depende de onde você o guarda.</p>
+
+        <h2>Recursos de disfarce</h2>
+        <p>O disfarce de calculadora e o ícone personalizado só mudam a aparência do app no seu celular: o ícone, o nome e a tela em que ele abre. O código secreto do modo calculadora é armazenado como um hash lento, não como texto, e nunca sai do seu celular.</p>
+
+        <h2>Compras</h2>
+        <p>O Sealcloak Pro é vendido pelo Google Play. O Google cuida do pagamento e dos reembolsos conforme a <a href="https://policies.google.com/privacy">política de privacidade do Google</a>. Não recebemos seu nome, cartão nem dados de pagamento. O app só pergunta ao Google Play se o Pro está ativo na sua conta, usando o serviço de faturamento do Google no seu aparelho.</p>
+
+        <h2>Este site</h2>
+        <p>Este site não tem análises, pixels de publicidade nem cookies. Ele guarda uma pequena preferência no seu navegador, o tema claro ou escuro, usando o armazenamento local apenas no seu aparelho. As fontes da página são carregadas do Google Fonts, que pode ver seu endereço IP quando o navegador as baixa. O site é hospedado na Vercel, que, como a maioria das hospedagens, pode manter registros comuns de servidor, como endereço IP e página acessada. Se você nos mandar um e-mail, recebemos seu endereço de e-mail e sua mensagem.</p>
+
+        <h2>Mensagens que você nos envia</h2>
+        <p>Se você nos escrever pedindo suporte, lemos sua mensagem e respondemos para o endereço de onde ela veio. Usamos a mensagem para ajudar você e para melhorar o app. Só a guardamos pelo tempo necessário para isso. Nunca envie seu padrão, sua frase de recuperação ou a senha do seu backup. Nós nunca vamos pedi-los.</p>
+
+        <h2>Serviços de terceiros</h2>
+        <ul>
+          <li><strong>Google Play e Google Play Billing:</strong> para instalar o app e processar compras.</li>
+          <li><strong>Android Keystore:</strong> no seu celular, para proteger as chaves que encapsulam seus cofres.</li>
+          <li><strong>Google Fonts e Vercel:</strong> apenas para este site, como descrito acima.</li>
+        </ul>
+        <p>O app em si não se comunica com nenhum deles.</p>
+
+        <h2>Crianças</h2>
+        <p>O Sealcloak não é direcionado a crianças menores de 13 anos. O app não coleta informações de ninguém e não exige conta.</p>
+
+        <h2>Mudanças nesta política</h2>
+        <p>Se esta política mudar, atualizaremos esta página e a data no topo. Se uma mudança afetar o que o app coleta, também avisaremos nas notas de atualização do app.</p>
+
+        <h2>Contato</h2>
+        <p>Dúvidas sobre esta política? Visite nossa <a href="{{root}}support">página de suporte</a> ou envie um e-mail para <a href="mailto:{{email}}">{{email}}</a>.</p>
+      </div>
+    </article>
+  </div>
+</section>

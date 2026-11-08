@@ -1,0 +1,63 @@
+<!--meta {
+  "sourceHash": "9f545eb7c0bb",
+  "title": "Segurança",
+  "description": "Como o Sealcloak protege seus arquivos: criptografia AES-256-GCM, derivação de chave Argon2id, Android Keystore, sem conta e sem permissão de internet.",
+  "nav": "security"
+} -->
+<section class="panel">
+  <div class="panel-inner wrap">
+    <div class="section-head">
+      <div class="eyebrow">Segurança</div>
+      <h1 style="margin-top:20px">Feito para que nem nós consigamos olhar.</h1>
+      <p class="lead">O Sealcloak não mantém servidores nem contas, e o app não tem permissão para usar a internet. Seus arquivos são criptografados no seu celular com chaves que só o seu padrão ou a sua frase conseguem desbloquear.</p>
+    </div>
+    <div class="cards four reveal">
+      <div class="card"><h3>Sem conta</h3><p>Sem e-mail, número de telefone ou login. Nunca.</p></div>
+      <div class="card"><h3>Sem internet</h3><p>A permissão de internet foi removida do app por completo.</p></div>
+      <div class="card"><h3>Sem nuvem</h3><p>Os arquivos ficam no seu celular, apenas em forma criptografada.</p></div>
+      <div class="card"><h3>Sem porta dos fundos</h3><p>Não conseguimos redefinir seu padrão nem abrir seu cofre.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="panel">
+  <div class="panel-inner wrap">
+    <div class="split reveal">
+      <div>
+        <div class="eyebrow">Por dentro</div>
+        <h2 style="margin-top:16px">Como seus arquivos são trancados.</h2>
+        <p class="lead" style="margin-top:16px">Para quem quer os detalhes.</p>
+      </div>
+      <table class="spec">
+        <tr><th>Criptografia dos arquivos</th><td>AES-256-GCM. Cada arquivo é criptografado antes de ser gravado no armazenamento, e a tag dele detecta qualquer adulteração.</td></tr>
+        <tr><th>Chave do cofre</th><td>Cada cofre tem sua própria chave mestra aleatória de 256 bits.</td></tr>
+        <tr><th>Padrão e frase</th><td>Transformados em chaves com o Argon2id (32 MiB de memória), então adivinhar é lento mesmo em hardware rápido.</td></tr>
+        <tr><th>Hardware</th><td>Os dados do padrão também são encapsulados por uma chave no Android Keystore, então não podem ser copiados do celular para serem atacados.</td></tr>
+        <tr><th>Padrões errados</th><td>Tempos de espera cada vez maiores após tentativas erradas. Apagamento opcional depois de tentativas demais.</td></tr>
+        <tr><th>Backups</th><td>Os arquivos de backup continuam criptografados. A frase de cada cofre restaura apenas aquele cofre.</td></tr>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="panel">
+  <div class="panel-inner wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">Limites, com sinceridade</div>
+      <h2>O que o Sealcloak não consegue fazer.</h2>
+      <p class="lead">Segurança de verdade também significa deixar isso claro.</p>
+    </div>
+    <div class="cards reveal">
+      <div class="card"><h3>Esqueceu os dois, perdeu tudo</h3><p>Se você esquecer seu padrão e perder sua frase de recuperação, ninguém consegue abrir o cofre. Nem nós.</p></div>
+      <div class="card"><h3>Desinstalar apaga</h3><p>Remover o app apaga os cofres dele. Guarde um arquivo de backup em um lugar seguro.</p></div>
+      <div class="card"><h3>Celular desbloqueado está aberto</h3><p>Enquanto um cofre está aberto, qualquer pessoa com o celular na mão consegue vê-lo. Ele bloqueia de novo assim que você sai do app.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="panel final">
+  <div class="panel-inner wrap">
+    <h2>Privado por padrão.</h2>
+    <div class="cta-row"><a class="btn btn-primary btn-lg" href="{{play}}">Baixe no Google Play</a><a class="btn btn-ghost btn-lg" href="{{root}}privacy">Leia a política de privacidade</a></div>
+  </div>
+</section>
