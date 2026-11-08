@@ -2,7 +2,55 @@
   "title": "Sealcloak",
   "description": "Esconda fotos, vídeos e arquivos no Android em um cofre criptografado que só o seu padrão abre. Sem conta, sem nuvem, sem permissão de internet.",
   "nav": "home",
-  "sourceHash": "885cab6bb186"
+  "sourceHash": "c1c27c3ebe11",
+  "jsonLd": [
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "O Sealcloak envia minhas fotos para algum lugar?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Não. O app não tem permissão de internet, então não consegue enviar nada. Seus arquivos são criptografados e ficam no seu celular."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "E se eu esquecer meu padrão?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Toque em Usar frase de recuperação na tela do padrão e digite a frase que você guardou na configuração. Depois desenhe um padrão novo."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "E se eu perder meu padrão e minha frase de recuperação?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Aí ninguém consegue abrir esse cofre, nem nós. Não existe porta dos fundos. Guarde sua frase no papel, em um lugar seguro."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Como passo meu cofre para um celular novo?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Exporte um backup no celular antigo, copie o arquivo para o celular novo, instale o Sealcloak e importe o backup com a frase de recuperação desse cofre."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "O Sealcloak está disponível para iPhone?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ainda não. O Sealcloak é um app para Android."
+          }
+        }
+      ]
+    }
+  ]
 } -->
 <section class="panel hero">
   <div class="bars" aria-hidden="true"></div>
@@ -16,9 +64,12 @@
     </div>
     <div class="trust"><span>Grátis para começar</span><span>Sem conta</span><span>Sem permissão de internet</span></div>
     <div class="mock-trio" aria-hidden="true">
-      <figure class="mock side"><img src="{{root}}assets/screens/unlock.jpg" alt="" loading="eager" width="450" height="1000"></figure>
-      <figure class="mock"><img src="{{root}}assets/screens/home.jpg" alt="" loading="eager" width="450" height="1000"></figure>
-      <figure class="mock side"><img src="{{root}}assets/screens/images.jpg" alt="" loading="eager" width="450" height="1000"></figure>
+      <figure class="mock side"><div class="mock-screen"><img src="{{root}}assets/screens/unlock.jpg" alt="" loading="eager" width="450" height="1000">
+        <svg class="mock-fx fx-unlock" viewBox="0 0 405 900"><polyline class="fx-line" points="59,332 131,332 202,332 202,404 202,475 274,547 345,618"/><circle class="fx-dot" style="--d:0" cx="59" cy="332" r="13"/><circle class="fx-dot" style="--d:1" cx="131" cy="332" r="13"/><circle class="fx-dot" style="--d:2" cx="202" cy="332" r="13"/><circle class="fx-dot" style="--d:3" cx="202" cy="404" r="13"/><circle class="fx-dot" style="--d:4" cx="202" cy="475" r="13"/><circle class="fx-dot" style="--d:5" cx="274" cy="547" r="13"/><circle class="fx-dot" style="--d:6" cx="345" cy="618" r="13"/><circle class="fx-finger" r="18"/><rect class="fx-ok" x="0" y="0" width="405" height="900"/></svg></div></figure>
+      <figure class="mock"><div class="mock-screen"><img src="{{root}}assets/screens/home.jpg" alt="" loading="eager" width="450" height="1000">
+        <svg class="mock-fx fx-home" viewBox="0 0 405 900"><rect class="fx-press" x="24" y="216" width="170" height="170" rx="30"/><circle class="fx-tap fx-tap1" cx="109" cy="300" r="22"/><rect class="fx-press fx-press2" x="323" y="794" width="60" height="60" rx="30"/><circle class="fx-tap fx-tap2" cx="352" cy="824" r="22"/></svg></div></figure>
+      <figure class="mock side"><div class="mock-screen"><img src="{{root}}assets/screens/images.jpg" alt="" loading="eager" width="450" height="1000">
+        <svg class="mock-fx fx-images" viewBox="0 0 405 900"><rect class="fx-cover" style="--i:0" x="26" y="190" width="114" height="114" rx="10"/><rect class="fx-cover" style="--i:1" x="146" y="190" width="114" height="114" rx="10"/><rect class="fx-cover" style="--i:2" x="265" y="190" width="114" height="114" rx="10"/><rect class="fx-cover" style="--i:3" x="26" y="310" width="114" height="114" rx="10"/><rect class="fx-cover" style="--i:4" x="146" y="310" width="114" height="114" rx="10"/><rect class="fx-cover" style="--i:5" x="265" y="310" width="114" height="114" rx="10"/><g class="fx-badge"><rect x="122" y="440" width="160" height="40" rx="20"/><text x="202" y="466" text-anchor="middle">Criptografado ✓</text></g></svg></div></figure>
     </div>
   </div>
 </section>
@@ -101,10 +152,42 @@
 <section class="panel">
   <div class="panel-inner wrap">
     <div class="section-head reveal">
-      <div class="eyebrow">Guias</div>
+      <div class="eyebrow">Aprenda</div>
       <h2>Aprenda a manter tudo privado.</h2>
     </div>
     <div class="cards reveal">{{latestGuides}}
+    </div>
+  </div>
+</section>
+
+<section class="panel" id="faq">
+  <div class="panel-inner wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">Perguntas frequentes</div>
+      <h2>Suas dúvidas, respondidas.</h2>
+    </div>
+    <div class="faq reveal">
+    <h2 class="mono dim faq-group">Privacidade</h2>
+    <details><summary>O Sealcloak envia minhas fotos para algum lugar?</summary><p>Não. O app não tem permissão de internet, então não consegue enviar nada. Seus arquivos são criptografados e ficam no seu celular.</p></details>
+    <details><summary>Preciso criar uma conta?</summary><p>Não. Sem e-mail, sem número de telefone, sem login. Seu padrão é a única chave.</p></details>
+    <details><summary>Vocês conseguem ver meus arquivos?</summary><p>Não. Não temos servidores nem cópia dos seus arquivos ou chaves. Tudo é criptografado no seu celular.</p></details>
+    <details><summary>As fotos continuam na minha galeria?</summary><p>Ao adicionar uma foto, o app cria uma cópia criptografada no cofre. A original continua na sua galeria até você apagá-la por lá, então dá para conferir a cópia no cofre antes.</p></details>
+
+    <h2 class="mono dim faq-group">Como entrar</h2>
+    <details><summary>E se eu esquecer meu padrão?</summary><p>Toque em “Usar frase de recuperação” na tela do padrão e digite a frase que você guardou na configuração. Depois desenhe um padrão novo.</p></details>
+    <details><summary>E se eu perder meu padrão e minha frase de recuperação?</summary><p>Aí ninguém consegue abrir esse cofre, nem nós. Não existe porta dos fundos. Guarde sua frase no papel, em um lugar seguro.</p></details>
+    <details><summary>Posso usar minha digital?</summary><p>Sim. Ative o desbloqueio por digital nas Configurações. Seu padrão continua funcionando também.</p></details>
+    <details><summary>O que é o Coerce?</summary><p>Um segundo cofre, de aparência inofensiva, com padrão próprio. Se alguém obrigar você a desbloquear o app, desenhe esse padrão no lugar do verdadeiro.</p><p>Ele também pode apagar seus outros cofres quando é aberto, mas isso vem desativado e exige que você digite PERMIT.</p></details>
+
+    <h2 class="mono dim faq-group">Backups e celulares</h2>
+    <details><summary>Como passo meu cofre para um celular novo?</summary><p>Exporte um backup no celular antigo, copie o arquivo para o celular novo, instale o Sealcloak e importe o backup com a frase de recuperação desse cofre.</p></details>
+    <details><summary>O que acontece se eu desinstalar o app?</summary><p>Os cofres dele são apagados do celular. Os arquivos de backup que você exportou antes continuam guardados e podem ser importados de novo.</p></details>
+    <details><summary>Os backups são criptografados?</summary><p>Sim. Um arquivo de backup não serve para nada sem a frase de recuperação daquele cofre.</p></details>
+    <details><summary>O Sealcloak está disponível para iPhone?</summary><p>Ainda não. O Sealcloak é um app para Android.</p></details>
+
+    <h2 class="mono dim faq-group">Pro</h2>
+    <details><summary>O que o Pro acrescenta?</summary><p>Cofres e arquivos ilimitados, além de disfarçar o app como outro app, com ícone e nome à sua escolha.</p></details>
+    <details><summary>Perco meus arquivos se parar de pagar?</summary><p>Não. Tudo continua lá e funcionando. Você só não consegue adicionar mais coisas além dos limites gratuitos.</p></details>
     </div>
   </div>
 </section>

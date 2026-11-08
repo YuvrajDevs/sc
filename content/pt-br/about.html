@@ -1,0 +1,51 @@
+<!--meta {
+  "title": "Sobre o Sealcloak: um cofre privado que fica no seu celular",
+  "description": "Quem faz o Sealcloak, por que ele não tem permissão de internet, como ganhamos dinheiro sem seus dados e como falar com a gente. Um cofre de fotos offline para Android.",
+  "nav": "about",
+  "date": "2026-11-08",
+  "sourceHash": "bf85fa4d6f10"
+} -->
+<section class="panel">
+  <div class="panel-inner wrap">
+    <article class="article">
+      <div class="meta">Sobre</div>
+      <h1>Sobre o Sealcloak</h1>
+      <p class="lead">O Sealcloak é um cofre de fotos e arquivos para Android construído em cima de uma promessa: seus arquivos privados ficam no seu celular, criptografados, e ninguém mais tem uma cópia. Nem servidor, nem nuvem, nem nós.</p>
+      <div class="prose">
+        <h2>Por que criamos o app</h2>
+        <p>A maioria dos celulares guarda coisas que valem muito mais do que o próprio aparelho: fotos da família, documentos de identidade, exames médicos, fotos íntimas, cartas, arquivos de trabalho. E a maioria dos apps de cofre que prometem proteger tudo isso pede uma conta, faz backup nos próprios servidores, mostra anúncios ou compartilha dados do aparelho com outras empresas. A gente queria um cofre que não fizesse nada disso, então criou um.</p>
+        <p>A ideia central é simples. Se um app não consegue se conectar à internet, ele não consegue vazar o que tem dentro. Por isso o Sealcloak vem sem a permissão de internet do Android. Isso não é uma configuração que podemos mudar escondido depois; é como o app é feito, e o próprio Android garante isso.</p>
+
+        <h2>O que o Sealcloak faz</h2>
+        <ul>
+          <li>Criptografa cada foto, vídeo, documento, áudio, nota e digitalização no seu celular com AES-256-GCM.</li>
+          <li>Abre com um padrão 5×5 que vira a chave por meio do Argon2id, além da digital, se você quiser.</li>
+          <li>Dá a cada cofre uma frase de recuperação de 9 palavras, para que esquecer o padrão não seja o fim.</li>
+          <li>Mantém até três cofres separados de graça, sem nada que mostre quantos existem.</li>
+          <li>Oferece o Coerce, um cofre de fachada para quando pressionarem você a desbloquear, e fotos de intrusos.</li>
+          <li>Pode se passar por uma calculadora que funciona de verdade, ou usar qualquer ícone e nome que você escolher.</li>
+          <li>Faz backups criptografados que ficam com você, manualmente ou de forma programada.</li>
+        </ul>
+        <p>Veja a <a href="{{root}}features">lista completa de recursos</a> e <a href="{{root}}security">como funciona a segurança</a>.</p>
+
+        <h2>Como ganhamos dinheiro</h2>
+        <p>O Sealcloak é grátis para usar, com limites: três cofres, 100 fotos, 10 vídeos, 10 documentos e 10 arquivos de áudio. O Sealcloak Pro tira os limites e adiciona os disfarces, o Coerce e as opções de apagar, e é vendido pelo Google Play. Esse é o negócio todo. Sem anúncios, sem venda de dados, sem analytics, sem “insights anonimizados”. Não temos seus dados para vender.</p>
+
+        <h2>O que nunca vamos fazer</h2>
+        <ul>
+          <li>Adicionar a permissão de internet ao app.</li>
+          <li>Pedir que você crie uma conta.</li>
+          <li>Colocar anúncios, rastreadores ou analytics no app.</li>
+          <li>Criar um jeito de nós, ou qualquer pessoa, abrirmos seu cofre. Não existe porta dos fundos nem chave mestra.</li>
+        </ul>
+        <p>Leia os motivos por trás disso no nosso <a href="{{root}}manifesto">manifesto</a>.</p>
+
+        <h2>Este site</h2>
+        <p>Este site segue as mesmas regras sempre que possível. Nossas <a href="{{root}}tools/">ferramentas grátis</a> funcionam no seu navegador e nunca enviam seus arquivos. O site não tem anúncios nem scripts de rastreamento. Os guias são escritos para serem úteis em primeiro lugar, e as comparações com outros apps usam as próprias páginas desses apps no Google Play, incluindo o que eles fazem melhor.</p>
+
+        <h2>Contato</h2>
+        <p>Dúvidas, relatos de bugs ou ideias: mande um e-mail para <a href="mailto:{{email}}">{{email}}</a>. A gente lê tudo. Nunca nos envie seu padrão ou sua frase de recuperação; nunca vamos pedir isso, e nem conseguiríamos usar. Veja a <a href="{{root}}support">página de suporte</a> para respostas rápidas.</p>
+      </div>
+    </article>
+  </div>
+</section>

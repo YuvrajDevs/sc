@@ -1,0 +1,42 @@
+<!--meta {
+  "title": "O manifesto do Sealcloak: privacidade que não depende de confiança",
+  "description": "Por que o Sealcloak não tem internet, conta nem porta dos fundos. Sete princípios por trás de um cofre que mantém seus arquivos privados no seu celular.",
+  "nav": "about",
+  "date": "2026-11-08",
+  "sourceHash": "01623dba76fa"
+} -->
+<section class="panel">
+  <div class="panel-inner wrap">
+    <article class="article">
+      <div class="meta">Manifesto</div>
+      <h1>Privacidade não deveria depender de confiar na gente.</h1>
+      <p class="lead">Todo app de privacidade pede que você confie nele. A gente prefere criar um em que a confiança importe o mínimo possível. Estes são os princípios sobre os quais o Sealcloak foi construído, e as promessas que não vamos quebrar.</p>
+      <div class="prose">
+        <h2>1. O que não está online não vaza online.</h2>
+        <p>Servidores são invadidos. Empresas são compradas. Políticas mudam, sem alarde, em e-mails que ninguém lê. A única cópia das suas fotos privadas que não pode ser exposta por nada disso é aquela que nunca saiu do seu celular. Por isso o Sealcloak não tem permissão de internet, e o próprio Android impede que ele se conecte.</p>
+
+        <h2>2. A melhor conta é nenhuma conta.</h2>
+        <p>Uma conta é um nome de usuário, um e-mail e uma senha guardados em algum lugar que você não controla, e uma porta em que outra pessoa pode bater. Um cofre não precisa disso. O Sealcloak nunca pergunta quem você é.</p>
+
+        <h2>3. Escondido não é protegido. Criptografado é.</h2>
+        <p>Mover uma foto para uma pasta oculta só a tira de uma tela. Qualquer pessoa com um gerenciador de arquivos ou um computador ainda consegue abri-la. Cada arquivo no Sealcloak é criptografado com AES-256-GCM, usando uma chave gerada a partir do seu padrão, então sem esse padrão os arquivos são puro ruído.</p>
+
+        <h2>4. Sem portas dos fundos, nem para nós.</h2>
+        <p>Não conseguimos abrir seu cofre, redefinir seu padrão nem recuperar seus arquivos. Não é uma limitação pela qual pedimos desculpas; é justamente a ideia. Um cofre que o fabricante consegue abrir é um cofre que qualquer um que pressione o fabricante consegue abrir. Sua frase de recuperação é a única chave reserva, e ela é sua.</p>
+
+        <h2>5. A vida real inclui pressão.</h2>
+        <p>Ferramentas de privacidade costumam ser pensadas para estranhos. Mas quem tem mais chance de exigir seu celular muitas vezes é alguém próximo. É por isso que o Sealcloak tem o <a href="{{root}}features/coerce">Coerce</a>, um cofre de fachada convincente, é por isso que ele nunca mostra quantos cofres existem, e é por isso que as <a href="{{root}}features/intruder-photos">fotos de intrusos</a> mostram quem tentou entrar.</p>
+
+        <h2>6. Recursos destrutivos ficam desligados até você ter certeza.</h2>
+        <p>Apagar um cofre depois de padrões errados, ou quando o Coerce é usado, pode proteger pessoas em perigo. Também pode destruir as fotos de uma família porque uma criança pequena brincou com o celular. Por isso todo recurso de apagar vem desligado, e para ligar um deles é preciso digitar PERMIT. Você decide, de propósito.</p>
+
+        <h2>7. Você paga com dinheiro, não com dados.</h2>
+        <p>Apps gratuitos que mostram anúncios ou compartilham IDs do aparelho são pagos com informações sobre você. O Sealcloak tem um plano grátis com limites e uma versão Pro paga pelo Google Play. Sem anúncios, sem analytics, sem rastreadores, sem dados para vender.</p>
+
+        <h2>O que isso significa na prática</h2>
+        <p>Você é responsável por uma coisa que não podemos fazer por você: os backups. Como nada fica na nuvem, perder o celular sem backup significa perder o que está nele. O Sealcloak facilita isso com <a href="{{root}}features/encrypted-backups">backups criptografados programados</a> para um lugar que você escolhe. Achamos uma troca justa por um cofre que ninguém mais alcança.</p>
+        <p>Se um dia você nos pegar quebrando um desses princípios, avise em <a href="mailto:{{email}}">{{email}}</a>. Leia mais <a href="{{root}}about">sobre o Sealcloak</a> ou veja <a href="{{root}}security">como funciona a segurança</a>.</p>
+      </div>
+    </article>
+  </div>
+</section>
