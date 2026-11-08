@@ -1,0 +1,78 @@
+<!--meta {
+  "title": "Hapus lokasi dari foto: gratis, privat, langsung di browser",
+  "navTitle": "Hapus lokasi foto",
+  "description": "Lihat dan hapus lokasi GPS tersembunyi, model ponsel, dan tanggal dari foto sebelum dibagikan. Gratis, berjalan di browser, tidak ada yang diunggah.",
+  "keyword": "hapus lokasi di foto",
+  "alsoTargets": ["hapus gps dari foto", "hapus data exif", "hapus metadata foto", "cara menghapus lokasi di foto android"],
+  "summary": "Lihat apa yang terungkap dari sebuah foto, dan hapus lokasi GPS-nya sebelum dibagikan. Tidak ada yang diunggah.",
+  "date": "2026-11-08",
+  "readMins": 4,
+  "nav": "guides",
+  "sourceHash": "dfcb8276cf96",
+  "faq": [
+    {"q": "Apakah foto saya diunggah ke suatu tempat?", "a": "Tidak. Alat ini berjalan sepenuhnya di tab browser Anda. Foto dibaca, dibersihkan, dan dikembalikan di perangkat Anda sendiri, dan halaman ini tidak mengirim foto itu lewat jaringan."},
+    {"q": "Apakah menghapus lokasi menurunkan kualitas foto?", "a": "Tidak. Alat ini hanya menghapus blok data tersembunyi. Gambarnya sendiri disalin byte demi byte, jadi tidak ada kompresi ulang."},
+    {"q": "Apakah foto saya akan jadi miring setelah dibersihkan?", "a": "Seharusnya tidak. Ponsel menyimpan info rotasi di data tersembunyi yang sama, jadi alat ini menulis kembali info rotasinya saja, tidak ada yang lain."},
+    {"q": "Bukankah WhatsApp dan Instagram sudah menghapus lokasi?", "a": "Kebanyakan aplikasi besar menghapus lokasi saat mengompres foto, tetapi file yang dikirim sebagai dokumen, lewat email, Bluetooth, tautan cloud, atau USB biasanya tetap menyimpan semuanya. Membersihkannya lebih dulu berarti Anda tidak perlu bergantung pada itu."},
+    {"q": "Bisakah ponsel saya berhenti menambahkan lokasi sejak awal?", "a": "Bisa. Di setelan aplikasi kamera, matikan tag lokasi (biasanya bernama Simpan lokasi atau Tag lokasi). Foto baru tidak akan lagi menyertakan koordinat GPS."}
+  ]
+} -->
+<section class="panel">
+  <div class="panel-inner wrap">
+    <article class="article">
+      <div class="meta"><a href="{{root}}tools/">Alat gratis</a> · Berjalan di browser Anda</div>
+      <h1>Hapus lokasi dari foto</h1>
+      <p class="lead">Sebagian besar foto dari ponsel membawa data tersembunyi: titik GPS persis tempat foto diambil, model ponsel Anda, serta tanggal dan jamnya. Periksa foto di sini, lalu unduh salinan yang bersih sebelum Anda membagikannya.</p>
+
+      <div class="meta-drop" id="meta-drop">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/><path d="M4 4l16 16"/></svg>
+        <p><strong>Letakkan foto di sini</strong> atau</p>
+        <label class="btn btn-primary">Pilih foto<input id="meta-input" type="file" accept="image/jpeg,image/png" multiple hidden></label>
+        <p class="dim">JPEG dan PNG. Foto Anda tidak pernah keluar dari perangkat ini.</p>
+      </div>
+      <ul class="meta-results" id="meta-results" aria-live="polite"></ul>
+
+      <div class="answer">
+        <div class="eyebrow">Jawaban singkat</div>
+        <p>Untuk menghapus lokasi dari foto, buka foto di alat di atas lalu unduh salinan yang bersih. Alat ini menghapus koordinat GPS, model ponsel, tanggal, dan data tersembunyi lainnya tanpa menyentuh gambarnya. Agar foto baru tidak mendapat lokasi, matikan tag lokasi di setelan aplikasi kamera Anda.</p>
+      </div>
+      <div class="prose">
+        <h2>Apa saja yang bisa terungkap dari foto</h2>
+        <p>Foto menyimpan detail tambahan yang disebut metadata EXIF. Tergantung ponsel dan setelannya, satu foto bisa berisi:</p>
+        <ul>
+          <li><strong>Koordinat GPS</strong>, sering kali akurat hingga beberapa meter. Foto yang diambil di rumah bisa mengungkap alamat Anda.</li>
+          <li><strong>Tanggal dan jam</strong> sampai ke detiknya.</li>
+          <li><strong>Merek dan model ponsel</strong>, dan terkadang lensa serta setelan kamera.</li>
+          <li><strong>Riwayat edit dan catatan teks</strong> yang ditambahkan oleh beberapa aplikasi.</li>
+        </ul>
+        <p>Semua ini tidak terlihat saat Anda melihat fotonya. Data ini ikut terbawa bersama file setiap kali Anda mengirimnya sebagai dokumen, mengunggahnya ke situs web, memasangnya di forum, atau membagikannya lewat email, Bluetooth, atau tautan cloud.</p>
+
+        <h2>Cara menghentikan ponsel Android menambahkan lokasi</h2>
+        <ol>
+          <li>Buka aplikasi <strong>Kamera</strong> lalu masuk ke setelannya (biasanya ikon roda gigi).</li>
+          <li>Cari <strong>Tag lokasi</strong>, <strong>Simpan lokasi</strong>, atau <strong>Tag GPS</strong> lalu matikan.</li>
+          <li>Ambil foto uji coba dan periksa di sini: seharusnya tidak ada lokasi yang muncul.</li>
+        </ol>
+        <p>Nama menunya berbeda-beda tiap merek (Samsung, Xiaomi, vivo, OPPO, dan Pixel masing-masing menamainya sedikit berbeda). Foto yang sudah telanjur diambil tetap membawa lokasinya, jadi bersihkan dulu sebelum dibagikan.</p>
+
+        <h2>Cara kerja alat ini</h2>
+        <p>Alat ini membaca foto di dalam browser Anda, menghapus blok yang menyimpan data tersembunyi (EXIF dan XMP, IPTC dan komentar di JPEG, serta potongan teks di PNG), lalu memberi Anda file baru. Data gambarnya sendiri disalin persis, jadi kualitasnya tidak turun. Karena ponsel menyimpan info rotasi di tempat yang sama, alat ini menulis kembali info rotasinya saja, sehingga foto Anda tetap pada posisi yang benar.</p>
+        <p>Tidak ada unggahan, akun, maupun pelacakan di situs ini. Anda bahkan bisa membuka halaman ini, mematikan internet, dan alatnya tetap berfungsi.</p>
+
+        {{cta}}
+
+        <h2>Saat lokasi paling penting</h2>
+        <ul>
+          <li>Berjualan online dari rumah.</li>
+          <li>Mengirim foto ke orang yang baru Anda kenal secara online.</li>
+          <li>Mengunggah foto anak, kendaraan, atau rumah Anda.</li>
+          <li>Membagikan bukti atau dokumen saat keberadaan Anda harus tetap dirahasiakan.</li>
+        </ul>
+        <p>Foto pribadi yang sama sekali tidak ingin Anda bagikan lebih baik disimpan di luar galeri. Lihat <a href="{{root}}guides/how-to-hide-photos-on-android">cara menyembunyikan foto di Android</a> dan bagaimana <a href="{{root}}features/encryption">enkripsi</a> Sealcloak membuatnya tidak bisa dibaca.</p>
+        {{faq}}
+      </div>
+      {{related}}
+    </article>
+  </div>
+</section>
+<script src="{{root}}js/tool-metadata.js" defer></script>
