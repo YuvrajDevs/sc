@@ -1,0 +1,73 @@
+<!--meta {
+  "title": "Chính sách quyền riêng tư",
+  "description": "Sealcloak không thu thập dữ liệu: không tài khoản, phân tích, quảng cáo hay quyền internet. Đây là chính xác những gì ứng dụng và trang web này làm và không làm.",
+  "nav": "privacy",
+  "date": "2026-11-03",
+  "sourceHash": "0f88e879fe0b"
+} -->
+<section class="panel">
+  <div class="panel-inner wrap">
+    <article class="article">
+      <div class="meta">Cập nhật lần cuối ngày 3 tháng 11 năm 2026</div>
+      <h1>Chính sách quyền riêng tư</h1>
+      <p class="lead">Sealcloak là két sắt riêng tư ngoại tuyến cho Android. Tệp của bạn được mã hóa trên điện thoại bằng một khóa ngẫu nhiên riêng cho từng két sắt, và khóa đó chỉ có thể được mở bằng hình mở khóa hoặc cụm từ khôi phục của bạn. Chúng tôi không vận hành dịch vụ nào nhận tệp, hình mở khóa hay khóa của bạn.</p>
+      <div class="prose">
+        <h2>Tổng quan</h2>
+        <p>Ứng dụng Android không có quyền internet. Chúng tôi cố ý gỡ quyền này khỏi ứng dụng, nên Sealcloak không thể gửi bất cứ thứ gì đi đâu, kể cả do nhầm lẫn. Không có tài khoản, không phân tích, không báo cáo sự cố, không quảng cáo và không theo dõi trong ứng dụng.</p>
+
+        <h2>Những gì chúng tôi không thu thập</h2>
+        <ul>
+          <li><strong>Ảnh, video, tài liệu, âm thanh, ghi chú hay bản quét của bạn.</strong> Chúng được mã hóa bằng AES-256-GCM trên điện thoại và chỉ lưu trong bộ nhớ riêng của ứng dụng. Chúng tôi không bao giờ nhận được chúng.</li>
+          <li><strong>Hình mở khóa của bạn.</strong> Nó được biến thành khóa ngay trên điện thoại bằng Argon2id, một hàm dẫn xuất khóa chậm được thiết kế để chống đoán mò. Bản thân hình mở khóa không bao giờ được lưu.</li>
+          <li><strong>Khóa mã hóa của bạn.</strong> Mỗi két sắt có một khóa chính ngẫu nhiên riêng. Khóa này được bọc lại, bảo vệ bằng hình mở khóa của bạn và bằng một khóa nằm trong Android Keystore có hỗ trợ phần cứng. Các khóa được xóa khỏi bộ nhớ khi két sắt khóa lại.</li>
+          <li><strong>Cụm từ khôi phục của bạn.</strong> Nó được hiển thị cho bạn một lần khi thiết lập và chỉ được giữ trên điện thoại ở dạng mã hóa. Chúng tôi không thể xem và không thể đặt lại nó.</li>
+          <li><strong>Bất kỳ loại tài khoản nào.</strong> Không email, không số điện thoại, không đăng nhập.</li>
+          <li><strong>Sao lưu đám mây của Android.</strong> Ứng dụng từ chối tính năng tự động sao lưu ứng dụng của Android, nên két sắt của bạn không bị âm thầm sao chép lên Google Drive.</li>
+        </ul>
+
+        <h2>Các quyền ứng dụng sử dụng</h2>
+        <ul>
+          <li><strong>Camera:</strong> cho camera trong ứng dụng và máy quét tài liệu, và cho ảnh kẻ xâm nhập nếu bạn bật. Ảnh được lưu đã mã hóa trong két sắt, không bao giờ vào thư viện ảnh.</li>
+          <li><strong>Sinh trắc học:</strong> để mở khóa bằng vân tay hoặc khuôn mặt, nếu bạn bật. Android thực hiện việc kiểm tra sinh trắc học; ứng dụng không bao giờ thấy vân tay hay khuôn mặt của bạn.</li>
+          <li><strong>Chạy khi khởi động:</strong> để lịch sao lưu bạn đã đặt tiếp tục hoạt động sau khi điện thoại khởi động lại.</li>
+        </ul>
+        <p>Ứng dụng không xin quyền truy cập danh bạ, vị trí, micro, toàn bộ bộ nhớ hay internet. Tệp bạn thêm được chọn qua trình chọn tệp và ảnh của chính Android, vốn chỉ trao cho ứng dụng những mục bạn chọn.</p>
+
+        <h2>Ảnh kẻ xâm nhập</h2>
+        <p>Nếu bạn bật tính năng này, camera trước sẽ chụp ảnh sau nhiều lần vẽ sai liên tiếp. Khi két sắt đang khóa, ảnh được niêm phong bằng một khóa công khai, nên ứng dụng có thể thêm ảnh nhưng không thể đọc những ảnh đã lưu. Chỉ két sắt đã bật tính năng này mới mở được chúng, sau khi bạn mở khóa. Ảnh không bao giờ rời khỏi điện thoại và không bao giờ xuất hiện trong thông báo. Android luôn hiện chỉ báo camera như bình thường mỗi khi có ứng dụng dùng camera, và ứng dụng không thể ẩn nó.</p>
+
+        <h2>Bản sao lưu bạn tạo</h2>
+        <p>Bản sao lưu chỉ được tạo khi bạn yêu cầu, hoặc theo lịch hằng tuần hay hằng tháng do bạn đặt, và được lưu vào thư mục bạn chọn. Mỗi bản sao lưu là một tệp, được mã hóa bằng cụm từ khôi phục của két sắt hoặc bằng mật khẩu bạn chọn lúc đó. Chúng tôi không nhận bản sao lưu và không thể mở chúng. Khi bản sao lưu đã ra khỏi ứng dụng, độ an toàn của nó phụ thuộc vào nơi bạn cất giữ.</p>
+
+        <h2>Tính năng ngụy trang</h2>
+        <p>Ngụy trang máy tính và biểu tượng tùy chỉnh chỉ thay đổi vẻ ngoài của ứng dụng trên điện thoại: biểu tượng, tên và màn hình mở ra đầu tiên. Mã bí mật cho chế độ máy tính được lưu dưới dạng hàm băm chậm, không phải văn bản, và không bao giờ rời khỏi điện thoại.</p>
+
+        <h2>Mua hàng</h2>
+        <p>Sealcloak Pro được bán qua Google Play dưới dạng gói đăng ký tuần, tháng hoặc năm và gói mua một lần trọn đời. Google xử lý thanh toán, bản dùng thử và hoàn tiền theo <a href="https://policies.google.com/privacy">chính sách quyền riêng tư của Google</a>. Chúng tôi không nhận tên, thẻ hay thông tin thanh toán của bạn. Ứng dụng chỉ hỏi Google Play xem Pro có đang hoạt động trên tài khoản của bạn không, thông qua dịch vụ thanh toán của Google trên thiết bị.</p>
+
+        <h2>Trang web này</h2>
+        <p>Trang web này không có công cụ phân tích, không có pixel quảng cáo và không có cookie. Nó lưu một tùy chọn nhỏ trong trình duyệt của bạn, giao diện sáng hoặc tối, bằng bộ nhớ cục bộ chỉ trên thiết bị của bạn. Phông chữ của trang được tải từ Google Fonts, dịch vụ này có thể thấy địa chỉ IP của bạn khi trình duyệt tải phông. Trang được lưu trữ trên Vercel, và như phần lớn nhà cung cấp lưu trữ web, Vercel có thể giữ nhật ký máy chủ thông thường như địa chỉ IP và trang được yêu cầu. Nếu bạn gửi email cho chúng tôi, chúng tôi nhận được địa chỉ email và nội dung thư của bạn.</p>
+
+        <h2>Tin nhắn bạn gửi cho chúng tôi</h2>
+        <p>Nếu bạn viết thư cho chúng tôi để được hỗ trợ, chúng tôi đọc thư và trả lời về địa chỉ đã gửi. Chúng tôi dùng nó để giúp bạn và cải thiện ứng dụng. Chúng tôi chỉ giữ nó trong thời gian cần thiết cho việc đó. Xin đừng bao giờ gửi hình mở khóa, cụm từ khôi phục hay mật khẩu sao lưu. Chúng tôi sẽ không bao giờ hỏi những thứ đó.</p>
+
+        <h2>Dịch vụ bên thứ ba</h2>
+        <ul>
+          <li><strong>Google Play và Google Play Billing:</strong> để cài đặt ứng dụng và xử lý giao dịch mua.</li>
+          <li><strong>Android Keystore:</strong> trên điện thoại của bạn, để bảo vệ các khóa bọc két sắt.</li>
+          <li><strong>Google Fonts và Vercel:</strong> chỉ cho trang web này, như mô tả ở trên.</li>
+        </ul>
+        <p>Bản thân ứng dụng không giao tiếp với bất kỳ dịch vụ nào trong số này.</p>
+
+        <h2>Trẻ em</h2>
+        <p>Sealcloak không hướng đến trẻ em dưới 13 tuổi. Ứng dụng không thu thập thông tin từ bất kỳ ai và không yêu cầu tài khoản.</p>
+
+        <h2>Thay đổi chính sách này</h2>
+        <p>Nếu chính sách này thay đổi, chúng tôi sẽ cập nhật trang này và ngày ở đầu trang. Nếu thay đổi ảnh hưởng đến những gì ứng dụng thu thập, chúng tôi cũng sẽ nêu rõ trong ghi chú cập nhật của ứng dụng.</p>
+
+        <h2>Liên hệ</h2>
+        <p>Có câu hỏi về chính sách này? Hãy ghé <a href="{{root}}support">trang hỗ trợ</a> hoặc gửi email đến <a href="mailto:{{email}}">{{email}}</a>.</p>
+      </div>
+    </article>
+  </div>
+</section>
