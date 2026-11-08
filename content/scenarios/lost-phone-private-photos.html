@@ -1,0 +1,92 @@
+<!--meta {
+  "title": "Lost your phone? What to do about your private photos",
+  "navTitle": "Lost phone and private photos",
+  "description": "Lost or stolen Android phone with private photos on it? Lock it, erase it if needed, secure your accounts and get your photos back, step by step.",
+  "keyword": "lost phone private photos",
+  "alsoTargets": ["stolen phone private photos", "lost android phone what to do", "how to protect photos on lost phone", "erase lost android phone"],
+  "summary": "Lock it, decide whether to erase, secure accounts, restore your photos.",
+  "date": "2026-11-08",
+  "readMins": 7,
+  "nav": "guides",
+  "steps": ["Lock the phone remotely with Find My Device", "Change your Google password and sign the phone out", "Block the SIM with your carrier", "Decide whether to erase the phone", "Restore your photos and vault on a new phone"],
+  "faq": [
+    {"q": "Can someone see my photos if they find my lost phone?", "a": "Not if the phone has a screen lock and stays locked: modern Android phones encrypt their storage, so the photos can't be read without unlocking. The risk comes from weak locks, notifications on the lock screen, and photos synced to accounts the finder could reach."},
+    {"q": "Should I erase my lost phone straight away?", "a": "Lock it first and try to locate it. Erase when you're fairly sure you won't get it back, or if it holds something you can't risk. After an erase, you can no longer locate it with Find My Device."},
+    {"q": "How do I get my photos back after losing my phone?", "a": "Photos backed up to Google Photos or another service come back when you sign in on a new phone. Files in an offline vault come back from your vault backup; in Sealcloak, restore the encrypted backup file with your recovery phrase."},
+    {"q": "Is my Sealcloak vault safe on a stolen phone?", "a": "The files are encrypted with AES-256-GCM and need your vault pattern or recovery phrase, which is separate from your screen lock, so a thief who unlocks the phone still can't open them. Wrong guesses trigger growing waits."}
+  ]
+} -->
+<section class="panel">
+  <div class="panel-inner wrap">
+    <article class="article">
+      <div class="meta">Real situation · 7 min read</div>
+      <h1>Lost your phone? Protect your private photos, step by step</h1>
+      <p class="lead">That sinking feeling when your pocket is empty is bad enough. Thinking about who might scroll through your photos makes it worse. Take a breath: if your phone had a screen lock, its storage is encrypted and your photos aren't simply sitting there for anyone to see. Here's what to do, in order, to keep it that way and get your things back.</p>
+      <div class="answer">
+        <div class="eyebrow">What to do now</div>
+        <p>From another phone or computer, go to Google's Find My Device, sign in, and lock the phone with a message and a contact number. Change your Google password. Call your carrier to block the SIM. If you don't get the phone back, erase it remotely, then restore your photos and vault backup on your new phone.</p>
+      </div>
+      <div class="prose">
+        <h2>The first fifteen minutes</h2>
+        <ol>
+          <li><strong>Try to find it.</strong> On a computer or a friend's phone, open Google's Find My Device (or the Find Hub app) and sign in with your Google account. It shows the last known location and can ring the phone at full volume, even if it's on silent. Samsung owners can also use Samsung's own Find service.</li>
+          <li><strong>Lock it.</strong> Use the lock option to show a message and a number to call on the lock screen. If your phone had no screen lock, this sets one.</li>
+          <li><strong>Change your Google password</strong> and, in your Google account's security page, sign the lost phone out under Your devices. This cuts off Gmail, Google Photos and Drive on that device.</li>
+          <li><strong>Call your carrier</strong> to block the SIM. A thief with your SIM can receive your login codes by text.</li>
+          <li><strong>Change passwords for banking and email</strong> if they were logged in, starting with email, because it can reset everything else.</li>
+        </ol>
+
+        <h2>Who could see what</h2>
+        <p>A locked Android phone protects more than people think. Since Android 10, phones encrypt their storage, so photos can't be read by pulling out the chip or plugging the phone into a computer while it's locked. Recent Android versions can also lock the screen automatically if they detect the phone being snatched. The risks are in the gaps:</p>
+        <ul>
+          <li><strong>A weak or guessable lock</strong>, such as 1234, a simple L-shaped pattern or a birthday.</li>
+          <li><strong>Notifications on the lock screen</strong>, which can show message previews and photo thumbnails.</li>
+          <li><strong>Your accounts</strong>: photos synced to Google Photos, WhatsApp backups or cloud storage can be reached by anyone who gets into the account, not the phone.</li>
+          <li><strong>A memory card</strong>, which usually isn't encrypted and can be read in any computer.</li>
+        </ul>
+
+        <h2>Erase or wait?</h2>
+        <div class="table-wrap"><table>
+          <thead><tr><th>Situation</th><th>What to do</th></tr></thead>
+          <tbody>
+            <tr><td>Probably left it somewhere, location looks right</td><td>Lock it, ring it, go and get it</td></tr>
+            <tr><td>Location shows somewhere unknown or keeps moving</td><td>Lock it, report it to the police with the IMEI; don't confront anyone</td></tr>
+            <tr><td>Phone is offline and you're not getting it back</td><td>Erase it remotely; it erases when it next connects</td></tr>
+            <tr><td>Very sensitive data and a weak screen lock</td><td>Erase it now</td></tr>
+          </tbody>
+        </table></div>
+        <p>Erasing is final: after it, Find My Device can't locate the phone. Because it's tied to your Google account, a thief still can't set it up as new without your password, which makes the phone far less useful to them.</p>
+
+        {{cta}}
+
+        <h2>Getting your photos back</h2>
+        <p>Your new phone can only restore what was backed up somewhere else. Ordinary photos synced to Google Photos come back as soon as you sign in. WhatsApp chats and media come back from its own backup if you turned it on.</p>
+        <p>Private photos are the tricky part. If you kept them out of the cloud on purpose, they only exist where you put them. That's why an offline vault needs its own backup. In Sealcloak, <a href="{{root}}features/encrypted-backups">encrypted backups</a> run by hand or on a weekly or monthly schedule to a folder you choose. Keep a copy off the phone, on a computer or a USB drive. On the new phone, install Sealcloak, choose restore and use your <a href="{{root}}features/recovery-phrase">recovery phrase</a> or the backup's passphrase.</p>
+        <p>If you never made a backup of an offline vault, those files went with the phone. That's the trade-off of keeping things out of the cloud, and the best reason to set up a scheduled backup today on your new phone.</p>
+
+        <h2>Why the vault stays shut</h2>
+        <p>Your screen lock and your vault are separate locks. Even if someone watched you unlock your phone, a Sealcloak vault needs its own <a href="{{root}}features/pattern-lock">pattern</a>, which is turned into the encryption key with Argon2id. After four wrong attempts the waits grow longer each time, and changing the phone's clock doesn't skip them. If you turned on <a href="{{root}}features/intruder-photos">intruder photos</a>, the front camera photographs whoever keeps guessing, from the third wrong pattern in a row.</p>
+        <p>For people at higher risk, <a href="{{root}}features/erase-after-wrong-patterns">erase after wrong patterns</a> can wipe a vault after a set number of failed attempts. It's off by default and you have to type PERMIT to turn it on, because a backup is the only way back.</p>
+
+        <h2>Set up your new phone better</h2>
+        <ol>
+          <li>Use a strong screen lock: six or more digits, or a longer pattern, plus fingerprint.</li>
+          <li>Hide sensitive notification content on the lock screen in Settings.</li>
+          <li>Turn on your phone's theft protection features if offered.</li>
+          <li>Keep private photos in an encrypted vault with its own lock, not just a hidden album.</li>
+          <li>Schedule an encrypted vault backup and copy it off the phone now and then.</li>
+          <li>Write down your phone's IMEI (dial *#06#) and keep it with your recovery phrase.</li>
+        </ol>
+        <p>Our guide on <a href="{{root}}guides/how-to-hide-photos-on-android">hiding photos on Android</a> walks through the vault setup.</p>
+
+        <h2>If someone threatens you with your photos</h2>
+        <p>If a finder or thief contacts you about your photos, or private images appear online, don't pay and don't negotiate. Keep screenshots of messages, report it to the police and to the platform, and talk to someone you trust. Many countries have helplines for image-based abuse that can help get images taken down.</p>
+
+        <h2>Bottom line</h2>
+        <p>Lock it, secure your accounts, block the SIM, and erase it if it's gone for good. A locked, encrypted phone and a separately locked vault keep your photos private, and an encrypted backup brings them back. Read <a href="{{root}}security">how Sealcloak's security works</a>.</p>
+        {{faq}}
+      </div>
+      {{related}}
+    </article>
+  </div>
+</section>

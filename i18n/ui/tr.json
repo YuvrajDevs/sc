@@ -3,7 +3,7 @@
     "home": "Ana sayfa",
     "features": "Özellikler",
     "security": "Güvenlik",
-    "how": "Nasıl çalışır", 
+    "how": "Nasıl çalışır",
     "guides": "Rehberler",
     "faq": "SSS",
     "support": "Destek"
@@ -50,5 +50,8 @@
     "download": "Temiz kopyayı indir",
     "unsupported": "Yalnızca JPEG ve PNG desteklenir. HEIC fotoğrafları önce JPEG olarak paylaşın veya kamerayı JPEG kaydedecek şekilde ayarlayın.",
     "unreadable": "Bu dosya okunamadı:"
-  }
+  },
+  "about": "Hakkında",
+  "manifesto": "Manifesto",
+  "whatsNew": "Yenilikler"
 }

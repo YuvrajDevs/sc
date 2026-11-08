@@ -3,7 +3,7 @@
     "home": "홈",
     "features": "기능",
     "security": "보안",
-    "how": "작동 방식", 
+    "how": "작동 방식",
     "guides": "가이드",
     "faq": "자주 묻는 질문",
     "support": "지원"
@@ -50,5 +50,8 @@
     "download": "깨끗한 사본 다운로드",
     "unsupported": "JPEG와 PNG만 지원합니다. HEIC 사진은 먼저 JPEG로 공유하거나 카메라를 JPEG 저장으로 바꾸세요.",
     "unreadable": "이 파일을 읽을 수 없습니다:"
-  }
+  },
+  "about": "소개",
+  "manifesto": "선언문",
+  "whatsNew": "새로운 기능"
 }

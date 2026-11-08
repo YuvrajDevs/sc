@@ -1,0 +1,41 @@
+<!--meta {
+  "title": "The Sealcloak manifesto: privacy that doesn't depend on trust",
+  "description": "Why Sealcloak has no internet, no account and no backdoor. Seven principles behind a vault that keeps your private files on your phone.",
+  "nav": "about",
+  "date": "2026-11-08"
+} -->
+<section class="panel">
+  <div class="panel-inner wrap">
+    <article class="article">
+      <div class="meta">Manifesto</div>
+      <h1>Privacy shouldn't depend on trusting us.</h1>
+      <p class="lead">Every privacy app asks you to trust it. We'd rather build one where trust matters as little as possible. These are the principles Sealcloak is built on, and the promises we won't break.</p>
+      <div class="prose">
+        <h2>1. What isn't online can't leak online.</h2>
+        <p>Servers get breached. Companies get bought. Policies change, quietly, in emails nobody reads. The only copy of your private photos that can't be exposed by any of that is one that never left your phone. So Sealcloak has no internet permission, and Android itself stops it from connecting.</p>
+
+        <h2>2. No account is the best account.</h2>
+        <p>An account is a username, an email and a password stored somewhere you don't control, and a door someone else can knock on. A vault doesn't need one. Sealcloak never asks who you are.</p>
+
+        <h2>3. Hidden isn't protected. Encrypted is.</h2>
+        <p>Moving a photo to a hidden folder only keeps it off one screen. Anyone with a file manager or a computer can still open it. Every file in Sealcloak is encrypted with AES-256-GCM, using a key made from your pattern, so without that pattern the files are noise.</p>
+
+        <h2>4. No backdoors, including for us.</h2>
+        <p>We can't open your vault, reset your pattern or recover your files. That's not a limitation we apologise for; it's the point. A vault its maker can open is a vault anyone who pressures its maker can open. Your recovery phrase is the only spare key, and it's yours.</p>
+
+        <h2>5. Real life includes pressure.</h2>
+        <p>Privacy tools are usually designed for strangers. But the people most likely to demand your phone are often close to you. That's why Sealcloak has <a href="{{root}}features/coerce">Coerce</a>, a believable decoy vault, why it never shows how many vaults exist, and why <a href="{{root}}features/intruder-photos">intruder photos</a> tell you who tried.</p>
+
+        <h2>6. Destructive features stay off until you really mean it.</h2>
+        <p>Erasing a vault after wrong patterns, or when Coerce is used, can protect people in danger. It can also destroy a family's photos because a toddler played with the phone. So every erase feature is off by default, and turning one on means typing PERMIT. You decide, deliberately.</p>
+
+        <h2>7. You pay with money, not data.</h2>
+        <p>Free apps that show ads or share device IDs are paid for with information about you. Sealcloak has a free plan with limits and a paid Pro version through Google Play. No ads, no analytics, no trackers, no data to sell.</p>
+
+        <h2>What this means in practice</h2>
+        <p>You are responsible for one thing we can't do for you: backups. Because nothing is in a cloud, losing your phone without a backup means losing what's on it. Sealcloak makes this easy with <a href="{{root}}features/encrypted-backups">scheduled encrypted backups</a> to a place you choose. We think that's a fair trade for a vault nobody else can reach.</p>
+        <p>If you ever catch us breaking one of these principles, tell us at <a href="mailto:{{email}}">{{email}}</a>. Read more <a href="{{root}}about">about Sealcloak</a>, or see <a href="{{root}}security">how the security works</a>.</p>
+      </div>
+    </article>
+  </div>
+</section>

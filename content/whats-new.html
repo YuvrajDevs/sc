@@ -1,0 +1,49 @@
+<!--meta {
+  "title": "What's new in Sealcloak",
+  "description": "Release notes for Sealcloak, the offline encrypted vault for Android: what each version adds and fixes. Version 1.0.0 is the first release.",
+  "nav": "about",
+  "date": "2026-11-08"
+} -->
+<section class="panel">
+  <div class="panel-inner wrap">
+    <article class="article">
+      <div class="meta">Release notes</div>
+      <h1>What's new</h1>
+      <p class="lead">Every version of Sealcloak, newest first. Updates arrive through Google Play. Because the app can't connect to the internet, it never downloads anything by itself.</p>
+      <div class="prose">
+        <h2>Version 1.0.0 <span class="dim" style="font-size:.6em">First release</span></h2>
+        <p>The first public version of Sealcloak.</p>
+        <h3>Vault and encryption</h3>
+        <ul>
+          <li>Every file encrypted on the phone with AES-256-GCM; each vault has its own random master key, protected with help from the Android Keystore.</li>
+          <li>5×5 pattern lock of at least 6 dots, turned into a key with Argon2id. Optional fingerprint or face unlock.</li>
+          <li>A 9-word recovery phrase for every vault, or a sentence of your own.</li>
+          <li>Up to 3 vaults on the free plan, each with its own pattern and name; nothing shows how many exist.</li>
+          <li>After 4 wrong patterns, growing waits that changing the phone's clock can't skip.</li>
+          <li>Screenshots and screen recording blocked inside the app.</li>
+        </ul>
+        <h3>Files</h3>
+        <ul>
+          <li>Photos, videos, documents, audio, text notes and scans, with folders, search, slideshow, multi-select, move, copy and export.</li>
+          <li>Private camera that saves straight into the vault, and a document scanner that makes PDFs.</li>
+          <li>Secure sharing as a passphrase-locked package.</li>
+          <li>Encrypted backups by hand, or weekly or monthly to a folder you choose, and restore on a new phone.</li>
+        </ul>
+        <h3>Protection</h3>
+        <ul>
+          <li>Intruder photos: from the third wrong pattern in a row, the front camera takes a photo of each attempt, viewable only after you unlock.</li>
+          <li>Coerce (Pro): a decoy vault with its own pattern; optionally erase other vaults, off by default and needs PERMIT typed.</li>
+          <li>Erase after wrong patterns (Pro): off by default, needs PERMIT typed.</li>
+          <li>Calculator disguise (Pro): a working calculator; type your code and hold = for 2 seconds.</li>
+          <li>Custom icon (Pro): any picture and name on the home screen.</li>
+        </ul>
+        <h3>Privacy</h3>
+        <ul>
+          <li>No internet permission, no account, no ads, no analytics, no crash reporting.</li>
+          <li>Opts out of Android's automatic cloud backup of app data.</li>
+        </ul>
+        <p>Found a bug or have an idea for the next version? Email <a href="mailto:{{email}}">{{email}}</a>. See all <a href="{{root}}features">features</a>.</p>
+      </div>
+    </article>
+  </div>
+</section>

@@ -3,7 +3,7 @@
     "home": "Trang chủ",
     "features": "Tính năng",
     "security": "Bảo mật",
-    "how": "Cách hoạt động", 
+    "how": "Cách hoạt động",
     "guides": "Hướng dẫn",
     "faq": "Hỏi đáp",
     "support": "Hỗ trợ"
@@ -50,5 +50,8 @@
     "download": "Tải bản sạch",
     "unsupported": "Chỉ hỗ trợ JPEG và PNG. Ảnh HEIC: hãy chia sẻ dưới dạng JPEG trước, hoặc đặt máy ảnh lưu JPEG.",
     "unreadable": "Không thể đọc tệp này:"
-  }
+  },
+  "about": "Giới thiệu",
+  "manifesto": "Tuyên ngôn",
+  "whatsNew": "Có gì mới"
 }

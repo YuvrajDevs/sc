@@ -3,7 +3,7 @@
     "home": "Beranda",
     "features": "Fitur",
     "security": "Keamanan",
-    "how": "Cara kerja", 
+    "how": "Cara kerja",
     "guides": "Panduan",
     "faq": "Tanya jawab",
     "support": "Bantuan"
@@ -50,5 +50,8 @@
     "download": "Unduh salinan bersih",
     "unsupported": "Hanya JPEG dan PNG yang didukung. Foto HEIC: bagikan dulu sebagai JPEG, atau atur kamera untuk menyimpan JPEG.",
     "unreadable": "File ini tidak bisa dibaca:"
-  }
+  },
+  "about": "Tentang",
+  "manifesto": "Manifesto",
+  "whatsNew": "Yang baru"
 }

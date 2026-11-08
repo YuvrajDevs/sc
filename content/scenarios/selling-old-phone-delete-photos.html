@@ -1,0 +1,87 @@
+<!--meta {
+  "title": "Selling your phone? Delete photos so nobody can recover them",
+  "navTitle": "Selling an old phone",
+  "description": "Before you sell, trade in or give away an Android phone: back up, move your vault, remove accounts and factory reset so your photos can't be recovered.",
+  "keyword": "delete photos before selling phone",
+  "alsoTargets": ["wipe android phone before selling", "factory reset delete photos permanently", "can photos be recovered after factory reset", "trade in phone privacy"],
+  "summary": "Back up, move your vault, remove accounts, reset properly.",
+  "date": "2026-11-08",
+  "readMins": 6,
+  "nav": "guides",
+  "steps": ["Back up photos and your vault to the new phone or a computer", "Check the backup opens", "Remove your Google and brand accounts", "Take out the SIM and memory card", "Factory reset the phone"],
+  "faq": [
+    {"q": "Can photos be recovered after a factory reset?", "a": "On modern Android phones, no in practice. The storage is encrypted, and a factory reset destroys the key, so what's left is unreadable. Older phones from before encryption was standard are the exception; for those, encrypt first, then reset."},
+    {"q": "Is deleting photos from the gallery enough before selling?", "a": "No. Deleted photos often sit in the gallery's trash for 30 days, copies can remain in WhatsApp and Downloads folders, and the memory card keeps its own copies. A factory reset is the reliable way to clear the phone."},
+    {"q": "Do I need to remove my Google account before a reset?", "a": "Yes. If you don't, the phone stays locked to your account after the reset (factory reset protection), and the buyer can't set it up. Remove it in Settings under Accounts first."},
+    {"q": "How do I move my Sealcloak vault to my new phone?", "a": "Make an encrypted backup in Sealcloak, copy the file to the new phone or a computer, install Sealcloak on the new phone and restore it with your recovery phrase or the backup passphrase. Check it opens before resetting the old phone."}
+  ]
+} -->
+<section class="panel">
+  <div class="panel-inner wrap">
+    <article class="article">
+      <div class="meta">Real situation · 6 min read</div>
+      <h1>Selling your phone: how to delete photos before selling it</h1>
+      <p class="lead">Selling, trading in or handing down an old phone is a good idea, as long as your photos don't go with it. Deleting them from the gallery isn't enough. The good news is that on a modern Android phone, a proper factory reset makes your old data unrecoverable. The order you do things in is what matters.</p>
+      <div class="answer">
+        <div class="eyebrow">What to do now</div>
+        <p>Back up your photos and move any vault to your new phone, and check the backup opens. Then remove your Google account and any phone-maker account, take out the SIM and memory card, and factory reset the phone. On modern Android, a reset after encryption leaves nothing readable behind.</p>
+      </div>
+      <div class="prose">
+        <h2>In the right order</h2>
+        <ol>
+          <li><strong>Back up everything.</strong> Ordinary photos: Google Photos, a computer or your new phone's transfer tool. Chats: WhatsApp's own backup. Private photos in a vault: the vault's own backup.</li>
+          <li><strong>Prove the backup works.</strong> Open a few photos on the new phone or computer. Restore your vault on the new phone and open it. Only then go on.</li>
+          <li><strong>Remove your accounts.</strong> In Settings, under Accounts or Passwords and accounts, remove your Google account and any Samsung, Xiaomi or other brand account. This lifts the factory reset lock so the buyer can set the phone up.</li>
+          <li><strong>Take out the SIM and memory card.</strong> Memory cards are often unencrypted and keep their own copies of photos; keep the card or wipe it on a computer.</li>
+          <li><strong>Factory reset.</strong> Settings, then System (or General management), then Reset options, then Erase all data. Confirm with your screen lock.</li>
+          <li><strong>Remove the old phone</strong> from your Google account's device list.</li>
+        </ol>
+
+        <h2>Why a reset is enough on modern phones</h2>
+        <p>Phones that launched with Android 10 or newer encrypt their storage, and most phones from the years before did too. Your photos are stored scrambled, and the key that unscrambles them is kept in the phone's secure hardware. A factory reset throws that key away. The scrambled data may physically remain until it's overwritten, but without the key it's just noise. That's why recovery tools that work on old memory cards don't work on a reset modern phone.</p>
+        <p>For a very old phone, check Settings, under Security, for an Encrypt phone option. If it's there and not already on, encrypt the phone first, then reset it.</p>
+
+        <h2>Places photos hide</h2>
+        <p>Before the backup step, look in the places people forget, so nothing private is missed or left only on the old phone:</p>
+        <div class="table-wrap"><table>
+          <thead><tr><th>Where</th><th>What's there</th></tr></thead>
+          <tbody>
+            <tr><td>Gallery trash or recently deleted</td><td>Photos you deleted, often for 30 days</td></tr>
+            <tr><td>WhatsApp and Telegram media folders</td><td>Every photo and video you received</td></tr>
+            <tr><td>Downloads</td><td>Saved images, PDFs, ID scans</td></tr>
+            <tr><td>Screenshots folder</td><td>Chats, receipts, codes</td></tr>
+            <tr><td>Memory card</td><td>Camera photos if the camera saved to the card</td></tr>
+            <tr><td>Google Photos and other cloud apps</td><td>Copies that stay in your account after the reset</td></tr>
+          </tbody>
+        </table></div>
+
+        {{cta}}
+
+        <h2>Moving a private vault</h2>
+        <p>Vault apps store files differently from the gallery, so a normal phone-to-phone transfer won't carry them over. Each app has its own way; check yours before resetting anything.</p>
+        <p>With Sealcloak, everything stays offline, so the move goes through a file you control:</p>
+        <ol>
+          <li>In Sealcloak on the old phone, make an <a href="{{root}}features/encrypted-backups">encrypted backup</a> of each vault.</li>
+          <li>Copy the backup file to the new phone by cable, memory card or computer. It's encrypted, so it's safe to copy around.</li>
+          <li>Install Sealcloak on the new phone, choose restore, and enter your <a href="{{root}}features/recovery-phrase">recovery phrase</a> or the backup passphrase.</li>
+          <li>Open the vault and check your files before you reset the old phone.</li>
+        </ol>
+        <p>Have more than one vault? Back up and restore each one; each has its own phrase.</p>
+
+        <h2>Trade-in and repair-and-resale programmes</h2>
+        <p>Carrier and manufacturer trade-in schemes usually wipe phones they receive, but you can't see that happen, and some phones are resold as they are. Reset the phone yourself before it leaves your hands, every time. If the phone won't turn on, you can't reset it, so ask the trade-in service how they handle data and whether they certify erasure. Our guide on <a href="{{root}}scenarios/phone-repair-private-photos">handing your phone in for repair</a> covers the case where you can't reset it first.</p>
+
+        <h2>Selling it yourself online</h2>
+        <p>Private sales add one more privacy step that people miss: the listing photos. Pictures of the phone taken at home can carry the exact location in their hidden data, and a reflection in a dark screen can show your face or your room. Photograph the phone against a plain background, and run the pictures through our free <a href="{{root}}tools/remove-photo-location">photo location remover</a> before you post them. When you meet the buyer, let them check the phone after the reset, at the setup screen, not while your accounts are still on it.</p>
+
+        <h2>Giving a phone to family</h2>
+        <p>Handing a phone to a child or a parent feels safer, but the same steps apply. Children explore everything, and family members can sync your old accounts by accident. Reset it and let them set it up as their own. Hand over the charger and box too, but keep your memory card. If it's for a child, set it up with parental controls from the start.</p>
+
+        <h2>Bottom line</h2>
+        <p>Back up, check the backup, remove accounts, take out the SIM and card, then reset. On a modern Android phone, that's all it takes for your old photos to be gone for good. For the new phone, set up private photos the right way from day one with our guide to <a href="{{root}}guides/how-to-hide-photos-on-android">hiding photos on Android</a>, and see <a href="{{root}}how-it-works">how Sealcloak works</a>.</p>
+        {{faq}}
+      </div>
+      {{related}}
+    </article>
+  </div>
+</section>

@@ -1,0 +1,50 @@
+<!--meta {
+  "title": "About Sealcloak: a private vault that stays on your phone",
+  "description": "Who makes Sealcloak, why it has no internet permission, how we make money without your data, and how to reach us. An offline photo vault for Android.",
+  "nav": "about",
+  "date": "2026-11-08"
+} -->
+<section class="panel">
+  <div class="panel-inner wrap">
+    <article class="article">
+      <div class="meta">About</div>
+      <h1>About Sealcloak</h1>
+      <p class="lead">Sealcloak is a photo and file vault for Android built on one promise: your private files stay on your phone, encrypted, and nobody else ever holds a copy. Not a server, not a cloud, not us.</p>
+      <div class="prose">
+        <h2>Why we built it</h2>
+        <p>Most phones hold things that matter far more than their price: photos of family, ID documents, medical records, private pictures, letters, work files. And most vault apps that promise to protect them ask for an account, back them up to their own servers, show ads, or share device data with other companies. We wanted a vault that did none of that, so we built one.</p>
+        <p>The core idea is simple. If an app can't connect to the internet, it can't leak what's inside it. So Sealcloak ships without Android's internet permission. That isn't a setting we can change quietly later; it's how the app is built, and Android enforces it.</p>
+
+        <h2>What Sealcloak does</h2>
+        <ul>
+          <li>Encrypts every photo, video, document, audio file, note and scan on your phone with AES-256-GCM.</li>
+          <li>Opens with a 5×5 pattern that's turned into the key with Argon2id, plus optional fingerprint.</li>
+          <li>Gives every vault a 9-word recovery phrase, so a forgotten pattern isn't the end.</li>
+          <li>Keeps up to three separate vaults free, with nothing showing how many exist.</li>
+          <li>Offers Coerce, a decoy vault for when you're pressured to unlock, and intruder photos.</li>
+          <li>Can look like a working calculator, or any icon and name you choose.</li>
+          <li>Makes encrypted backups you keep, by hand or on a schedule.</li>
+        </ul>
+        <p>See the <a href="{{root}}features">full feature list</a> and <a href="{{root}}security">how the security works</a>.</p>
+
+        <h2>How we make money</h2>
+        <p>Sealcloak is free to use, with limits: three vaults, 100 photos, 10 videos, 10 documents and 10 audio files. Sealcloak Pro removes the limits and adds the disguises, Coerce and erase options, and it's sold through Google Play. That's the whole business. No ads, no data sales, no analytics, no "anonymised insights". We don't have your data to sell.</p>
+
+        <h2>What we'll never do</h2>
+        <ul>
+          <li>Add the internet permission to the app.</li>
+          <li>Ask you to create an account.</li>
+          <li>Add ads, trackers or analytics to the app.</li>
+          <li>Build a way for us, or anyone, to open your vault. There is no backdoor and no master key.</li>
+        </ul>
+        <p>Read the reasons behind these in our <a href="{{root}}manifesto">manifesto</a>.</p>
+
+        <h2>This website</h2>
+        <p>This site follows the same rules where it can. Our <a href="{{root}}tools/">free tools</a> run in your browser and never upload your files. The site has no ads and no tracking scripts. Guides are written to be useful first, and comparisons with other apps use those apps' own Google Play listings, including what they do better.</p>
+
+        <h2>Contact</h2>
+        <p>Questions, bug reports or ideas: email <a href="mailto:{{email}}">{{email}}</a>. We read everything. Please never send us your pattern or recovery phrase; we'll never ask for them, and we couldn't use them anyway. See the <a href="{{root}}support">support page</a> for quick answers.</p>
+      </div>
+    </article>
+  </div>
+</section>

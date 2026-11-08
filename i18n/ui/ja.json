@@ -3,7 +3,7 @@
     "home": "ホーム",
     "features": "機能",
     "security": "セキュリティ",
-    "how": "使い方", 
+    "how": "使い方",
     "guides": "ガイド",
     "faq": "よくある質問",
     "support": "サポート"
@@ -50,5 +50,8 @@
     "download": "きれいなコピーをダウンロード",
     "unsupported": "JPEGとPNGのみ対応しています。HEIC写真はJPEGで共有するか、カメラをJPEG保存に切り替えてください。",
     "unreadable": "このファイルを読み込めませんでした:"
-  }
+  },
+  "about": "Sealcloakについて",
+  "manifesto": "マニフェスト",
+  "whatsNew": "新機能"
 }

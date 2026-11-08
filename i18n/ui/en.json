@@ -1,5 +1,13 @@
 {
-  "nav": {"home": "Home", "features": "Features", "security": "Security", "how": "How it works", "guides": "Guides", "faq": "FAQ", "support": "Support"},
+  "nav": {
+    "home": "Home",
+    "features": "Features",
+    "security": "Security",
+    "how": "How it works",
+    "guides": "Guides",
+    "faq": "FAQ",
+    "support": "Support"
+  },
   "getApp": "Get the app",
   "themeLabel": "Switch light or dark theme",
   "menuLabel": "Open menu",
@@ -23,7 +31,14 @@
   "stickyButton": "Get the app",
   "keepReading": "Keep reading",
   "faqTitle": "Frequently asked questions",
-  "sections": {"home": "Home", "guides": "Guides", "compare": "Compare", "scenarios": "Real situations", "features": "Features", "tools": "Free tools"},
+  "sections": {
+    "home": "Home",
+    "guides": "Guides",
+    "compare": "Compare",
+    "scenarios": "Real situations",
+    "features": "Features",
+    "tools": "Free tools"
+  },
   "tool": {
     "removed": "Removed {kb} KB of hidden data.",
     "clean": "No hidden data found. It was already clean.",
@@ -35,5 +50,8 @@
     "download": "Download clean copy",
     "unsupported": "Only JPEG and PNG are supported. HEIC photos: share them as JPEG first, or change your camera to save JPEG.",
     "unreadable": "This file couldn't be read:"
-  }
+  },
+  "about": "About",
+  "manifesto": "Manifesto",
+  "whatsNew": "What's new"
 }

@@ -247,6 +247,9 @@ ${lists.guides.slice(0, 4).map((g) => `        <li><a href="${link(g.out.replace
       <div><h4>${esc(ui.footHelp)}</h4><ul>
         <li><a href="${link("faq")}">${esc(ui.nav.faq)}</a></li>
         <li><a href="${link("support")}">${esc(ui.nav.support)}</a></li>
+        <li><a href="${link("about")}">${esc(ui.about)}</a></li>
+        <li><a href="${link("manifesto")}">${esc(ui.manifesto)}</a></li>
+        <li><a href="${link("whats-new")}">${esc(ui.whatsNew)}</a></li>
         <li><a href="${link("privacy")}">${esc(ui.privacy)}</a></li>
         <li><a href="${link("terms")}">${esc(ui.terms)}</a></li>
         <li><a href="${playLink(lang)}">${esc(ui.googlePlay)}</a></li>

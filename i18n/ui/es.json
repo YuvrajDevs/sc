@@ -3,7 +3,7 @@
     "home": "Inicio",
     "features": "Funciones",
     "security": "Seguridad",
-    "how": "Cómo funciona", 
+    "how": "Cómo funciona",
     "guides": "Guías",
     "faq": "Preguntas",
     "support": "Soporte"
@@ -50,5 +50,8 @@
     "download": "Descargar copia limpia",
     "unsupported": "Solo se admiten JPEG y PNG. Fotos HEIC: compártelas primero como JPEG o configura la cámara para guardar en JPEG.",
     "unreadable": "No se pudo leer este archivo:"
-  }
+  },
+  "about": "Acerca de",
+  "manifesto": "Manifiesto",
+  "whatsNew": "Novedades"
 }
