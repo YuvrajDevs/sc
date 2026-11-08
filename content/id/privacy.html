@@ -1,0 +1,73 @@
+<!--meta {
+  "title": "Kebijakan privasi",
+  "description": "Sealcloak tidak mengumpulkan data. Tanpa akun, analitik, iklan, maupun izin internet. Inilah yang dilakukan dan tidak dilakukan aplikasi dan situs web ini.",
+  "nav": "privacy",
+  "date": "2026-11-03",
+  "sourceHash": "7827b14361db"
+} -->
+<section class="panel">
+  <div class="panel-inner wrap">
+    <article class="article">
+      <div class="meta">Terakhir diperbarui 3 November 2026</div>
+      <h1>Kebijakan privasi</h1>
+      <p class="lead">Sealcloak adalah brankas pribadi offline untuk Android. File Anda dienkripsi di ponsel dengan kunci acak untuk setiap brankas, dan kunci itu hanya bisa dibuka dengan pola atau frasa pemulihan Anda. Kami tidak menjalankan layanan apa pun yang menerima file, pola, atau kunci Anda.</p>
+      <div class="prose">
+        <h2>Ringkasan</h2>
+        <p>Aplikasi Android ini tidak memiliki izin internet. Kami sengaja menghapusnya dari aplikasi, sehingga Sealcloak tidak bisa mengirim apa pun ke mana pun, bahkan secara tidak sengaja. Tidak ada akun, analitik, laporan crash, iklan, maupun pelacakan di dalam aplikasi.</p>
+
+        <h2>Yang tidak kami kumpulkan</h2>
+        <ul>
+          <li><strong>Foto, video, dokumen, audio, catatan, atau hasil pindaian Anda.</strong> Semuanya dienkripsi dengan AES-256-GCM di ponsel Anda dan hanya disimpan di penyimpanan pribadi aplikasi. Kami tidak pernah menerimanya.</li>
+          <li><strong>Pola Anda.</strong> Pola diubah menjadi kunci di ponsel Anda dengan Argon2id, fungsi penurunan kunci yang sengaja dibuat lambat agar tahan terhadap tebakan. Polanya sendiri tidak pernah disimpan.</li>
+          <li><strong>Kunci enkripsi Anda.</strong> Setiap brankas punya kunci utama acaknya sendiri. Kunci ini disimpan dalam keadaan terbungkus, dilindungi oleh pola Anda dan oleh kunci yang disimpan di Keystore Android berbasis perangkat keras. Kunci dihapus dari memori saat brankas terkunci.</li>
+          <li><strong>Frasa pemulihan Anda.</strong> Frasa ini ditampilkan sekali saat pengaturan awal dan hanya disimpan di ponsel Anda dalam bentuk terenkripsi. Kami tidak bisa melihatnya dan tidak bisa meresetnya.</li>
+          <li><strong>Akun dalam bentuk apa pun.</strong> Tanpa email, tanpa nomor HP, tanpa login.</li>
+          <li><strong>Cadangan cloud Android.</strong> Aplikasi ini tidak ikut serta dalam cadangan aplikasi otomatis Android, jadi brankas Anda tidak disalin ke Google Drive tanpa sepengetahuan Anda.</li>
+        </ul>
+
+        <h2>Izin yang digunakan aplikasi</h2>
+        <ul>
+          <li><strong>Kamera:</strong> untuk kamera dalam aplikasi dan pemindai dokumen, serta untuk foto penyusup jika Anda menyalakannya. Gambar disimpan terenkripsi di dalam brankas Anda, tidak pernah ke galeri.</li>
+          <li><strong>Biometrik:</strong> untuk membuka kunci dengan sidik jari atau wajah, jika Anda menyalakannya. Android yang menangani pemeriksaan biometrik; aplikasi tidak pernah melihat sidik jari atau wajah Anda.</li>
+          <li><strong>Berjalan saat ponsel dinyalakan:</strong> agar jadwal cadangan yang Anda atur tetap berjalan setelah ponsel dimulai ulang.</li>
+        </ul>
+        <p>Aplikasi ini tidak meminta akses ke kontak, lokasi, mikrofon, seluruh penyimpanan, maupun internet. File yang Anda tambahkan dipilih lewat pemilih file dan foto bawaan Android, yang hanya memberikan item yang Anda pilih kepada aplikasi.</p>
+
+        <h2>Foto penyusup</h2>
+        <p>Jika Anda menyalakan fitur ini, kamera depan mengambil foto setelah pola salah berulang kali. Selama brankas terkunci, foto itu disegel dengan kunci publik, sehingga aplikasi bisa menambahkan foto tetapi tidak bisa membaca foto yang sudah tersimpan. Hanya brankas yang menyalakan fitur ini yang bisa membukanya, setelah Anda membuka kuncinya. Foto tidak pernah keluar dari ponsel Anda dan tidak pernah muncul di notifikasi. Android menampilkan indikator kamera seperti biasa setiap kali ada aplikasi yang memakai kamera, dan aplikasi tidak bisa menyembunyikannya.</p>
+
+        <h2>Cadangan yang Anda buat</h2>
+        <p>Cadangan hanya dibuat saat Anda memintanya, atau sesuai jadwal mingguan atau bulanan yang Anda atur, dan disimpan ke folder pilihan Anda. Cadangan berupa satu file yang dienkripsi dengan frasa pemulihan brankas Anda atau dengan frasa sandi yang Anda pilih saat itu. Kami tidak menerima cadangan dan tidak bisa membukanya. Begitu cadangan berada di luar aplikasi, keamanannya bergantung pada tempat Anda menyimpannya.</p>
+
+        <h2>Fitur penyamaran</h2>
+        <p>Penyamaran kalkulator dan ikon kustom hanya mengubah tampilan aplikasi di ponsel Anda: ikonnya, namanya, dan layar yang pertama kali terbuka. Kode rahasia untuk mode kalkulator disimpan sebagai hash lambat, bukan sebagai teks, dan tidak pernah keluar dari ponsel Anda.</p>
+
+        <h2>Pembelian</h2>
+        <p>Sealcloak Pro dijual melalui Google Play. Google menangani pembayaran dan pengembalian dana sesuai <a href="https://policies.google.com/privacy">kebijakan privasi Google</a>. Kami tidak menerima nama, kartu, atau detail pembayaran Anda. Aplikasi hanya menanyakan kepada Google Play apakah Pro aktif di akun Anda, menggunakan layanan penagihan Google di perangkat Anda.</p>
+
+        <h2>Situs web ini</h2>
+        <p>Situs web ini tidak memakai analitik, piksel iklan, maupun cookie. Situs ini menyimpan satu preferensi kecil di browser Anda, yaitu tema terang atau gelap, menggunakan penyimpanan lokal di perangkat Anda saja. Font halaman dimuat dari Google Fonts, yang dapat melihat alamat IP Anda saat browser mengambilnya. Situs ini di-hosting di Vercel, yang seperti kebanyakan layanan hosting web, mungkin menyimpan log server biasa seperti alamat IP dan halaman yang diminta. Jika Anda mengirim email kepada kami, kami menerima alamat email dan pesan Anda.</p>
+
+        <h2>Pesan yang Anda kirim kepada kami</h2>
+        <p>Jika Anda menghubungi kami untuk bantuan, kami membaca pesan Anda dan membalas ke alamat pengirimnya. Kami menggunakannya untuk membantu Anda dan untuk menyempurnakan aplikasi. Kami hanya menyimpannya selama diperlukan untuk itu. Jangan pernah mengirimkan pola, frasa pemulihan, atau frasa sandi cadangan Anda. Kami tidak akan pernah memintanya.</p>
+
+        <h2>Layanan pihak ketiga</h2>
+        <ul>
+          <li><strong>Google Play dan Google Play Billing:</strong> untuk menginstal aplikasi dan memproses pembelian.</li>
+          <li><strong>Android Keystore:</strong> di ponsel Anda, untuk melindungi kunci yang membungkus brankas Anda.</li>
+          <li><strong>Google Fonts dan Vercel:</strong> hanya untuk situs web ini, seperti dijelaskan di atas.</li>
+        </ul>
+        <p>Aplikasinya sendiri tidak berkomunikasi dengan satu pun layanan tersebut.</p>
+
+        <h2>Anak-anak</h2>
+        <p>Sealcloak tidak ditujukan untuk anak-anak di bawah 13 tahun. Aplikasi ini tidak mengumpulkan informasi dari siapa pun, dan tidak memerlukan akun.</p>
+
+        <h2>Perubahan kebijakan ini</h2>
+        <p>Jika kebijakan ini berubah, kami akan memperbarui halaman ini dan tanggal di bagian atas. Jika suatu perubahan memengaruhi apa yang dikumpulkan aplikasi, kami juga akan menyebutkannya di catatan pembaruan aplikasi.</p>
+
+        <h2>Kontak</h2>
+        <p>Ada pertanyaan tentang kebijakan ini? Kunjungi <a href="{{root}}support">halaman bantuan</a> kami atau kirim email ke <a href="mailto:{{email}}">{{email}}</a>.</p>
+      </div>
+    </article>
+  </div>
+</section>

@@ -1,0 +1,63 @@
+<!--meta {
+  "title": "Keamanan",
+  "description": "Cara Sealcloak melindungi file Anda: enkripsi AES-256-GCM, penurunan kunci Argon2id, Android Keystore, tanpa akun, dan tanpa izin internet.",
+  "nav": "security",
+  "sourceHash": "9f545eb7c0bb"
+} -->
+<section class="panel">
+  <div class="panel-inner wrap">
+    <div class="section-head">
+      <div class="eyebrow">Keamanan</div>
+      <h1 style="margin-top:20px">Dibuat agar kami pun tidak bisa mengintip.</h1>
+      <p class="lead">Sealcloak tidak punya server maupun akun, dan aplikasinya tidak punya izin untuk memakai internet. File Anda dienkripsi di ponsel dengan kunci yang hanya bisa dibuka oleh pola atau frasa Anda.</p>
+    </div>
+    <div class="cards four reveal">
+      <div class="card"><h3>Tanpa akun</h3><p>Tanpa email, nomor HP, atau login. Selamanya.</p></div>
+      <div class="card"><h3>Tanpa internet</h3><p>Izin internet dihapus sepenuhnya dari aplikasi.</p></div>
+      <div class="card"><h3>Tanpa cloud</h3><p>File tetap di ponsel Anda, hanya dalam bentuk terenkripsi.</p></div>
+      <div class="card"><h3>Tanpa pintu belakang</h3><p>Kami tidak bisa mereset pola Anda atau membuka brankas Anda.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="panel">
+  <div class="panel-inner wrap">
+    <div class="split reveal">
+      <div>
+        <div class="eyebrow">Di balik layar</div>
+        <h2 style="margin-top:16px">Cara file Anda dikunci.</h2>
+        <p class="lead" style="margin-top:16px">Untuk Anda yang ingin tahu detailnya.</p>
+      </div>
+      <table class="spec">
+        <tr><th>Enkripsi file</th><td>AES-256-GCM. Setiap file dienkripsi sebelum ditulis ke penyimpanan, dan tag-nya mendeteksi setiap upaya pengubahan.</td></tr>
+        <tr><th>Kunci brankas</th><td>Setiap brankas punya kunci utama acak 256-bit sendiri.</td></tr>
+        <tr><th>Pola & frasa</th><td>Diubah menjadi kunci dengan Argon2id (memori 32 MiB), sehingga menebak tetap lambat bahkan di perangkat keras yang cepat.</td></tr>
+        <tr><th>Perangkat keras</th><td>Data pola juga dibungkus oleh kunci di Android Keystore, sehingga tidak bisa disalin keluar dari ponsel lalu dibobol.</td></tr>
+        <tr><th>Pola salah</th><td>Waktu tunggu makin lama setelah percobaan yang salah. Opsi hapus otomatis setelah terlalu banyak percobaan.</td></tr>
+        <tr><th>Cadangan</th><td>File cadangan tetap terenkripsi. Frasa setiap brankas hanya memulihkan brankas itu saja.</td></tr>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="panel">
+  <div class="panel-inner wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">Batasan yang jujur</div>
+      <h2>Yang tidak bisa dilakukan Sealcloak.</h2>
+      <p class="lead">Keamanan yang baik juga berarti terus terang soal ini.</p>
+    </div>
+    <div class="cards reveal">
+      <div class="card"><h3>Lupa keduanya, hilang semua</h3><p>Jika Anda lupa pola dan kehilangan frasa pemulihan, tidak ada yang bisa membuka brankas. Kami pun tidak.</p></div>
+      <div class="card"><h3>Menghapus aplikasi berarti menghapus data</h3><p>Menghapus aplikasi juga menghapus brankas-brankasnya. Simpan file cadangan di tempat yang aman.</p></div>
+      <div class="card"><h3>Ponsel yang terbuka itu terbuka</h3><p>Selama brankas terbuka, siapa pun yang memegang ponsel bisa melihatnya. Brankas terkunci lagi begitu Anda keluar dari aplikasi.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="panel final">
+  <div class="panel-inner wrap">
+    <h2>Privat sejak awal.</h2>
+    <div class="cta-row"><a class="btn btn-primary btn-lg" href="{{play}}">Unduh di Google Play</a><a class="btn btn-ghost btn-lg" href="{{root}}privacy">Baca kebijakan privasi</a></div>
+  </div>
+</section>
