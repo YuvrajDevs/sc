@@ -1,0 +1,60 @@
+<!--meta {
+  "title": "Cadangan terenkripsi: pindahkan brankas ke ponsel baru",
+  "navTitle": "Cadangan terenkripsi",
+  "description": "Cadangkan brankas Sealcloak sebagai satu file terenkripsi, manual atau mingguan/bulanan, ke folder pilihan Anda. Pulihkan di ponsel baru dengan frasa Anda.",
+  "keyword": "backup brankas foto",
+  "summary": "Satu file terenkripsi, manual atau terjadwal. Pulihkan di ponsel mana pun.",
+  "date": "2026-11-08",
+  "readMins": 4,
+  "nav": "features",
+  "order": 9,
+  "sourceHash": "54c93bd31a73",
+  "faq": [
+    {
+      "q": "Apakah Sealcloak mengunggah cadangan saya?",
+      "a": "Tidak. Aplikasi ini tidak punya izin internet. File disimpan di tempat yang Anda pilih; memindahkannya ke tempat lain adalah keputusan Anda."
+    },
+    {
+      "q": "Bisakah cadangan dibuka tanpa frasa?",
+      "a": "Tidak. Cadangan hanya bisa dibuka dengan frasa pemulihan atau frasa sandi yang dipakai saat membuatnya."
+    },
+    {
+      "q": "Apakah memulihkan dua kali akan menggandakan file?",
+      "a": "Tidak. File yang sudah ada di brankas dilewati, jadi mengimpor cadangan yang sama lagi tetap aman."
+    },
+    {
+      "q": "Apa yang terjadi kalau cadangan rusak?",
+      "a": "Sealcloak memulihkan semua yang masih bisa dibaca dan memberi tahu berapa file yang tidak bisa dipulihkan."
+    }
+  ]
+} -->
+<section class="panel">
+  <div class="panel-inner wrap">
+    <article class="article">
+      <div class="meta"><a href="{{root}}features">Fitur</a> · Cadangan terenkripsi</div>
+      <h1>Cadangan terenkripsi: pindahkan brankas ke ponsel baru</h1>
+      <p class="lead">Brankas offline perlu rencana untuk ponsel yang hilang atau rusak. Cadangan Sealcloak berupa satu file terenkripsi yang bisa Anda simpan di mana saja.</p>
+      <div class="answer">
+        <div class="eyebrow">Singkatnya</div>
+        <p>Ekspor cadangan di Setelan dan Sealcloak menulis satu file terenkripsi ke folder pilihan Anda, lalu memeriksa bahwa file itu bisa dibaca kembali. Kunci dengan frasa pemulihan atau frasa sandi. Untuk memulihkan, instal Sealcloak di ponsel baru, pilih Pulihkan dari cadangan, dan masukkan frasa atau frasa sandi yang sama. Cadangan terjadwal bisa berjalan sendiri setiap minggu atau bulan.</p>
+      </div>
+      <div class="prose">
+        <h2>Membuat cadangan</h2>
+        <ol><li>Di Setelan, pada bagian Cadangan, ketuk Ekspor cadangan.</li><li>Pilih Gunakan frasa pemulihan saya (disarankan) atau frasa sandi minimal 8 karakter.</li><li>Pilih tempat menyimpan file.</li><li>Tunggu sampai muncul Cadangan terverifikasi. Aplikasi membaca ulang file untuk memeriksanya.</li></ol>
+
+        <h2>Cadangan terjadwal</h2>
+        <p>Atur cadangan terjadwal agar file tersimpan sendiri setiap minggu atau bulan, ke folder pilihan Anda. Jika folder itu dipantau oleh Drive atau aplikasi sinkronisasi lain, file terenkripsi otomatis tersalin keluar dari ponsel, tanpa Sealcloak sendiri pernah menyentuh internet.</p>
+
+        {{cta}}
+
+        <h2>Memulihkan di ponsel baru</h2>
+        <ol><li>Salin file cadangan ke ponsel baru.</li><li>Instal Sealcloak dan ketuk Pulihkan dari cadangan.</li><li>Atur pola untuk brankas baru dan catat frasa pemulihannya.</li><li>Pilih file cadangan dan masukkan frasa atau frasa sandinya.</li></ol><p>Impor aman diulang: file yang sudah Anda miliki akan dilewati.</p>
+
+        <h2>Simpan filenya dengan aman</h2>
+        <p>Filenya terenkripsi, tetapi privasinya hanya sebaik tempat Anda menyimpannya, dan siapa pun yang punya file sekaligus kuncinya bisa membukanya. Tulis kuncinya di kertas, terpisah dari file. Cek keamanan di aplikasi akan mengingatkan jika belum ada cadangan terbaru. Frasanya juga hilang? Lihat <a href="{{root}}features/recovery-phrase">frasa pemulihan</a>.</p>
+        {{faq}}
+      </div>
+      {{related}}
+    </article>
+  </div>
+</section>

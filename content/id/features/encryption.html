@@ -1,0 +1,63 @@
+<!--meta {
+  "title": "Cara Sealcloak mengenkripsi foto dan file Anda",
+  "navTitle": "Enkripsi",
+  "description": "Setiap file di Sealcloak dienkripsi di ponsel Anda dengan AES-256-GCM, dengan kunci acak per brankas yang dilindungi pola Anda dan Android Keystore.",
+  "keyword": "enkripsi foto",
+  "summary": "AES-256-GCM di ponsel, kunci acak per brankas, dibuka dengan pola Anda.",
+  "date": "2026-11-08",
+  "readMins": 4,
+  "nav": "features",
+  "order": 2,
+  "sourceHash": "5d2ec5b000c7",
+  "faq": [
+    {
+      "q": "Apakah AES-256 benar-benar aman?",
+      "a": "AES-256 adalah standar yang dipakai untuk melindungi data sensitif di seluruh dunia, dan belum ada serangan praktis terhadapnya. Dalam praktiknya, titik lemahnya adalah kata sandi dan pola yang mudah ditebak, bukan algoritma enkripsinya."
+    },
+    {
+      "q": "Bisakah Sealcloak melihat foto saya?",
+      "a": "Tidak. Enkripsi terjadi di ponsel Anda, aplikasi tidak bisa terhubung ke internet, dan kami tidak pernah memegang pola, frasa, atau kunci Anda."
+    },
+    {
+      "q": "Jika seseorang menyalin file aplikasi, bisakah ia membukanya?",
+      "a": "Tidak tanpa kuncinya. File-file itu terenkripsi, dan kuncinya memerlukan pola atau frasa pemulihan Anda, ditambah Keystore di ponsel aslinya."
+    },
+    {
+      "q": "Apakah cadangan saya juga dienkripsi?",
+      "a": "Ya. File cadangan dienkripsi dengan frasa pemulihan brankas Anda atau frasa sandi pilihan Anda. Tanpa itu, file tidak bisa dibuka."
+    }
+  ]
+} -->
+<section class="panel">
+  <div class="panel-inner wrap">
+    <article class="article">
+      <div class="meta"><a href="{{root}}features">Fitur</a> · Enkripsi</div>
+      <h1>Cara Sealcloak mengenkripsi foto dan file Anda</h1>
+      <p class="lead">Menyembunyikan foto dan mengenkripsinya adalah dua hal berbeda. Sealcloak mengenkripsi setiap file di ponsel Anda, jadi salinan yang dibawa keluar dari aplikasi pun tidak bisa dibaca tanpa kunci Anda.</p>
+      <div class="answer">
+        <div class="eyebrow">Singkatnya</div>
+        <p>Setiap brankas punya kunci utama acaknya sendiri. Setiap file dienkripsi dengan AES-256-GCM sebelum disimpan. Kunci utama dibungkus menggunakan kunci yang diturunkan dari pola Anda dengan Argon2id dan kunci yang disimpan di Keystore Android berbasis perangkat keras. Tidak ada yang keluar dari ponsel Anda, karena aplikasi tidak punya izin internet.</p>
+      </div>
+      <div class="prose">
+        <h2>Disembunyikan tidak sama dengan dienkripsi</h2>
+        <p>Banyak aplikasi pengunci galeri memindahkan foto ke folder tersembunyi lalu memasang layar kata sandi di depannya. Siapa pun yang punya pengelola file atau komputer tetap bisa menemukan dan membuka file-filenya. Dengan enkripsi, file itu sendiri diacak. Salinannya tidak berguna tanpa kunci, di mana pun ia berakhir.</p>
+
+        <h2>Yang terjadi saat Anda menambahkan foto</h2>
+        <ol><li>File dibaca per bagian dan setiap bagian dienkripsi dengan AES-256-GCM, yang juga mendeteksi setiap upaya pengubahan.</li><li>File terenkripsi ditulis ke penyimpanan pribadi aplikasi, dengan nama acak yang tidak mengungkap isinya.</li><li>Indeks brankas (nama, folder, tanggal) juga dienkripsi.</li><li>File asli tetap di galeri sampai Anda menghapusnya sendiri, jadi Anda bisa memeriksa salinan di brankas lebih dulu.</li></ol>
+
+        {{cta}}
+
+        <h2>Cara pola Anda membukanya</h2>
+        <p>Pola Anda diproses dengan Argon2id, fungsi lambat yang boros memori dan dibuat untuk menahan tebakan dalam skala besar. Hasilnya, bersama kunci yang tidak pernah keluar dari Keystore Android, membuka bungkus kunci utama brankas Anda. Saat Anda mengunci brankas, kunci-kunci dihapus dari memori.</p>
+
+        <h2>Tidak ada server untuk diretas</h2>
+        <p>Sealcloak tidak punya akun, cloud, maupun izin internet. Tidak ada salinan file atau kunci Anda di mana pun selain di ponsel Anda dan <a href="{{root}}features/encrypted-backups">cadangan</a> yang Anda pilih untuk dibuat. Baca gambaran lengkapnya di <a href="{{root}}security">halaman keamanan</a>.</p>
+
+        <h2>Batasan yang jujur</h2>
+        <p>Tidak ada keamanan yang mutlak. Pola yang mudah ditebak, ponsel yang sudah disusupi malware, atau frasa pemulihan yang disimpan sebagai foto di ponsel yang sama bisa menggagalkan enkripsi yang baik. Cek keamanan di Setelan aplikasi menunjukkan titik-titik lemah yang umum.</p>
+        {{faq}}
+      </div>
+      {{related}}
+    </article>
+  </div>
+</section>
