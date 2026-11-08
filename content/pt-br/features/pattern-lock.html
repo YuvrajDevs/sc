@@ -1,0 +1,66 @@
+<!--meta {
+  "sourceHash": "428e89c0c3a7",
+  "title": "Bloqueio de fotos por padrão: uma grade 5×5 que só você conhece",
+  "navTitle": "Bloqueio por padrão",
+  "description": "O Sealcloak tranca suas fotos com um padrão 5×5 próprio, separado do bloqueio do celular, com digital opcional e esperas crescentes após tentativas erradas.",
+  "keyword": "bloquear fotos com padrão",
+  "summary": "Um padrão 5×5 próprio, separado do bloqueio do celular, com digital opcional.",
+  "date": "2026-11-08",
+  "readMins": 4,
+  "nav": "features",
+  "order": 1,
+  "faq": [
+    {
+      "q": "Posso usar um PIN em vez de padrão?",
+      "a": "Não. Cada cofre abre com seu próprio padrão, além do desbloqueio opcional por digital ou rosto. Um padrão em uma grade 5×5 tem muito mais combinações do que um PIN comum de 4 dígitos."
+    },
+    {
+      "q": "E se eu esquecer meu padrão?",
+      "a": "Toque em Esqueceu seu padrão? e digite a frase de recuperação de 9 palavras que você salvou na configuração, depois desenhe um novo padrão. Sem a frase, ninguém consegue abrir o cofre, nem nós."
+    },
+    {
+      "q": "Alguém consegue descobrir meu padrão pelas marcas de dedo na tela?",
+      "a": "Ataques por marcas de dedo e por espiar por cima do ombro são possíveis com qualquer padrão. Limpe a tela de vez em quando, desenhe longe dos olhos dos outros ou use a digital em público."
+    },
+    {
+      "q": "O padrão fica salvo no meu celular?",
+      "a": "Não. O padrão é transformado em uma chave com o Argon2id, uma função lenta de propósito, e só o resultado é usado para desbloquear a chave do seu cofre. O padrão em si não é salvo em lugar nenhum."
+    }
+  ],
+  "steps": [
+    "Instale o Sealcloak e toque em Configurar meu cofre.",
+    "Desenhe um padrão de pelo menos 6 pontos na grade 5×5 e desenhe de novo.",
+    "Anote no papel a frase de recuperação de 9 palavras.",
+    "Se quiser, ative o desbloqueio por digital nas Configurações."
+  ]
+} -->
+<section class="panel">
+  <div class="panel-inner wrap">
+    <article class="article">
+      <div class="meta"><a href="{{root}}features">Recursos</a> · Bloqueio por padrão</div>
+      <h1>Bloqueio de fotos por padrão: uma grade 5×5 que só você conhece</h1>
+      <p class="lead">Seu cofre abre com um padrão desenhado em uma grade 5×5. Ele é separado do bloqueio de tela do celular, então quem sabe o PIN do seu celular continua sem conseguir entrar.</p>
+      <div class="answer">
+        <div class="eyebrow">Resumindo</div>
+        <p>O Sealcloak usa um padrão próprio em uma grade 5×5, com pelo menos 6 pontos. O padrão nunca é armazenado: ele é transformado na chave que desbloqueia seu cofre. O desbloqueio por digital ou rosto é opcional, e o padrão sempre continua funcionando.</p>
+      </div>
+      <div class="prose">
+        <h2>Por que 5×5 em vez do 3×3 de sempre</h2>
+        <p>Uma grade 3×3, como a da maioria das telas de bloqueio, tem um número pequeno de padrões possíveis, e muita gente escolhe as mesmas poucas formas. Uma grade 5×5 tem 25 pontos, então há muito mais padrões para escolher, e o mínimo de 6 pontos impede as formas mais curtas e fáceis de adivinhar. A tela de configuração mostra a força do seu padrão enquanto você desenha.</p>
+
+        <h2>Separado do bloqueio do celular, de propósito</h2>
+        <p>A maioria dos álbuns privados que já vêm no celular abre com o mesmo PIN que desbloqueia o aparelho. E quem tem mais chance de bisbilhotar muitas vezes é justamente quem já sabe esse PIN. O padrão do Sealcloak é só dele, e cada cofre pode ter um diferente.</p>
+
+        {{cta}}
+
+        <h2>O que acontece depois de padrões errados</h2>
+        <p>Os 4 primeiros padrões errados seguidos são livres. Depois disso, o app faz você esperar antes da próxima tentativa, e a espera aumenta a cada vez. Mudar o relógio do celular não pula a espera. Se quiser, você também pode ativar as <a href="{{root}}features/intruder-photos">fotos de intrusos</a> e, com o Pro, o <a href="{{root}}features/erase-after-wrong-patterns">apagamento após padrões errados</a>.</p>
+
+        <h2>Digital ou rosto, se você quiser</h2>
+        <p>Ative o desbloqueio por digital nas Configurações para abrir o cofre com sua digital ou seu rosto em vez de desenhar. O Android faz a verificação biométrica; o app nunca vê sua digital. Seu padrão sempre continua funcionando, e é ele que continua protegendo os arquivos.</p>
+        {{faq}}
+      </div>
+      {{related}}
+    </article>
+  </div>
+</section>

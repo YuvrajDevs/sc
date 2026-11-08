@@ -1,0 +1,67 @@
+<!--meta {
+  "sourceHash": "687a4ffa61bb",
+  "title": "Fotos de intrusos: veja quem tentou abrir seu cofre",
+  "navTitle": "Fotos de intrusos",
+  "description": "Ative as fotos de intrusos e a câmera frontal do Sealcloak fotografa em silêncio os padrões errados repetidos. Só o seu cofre vê as fotos, depois que você desbloqueia.",
+  "keyword": "foto de intruso",
+  "alsoTargets": [
+    "selfie do intruso",
+    "app que tira foto de quem tenta desbloquear"
+  ],
+  "summary": "A partir do 3º padrão errado seguido, a câmera frontal fotografa cada tentativa.",
+  "date": "2026-11-08",
+  "readMins": 4,
+  "nav": "features",
+  "order": 7,
+  "faq": [
+    {
+      "q": "Ele tira foto quando eu mesmo erro?",
+      "a": "Só a partir do terceiro padrão errado seguido. Desbloqueie com sucesso e a contagem recomeça."
+    },
+    {
+      "q": "Onde as fotos de intrusos ficam guardadas?",
+      "a": "Criptografadas no armazenamento privado do app. Elas nunca vão para a sua galeria e nunca saem do celular."
+    },
+    {
+      "q": "O intruso consegue perceber que uma foto foi tirada?",
+      "a": "O app não faz som nem mostra mensagem, mas o Android exibe por um instante o ponto indicador de câmera enquanto ela está em uso."
+    },
+    {
+      "q": "Quantas fotos ficam guardadas?",
+      "a": "As 20 mais recentes. As mais antigas são removidas para que um ataque longo não encha o seu celular."
+    }
+  ]
+} -->
+<section class="panel">
+  <div class="panel-inner wrap">
+    <article class="article">
+      <div class="meta"><a href="{{root}}features">Recursos</a> · Fotos de intrusos</div>
+      <h1>Fotos de intrusos: veja quem tentou abrir seu cofre</h1>
+      <p class="lead">Quer saber se alguém tentou entrar no seu cofre? As fotos de intrusos respondem isso, com uma foto de quem foi.</p>
+      <div class="answer">
+        <div class="eyebrow">Resumindo</div>
+        <p>Com as fotos de intrusos ativadas, o Sealcloak perdoa os dois primeiros padrões errados e, a partir do terceiro seguido, tira uma foto com a câmera frontal a cada tentativa errada. As fotos são criptografadas para que só o cofre que ativou o recurso possa abri-las, e você as vê depois de desbloquear.</p>
+      </div>
+      <div class="prose">
+        <h2>Como ativar</h2>
+        <ol><li>Nas Configurações, em Segurança, encontre Fotos de intrusos e toque em Ativar.</li><li>Permita o acesso à câmera quando o app pedir.</li><li>Pronto. As Configurações mostram quantas fotos estão esperando por você.</li></ol>
+
+        <h2>Por que os dois primeiros erros são perdoados</h2>
+        <p>Todo mundo erra o padrão de vez em quando. Fotografar cada erro encheria a pasta de fotos suas. As esperas cada vez maiores após tentativas erradas são explicadas em <a href="{{root}}features/pattern-lock">bloqueio por padrão</a>. A partir do terceiro padrão errado seguido, é bem mais provável que seja outra pessoa.</p>
+
+        {{cta}}
+
+        <h2>Privadas mesmo com o cofre bloqueado</h2>
+        <p>Enquanto o cofre está bloqueado, o app não tem a chave para ler seus arquivos. As fotos de intrusos são seladas com uma chave pública: o app consegue adicionar uma foto, mas só o seu cofre desbloqueado consegue abri-las. Elas nunca aparecem na sua galeria nem em notificações. Depois que você desbloqueia, um aviso informa quantas tentativas erradas foram fotografadas.</p>
+
+        <h2>O indicador de câmera</h2>
+        <p>No Android 12 e mais recentes, o celular mostra seu próprio ponto verde de câmera sempre que qualquer app usa a câmera. Isso é um recurso de privacidade do Android, e nenhum app consegue escondê-lo. A foto é tirada rapidamente, então o ponto aparece só por um instante.</p>
+
+        <h2>Use dentro da lei</h2>
+        <p>As regras sobre fotografar outras pessoas variam de país para país. Você é responsável por usar este recurso de forma legal onde mora. Veja mais nos nossos <a href="{{root}}terms">termos</a>.</p>
+        {{faq}}
+      </div>
+      {{related}}
+    </article>
+  </div>
+</section>
