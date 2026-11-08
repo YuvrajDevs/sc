@@ -1,0 +1,66 @@
+<!--meta {
+  "title": "Kunci pola untuk foto: kisi 5×5 yang hanya Anda ketahui",
+  "navTitle": "Kunci pola",
+  "description": "Sealcloak mengunci foto Anda dengan pola 5×5 sendiri, terpisah dari kunci layar ponsel, dengan opsi sidik jari dan waktu tunggu yang makin lama setelah pola salah.",
+  "keyword": "kunci foto dengan pola",
+  "summary": "Pola 5×5 sendiri, terpisah dari kunci layar ponsel, dengan opsi sidik jari.",
+  "date": "2026-11-08",
+  "readMins": 4,
+  "nav": "features",
+  "order": 1,
+  "sourceHash": "428e89c0c3a7",
+  "faq": [
+    {
+      "q": "Bisakah saya memakai PIN, bukan pola?",
+      "a": "Tidak. Setiap brankas dibuka dengan polanya sendiri, ditambah opsi buka dengan sidik jari atau wajah. Pola di kisi 5×5 punya jauh lebih banyak kombinasi daripada PIN 4 digit pada umumnya."
+    },
+    {
+      "q": "Bagaimana kalau saya lupa pola?",
+      "a": "Ketuk Lupa pola? lalu masukkan frasa pemulihan 9 kata yang Anda simpan saat pengaturan awal, kemudian gambar pola baru. Tanpa frasa itu, tidak ada yang bisa membuka brankas, termasuk kami."
+    },
+    {
+      "q": "Bisakah orang melihat pola saya dari bekas jari di layar?",
+      "a": "Serangan lewat bekas jari dan mengintip dari balik bahu mungkin terjadi pada pola apa pun. Lap layar sesekali, gambar pola di tempat yang tak terlihat, atau gunakan sidik jari di tempat umum."
+    },
+    {
+      "q": "Apakah pola saya disimpan di ponsel?",
+      "a": "Tidak. Pola diubah menjadi kunci dengan Argon2id, fungsi yang sengaja dibuat lambat, dan hanya hasilnya yang dipakai untuk membuka kunci brankas. Polanya sendiri tidak disimpan di mana pun."
+    }
+  ],
+  "steps": [
+    "Instal Sealcloak dan ketuk Siapkan brankas saya.",
+    "Gambar pola minimal 6 titik di kisi 5×5, lalu gambar sekali lagi.",
+    "Tulis frasa pemulihan 9 kata di kertas.",
+    "Jika mau, nyalakan buka dengan sidik jari di Setelan."
+  ]
+} -->
+<section class="panel">
+  <div class="panel-inner wrap">
+    <article class="article">
+      <div class="meta"><a href="{{root}}features">Fitur</a> · Kunci pola</div>
+      <h1>Kunci pola untuk foto: kisi 5×5 yang hanya Anda ketahui</h1>
+      <p class="lead">Brankas Anda dibuka dengan pola yang digambar di kisi 5×5. Pola ini terpisah dari kunci layar ponsel, jadi orang yang tahu PIN ponsel Anda tetap tidak bisa masuk.</p>
+      <div class="answer">
+        <div class="eyebrow">Singkatnya</div>
+        <p>Sealcloak memakai polanya sendiri di kisi 5×5, minimal 6 titik. Pola tidak pernah disimpan: pola diubah menjadi kunci yang membuka brankas Anda. Buka dengan sidik jari atau wajah bersifat opsional, dan pola selalu tetap bisa dipakai.</p>
+      </div>
+      <div class="prose">
+        <h2>Kenapa 5×5, bukan 3×3 seperti biasanya</h2>
+        <p>Kisi 3×3, seperti di kebanyakan layar kunci ponsel, hanya punya sedikit kemungkinan pola, dan banyak orang memilih bentuk yang itu-itu saja. Kisi 5×5 punya 25 titik, jadi pilihan polanya jauh lebih banyak, dan minimal 6 titik mencegah bentuk paling pendek yang paling mudah ditebak. Layar pengaturan menunjukkan seberapa kuat pola Anda saat Anda menggambarnya.</p>
+
+        <h2>Sengaja dibuat terpisah dari kunci ponsel</h2>
+        <p>Kebanyakan album pribadi bawaan dibuka dengan PIN yang sama dengan kunci ponsel Anda. Padahal orang yang paling mungkin mengintip sering kali justru orang yang sudah tahu PIN itu. Pola Sealcloak berdiri sendiri, dan setiap brankas bisa punya pola yang berbeda.</p>
+
+        {{cta}}
+
+        <h2>Yang terjadi setelah pola salah</h2>
+        <p>4 pola salah pertama berturut-turut tidak dikenai jeda. Setelah itu, aplikasi membuat Anda menunggu sebelum percobaan berikutnya, dan waktu tunggunya makin lama setiap kali. Mengubah jam ponsel tidak bisa melewatinya. Jika mau, Anda juga bisa menyalakan <a href="{{root}}features/intruder-photos">foto penyusup</a> dan, dengan Pro, <a href="{{root}}features/erase-after-wrong-patterns">hapus setelah pola salah</a>.</p>
+
+        <h2>Sidik jari atau wajah, jika Anda mau</h2>
+        <p>Nyalakan buka dengan sidik jari di Setelan untuk membuka brankas dengan sidik jari atau wajah tanpa menggambar pola. Android yang memeriksa biometriknya; aplikasi tidak pernah melihat sidik jari Anda. Pola Anda selalu tetap bisa dipakai, dan polalah yang tetap melindungi file.</p>
+        {{faq}}
+      </div>
+      {{related}}
+    </article>
+  </div>
+</section>
