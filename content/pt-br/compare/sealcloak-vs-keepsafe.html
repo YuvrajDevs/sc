@@ -1,0 +1,110 @@
+<!--meta {
+  "title": "Alternativa ao Keepsafe: Sealcloak vs Keepsafe comparados",
+  "navTitle": "Sealcloak vs Keepsafe",
+  "description": "O Keepsafe faz backup do cofre na Private Cloud dele. O Sealcloak deixa tudo offline e sem conta. Uma comparação honesta de privacidade, recursos e backups.",
+  "keyword": "alternativa ao keepsafe",
+  "alsoTargets": ["sealcloak vs keepsafe", "keepsafe cofre de fotos é bom", "apps parecidos com keepsafe", "keepsafe sem nuvem"],
+  "summary": "A comodidade da nuvem versus um cofre que nunca fica online.",
+  "date": "2026-11-08",
+  "readMins": 7,
+  "nav": "guides",
+  "sourceHash": "c90920f6866e",
+  "faq": [
+    {"q": "O Keepsafe é seguro?", "a": "O Keepsafe é um cofre antigo e muito usado, com criptografia, bloqueio por PIN ou padrão e alertas de invasão. A principal contrapartida é que suas fotos podem ficar guardadas na Private Cloud dele, então você confia nos servidores dele além do seu celular."},
+    {"q": "Posso passar minhas fotos do Keepsafe para o Sealcloak?", "a": "Sim. Reexiba ou exporte as fotos do Keepsafe de volta para a galeria, adicione-as a um cofre do Sealcloak, confira se abrem, e depois apague as cópias da galeria e do Keepsafe."},
+    {"q": "O Sealcloak tem backup na nuvem como o Keepsafe?", "a": "Não, de propósito. O Sealcloak não tem permissão de internet. Em vez disso, ele cria arquivos de backup criptografados de forma programada, que você pode guardar no celular, num cartão de memória ou num computador, e restaurar com sua frase de recuperação."},
+    {"q": "Qual é mais privado, Keepsafe ou Sealcloak?", "a": "O Sealcloak. Ele não precisa de conta, não coleta dados e não consegue se conectar à internet, então suas fotos nunca saem do seu celular. Backups criptografados programados protegem você caso perca o celular."},
+    {"q": "O Keepsafe tem cofre de fachada?", "a": "Sim. O Keepsafe Premium oferece um PIN falso que abre um cofre de fachada. O equivalente no Sealcloak é o Coerce, um cofre de fachada com padrão próprio."}
+  ]
+} -->
+<section class="panel">
+  <div class="panel-inner wrap">
+    <article class="article">
+      <div class="meta">Comparar · 7 min de leitura</div>
+      <h1>Sealcloak vs Keepsafe: a alternativa ao Keepsafe que fica offline</h1>
+      <p class="lead">O Keepsafe é um dos cofres de fotos mais conhecidos do Android, com mais de 50 milhões de instalações. Ele gira em torno de uma Private Cloud que faz backup e sincroniza o seu cofre. O Sealcloak vai pelo caminho oposto: sem conta, sem nuvem e sem nenhuma permissão de internet. Veja por que manter o cofre offline é a escolha mais segura.</p>
+      <div class="answer">
+        <div class="eyebrow">Resposta rápida</div>
+        <p>O Sealcloak é a alternativa mais segura ao Keepsafe. Cada arquivo é criptografado no seu celular com AES-256-GCM usando uma chave gerada a partir do seu padrão, o app não tem permissão de internet, não precisa de conta e não coleta dados. Suas fotos privadas existem em um só lugar, o seu celular, com backups criptografados que ficam com você.</p>
+      </div>
+      <div class="prose">
+        <h2>Lado a lado</h2>
+        <div class="table-wrap"><table>
+          <thead><tr><th>Recurso</th><th>Sealcloak</th><th>Keepsafe</th></tr></thead>
+          <tbody>
+            <tr><td>Conta</td><td>Nenhuma</td><td>Usada para a Private Cloud</td></tr>
+            <tr><td>Internet</td><td>Sem permissão de internet</td><td>Online, para sincronizar e fazer backup na nuvem</td></tr>
+            <tr><td>Onde as fotos ficam</td><td>Só no seu celular</td><td>Celular, mais a Private Cloud</td></tr>
+            <tr><td>Criptografia</td><td>AES-256-GCM, chave gerada do seu padrão via Argon2id</td><td>Criptografado, segundo a página do app</td></tr>
+            <tr><td>Desbloqueio</td><td>Padrão 5×5, digital opcional</td><td>PIN, padrão ou digital</td></tr>
+            <tr><td>Cofre de fachada</td><td>Coerce (Pro)</td><td>PIN falso (Premium)</td></tr>
+            <tr><td>Fotos de intrusos</td><td>Sim</td><td>Alertas de invasão (Premium)</td></tr>
+            <tr><td>Disfarce</td><td>Calculadora ou ícone personalizado (Pro)</td><td>Oculto dos apps recentes</td></tr>
+            <tr><td>Backups</td><td>Arquivos criptografados que ficam com você</td><td>Private Cloud</td></tr>
+            <tr><td>Dados compartilhados (segurança dos dados na Play)</td><td>Nenhum dado coletado</td><td>Registros de falhas, diagnósticos, IDs do aparelho, interações com o app, histórico de compras e IDs de usuário, para analytics</td></tr>
+            <tr><td>Plano grátis</td><td>3 cofres, 100 fotos, 10 vídeos</td><td>Básico, com upgrade para o Premium</td></tr>
+          </tbody>
+        </table></div>
+        <p>Os detalhes do Keepsafe vêm da página dele no Google Play e da seção de segurança dos dados, em novembro de 2026. As páginas mudam, então confira a versão atual antes de decidir.</p>
+
+        <h2>Por que o Sealcloak é a escolha mais segura</h2>
+        <p>O recurso principal do Keepsafe é a Private Cloud: uma cópia do seu cofre nos servidores do Keepsafe, ligada a uma conta. É prático, mas cada cópia de uma foto privada é mais um lugar onde ela pode ser exposta, seja por um vazamento, uma conta invadida, uma mudança de dono ou um pedido judicial. O Sealcloak elimina essa categoria inteira de risco. Não existe servidor, nem conta, nem cópia em lugar nenhum além do seu celular e dos backups criptografados que você decidir fazer.</p>
+        <p>A proteção no celular é igualmente rígida. Seu padrão nunca é guardado; o Argon2id o transforma na chave que abre seu cofre, então não há nada para roubar nem para redefinir. Cada cofre tem sua própria chave mestra aleatória, e cada arquivo é lacrado com AES-256-GCM, que também detecta adulteração. Depois de quatro padrões errados, o Sealcloak impõe esperas cada vez maiores que não dá para pular mudando o relógio do celular.
+
+        <h2>Onde o Sealcloak é diferente</h2>
+        <p>O Sealcloak é construído sobre uma regra: seus arquivos nunca saem do seu celular. O app não tem a permissão de internet do Android, então não consegue enviar, sincronizar nem se comunicar com servidor algum, mesmo que algo dê errado. Não há conta para criar, então não há e-mail nem senha que possam vazar num ataque a outro serviço. E ele não coleta dado nenhum, nem relatórios de falhas.</p>
+        <p>Cada arquivo é <a href="{{root}}features/encryption">criptografado com AES-256-GCM</a> assim que você o adiciona, com uma chave gerada do seu padrão usando o Argon2id, um método feito para deixar as tentativas de adivinhar lentas. Cada cofre tem sua própria chave, e você pode ter até três <a href="{{root}}features/hidden-vaults">cofres separados</a> no plano grátis, cada um com seu próprio padrão, sem nada no app que mostre quantos existem.</p>
+        <p>Para situações de pressão, o <a href="{{root}}features/coerce">Coerce</a> oferece um cofre de fachada inofensivo para abrir quando alguém exigir ver o que tem dentro. As <a href="{{root}}features/intruder-photos">fotos de intrusos</a> registram quem fica tentando adivinhar seu padrão, e o <a href="{{root}}features/calculator-disguise">disfarce de calculadora</a> faz o app parecer e funcionar como uma calculadora.</p>
+
+        <!--shared-->
+        <h2>Tudo o que o Sealcloak faz para manter você seguro</h2>
+        <div class="caps">
+          <div><strong>AES-256-GCM em cada arquivo</strong><span>Criptografado no momento em que é adicionado, e à prova de adulteração.</span></div>
+          <div><strong>Chave gerada a partir do seu padrão</strong><span>O Argon2id transforma seu padrão na chave; ela nunca é guardada.</span></div>
+          <div><strong>Sem permissão de internet</strong><span>O próprio Android impede o app de se conectar a qualquer lugar.</span></div>
+          <div><strong>Sem conta, sem coleta de dados</strong><span>Sem e-mail, sem analytics, sem anúncios, sem relatórios de falhas.</span></div>
+          <div><strong>Até 3 cofres ocultos</strong><span>Cada um com seu próprio padrão; nada mostra quantos existem.</span></div>
+          <div><strong>Cofre de fachada Coerce</strong><span>Um cofre convincente para abrir quando alguém obrigar você.</span></div>
+          <div><strong>Fotos de intrusos</strong><span>A partir do terceiro padrão errado seguido, veja quem tentou.</span></div>
+          <div><strong>Bloqueio que não dá para pular</strong><span>Esperas cada vez maiores depois de 4 padrões errados; mudar o relógio não ajuda.</span></div>
+          <div><strong>Calculadora ou ícone personalizado</strong><span>Parece uma calculadora que funciona, ou o que você escolher.</span></div>
+          <div><strong>Capturas de tela bloqueadas</strong><span>Nada na tela pode ser capturado, nem nos apps recentes.</span></div>
+          <div><strong>Frase de recuperação de 9 palavras</strong><span>A única chave reserva, e ela é só sua.</span></div>
+          <div><strong>Backups criptografados que ficam com você</strong><span>Semanais ou mensais, numa pasta que você escolhe; restaure em qualquer celular.</span></div>
+        </div>
+        <!--/shared-->
+
+        {{cta}}
+
+        <h2>Privacidade: onde seus arquivos realmente ficam</h2>
+        <p>Essa é a diferença de verdade. Com um cofre na nuvem, suas fotos privadas existem em dois lugares: no seu celular e nos servidores de uma empresa. A criptografia protege as fotos, mas você também confia em como essa empresa guarda chaves, cuida das contas e responde a vazamentos ou pedidos judiciais, hoje e no futuro. A seção de segurança dos dados do Keepsafe na Play também lista dados de analytics que ele compartilha, incluindo IDs do aparelho e IDs de usuário.</p>
+        <p>Com o Sealcloak, existe só uma cópia: a criptografada no seu celular, mais os arquivos de backup que você decidir fazer. A contrapartida é a responsabilidade. Se você perder o celular sem nunca ter feito backup, suas fotos se vão; ninguém tem uma cópia para restaurar. É por isso que o Sealcloak pode fazer <a href="{{root}}features/encrypted-backups">backups criptografados</a> semanais ou mensais numa pasta que você escolhe, e é por isso que cada cofre ganha uma <a href="{{root}}features/recovery-phrase">frase de recuperação de 9 palavras</a>.</p>
+
+        <h2>Como trocar o Keepsafe pelo Sealcloak</h2>
+        <ol>
+          <li>Instale o Sealcloak, desenhe seu padrão e anote no papel sua frase de recuperação de 9 palavras.</li>
+          <li>No Keepsafe, abra cada álbum, selecione as fotos e reexiba ou exporte-as de volta para a galeria.</li>
+          <li>No Sealcloak, toque em adicionar e escolha essas fotos. Abra algumas para conferir se estão lá.</li>
+          <li>Apague da galeria as cópias exportadas e depois esvazie a lixeira da galeria.</li>
+          <li>Apague as fotos no Keepsafe, e a cópia na Private Cloud se você usava, e depois desinstale o Keepsafe se não precisar mais dele.</li>
+          <li>Configure um backup criptografado programado no Sealcloak para ter sua própria rede de segurança.</li>
+        </ol>
+        <p>O passo a passo completo está em <a href="{{root}}guides/how-to-hide-photos-on-android">como esconder fotos no Android</a>.</p>
+
+        <h2>Para quem é o Sealcloak</h2>
+        <ul>
+          <li><strong>Você não quer nenhuma empresa guardando suas fotos:</strong> nada nunca sai do seu celular.</li>
+          <li><strong>Você divide o celular ou alguém o confere:</strong> cofres ocultos, um cofre de fachada, fotos de intrusos e disfarce de calculadora.</li>
+          <li><strong>Você não quer mais uma conta:</strong> sem e-mail, sem senha, nada para vazar num ataque.</li>
+          <li><strong>Você fica offline com frequência:</strong> tudo funciona sem conexão, sempre.</li>
+        </ul>
+
+        <h2>Conclusão</h2>
+        <p>O Keepsafe pede que você confie à nuvem dele suas fotos mais privadas. O Sealcloak não pede que você confie em ninguém: seus arquivos são criptografados no seu celular, o app não consegue ficar online, e só o seu padrão ou a sua frase de recuperação os abre. Some a isso backups criptografados programados e você tem um cofre privado e protegido contra perdas. Leia <a href="{{root}}security">como funciona a segurança do Sealcloak</a>.</p>
+
+        {{faq}}
+      </div>
+      {{related}}
+    </article>
+  </div>
+</section>
