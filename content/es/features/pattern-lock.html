@@ -1,0 +1,66 @@
+<!--meta {
+  "title": "Bloqueo con patrón para fotos: una cuadrícula de 5×5 que solo tú conoces",
+  "navTitle": "Bloqueo con patrón",
+  "description": "Sealcloak protege tus fotos con su propio patrón de 5×5, aparte del bloqueo del teléfono, con huella opcional y esperas cada vez más largas tras intentos fallidos.",
+  "keyword": "bloquear fotos con patrón",
+  "summary": "Su propio patrón de 5×5, aparte del bloqueo de tu teléfono, con huella opcional.",
+  "date": "2026-11-08",
+  "readMins": 4,
+  "nav": "features",
+  "order": 1,
+  "sourceHash": "428e89c0c3a7",
+  "faq": [
+    {
+      "q": "¿Puedo usar un PIN en lugar de un patrón?",
+      "a": "No. Cada bóveda se abre con su propio patrón, además del desbloqueo opcional con huella o rostro. Un patrón en una cuadrícula de 5×5 tiene muchísimas más combinaciones que un PIN típico de 4 dígitos."
+    },
+    {
+      "q": "¿Qué pasa si olvido mi patrón?",
+      "a": "Toca ¿Olvidaste tu patrón? y escribe la frase de recuperación de 9 palabras que guardaste al configurar la app; luego dibuja un patrón nuevo. Sin la frase, nadie puede abrir la bóveda, ni siquiera nosotros."
+    },
+    {
+      "q": "¿Alguien puede ver mi patrón por las marcas de los dedos en la pantalla?",
+      "a": "Los ataques por marcas en la pantalla o mirando por encima del hombro son posibles con cualquier patrón. Limpia la pantalla de vez en cuando, dibújalo donde no te vean o usa el desbloqueo con huella en público."
+    },
+    {
+      "q": "¿El patrón se guarda en mi teléfono?",
+      "a": "No. El patrón se convierte en una llave con Argon2id, una función lenta a propósito, y solo el resultado se usa para desbloquear la llave de tu bóveda. El patrón en sí no se guarda en ningún lado."
+    }
+  ],
+  "steps": [
+    "Instala Sealcloak y toca Configurar mi bóveda.",
+    "Dibuja un patrón de al menos 6 puntos en la cuadrícula de 5×5 y luego dibújalo otra vez.",
+    "Anota en papel la frase de recuperación de 9 palabras.",
+    "Si quieres, activa el desbloqueo con huella en Ajustes."
+  ]
+} -->
+<section class="panel">
+  <div class="panel-inner wrap">
+    <article class="article">
+      <div class="meta"><a href="{{root}}features">Funciones</a> · Bloqueo con patrón</div>
+      <h1>Bloqueo con patrón para fotos: una cuadrícula de 5×5 que solo tú conoces</h1>
+      <p class="lead">Tu bóveda se abre con un patrón dibujado en una cuadrícula de 5×5. Es independiente del bloqueo de pantalla de tu teléfono, así que quien conozca el PIN de tu teléfono igual no puede entrar.</p>
+      <div class="answer">
+        <div class="eyebrow">En resumen</div>
+        <p>Sealcloak usa su propio patrón en una cuadrícula de 5×5, de al menos 6 puntos. El patrón nunca se guarda: se convierte en la llave que desbloquea tu bóveda. El desbloqueo con huella o rostro es opcional, y el patrón siempre sigue funcionando.</p>
+      </div>
+      <div class="prose">
+        <h2>Por qué 5×5 en lugar del típico 3×3</h2>
+        <p>Una cuadrícula de 3×3, como la de la mayoría de las pantallas de bloqueo, tiene pocos patrones posibles, y mucha gente elige las mismas pocas figuras. Una cuadrícula de 5×5 tiene 25 puntos, así que hay muchísimos más patrones para elegir, y el mínimo de 6 puntos evita las figuras más cortas y fáciles de adivinar. La pantalla de configuración te muestra qué tan fuerte es tu patrón mientras lo dibujas.</p>
+
+        <h2>Aparte del bloqueo de tu teléfono, a propósito</h2>
+        <p>La mayoría de los álbumes privados que vienen en el teléfono se abren con el mismo PIN que desbloquea el teléfono. Y las personas con más probabilidades de mirar suelen ser justo las que ya lo conocen. El patrón de Sealcloak es solo suyo, y cada bóveda puede tener uno distinto.</p>
+
+        {{cta}}
+
+        <h2>Qué pasa después de patrones incorrectos</h2>
+        <p>Los primeros 4 patrones incorrectos seguidos no tienen consecuencias. Después, la app te hace esperar antes del siguiente intento, y la espera crece cada vez. Cambiar la hora del teléfono no la salta. Si quieres, también puedes activar las <a href="{{root}}features/intruder-photos">fotos de intrusos</a> y, con Pro, el <a href="{{root}}features/erase-after-wrong-patterns">borrado tras patrones incorrectos</a>.</p>
+
+        <h2>Huella o rostro, si lo prefieres</h2>
+        <p>Activa el desbloqueo con huella en Ajustes para abrir la bóveda con tu huella o tu rostro en lugar de dibujar. Android verifica la biometría; la app nunca ve tu huella. Tu patrón siempre sigue funcionando, y sigue siendo lo que protege los archivos.</p>
+        {{faq}}
+      </div>
+      {{related}}
+    </article>
+  </div>
+</section>
