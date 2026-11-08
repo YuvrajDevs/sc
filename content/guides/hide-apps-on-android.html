@@ -1,59 +1,121 @@
 <!--meta {
-  "title": "How to hide apps on Android, and make a vault look like something else",
+  "title": "How to hide apps on Android: every method, and its limits",
   "navTitle": "Hide apps on Android",
-  "description": "Ways to hide an app on Android: launcher hiding, Private space, Secure Folder, and disguising a vault app with its own icon and name. What each one really hides.",
+  "description": "Hide apps on Android with your launcher, Private space, Secure Folder or a disguised icon. Steps for Samsung, Xiaomi and Pixel, and what each leaves visible.",
   "keyword": "hide apps on android",
-  "summary": "Launcher hiding, Private space, Secure Folder or a disguised icon. What each one really hides.",
+  "alsoTargets": [
+    "how to hide apps on android",
+    "hide apps samsung",
+    "hide apps xiaomi",
+    "how to find hidden apps on android"
+  ],
+  "summary": "Launcher hiding, Private space, Secure Folder or a disguised icon, and what each really hides.",
   "date": "2026-10-24",
-  "readMins": 5,
-  "nav": "guides"
+  "updated": "2026-11-08",
+  "readMins": 7,
+  "nav": "guides",
+  "steps": [
+    "Decide whether you need to hide the app or just its contents",
+    "Try your launcher's hide-apps option",
+    "Use Private space or Secure Folder for stronger separation",
+    "For private files, use a vault that disguises itself and encrypts its contents"
+  ],
+  "faq": [
+    {
+      "q": "How do I hide apps on Samsung?",
+      "a": "Long-press the home screen, open Settings, and choose Hide apps on Home and Apps screens (wording varies by One UI version). For stronger separation, use Secure Folder."
+    },
+    {
+      "q": "How do I hide apps on Xiaomi or Redmi?",
+      "a": "Many Xiaomi phones have Hidden apps under Settings, Apps, App lock; others hide apps from the launcher's settings. The exact menu depends on your HyperOS or MIUI version."
+    },
+    {
+      "q": "Can people find hidden apps?",
+      "a": "Usually, yes. Hidden apps still appear in Settings, Apps, and in the Play Store's list of installed apps. Hiding stops a casual look, not a determined search."
+    },
+    {
+      "q": "What's the best way to hide a vault app?",
+      "a": "Use a vault that can disguise itself, such as Sealcloak's working calculator or custom icon and name, so there's nothing hidden to look for, and that encrypts its files in case someone finds it anyway."
+    },
+    {
+      "q": "Does hiding an app hide its notifications?",
+      "a": "Not always. Launcher hiding only removes the icon, so the app's notifications can still appear. Private space pauses its apps and their notifications while it's locked."
+    },
+    {
+      "q": "Can I hide Sealcloak itself?",
+      "a": "Yes. Turn on the calculator disguise or set a custom icon and name, and Sealcloak looks like an ordinary app on your home screen while the vault behind it stays encrypted."
+    }
+  ]
 } -->
 <section class="panel">
   <div class="panel-inner wrap">
     <article class="article">
-      <div class="meta">Guide · 5 min read</div>
+      <div class="meta">Guide · 7 min read</div>
       <h1>How to hide apps on Android</h1>
-      <p class="lead">Sometimes it isn’t only the photos you want hidden. It’s the fact that a vault app is on your phone at all. Here are the ways to hide an app on Android, and what each one leaves visible.</p>
+      <p class="lead">Sometimes it isn't only the photos you want private, it's the fact that an app is on your phone at all. Android gives you several ways to hide apps, from removing an icon to a whole separate locked space. Here's how each works on popular phones, and what it still leaves visible.</p>
+      <div class="answer">
+        <div class="eyebrow">Quick answer</div>
+        <p>To hide an app on Android, use your launcher's Hide apps option (on Samsung: Home screen settings, Hide apps), or move it into Private space on Android 15 and newer, or Secure Folder on Galaxy phones. Hidden apps still appear in Settings, so for a private vault, a disguised icon plus real encryption works best.</p>
+      </div>
       <div class="prose">
-        <h2>1. Hide it in your launcher</h2>
-        <p>Many launchers, including Samsung’s One UI and Nova, can hide an app from the home screen and app drawer. On Samsung: <strong>Home screen settings → Hide apps on Home and Apps screens</strong>.</p>
-        <p><strong>Watch out:</strong> the app still shows in Settings → Apps and in Play Store, and anyone can un-hide it from the same menu.</p>
+        <h2>Methods compared</h2>
+        <div class="table-wrap"><table>
+          <thead><tr><th>Method</th><th>Hides the icon</th><th>Hides from Settings</th><th>Locked</th><th>Phones</th></tr></thead>
+          <tbody>
+            <tr><td>Launcher hide apps</td><td>Yes</td><td>No</td><td>Sometimes</td><td>Most</td></tr>
+            <tr><td>App lock / hidden apps (brand feature)</td><td>Yes</td><td>No</td><td>Yes</td><td>Xiaomi, OPPO, vivo, realme and others</td></tr>
+            <tr><td>Private space</td><td>Yes</td><td>Separate profile</td><td>Yes</td><td>Android 15+</td></tr>
+            <tr><td>Samsung Secure Folder</td><td>Yes</td><td>Separate space</td><td>Yes</td><td>Galaxy</td></tr>
+            <tr><td>Disguised icon (vault apps)</td><td>Looks like another app</td><td>No</td><td>Yes</td><td>Any</td></tr>
+          </tbody>
+        </table></div>
+
+        <h2>1. Hide apps in your launcher</h2>
+        <p>Most launchers can remove an app from the home screen and app drawer without uninstalling it.</p>
+        <ol>
+          <li><strong>Samsung:</strong> long-press the home screen, tap Settings, then Hide apps on Home and Apps screens, and select the apps.</li>
+          <li><strong>Xiaomi, Redmi, POCO:</strong> look under Settings, Apps, App lock, Hidden apps, or in the home screen settings, depending on your version.</li>
+          <li><strong>OPPO, realme, OnePlus:</strong> search Settings for "Hide apps"; some versions use a dial-code to open them.</li>
+          <li><strong>Pixel:</strong> the stock launcher doesn't hide apps; use Private space instead.</li>
+        </ol>
+        <p><strong>Watch out:</strong> the app still appears in Settings, Apps, and in the Play Store's installed list, and anyone who knows the menu can unhide it.</p>
 
         <h2>2. Android Private space</h2>
-        <p>On Android 15 and newer, <strong>Settings → Security & privacy → Private space</strong> creates a locked area at the bottom of the app drawer. Apps installed there are hidden until you unlock it.</p>
-        <p><strong>Watch out:</strong> only on newer phones, and the Private space entry itself is visible to anyone who scrolls.</p>
+        <p>On Android 15 and newer, Settings, Security and privacy, Private space creates a locked area at the bottom of the app drawer. Apps installed inside are hidden and paused until you unlock it, and their notifications don't show while it's locked. On some phones you can hide the Private space entry itself, so it only appears when you search for it.</p>
+        <p><strong>Watch out:</strong> it's only on newer phones and depends on your phone maker. Compare it with a vault in <a href="{{root}}compare/sealcloak-vs-android-private-space">Private space vs Sealcloak</a>.</p>
 
         <h2>3. Samsung Secure Folder</h2>
-        <p>Secure Folder keeps separate copies of apps behind their own lock. You can even rename its icon. It needs a Samsung account and only works on Galaxy phones.</p>
+        <p>Secure Folder keeps separate copies of apps and their data behind their own lock, and you can rename its icon or hide it. It's one of the strongest built-in options on Galaxy phones. More in <a href="{{root}}compare/sealcloak-vs-samsung-secure-folder">Secure Folder compared</a>.</p>
 
         <h2>4. Disguise the app as something else</h2>
-        <p>Some vault apps can change their own icon and name, so on your home screen they look like an ordinary app. Opened normally, they show nothing unusual; only your code or pattern reveals the vault.</p>
-        <p>This works on any Android phone, and it’s the hardest for a curious person to notice, because there’s nothing “hidden” to look for.</p>
-
-        <h2>What to look for in a disguise</h2>
+        <p>Some vault apps can change their own icon and name, so on your home screen they look like an ordinary app. Opened normally, they show nothing unusual; only your code or pattern reveals the vault. This works on any Android phone, and it's the hardest for a curious person to notice, because there's nothing "hidden" to look for.</p>
+        <p>What makes a good disguise:</p>
         <ul>
-          <li><strong>Your choice of icon and name.</strong> A disguise works best when it blends in with the apps you already have.</li>
-          <li><strong>Real encryption underneath.</strong> The disguise hides that a vault exists; encryption is what protects the files if someone finds it.</li>
-          <li><strong>No account and no internet.</strong> Otherwise the “hidden” app is still talking to a server about you.</li>
+          <li><strong>A working front.</strong> A calculator that really calculates is far more convincing than a blank screen.</li>
+          <li><strong>Your choice of icon and name,</strong> so it blends in with apps you already have.</li>
+          <li><strong>Real encryption underneath.</strong> The disguise hides that a vault exists; encryption protects the files if someone finds it.</li>
+          <li><strong>No account and no internet,</strong> or the "hidden" app is still talking to a server about you.</li>
         </ul>
 
+        {{cta}}
+
+        <h2>How Sealcloak hides itself</h2>
+        <p>Sealcloak offers two disguises. The <a href="{{root}}features/calculator-disguise">calculator disguise</a> turns the app into a working calculator; you open the vault by typing your secret code of 4 to 8 digits and holding the equals key for two seconds. A <a href="{{root}}features/custom-icon">custom icon</a> lets you pick any picture and name. Either way, the vault behind it is <a href="{{root}}features/encryption">encrypted with AES-256-GCM</a>, screenshots are blocked so recent apps shows nothing, and the app has no internet permission. See <a href="{{root}}security">the security details</a>.</p>
+
         <h2>The honest limit</h2>
-        <p>Android’s Settings → Apps list always shows an app’s real name. A disguise is camouflage against a quick look, not against someone searching your phone in detail. That’s why the files inside still need strong encryption and a lock of their own.</p>
+        <p>Android's Settings, Apps list shows every installed app by its real name, and the Play Store lists what you've installed. No method makes an app truly invisible to someone who goes looking. That's why the contents matter more than the icon: a hidden app with unencrypted files is still exposed; a disguised vault with encrypted files stays private even if someone finds it. If you're worried about someone checking your phone, our page on <a href="{{root}}scenarios/someone-went-through-my-phone">what to do if someone went through your phone</a> may help.</p>
 
-        <div class="callout">
-          <div class="eyebrow">Our app</div>
-          <p><a href="{{root}}features">Sealcloak Pro</a> can disguise itself with any picture and name you choose, so it looks like another app on your home screen. Inside, every file is encrypted with AES-256, with no account and no internet permission.</p>
-        </div>
+        <h2>Hiding apps from children</h2>
+        <p>If the goal is stopping children opening certain apps on a phone you share, hiding isn't the best tool; they find menus quickly. App pinning keeps the phone locked to one app until you unlock it, and a kids mode or a separate device managed with Google Family Link gives them their own space. Our page on <a href="{{root}}scenarios/kids-using-my-phone">kids using your phone</a> walks through each option.</p>
 
-        <p>Related: <a href="{{root}}guides/how-to-hide-photos-on-android">How to hide photos on Android</a> · <a href="{{root}}guides/photo-vault-app-without-account">Photo vault apps that don’t need an account</a></p>
+        <h2>Hiding apps before handing over your phone</h2>
+        <p>Repairs, borrowed phones and checks at work or school are the moments people most often search for this. Hiding icons helps a little; a repair or maintenance mode helps more, because it hides your whole account. See <a href="{{root}}scenarios/phone-repair-private-photos">giving your phone for repair</a>.</p>
+
+        <h2>How to find hidden apps</h2>
+        <p>If you're checking your own phone for apps someone else installed, open Settings, Apps and scroll the full list, including system apps. Look for apps with device administrator access (Settings, Security) or accessibility access you didn't grant, and run a Play Protect scan from the Play Store.</p>
+        {{faq}}
       </div>
+      {{related}}
     </article>
-  </div>
-</section>
-
-<section class="panel final">
-  <div class="panel-inner wrap">
-    <h2>Hide the app, not just the photos.</h2>
-    <div class="cta-row"><a class="btn btn-primary btn-lg" href="{{play}}">Get it on Google Play</a></div>
   </div>
 </section>

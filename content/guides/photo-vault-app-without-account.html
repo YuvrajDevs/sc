@@ -1,56 +1,124 @@
 <!--meta {
-  "title": "Photo vault apps without an account: why it matters",
-  "navTitle": "Vault apps with no account",
-  "description": "Most photo vault apps want your email and upload to their cloud. Why a vault with no account and no internet is safer, and how backups work without a cloud.",
+  "title": "Photo vault app without an account: why it matters, what to check",
+  "navTitle": "Photo vault without an account",
+  "description": "Most photo vault apps want an account or upload to the cloud. Here's why a vault with no account and no internet is safer, and how to check any app.",
   "keyword": "photo vault app without account",
-  "summary": "Why a vault that never asks for your email, and never goes online, is the safer kind.",
+  "alsoTargets": [
+    "photo vault no account",
+    "offline photo vault app",
+    "photo vault without cloud",
+    "photo vault no internet"
+  ],
+  "summary": "Why a vault with no account and no internet is safer, and how to check.",
   "date": "2026-10-23",
-  "readMins": 5,
-  "nav": "guides"
+  "updated": "2026-11-08",
+  "readMins": 7,
+  "nav": "guides",
+  "steps": [
+    "Open the vault app's Google Play page",
+    "Read the Data safety section",
+    "Check whether it needs an account or uploads to a cloud",
+    "Check its permissions for internet access",
+    "Confirm it has a recovery method and backups that don't need an account"
+  ],
+  "faq": [
+    {
+      "q": "Is there a photo vault app without an account?",
+      "a": "Yes. Sealcloak needs no account, email or phone number, and has no internet permission at all. Your vault opens with your own pattern and recovers with a 9-word phrase you keep."
+    },
+    {
+      "q": "Why do photo vault apps ask for an account?",
+      "a": "Usually for cloud backup, syncing between devices, password reset or subscriptions. Each of those means some data about you, and sometimes your photos, leaves the phone."
+    },
+    {
+      "q": "How do I recover a vault without an account?",
+      "a": "A good offline vault gives you a recovery method you keep yourself. In Sealcloak, each vault has a 9-word recovery phrase; type it on the pattern screen to get back in."
+    },
+    {
+      "q": "Can I back up a vault with no account?",
+      "a": "Yes. Sealcloak makes encrypted backup files, by hand or on a schedule, in a folder you choose. Copy them to a computer or memory card, and restore them on any phone with your phrase."
+    },
+    {
+      "q": "How can I tell if a vault app uploads my photos?",
+      "a": "Check the Data safety section on its Google Play page for photos and videos collected or shared, look for cloud or sync features in the listing, and see whether the app needs internet access."
+    },
+    {
+      "q": "Is an offline vault less safe if I lose my phone?",
+      "a": "Not if you keep backups. Sealcloak's files are encrypted on the phone, so a thief can't read them, and your encrypted backup brings everything back on a new phone with your recovery phrase."
+    },
+    {
+      "q": "Do I need internet to use Sealcloak?",
+      "a": "No. Sealcloak has no internet permission and works fully offline: adding files, opening vaults, making backups and restoring them all happen on your phone."
+    }
+  ]
 } -->
 <section class="panel">
   <div class="panel-inner wrap">
     <article class="article">
-      <div class="meta">Guide · 5 min read</div>
-      <h1>Photo vault apps without an account</h1>
-      <p class="lead">Most photo vault apps ask for your email on day one, and many sync your photos to their cloud. For the most private photos on your phone, that’s backwards. Here’s why “no account” matters, and how to stay safe without a cloud.</p>
-      <div class="prose">
-        <h2>Why vault apps ask for an account</h2>
-        <ul>
-          <li><strong>Cloud backup.</strong> Your photos are uploaded so they can be restored later.</li>
-          <li><strong>Password reset.</strong> Forget your PIN, and they email you a reset link.</li>
-          <li><strong>Marketing.</strong> An email address is valuable to the company.</li>
-        </ul>
-        <p>Each one is convenient. Each one also means your private photos, or a key to them, exist somewhere other than your phone.</p>
-
-        <h2>The risk</h2>
-        <p>If a company can reset your password, then someone else who gets into your email, or into the company, may be able to as well. Uploaded photos are only as safe as that company’s servers, staff and policies, now and in the future.</p>
-
-        <h2>What “no account” looks like</h2>
-        <ul>
-          <li><strong>Encryption on the phone.</strong> Files are encrypted before they’re saved, with a key derived from your own lock.</li>
-          <li><strong>Recovery without email.</strong> A recovery phrase, written on paper, replaces “forgot password”.</li>
-          <li><strong>Backups you control.</strong> An encrypted backup file you keep, rather than someone else’s cloud.</li>
-          <li><strong>No internet.</strong> The strongest promise is an app that can’t go online at all.</li>
-        </ul>
-
-        <h2>The trade-off</h2>
-        <p>Without an account, nobody can rescue you. If you forget your lock and lose your recovery phrase, the files are gone. That’s the price of no back door, so write your phrase down and keep a backup.</p>
-
-        <div class="callout">
-          <div class="eyebrow">Our app</div>
-          <p><a href="{{root}}">Sealcloak</a> has no account, no cloud and no internet permission. Each vault has its own recovery phrase, and you can make encrypted backups by hand or on a schedule. <a href="{{root}}security">See how it works</a>.</p>
-        </div>
-
-        <p>Related: <a href="{{root}}guides/how-to-hide-photos-on-android">How to hide photos on Android</a> · <a href="{{root}}guides/hide-apps-on-android">How to hide apps on Android</a></p>
+      <div class="meta">Guide · 7 min read</div>
+      <h1>Photo vault app without an account</h1>
+      <p class="lead">Most photo vault apps want something before they protect anything: an email, a phone number, or a sign-in for their cloud. That account is another way into your private photos, and another place data about you lives. Here's why a vault without an account is safer, and how to check any app before you trust it.</p>
+      <div class="answer">
+        <div class="eyebrow">Quick answer</div>
+        <p>A photo vault without an account keeps your photos and your identity off anyone's servers. Look for one that needs no sign-in, has no internet permission, encrypts files on the phone, and gives you a recovery phrase and backups you hold yourself. Sealcloak works this way.</p>
       </div>
-    </article>
-  </div>
-</section>
+      <div class="prose">
+        <h2>Why an account is a risk</h2>
+        <ul>
+          <li><strong>Breaches.</strong> Accounts are stored on servers. When those leak, emails and passwords leak with them, and reused passwords open other doors.</li>
+          <li><strong>Account takeover.</strong> If someone gets into your email, they may reset your vault account too.</li>
+          <li><strong>Cloud copies.</strong> Many accounts exist to sync or back up photos online. A copy on a server is a copy you can't fully control.</li>
+          <li><strong>Tracking.</strong> An account ties your use of the app to your identity, often alongside analytics and advertising IDs.</li>
+          <li><strong>Pressure.</strong> Anything a company holds can be requested from it, or exposed if the company changes hands.</li>
+        </ul>
 
-<section class="panel final">
-  <div class="panel-inner wrap">
-    <h2>Private photos, no sign-up.</h2>
-    <div class="cta-row"><a class="btn btn-primary btn-lg" href="{{play}}">Get Sealcloak on Google Play</a></div>
+        <h2>How to check any vault app in two minutes</h2>
+        <ol>
+          <li>Open the app's page on Google Play and scroll to <strong>Data safety</strong>. Look at "Data shared" and "Data collected". Photos, videos, email, location or device IDs listed there tell you what leaves the phone.</li>
+          <li>Read the listing for words like <strong>cloud, sync, backup to our servers, sign in</strong>.</li>
+          <li>Check whether the app needs <strong>internet access</strong>. A vault that can't connect can't upload.</li>
+          <li>Find out how you <strong>recover</strong> if you forget your code. Email reset means an account; a phrase you keep means you're in control.</li>
+          <li>Check how <strong>backups</strong> work, and whether they're encrypted.</li>
+        </ol>
+
+        <h2>Common vault designs compared</h2>
+        <div class="table-wrap"><table>
+          <thead><tr><th>Design</th><th>Account</th><th>Where photos live</th><th>Recovery</th></tr></thead>
+          <tbody>
+            <tr><td>Cloud vault</td><td>Required</td><td>Phone and company servers</td><td>Email reset</td></tr>
+            <tr><td>Ad-supported vault</td><td>Optional</td><td>Phone, data shared with ad networks</td><td>Email or security question</td></tr>
+            <tr><td>Offline vault</td><td>None</td><td>Only your phone and your backups</td><td>A phrase you keep</td></tr>
+          </tbody>
+        </table></div>
+        <p>See how specific apps compare in our <a href="{{root}}compare/">comparisons</a>, for example <a href="{{root}}compare/sealcloak-vs-keepsafe">Sealcloak vs Keepsafe</a>.</p>
+
+        {{cta}}
+
+        <h2>How Sealcloak works without an account</h2>
+        <p>Sealcloak never asks for an email, phone number or sign-in, and it doesn't have Android's internet permission, so it can't upload anything even by mistake. Every file is <a href="{{root}}features/encryption">encrypted with AES-256-GCM</a> on your phone, using a key made from your <a href="{{root}}features/pattern-lock">pattern</a> with Argon2id. The pattern itself is never stored.</p>
+        <p>Without an account, recovery comes from you: each vault gets a <a href="{{root}}features/recovery-phrase">9-word recovery phrase</a> when you create it. Write it on paper. It's the only spare key, and nobody else, including us, has a copy. To protect against a lost phone, <a href="{{root}}features/encrypted-backups">encrypted backups</a> run by hand or every week or month to a folder you pick, and restore on any Android phone with your phrase. More in <a href="{{root}}how-it-works">how it works</a>.</p>
+
+        <h2>The trade-off, honestly</h2>
+        <p>No account means no company can rescue you. If you lose both your pattern and your recovery phrase and have no backup, nobody can open that vault. That's the same property that keeps everyone else out. Keep your phrase somewhere safe, away from the phone, and let scheduled backups run, and an offline vault is both private and dependable.</p>
+
+        <h2>What "no internet" really means</h2>
+        <p>Android apps have to declare the permissions they use, and internet access is one of them. An app without the internet permission can't open a network connection: no uploads, no analytics, no ads, no "anonymous" usage pings. That's a stronger guarantee than a privacy policy, because the operating system enforces it rather than the developer promising it.</p>
+        <p>You can see an app's permissions on its Google Play page under "About this app", then "App permissions", or on your phone in Settings, Apps, then the app, then Permissions. A vault that lists network access can talk to the internet; one that doesn't, can't.</p>
+
+        <h2>Accounts and changing phones</h2>
+        <p>The usual argument for an account is moving to a new phone. An offline vault handles that with a file instead of a login. Make an encrypted backup on the old phone, copy it across by cable, memory card or computer, and restore it on the new phone with your recovery phrase. The backup is encrypted, so it's safe to carry, and nothing ever passes through a company's servers. If you're selling the old phone afterwards, our guide on <a href="{{root}}scenarios/selling-old-phone-delete-photos">deleting photos before selling</a> covers the rest.</p>
+
+        <h2>Setting up an account-free vault</h2>
+        <ol>
+          <li>Install Sealcloak and draw a pattern of at least six dots, different from your screen lock.</li>
+          <li>Write down the 9-word recovery phrase on paper.</li>
+          <li>Add your private photos, then delete the originals from the gallery and empty its trash.</li>
+          <li>Turn on scheduled backups and copy a backup to a computer now and then.</li>
+        </ol>
+        <p>For other approaches, see <a href="{{root}}guides/how-to-hide-photos-on-android">how to hide photos on Android</a>.</p>
+        {{faq}}
+      </div>
+      {{related}}
+    </article>
   </div>
 </section>
