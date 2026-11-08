@@ -1,0 +1,53 @@
+<!--meta {
+  "title": "Bantuan",
+  "description": "Bantuan untuk Sealcloak. Kirim email dan lihat apa saja yang perlu disertakan agar cepat terbantu. Jawaban singkat soal lupa pola, cadangan, dan pembelian.",
+  "nav": "support",
+  "sourceHash": "f2ec391f7b62"
+} -->
+<section class="panel">
+  <div class="panel-inner wrap">
+    <div class="section-head">
+      <div class="eyebrow">Bantuan</div>
+      <h1 style="margin-top:20px">Kami siap membantu.</h1>
+      <p class="lead" style="margin-top:16px">Sealcloak tidak punya akun, jadi email adalah cara untuk menghubungi kami. Setiap pesan dibaca oleh orang sungguhan.</p>
+    </div>
+
+    <div class="contact-card">
+      <div class="contact-main">
+        <div class="eyebrow">Kirim email</div>
+        <a class="contact-email" href="mailto:{{email}}?subject=Sealcloak%20support" id="support-email">{{email}}</a>
+        <p>Tulis kepada kami dari aplikasi email apa pun. Kami membalas ke alamat pengirim pesan Anda.</p>
+      </div>
+      <div class="cta-row">
+        <a class="btn btn-primary btn-lg" href="mailto:{{email}}?subject=Sealcloak%20support">Tulis email</a>
+        <button class="btn btn-ghost btn-lg" type="button" id="copy-email" data-email="{{email}}">Salin alamat</button>
+      </div>
+    </div>
+
+    <div class="cards two" style="margin-top:12px">
+      <div class="card">
+        <h3>Sertakan ini, jika bisa</h3>
+        <p>Model ponsel dan versi Android Anda, versi Sealcloak (di Google Play, pada bagian Tentang aplikasi ini), apa yang Anda lakukan, dan apa yang terjadi sebaliknya. Tangkapan layar membantu, tetapi periksa dulu: aplikasi memblokir tangkapan layar di dalamnya, jadi jelaskan layar-layar itu dengan kata-kata.</p>
+      </div>
+      <div class="card">
+        <h3>Jangan pernah kirim ini</h3>
+        <p>Pola, frasa pemulihan, frasa sandi cadangan, atau kode rahasia Anda. Kami tidak akan pernah memintanya, dan kami tidak bisa memakainya: kami tidak punya cara untuk masuk ke brankas Anda.</p>
+      </div>
+    </div>
+
+    <div class="faq" style="margin:72px 0 0">
+    <div class="section-head" style="margin-bottom:12px">
+      <div class="eyebrow">Jawaban singkat</div>
+      <h2 style="margin-top:16px">Pertanyaan yang sering muncul.</h2>
+    </div>
+    <details><summary>Saya lupa pola.</summary><p>Di layar pola, ketuk “Gunakan frasa pemulihan” lalu ketik frasa yang Anda simpan saat pengaturan awal. Setelah itu gambar pola baru. Jika keduanya hilang, tidak ada yang bisa membuka brankas itu, termasuk kami.</p></details>
+    <details><summary>Saya sudah membeli Pro tetapi belum aktif.</summary><p>Buka layar Pro dan ketuk “Pulihkan pembelian”. Pastikan Anda masuk dengan akun Google yang sama dengan yang membayar. Pembelian ditangani oleh Google Play, jadi untuk pengembalian dana gunakan halaman Pembayaran & langganan di Google Play.</p></details>
+    <details><summary>Bagaimana cara membatalkan langganan?</summary><p>Buka aplikasi Google Play, ketuk profil Anda, lalu Pembayaran & langganan, lalu Langganan, dan pilih Sealcloak. Menghapus aplikasi tidak membatalkan langganan.</p></details>
+    <details><summary>Bagaimana cara memindahkan file ke ponsel baru?</summary><p>Ekspor cadangan di Setelan pada ponsel lama dan salin filenya. Di ponsel baru, instal Sealcloak, pilih “Pulihkan dari cadangan”, lalu masukkan frasa pemulihan brankas tersebut atau frasa sandi yang Anda atur.</p></details>
+    <details><summary>Cadangan tidak bisa diimpor.</summary><p>Pastikan Anda memakai kata pemulihan atau frasa sandi yang benar, dan cadangannya memang berasal dari Sealcloak. Jika muncul pesan bahwa cadangan dibuat oleh versi yang lebih baru, perbarui aplikasi lalu coba lagi. Jika muncul pesan bahwa cadangan tidak lengkap, semua yang masih bisa dibaca tetap dipulihkan.</p></details>
+    <details><summary>Foto penyusup tidak muncul.</summary><p>Aktifkan fitur ini di Setelan dan izinkan akses kamera. Dua pola salah pertama dimaafkan; mulai dari yang ketiga berturut-turut, setiap percobaan salah akan mengambil foto. Lihat fotonya di Setelan, setelah Anda membuka kunci.</p></details>
+    <details><summary>Saya menemukan bug atau masalah keamanan.</summary><p>Silakan kirim detailnya lewat email. Untuk masalah keamanan, sebutkan di baris subjek dan sertakan informasi yang cukup untuk mereproduksinya. Kami akan segera memeriksanya.</p></details>
+    <p style="margin-top:32px" class="dim">Jawaban lainnya ada di <a href="{{root}}faq">tanya jawab</a>. Lihat juga <a href="{{root}}privacy">kebijakan privasi</a> dan <a href="{{root}}terms">ketentuan penggunaan</a>.</p>
+    </div>
+  </div>
+</section>
