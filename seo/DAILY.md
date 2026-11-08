@@ -72,3 +72,8 @@ The new article is English only at first. The translation routine (`seo/TRANSLAT
 ## 7. Report
 
 End with three lines: the keyword and why you picked it, the page URL, and the word count. If anything blocked publishing, say what and stop. Don't push a page that hasn't passed the check.
+
+
+## After publishing
+- Make the share image: `python3 seo/og.py` (needs Pillow: `pip install pillow` if missing). Commit the new file in `assets/og/`.
+- About two minutes after pushing (once Vercel has deployed), tell Bing and other engines: `node seo/indexnow.mjs <section>/<slug>`.

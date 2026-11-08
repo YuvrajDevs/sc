@@ -107,7 +107,13 @@ function buildPage(lang, out, { meta, body }) {
         <p>${esc(g.summary || "")}</p>
       </a>`).join("");
 
+  // Share image: the page's own 1200×630 card (seo/og.py), else the logo
+  const ogKey = out.replace(/\.html$/, "");
+  const ogLarge = existsSync(`assets/og/${ogKey}.png`);
+  const ogImage = ogLarge ? `${SITE.url}/assets/og/${ogKey}.png` : `${SITE.url}/assets/img/logo-512.png`;
   const jsonLd = [
+    { "@context": "https://schema.org", "@type": "Organization", name: SITE.name, url: SITE.url, logo: `${SITE.url}/assets/img/logo-512.png`,
+      email: SITE.email, sameAs: [SITE.playUrl] },
     { "@context": "https://schema.org", "@type": "SoftwareApplication", name: SITE.name, operatingSystem: "Android",
       applicationCategory: "UtilitiesApplication", url: SITE.url, downloadUrl: SITE.playUrl,
       offers: { "@type": "Offer", price: "0", priceCurrency: "USD" } },
@@ -188,8 +194,10 @@ ${hreflang}
 <meta property="og:description" content="${esc(meta.description)}">
 <meta property="og:url" content="${url}">
 <meta property="og:locale" content="${lang.hreflang.replace("-", "_")}">
-<meta property="og:image" content="${SITE.url}/assets/img/logo-512.png">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="${ogImage}">${ogLarge ? `\n<meta property="og:image:width" content="1200">\n<meta property="og:image:height" content="630">` : ""}
+<meta property="og:site_name" content="${SITE.name}">
+<meta name="twitter:card" content="${ogLarge ? "summary_large_image" : "summary"}">
+<meta name="twitter:image" content="${ogImage}">
 <link rel="icon" type="image/png" href="${root}assets/img/favicon.png">
 <link rel="apple-touch-icon" href="${root}assets/img/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -306,5 +314,35 @@ ${sitemap.map((p) => {
 }).join("\n")}
 </urlset>
 `);
+// IndexNow key file (Bing, Yandex and others re-crawl pages we ping with seo/indexnow.mjs)
+if (SITE.indexNowKey) writeFileSync(join(OUT, `${SITE.indexNowKey}.txt`), SITE.indexNowKey);
+// llms.txt: a plain summary for AI search and assistants, with the most useful pages
+{
+  const en = (dir) => articles("en", dir).map((a) => `- [${a.navTitle || a.title}](${SITE.url}/${a.out.replace(/\.html$/, "")}): ${a.summary || a.description || ""}`).join("\n");
+  writeFileSync(join(OUT, "llms.txt"), `# ${SITE.name}
+
+> ${SITE.name} is an offline encrypted photo and file vault for Android. Files are encrypted on the phone with AES-256-GCM using a key derived from the user's 5x5 pattern (Argon2id). The app has no internet permission, no account and collects no data. It offers up to 3 hidden vaults, a decoy vault (Coerce), intruder photos, a calculator disguise, a 9-word recovery phrase and encrypted backups the user keeps. Android only; no iPhone version.
+
+- Google Play: ${SITE.playUrl}
+- Security details: ${SITE.url}/security
+- Features: ${SITE.url}/features
+- Support: ${SITE.email}
+
+## Features
+${en("features")}
+
+## Comparisons
+${en("compare")}
+
+## Free privacy tools (run in the browser, nothing uploaded)
+${en("tools")}
+
+## Guides
+${en("guides")}
+
+## Real situations
+${en("scenarios")}
+`);
+}
 writeFileSync(join(OUT, "robots.txt"), `User-agent: *\nAllow: /\n\nSitemap: ${SITE.url}/sitemap.xml\n`);
 console.log(`Built ${sitemap.length} pages into ${OUT}/: ${Object.entries(counts).map(([c, n]) => `${c} ${n}`).join(", ")}.`);
