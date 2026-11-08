@@ -1,0 +1,56 @@
+{
+  "_about": "What Sealcloak really is and does. Every article is checked against this. Never claim anything that is not here.",
+  "app": "Sealcloak",
+  "listingTitle": "Photo Lock - Sealcloak",
+  "platform": "Android 8.0 or newer only. No iPhone, iPad, Windows, Mac or web version.",
+  "price": {
+    "free": "3 vaults, 100 photos, 10 videos, 10 documents, 10 audio files",
+    "pro": "Unlimited files and vaults, calculator disguise, custom icon, Coerce, erase after wrong patterns",
+    "plansUSD": "Weekly $1.49, Monthly $4.99, Annual $14.99 (7-day free trial), Lifetime $29.99",
+    "plansINR": "Weekly ₹49, Monthly ₹149, Annual ₹599 (7-day free trial), Lifetime ₹999",
+    "billing": "Google Play"
+  },
+  "privacy": [
+    "No account, no email, no phone number",
+    "The app has no internet permission at all, so it cannot upload anything",
+    "No cloud, no sync, no analytics, no ads",
+    "Opts out of Android's automatic cloud backup of app data"
+  ],
+  "security": [
+    "Every file encrypted on the phone with AES-256-GCM",
+    "Pattern turned into a key with Argon2id",
+    "Each vault has its own random master key, wrapped with help from the Android Keystore",
+    "Screenshots and screen recording blocked inside the app",
+    "Wrong patterns: first 4 free, then growing waits that changing the clock does not skip"
+  ],
+  "unlock": [
+    "5x5 pattern grid, at least 6 dots",
+    "Optional fingerprint or face unlock (the pattern always still works)",
+    "9-word recovery phrase for each vault if the pattern is forgotten",
+    "Nobody, including the developer, can open a vault without the pattern or phrase"
+  ],
+  "features": [
+    "Hide photos, videos, documents (PDF etc.), audio, text notes and scans",
+    "Built-in camera: photos and videos taken inside go straight into the vault, never the gallery",
+    "Document scanner that makes a PDF",
+    "Folders, move, copy, search, slideshow",
+    "Up to 3 separate vaults free, each with its own pattern; nothing shows how many exist",
+    "Intruder photos (optional): from the 3rd wrong pattern in a row, the front camera takes a photo, viewable only after unlocking",
+    "Coerce (Pro): a harmless decoy vault with its own pattern, for when someone forces you to unlock; can optionally erase other vaults, off by default, needs the word PERMIT typed",
+    "Calculator disguise (Pro): app becomes a working calculator; type the secret code (4–8 digits) and hold = for 2 seconds",
+    "Custom icon (Pro): any picture and name on the home screen",
+    "Erase after wrong patterns (Pro): off by default, needs PERMIT typed",
+    "Encrypted backups by hand or weekly/monthly schedule to a folder you choose; restore on a new phone with the recovery phrase or a passphrase",
+    "Share files as a passphrase-locked package",
+    "Adding files offers to keep the originals; the user deletes originals from the gallery themselves"
+  ],
+  "notTrue": [
+    "There is no iPhone/iOS version",
+    "There is no cloud backup or sync",
+    "There is no PIN or password unlock for the vault (pattern, plus optional fingerprint)",
+    "Sealcloak cannot recover a vault if both pattern and recovery phrase are lost",
+    "It is not open source",
+    "It cannot hide other apps; it can only disguise itself",
+    "It does not hide files inside other apps such as WhatsApp; files must be added to the vault"
+  ]
+}

@@ -24,10 +24,41 @@ function outPath(rel) { return rel.replace(/\.html$/, "") === "index" ? "index.h
 function rootFrom(out) { const depth = out.split("/").length - 1; return depth ? "../".repeat(depth) : "./"; }
 function pageUrl(out) { return SITE.url + "/" + out.replace(/(^|\/)index\.html$/, "$1").replace(/\.html$/, ""); }
 
-const guides = readdirSync("content/guides").filter((f) => f.endsWith(".html") && f !== "index.html").map((f) => {
-  const { meta } = parse(join("content/guides", f));
-  return { ...meta, out: "guides/" + f };
-}).sort((a, b) => b.date.localeCompare(a.date));
+// Articles: guides (one per search question) and compare pages (Sealcloak vs another app).
+function articles(dir) {
+  if (!existsSync(join("content", dir))) return [];
+  return readdirSync(join("content", dir)).filter((f) => f.endsWith(".html") && f !== "index.html").map((f) => {
+    const { meta } = parse(join("content", dir, f));
+    return { ...meta, out: `${dir}/${f}`, slug: f.replace(/\.html$/, ""), section: dir };
+  }).sort((a, b) => b.date.localeCompare(a.date));
+}
+const guides = articles("guides");
+const compares = articles("compare");
+const allArticles = [...guides, ...compares];
+
+// Play links carry the page they came from, so Play Console's acquisition report shows which articles bring installs.
+function playLink(section, slug) {
+  if (!slug) return SITE.playUrl;
+  const ref = `utm_source=sealcloak-site&utm_medium=${section}&utm_campaign=${slug}`;
+  return `${SITE.playUrl}&referrer=${encodeURIComponent(ref)}`;
+}
+
+// The closest other articles by shared words in keyword and title, for "Keep reading".
+const words = (a) => new Set(`${a.keyword || ""} ${a.title}`.toLowerCase().replace(/[^a-z0-9 ]/g, " ").split(/\s+/).filter((w) => w.length > 3));
+function related(me, n = 3) {
+  const mine = words(me);
+  return allArticles.filter((a) => a.out !== me.out)
+    .map((a) => ({ a, s: [...words(a)].filter((w) => mine.has(w)).length + (a.section === me.section ? 0.5 : 0) }))
+    .sort((x, y) => y.s - x.s || y.a.date.localeCompare(x.a.date)).slice(0, n).map((x) => x.a);
+}
+
+function ctaCard(section, slug, root) {
+  return `<div class="cta-card">
+          <img src="${root}assets/img/logo-512.png" alt="" width="56" height="56">
+          <div><h3>Keep them locked, offline</h3><p>Sealcloak encrypts your photos, videos and files on your phone. No account, no cloud, no internet permission.</p></div>
+          <a class="btn btn-primary" href="${playLink(section, slug)}">Get it free on Google Play</a>
+        </div>`;
+}
 
 function guideCards(list, root) {
   return list.map((g) => `
@@ -50,16 +81,41 @@ function layout({ meta, body, out }) {
       offers: { "@type": "Offer", price: "0", priceCurrency: "USD" } },
     ...(meta.jsonLd || []),
   ];
+  const art = allArticles.find((a) => a.out === out);
+  if (art) {
+    const sectionName = art.section === "compare" ? "Compare" : "Guides";
+    jsonLd.push({ "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: SITE.url + "/" },
+      { "@type": "ListItem", position: 2, name: sectionName, item: `${SITE.url}/${art.section}/` },
+      { "@type": "ListItem", position: 3, name: meta.navTitle || meta.title, item: url } ] });
+  }
+  if (meta.faq?.length) jsonLd.push({ "@context": "https://schema.org", "@type": "FAQPage",
+    mainEntity: meta.faq.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })) });
+  if (meta.steps?.length) jsonLd.push({ "@context": "https://schema.org", "@type": "HowTo", name: meta.title,
+    step: meta.steps.map((t, i) => ({ "@type": "HowToStep", position: i + 1, text: t })) });
   if (meta.date) jsonLd.push({ "@context": "https://schema.org", "@type": "Article", headline: meta.title,
     description: meta.description, datePublished: meta.date, dateModified: meta.updated || meta.date,
     author: { "@type": "Organization", name: SITE.name }, mainEntityOfPage: url });
 
+  if (art) {
+    // Every article ends with its FAQ (from meta), then "Keep reading" links to the closest other articles.
+    const faq = meta.faq?.length ? `
+      <h2>Frequently asked questions</h2>
+${meta.faq.map((f) => `      <h3>${esc(f.q)}</h3>\n      <p>${esc(f.a)}</p>`).join("\n")}` : "";
+    body = body.replace("{{faq}}", faq)
+      .replaceAll("{{cta}}", ctaCard(art.section, art.slug, root))
+      .replaceAll("{{play}}", playLink(art.section, art.slug))
+      .replace("{{related}}", `<div class="keep-reading"><div class="eyebrow">Keep reading</div><div class="cards">${guideCards(related(art), root)}
+        </div></div>`);
+    body += `\n<div class="sticky-cta" aria-hidden="false"><span>Hide them properly. Free, offline.</span><a class="btn btn-primary" href="${playLink(art.section, art.slug)}">Get the app</a></div>`;
+  }
   body = body
     .replaceAll("{{root}}", root)
     .replaceAll("{{play}}", SITE.playUrl)
     .replaceAll("{{email}}", SITE.email)
     .replace("{{latestGuides}}", guideCards(guides.slice(0, 3), root))
-    .replace("{{allGuides}}", guideCards(guides, root));
+    .replace("{{allGuides}}", guideCards(guides, root))
+    .replace("{{allCompares}}", guideCards(compares, root));
 
   return `<!doctype html>
 <html lang="en" data-theme="dark">
@@ -131,6 +187,7 @@ ${body.trim()}
       <div><h4>Guides</h4><ul>
 ${guides.slice(0, 4).map((g) => `        <li><a href="${root}${g.out.replace(/\.html$/, "")}">${esc(g.navTitle || g.title)}</a></li>`).join("\n")}
         <li><a href="${root}guides/">All guides</a></li>
+        <li><a href="${root}compare/">Compare apps</a></li>
       </ul></div>
       <div><h4>Help</h4><ul>
         <li><a href="${root}faq">FAQ</a></li>
@@ -153,7 +210,7 @@ ${guides.slice(0, 4).map((g) => `        <li><a href="${root}${g.out.replace(/\.
 const PLAY_ICON = `<svg class="play-ico" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.3 2.4a1.4 1.4 0 0 0-.6 1.2v16.8c0 .5.2.9.6 1.2l9.5-9.6-9.5-9.6Zm10.6 10.7 2.6 2.6-11 6.3 8.4-8.9Zm3.8-3.4 2.6 1.5c.9.5.9 1.7 0 2.2l-2.7 1.6-2.9-2.8 3-2.5ZM6.5 1.9l11 6.3-2.6 2.7-8.4-9Z"/></svg>`;
 function playIcons(html) {
   const href = SITE.playUrl.replace(/[.?]/g, "\\$&");
-  return html.replace(new RegExp(`(<a [^>]*href="${href}"[^>]*>)(?!<svg)`, "g"), `$1${PLAY_ICON}`);
+  return html.replace(new RegExp(`(<a [^>]*href="${href}[^"]*"[^>]*>)(?!<svg)`, "g"), `$1${PLAY_ICON}`);
 }
 
 function walk(dir) {

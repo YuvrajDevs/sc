@@ -1,0 +1,36 @@
+{
+  "_about": "Search phrases the daily collector expands into real autocomplete suggestions. 'deep' seeds are also expanded with a–z.",
+  "deep": [
+    "hide photos",
+    "photo vault",
+    "hide videos",
+    "gallery lock",
+    "app lock",
+    "hide apps",
+    "private photos",
+    "lock photos"
+  ],
+  "shallow": [
+    "calculator vault",
+    "secret photo album",
+    "hide pictures",
+    "hidden folder android",
+    "secure folder",
+    "private space android",
+    "vault app",
+    "hide files android",
+    "lock folder android",
+    "hide gallery",
+    "keepsafe",
+    "lockmypix",
+    "vaulty",
+    "calculator lock",
+    "photo locker",
+    "hide private photos",
+    "encrypt photos android",
+    "hide photos from gallery",
+    "hide whatsapp photos",
+    "intruder selfie"
+  ],
+  "brands": ["samsung", "redmi", "xiaomi", "vivo", "oppo", "realme", "oneplus", "poco", "motorola", "pixel", "infinix", "tecno", "iqoo", "nothing phone"]
+}
