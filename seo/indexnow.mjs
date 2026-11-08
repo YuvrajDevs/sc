@@ -6,7 +6,7 @@ const SITE = JSON.parse(readFileSync(new URL("../site.json", import.meta.url)));
 const host = new URL(SITE.url).host;
 let urls = process.argv.slice(2).map((p) => `${SITE.url}/${p.replace(/^\//, "")}`);
 if (!urls.length) urls = [...readFileSync(new URL("../public/sitemap.xml", import.meta.url), "utf8").matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1]);
-const res = await fetch("https://api.indexnow.org/indexnow", {
+const res = await fetch("https://www.bing.com/indexnow", {
   method: "POST", headers: { "content-type": "application/json; charset=utf-8" },
   body: JSON.stringify({ host, key: SITE.indexNowKey, keyLocation: `${SITE.url}/${SITE.indexNowKey}.txt`, urlList: urls.slice(0, 10000) }),
 });
