@@ -1,0 +1,77 @@
+<!--meta {
+  "title": "Remove location from photos: free, private, in your browser",
+  "navTitle": "Remove photo location",
+  "description": "See and remove the hidden GPS location, phone model and date from your photos before you share them. Free, runs in your browser, nothing is uploaded.",
+  "keyword": "remove location from photos",
+  "alsoTargets": ["remove gps from photo", "remove exif data", "photo metadata remover", "remove location from picture android"],
+  "summary": "See what a photo reveals, and strip its GPS location before you share it. Nothing is uploaded.",
+  "date": "2026-11-08",
+  "readMins": 4,
+  "nav": "guides",
+  "faq": [
+    {"q": "Is my photo uploaded anywhere?", "a": "No. The tool runs entirely in your browser tab. Your photo is read, cleaned and handed back on your own device, and the page makes no network requests with it."},
+    {"q": "Does removing the location lower the photo quality?", "a": "No. The tool removes the hidden data blocks only. The image itself is copied byte for byte, so nothing is re-compressed."},
+    {"q": "Will my photo turn sideways after cleaning?", "a": "It shouldn't. Phones store rotation in the same hidden data, so the tool writes back just the rotation and nothing else."},
+    {"q": "Do WhatsApp and Instagram remove location already?", "a": "Most big apps strip location when they compress a photo, but files sent as documents, by email, Bluetooth, cloud links or USB usually keep everything. Cleaning first means you don't have to rely on it."},
+    {"q": "Can I stop my phone adding location in the first place?", "a": "Yes. In your camera app's settings, turn off location tags (often called Save location or Location tags). New photos then won't include GPS coordinates."}
+  ]
+} -->
+<section class="panel">
+  <div class="panel-inner wrap">
+    <article class="article">
+      <div class="meta"><a href="{{root}}tools/">Free tools</a> · Runs in your browser</div>
+      <h1>Remove location from photos</h1>
+      <p class="lead">Most phone photos carry hidden data: the exact GPS spot where they were taken, your phone’s model and the date and time. Check a photo here, and download a clean copy before you share it.</p>
+
+      <div class="meta-drop" id="meta-drop">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/><path d="M4 4l16 16"/></svg>
+        <p><strong>Drop photos here</strong> or</p>
+        <label class="btn btn-primary">Choose photos<input id="meta-input" type="file" accept="image/jpeg,image/png" multiple hidden></label>
+        <p class="dim">JPEG and PNG. Your photos never leave this device.</p>
+      </div>
+      <ul class="meta-results" id="meta-results" aria-live="polite"></ul>
+
+      <div class="answer">
+        <div class="eyebrow">Quick answer</div>
+        <p>To remove the location from a photo, open it in the tool above and download the clean copy. It removes the GPS coordinates, phone model, date and other hidden data without touching the image. To stop new photos getting a location, turn off location tags in your camera app’s settings.</p>
+      </div>
+      <div class="prose">
+        <h2>What a photo can reveal</h2>
+        <p>Photos store extra details called EXIF metadata. Depending on your phone and settings, a single picture can include:</p>
+        <ul>
+          <li><strong>GPS coordinates</strong>, often accurate to a few metres. A photo taken at home can reveal your address.</li>
+          <li><strong>Date and time</strong> to the second.</li>
+          <li><strong>Phone make and model</strong>, and sometimes the lens and camera settings.</li>
+          <li><strong>Editing history and text notes</strong> added by some apps.</li>
+        </ul>
+        <p>None of this is visible when you look at the photo. It travels with the file whenever you send it as a document, upload it to a website, post it on a forum, or share it by email, Bluetooth or a cloud link.</p>
+
+        <h2>How to stop your Android phone adding location</h2>
+        <ol>
+          <li>Open your <strong>Camera</strong> app and go to its settings (usually a gear icon).</li>
+          <li>Find <strong>Location tags</strong>, <strong>Save location</strong> or <strong>GPS tag</strong> and turn it off.</li>
+          <li>Take a test photo and check it here: no location should appear.</li>
+        </ol>
+        <p>The wording differs by brand (Samsung, Xiaomi, vivo, OPPO and Pixel each name it slightly differently). Photos you already took still carry their location, so clean those before sharing.</p>
+
+        <h2>How this tool works</h2>
+        <p>The tool reads the photo inside your browser, removes the blocks that hold hidden data (EXIF and XMP, IPTC and comments in JPEGs, and text chunks in PNGs), and gives you a new file. The image data itself is copied exactly, so there’s no quality loss. Because phones store rotation in the same place, it writes back the rotation alone, so your photo stays the right way up.</p>
+        <p>There’s no upload, no account and no tracking on this site. You can even load the page, switch off your internet, and it still works.</p>
+
+        {{cta}}
+
+        <h2>When location matters most</h2>
+        <ul>
+          <li>Selling something online from home.</li>
+          <li>Sending photos to someone you’ve only met online.</li>
+          <li>Posting pictures of your children, your car or your home.</li>
+          <li>Sharing evidence or documents where your whereabouts should stay private.</li>
+        </ul>
+        <p>Private photos you don’t want to share at all are better kept out of the gallery entirely. See <a href="{{root}}guides/how-to-hide-photos-on-android">how to hide photos on Android</a> and how Sealcloak’s <a href="{{root}}features/encryption">encryption</a> keeps them unreadable.</p>
+        {{faq}}
+      </div>
+      {{related}}
+    </article>
+  </div>
+</section>
+<script src="{{root}}js/tool-metadata.js" defer></script>

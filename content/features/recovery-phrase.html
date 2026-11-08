@@ -1,0 +1,62 @@
+<!--meta {
+  "title": "Vault recovery phrase: get back in if you forget your pattern",
+  "navTitle": "Recovery phrase",
+  "description": "Every Sealcloak vault has a 9-word recovery phrase. If you forget your pattern, it gets you back in. Without it, nobody can open the vault, us included.",
+  "keyword": "vault recovery phrase",
+  "summary": "9 words that get you back in. Without them, nobody can open the vault.",
+  "date": "2026-11-08",
+  "readMins": 4,
+  "nav": "features",
+  "order": 8,
+  "faq": [
+    {
+      "q": "Can Sealcloak reset my pattern if I lose the phrase?",
+      "a": "No. Nobody holds a copy of your keys, so without the pattern or the phrase the vault can't be opened."
+    },
+    {
+      "q": "Can I see my recovery phrase again later?",
+      "a": "Write it down at setup. For safety, the phrase isn't something you should store on the same phone as the vault."
+    },
+    {
+      "q": "Does each vault have its own phrase?",
+      "a": "Yes. Every vault, including extra hidden vaults, has its own phrase."
+    },
+    {
+      "q": "What if a system update resets the phone's security key?",
+      "a": "The app tells you, and your recovery phrase gets you back in."
+    }
+  ]
+} -->
+<section class="panel">
+  <div class="panel-inner wrap">
+    <article class="article">
+      <div class="meta"><a href="{{root}}features">Features</a> · Recovery phrase</div>
+      <h1>Vault recovery phrase: get back in if you forget your pattern</h1>
+      <p class="lead">Strong encryption means there&#x27;s no back door. Your recovery phrase is the way back in that only you hold.</p>
+      <div class="answer">
+        <div class="eyebrow">In short</div>
+        <p>When you set up a vault, Sealcloak shows a 9-word recovery phrase and checks you&#x27;ve written it down. If you forget your pattern, tap Forgot your pattern?, enter the phrase and draw a new one. The phrase also unlocks backups. Without the pattern or the phrase, nobody can open the vault, including us.</p>
+      </div>
+      <div class="prose">
+        <h2>Recovering a forgotten pattern</h2>
+        <ol><li>On the pattern screen, tap Forgot your pattern?</li><li>Enter your 9 recovery words.</li><li>Draw a new pattern, then draw it again.</li><li>Your vault opens with all its files.</li></ol>
+
+        <h2>Why there&#x27;s no &#x27;reset by email&#x27;</h2>
+        <p>A reset link needs a company that holds a key to your files. Sealcloak has no account and no server, and your files are <a href="{{root}}features/encryption">encrypted</a> on your phone. That's what keeps them private, and it's also why the phrase matters so much.</p>
+
+        {{cta}}
+
+        <h2>Random words or your own sentence</h2>
+        <p>At setup, Sealcloak gives you 9 random words. You can choose to write your own sentence of six words or more instead. Random words are harder to guess; a sentence of your own can be easier to remember. Either way, it's the only way back in.</p>
+
+        <h2>Where to keep it</h2>
+        <ul><li>On paper, somewhere safe at home.</li><li>Not in a note, photo, screenshot or message on the same phone.</li><li>One phrase per vault: label each one so you know which is which.</li></ul>
+
+        <h2>It also protects your backups</h2>
+        <p>When you <a href="{{root}}features/encrypted-backups">export a backup</a>, the recommended choice locks it with your recovery phrase. Entering it also checks you still have the right words.</p>
+        {{faq}}
+      </div>
+      {{related}}
+    </article>
+  </div>
+</section>

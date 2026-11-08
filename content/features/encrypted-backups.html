@@ -1,0 +1,59 @@
+<!--meta {
+  "title": "Encrypted backups: move your vault to a new phone",
+  "navTitle": "Encrypted backups",
+  "description": "Back up your Sealcloak vault as one encrypted file, by hand or weekly or monthly, to a folder you choose. Restore it on a new phone with your phrase.",
+  "keyword": "photo vault backup",
+  "summary": "One encrypted file, by hand or on a schedule. Restore on any phone.",
+  "date": "2026-11-08",
+  "readMins": 4,
+  "nav": "features",
+  "order": 9,
+  "faq": [
+    {
+      "q": "Does Sealcloak upload my backups?",
+      "a": "No. The app has no internet permission. It saves the file where you choose; moving it anywhere else is up to you."
+    },
+    {
+      "q": "Can I open a backup without the phrase?",
+      "a": "No. A backup opens only with the recovery phrase or passphrase used to make it."
+    },
+    {
+      "q": "Will restoring twice duplicate my files?",
+      "a": "No. Files that are already in the vault are skipped, so importing the same backup again is safe."
+    },
+    {
+      "q": "What happens if a backup is damaged?",
+      "a": "Sealcloak restores everything it can read and tells you how many files couldn't be restored."
+    }
+  ]
+} -->
+<section class="panel">
+  <div class="panel-inner wrap">
+    <article class="article">
+      <div class="meta"><a href="{{root}}features">Features</a> · Encrypted backups</div>
+      <h1>Encrypted backups: move your vault to a new phone</h1>
+      <p class="lead">An offline vault needs a plan for lost or broken phones. Sealcloak&#x27;s backups are single encrypted files you keep wherever you like.</p>
+      <div class="answer">
+        <div class="eyebrow">In short</div>
+        <p>Export a backup in Settings and Sealcloak writes one encrypted file to a folder you choose, then checks it can be read back. Lock it with your recovery phrase or a passphrase. To restore, install Sealcloak on the new phone, choose Restore from a backup and enter the same phrase or passphrase. Scheduled backups can run weekly or monthly on their own.</p>
+      </div>
+      <div class="prose">
+        <h2>Making a backup</h2>
+        <ol><li>In Settings, under Backup, tap Export backup.</li><li>Choose Use my recovery phrase (recommended) or a passphrase of at least 8 characters.</li><li>Pick where to save the file.</li><li>Wait for Backup verified. The app reads the file back to check it.</li></ol>
+
+        <h2>Scheduled backups</h2>
+        <p>Set up a scheduled backup to save a file by itself every week or month, to a folder you choose. If that folder is one your Drive or another sync app watches, the encrypted file goes off-phone automatically, without Sealcloak itself ever touching the internet.</p>
+
+        {{cta}}
+
+        <h2>Restoring on a new phone</h2>
+        <ol><li>Copy the backup file to the new phone.</li><li>Install Sealcloak and tap Restore from a backup.</li><li>Set a pattern for the new vault and note its recovery phrase.</li><li>Choose the backup file and enter its phrase or passphrase.</li></ol><p>Importing is safe to repeat: files you already have are skipped.</p>
+
+        <h2>Keep the file safe</h2>
+        <p>The file is encrypted, but it's only as private as the place you keep it, and anyone with both the file and its key can open it. Keep the key on paper, separate from the file. The app's Security checkup reminds you if there's no recent backup. Lost the phrase too? See <a href="{{root}}features/recovery-phrase">recovery phrase</a>.</p>
+        {{faq}}
+      </div>
+      {{related}}
+    </article>
+  </div>
+</section>

@@ -2,6 +2,18 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://sealcloak.app/compare/</loc><lastmod>2026-11-08</lastmod></url>
   <url><loc>https://sealcloak.app/faq</loc><lastmod>2026-11-08</lastmod></url>
+  <url><loc>https://sealcloak.app/features/calculator-disguise</loc><lastmod>2026-11-08</lastmod></url>
+  <url><loc>https://sealcloak.app/features/coerce</loc><lastmod>2026-11-08</lastmod></url>
+  <url><loc>https://sealcloak.app/features/custom-icon</loc><lastmod>2026-11-08</lastmod></url>
+  <url><loc>https://sealcloak.app/features/encrypted-backups</loc><lastmod>2026-11-08</lastmod></url>
+  <url><loc>https://sealcloak.app/features/encryption</loc><lastmod>2026-11-08</lastmod></url>
+  <url><loc>https://sealcloak.app/features/erase-after-wrong-patterns</loc><lastmod>2026-11-08</lastmod></url>
+  <url><loc>https://sealcloak.app/features/hidden-vaults</loc><lastmod>2026-11-08</lastmod></url>
+  <url><loc>https://sealcloak.app/features/intruder-photos</loc><lastmod>2026-11-08</lastmod></url>
+  <url><loc>https://sealcloak.app/features/pattern-lock</loc><lastmod>2026-11-08</lastmod></url>
+  <url><loc>https://sealcloak.app/features/private-camera-and-scanner</loc><lastmod>2026-11-08</lastmod></url>
+  <url><loc>https://sealcloak.app/features/recovery-phrase</loc><lastmod>2026-11-08</lastmod></url>
+  <url><loc>https://sealcloak.app/features/secure-sharing</loc><lastmod>2026-11-08</lastmod></url>
   <url><loc>https://sealcloak.app/features</loc><lastmod>2026-11-08</lastmod></url>
   <url><loc>https://sealcloak.app/guides/gallery-lock-android</loc><lastmod>2026-11-08</lastmod></url>
   <url><loc>https://sealcloak.app/guides/hide-apps-on-android</loc><lastmod>2026-10-24</lastmod></url>
@@ -13,7 +25,10 @@
   <url><loc>https://sealcloak.app/</loc><lastmod>2026-11-08</lastmod></url>
   <url><loc>https://sealcloak.app/pricing</loc><lastmod>2026-11-08</lastmod></url>
   <url><loc>https://sealcloak.app/privacy</loc><lastmod>2026-11-03</lastmod></url>
+  <url><loc>https://sealcloak.app/scenarios/</loc><lastmod>2026-11-08</lastmod></url>
   <url><loc>https://sealcloak.app/security</loc><lastmod>2026-11-08</lastmod></url>
   <url><loc>https://sealcloak.app/support</loc><lastmod>2026-11-08</lastmod></url>
   <url><loc>https://sealcloak.app/terms</loc><lastmod>2026-11-03</lastmod></url>
+  <url><loc>https://sealcloak.app/tools/</loc><lastmod>2026-11-08</lastmod></url>
+  <url><loc>https://sealcloak.app/tools/remove-photo-location</loc><lastmod>2026-11-08</lastmod></url>
 </urlset>

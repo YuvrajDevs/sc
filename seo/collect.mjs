@@ -15,7 +15,7 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 // Off-topic or wrong-platform phrases. Sealcloak is Android only, and we don't chase piracy terms.
 const EXCLUDE = /\b(iphone|ipad|ios|mac|macbook|windows|pc|laptop|linux|apk|mod|crack|hack|login|sign in|download free|porn|nude|xxx|sex|reddit|quora|meaning in|in hindi meaning|stock|share price|kindle|fire tv|smart tv|download|facebook|instagram|snapchat|tiktok|twitter|telegram channel)\b/i;
 // A suggestion must be about hiding, locking or protecting private stuff on a phone.
-const ON_TOPIC = /(hide|hidden|hider|vault|lock|locker|private|secret|secure|encrypt|calculator|gallery|album|intruder|keepsafe|lockmypix|vaulty|incognito|disguise|password protect|protect (photos|pictures|videos|files))/i;
+const ON_TOPIC = /(hide|hidden|hider|vault|lock|locker|private|secret|secure|encrypt|calculator|gallery|album|intruder|keepsafe|lockmypix|vaulty|incognito|disguise|password protect|protect (photos|pictures|videos|files)|went through my phone|looked (at|through) my|check(s|ing)? my phone|snoop|my phone (for|to) repair|lend(ing)? my phone|someone (saw|looked|screenshot)|privacy)/i;
 const STOP = new Set(["how", "to", "the", "a", "an", "in", "on", "for", "my", "your", "of", "and", "or", "with", "without", "is", "can", "i", "do", "you", "app", "apps", "best", "android", "phone", "mobile"]);
 
 async function fetchJson(url) {
@@ -38,6 +38,7 @@ function queries() {
   }
   for (const s of seeds.shallow) list.push(s, `how to ${s}`, `${s} vs`, `${s} alternative`);
   for (const b of seeds.brands) list.push(`hide photos in ${b}`, `${b} hidden photos`, `${b} app lock`);
+  for (const s of seeds.situations || []) list.push(s, `how to ${s}`, `what to do ${s}`, `${s} how to`);
   return [...new Set(list)];
 }
 
@@ -51,7 +52,7 @@ function jaccard(a, b) {
 // Keywords and titles of every page that already exists, so the queue only holds new topics.
 function covered() {
   const out = [];
-  for (const dir of ["content/guides", "content/compare"]) {
+  for (const dir of ["content/guides", "content/compare", "content/scenarios", "content/features"]) {
     const d = join(ROOT, dir);
     if (!existsSync(d)) continue;
     for (const f of readdirSync(d).filter((f) => f.endsWith(".html") && f !== "index.html")) {
@@ -97,7 +98,8 @@ for (const r of ranked) {
 
 const done = covered();
 const isCovered = (t) => done.find((p) => p.keys.some((k) => jaccard(k, t.t) >= 0.5));
-const kind = (k) => /\b(vs|versus|alternative|alternatives|compared|review)\b/.test(k) ? "compare" : "guide";
+const SITUATION = /\b(someone|partner|boyfriend|girlfriend|wife|husband|parents?|mom|dad|kids?|child|friend|roommate|went through|looked (at|through)|checks?|checking|snoop\w*|repair|lend\w*|borrow\w*|lost|stolen|selling|border|screenshot\w*)\b/;
+const kind = (k) => /\b(vs|versus|alternative|alternatives|compared|review)\b/.test(k) ? "compare" : SITUATION.test(k) ? "scenario" : "guide";
 
 const queue = [], skipped = [];
 for (const t of topics.sort((a, b) => b.score - a.score)) {

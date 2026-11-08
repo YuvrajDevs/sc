@@ -1,0 +1,59 @@
+<!--meta {
+  "title": "Share files securely as a passphrase-locked package",
+  "navTitle": "Secure sharing",
+  "description": "Share photos and files from Sealcloak as one passphrase-locked package. Send it with any app and the passphrase separately. Only someone with both can open it.",
+  "keyword": "share photos securely",
+  "summary": "One passphrase-locked file. Send it with any app, and the passphrase separately.",
+  "date": "2026-11-08",
+  "readMins": 4,
+  "nav": "features",
+  "order": 12,
+  "faq": [
+    {
+      "q": "Does the other person need Sealcloak?",
+      "a": "Yes. The package is opened by importing it into Sealcloak with the passphrase."
+    },
+    {
+      "q": "Is the package uploaded anywhere by Sealcloak?",
+      "a": "No. Sealcloak only creates the file. You send it with whatever app you choose."
+    },
+    {
+      "q": "Can I share a whole folder?",
+      "a": "Yes. Open the folder and choose Share this folder to pack everything in it into one package."
+    },
+    {
+      "q": "What if someone gets the file but not the passphrase?",
+      "a": "They can't open it. The contents are encrypted and only the passphrase unlocks them."
+    }
+  ]
+} -->
+<section class="panel">
+  <div class="panel-inner wrap">
+    <article class="article">
+      <div class="meta"><a href="{{root}}features">Features</a> · Secure sharing</div>
+      <h1>Share files securely as a passphrase-locked package</h1>
+      <p class="lead">Sometimes a private file needs to reach one other person. Sealcloak packs it into an encrypted file that only the passphrase opens.</p>
+      <div class="answer">
+        <div class="eyebrow">In short</div>
+        <p>Select files or a folder in your vault and choose Share securely. Sealcloak makes one encrypted package locked with a passphrase you choose. Send the file with any app you like, and give the passphrase in a separate message. The other person imports it into Sealcloak with the passphrase.</p>
+      </div>
+      <div class="prose">
+        <h2>Sending</h2>
+        <ol><li>Press and hold a file, or select several, or open a folder and choose Share this folder.</li><li>Choose Share securely and set a passphrase.</li><li>Send the package with WhatsApp, email, Drive or any other app.</li><li>Give the passphrase another way: in person, by call or in a different app.</li></ol>
+
+        <h2>Receiving</h2>
+        <p>The other person opens Sealcloak, chooses Import backup in Settings, picks the package and enters the passphrase. The files land in their vault, encrypted.</p>
+
+        {{cta}}
+
+        <h2>Good uses</h2>
+        <p>Sending ID scans to a family member, sharing medical documents with someone you trust, or moving a few files from your vault to another phone without making a full backup.</p>
+
+        <h2>Why separate channels matter</h2>
+        <p>Anyone with both the file and the passphrase can open it. Sending them together in one chat means one leak exposes both. Splitting them across channels is what makes the package safe in transit. For other ways to share privately, see <a href="{{root}}guides/photo-vault-app-without-account">vault apps without an account</a>.</p>
+        {{faq}}
+      </div>
+      {{related}}
+    </article>
+  </div>
+</section>

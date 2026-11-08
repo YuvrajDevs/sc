@@ -31,7 +31,7 @@
   ],
   "features": [
     "Hide photos, videos, documents (PDF etc.), audio, text notes and scans",
-    "Built-in camera: photos and videos taken inside go straight into the vault, never the gallery",
+    "Take photos and videos from inside the app: they are saved straight into the vault, not the gallery (it uses the phone's camera app, and some camera apps keep their own copy, so users should check once)",
     "Document scanner that makes a PDF",
     "Folders, move, copy, search, slideshow",
     "Up to 3 separate vaults free, each with its own pattern; nothing shows how many exist",

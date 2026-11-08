@@ -1,0 +1,62 @@
+<!--meta {
+  "title": "How Sealcloak encrypts your photos and files",
+  "navTitle": "Encryption",
+  "description": "Every file in Sealcloak is encrypted on your phone with AES-256-GCM, under a random key per vault protected by your pattern and the Android Keystore.",
+  "keyword": "encrypt photos",
+  "summary": "AES-256-GCM on the phone, a random key per vault, unlocked by your pattern.",
+  "date": "2026-11-08",
+  "readMins": 4,
+  "nav": "features",
+  "order": 2,
+  "faq": [
+    {
+      "q": "Is AES-256 really secure?",
+      "a": "AES-256 is the standard used to protect sensitive data worldwide, and there's no practical attack on it. In practice, the weak points are guessable passwords and patterns, not the cipher."
+    },
+    {
+      "q": "Can Sealcloak see my photos?",
+      "a": "No. Encryption happens on your phone, the app can't connect to the internet, and we never have your pattern, phrase or keys."
+    },
+    {
+      "q": "If someone copies the app's files, can they open them?",
+      "a": "Not without the key. The files are encrypted, and the key needs your pattern or recovery phrase plus, on the original phone, the Keystore."
+    },
+    {
+      "q": "Are my backups encrypted too?",
+      "a": "Yes. A backup file is encrypted with your vault's recovery phrase or a passphrase you choose. Without it, the file can't be opened."
+    }
+  ]
+} -->
+<section class="panel">
+  <div class="panel-inner wrap">
+    <article class="article">
+      <div class="meta"><a href="{{root}}features">Features</a> · Encryption</div>
+      <h1>How Sealcloak encrypts your photos and files</h1>
+      <p class="lead">Hiding a photo and encrypting it are different things. Sealcloak encrypts every file on your phone, so even a copy taken out of the app is unreadable without your key.</p>
+      <div class="answer">
+        <div class="eyebrow">In short</div>
+        <p>Each vault has its own random master key. Every file is encrypted with AES-256-GCM before it&#x27;s saved. The master key is wrapped using a key derived from your pattern with Argon2id and a key held in Android&#x27;s hardware-backed Keystore. Nothing leaves your phone, because the app has no internet permission.</p>
+      </div>
+      <div class="prose">
+        <h2>Hidden is not the same as encrypted</h2>
+        <p>Many gallery lock apps move photos to a hidden folder and put a password screen in front. Anyone with a file manager or a computer can still find and open the files. With encryption, the files themselves are scrambled. A copy is useless without the key, wherever it ends up.</p>
+
+        <h2>What happens when you add a photo</h2>
+        <ol><li>The file is read in chunks and each chunk is encrypted with AES-256-GCM, which also detects any tampering.</li><li>The encrypted file is written to the app's private storage, under a random name that says nothing about what it is.</li><li>The vault's index (names, folders, dates) is encrypted too.</li><li>The original stays in your gallery until you delete it yourself, so you can check the vault copy first.</li></ol>
+
+        {{cta}}
+
+        <h2>How your pattern unlocks it</h2>
+        <p>Your pattern is run through Argon2id, a slow, memory-hard function made to resist guessing at scale. The result, together with a key that never leaves Android's Keystore, unwraps your vault's master key. When you lock the vault, the keys are cleared from memory.</p>
+
+        <h2>No server to hack</h2>
+        <p>Sealcloak has no account, no cloud and no internet permission. There's no copy of your files or keys anywhere except your phone and the <a href="{{root}}features/encrypted-backups">backups</a> you choose to make. Read the full picture on the <a href="{{root}}security">security page</a>.</p>
+
+        <h2>The honest limits</h2>
+        <p>No security is absolute. A guessable pattern, a phone that's already compromised by malware, or a recovery phrase kept in a photo on the same phone can all undo good encryption. The app's Security checkup in Settings points out the common weak spots.</p>
+        {{faq}}
+      </div>
+      {{related}}
+    </article>
+  </div>
+</section>

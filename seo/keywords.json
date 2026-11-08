@@ -1,31 +1,12 @@
 {
-  "updated": "2026-11-08T07:42:50.184Z",
-  "queries": 378,
-  "phrases": 3087,
+  "updated": "2026-11-08T08:31:44.235Z",
+  "queries": 438,
+  "phrases": 3130,
   "queue": [
-    {
-      "keyword": "gallery lock",
-      "type": "guide",
-      "score": 847,
-      "sources": [
-        "google",
-        "bing"
-      ],
-      "variants": [
-        "gallery lock app",
-        "how to lock gallery in android",
-        "gallery lock password",
-        "how to lock gallery in samsung",
-        "gallery lock pro",
-        "gallery lock on samsung",
-        "gallery lock open",
-        "gallery lock without app"
-      ]
-    },
     {
       "keyword": "private photos",
       "type": "guide",
-      "score": 702,
+      "score": 717,
       "sources": [
         "google",
         "bing"
@@ -39,81 +20,6 @@
         "private photos meaning",
         "private photos on samsung",
         "private photos apple"
-      ]
-    },
-    {
-      "keyword": "lock photos",
-      "type": "guide",
-      "score": 367,
-      "sources": [
-        "google",
-        "bing"
-      ],
-      "variants": [
-        "lock photos app",
-        "can i lock my photos",
-        "lock photos and videos app",
-        "lock photos on android",
-        "lock photos app android",
-        "lock box photos",
-        "lock photos google",
-        "can you put a lock on your photos"
-      ]
-    },
-    {
-      "keyword": "app lock in samsung",
-      "type": "guide",
-      "score": 210,
-      "sources": [
-        "google",
-        "bing"
-      ],
-      "variants": [
-        "app lock on samsung",
-        "app lock samsung",
-        "samsung app lock",
-        "how to app lock in samsung",
-        "best app lock for samsung",
-        "app lock apps for samsung",
-        "lock photos samsung",
-        "lock folder android samsung"
-      ]
-    },
-    {
-      "keyword": "how to lock a folder on android",
-      "type": "guide",
-      "score": 196,
-      "sources": [
-        "bing"
-      ],
-      "variants": [
-        "folder lock encryption for android",
-        "how to lock folder in android mobile",
-        "lock a folder app",
-        "folder lock youtube",
-        "lock folder android",
-        "how to lock folder android",
-        "folder lock without software",
-        "folder quick lock"
-      ]
-    },
-    {
-      "keyword": "app lock android",
-      "type": "guide",
-      "score": 182,
-      "sources": [
-        "bing",
-        "google"
-      ],
-      "variants": [
-        "app lock",
-        "best app lock for android",
-        "app lock app",
-        "how to app lock",
-        "best app lock",
-        "app lock in android",
-        "app lock without app",
-        "app lock best app"
       ]
     },
     {
@@ -133,25 +39,6 @@
         "how to secure folder in samsung",
         "secure folder android alternative",
         "secure folder in samsung"
-      ]
-    },
-    {
-      "keyword": "calculator vault",
-      "type": "guide",
-      "score": 122,
-      "sources": [
-        "google",
-        "bing"
-      ],
-      "variants": [
-        "calculator vault app",
-        "calculator vault app hider",
-        "how to use calculator vault",
-        "calculator or vault app",
-        "veeam vault calculator",
-        "what is a calculator vault",
-        "how to open calculator vault",
-        "calculator app vault how to use"
       ]
     },
     {
@@ -324,25 +211,6 @@
       ]
     },
     {
-      "keyword": "app lock password",
-      "type": "guide",
-      "score": 92,
-      "sources": [
-        "google",
-        "bing"
-      ],
-      "variants": [
-        "app lock with password",
-        "app lock remove password",
-        "lock photo password",
-        "app lock password forgot",
-        "vivo app lock password",
-        "oppo app lock password",
-        "realme app lock password",
-        "app lock without password"
-      ]
-    },
-    {
       "keyword": "photo vault by keepsafe",
       "type": "guide",
       "score": 86,
@@ -448,14 +316,14 @@
     {
       "keyword": "motorola app lock",
       "type": "guide",
-      "score": 68,
+      "score": 67,
       "sources": [
         "google",
         "bing"
       ],
       "variants": [
-        "app lock in motorola phone",
         "app lock on motorola",
+        "app lock in motorola phone",
         "app lock in motorola",
         "app lock motorola",
         "motorola app lock settings",
@@ -558,20 +426,6 @@
       ]
     },
     {
-      "keyword": "android encrypt phone photos",
-      "type": "guide",
-      "score": 56,
-      "sources": [
-        "bing"
-      ],
-      "variants": [
-        "how to encrypt photos",
-        "encrypt photos android",
-        "how to encrypt photos on android",
-        "can you encrypt photos"
-      ]
-    },
-    {
       "keyword": "best private photo storage app",
       "type": "guide",
       "score": 55,
@@ -586,6 +440,17 @@
         "best private photo storage",
         "private photo app android",
         "best private photo app android"
+      ]
+    },
+    {
+      "keyword": "lost private photos recovery android",
+      "type": "scenario",
+      "score": 55,
+      "sources": [
+        "bing"
+      ],
+      "variants": [
+        "private photos delete recovery"
       ]
     },
     {
@@ -605,24 +470,6 @@
         "hidden videos youtube channel",
         "hidden videos app",
         "hidden videos in apps"
-      ]
-    },
-    {
-      "keyword": "gallery lock kaise lagaye",
-      "type": "guide",
-      "score": 51,
-      "sources": [
-        "google"
-      ],
-      "variants": [
-        "gallery lock kaise tode",
-        "app lock kaise lagaye",
-        "gallery lock kaise hataye",
-        "lock photo kaise lagaye",
-        "motorola app lock kaise lagaye",
-        "gallery me lock kaise lagaye",
-        "gallery lock password kaise lagaye",
-        "app lock kaise lagaye vivo"
       ]
     },
     {
@@ -657,20 +504,6 @@
         "hide video controls in powerpoint",
         "hide html video controls",
         "hide video controls css"
-      ]
-    },
-    {
-      "keyword": "vault app",
-      "type": "guide",
-      "score": 46,
-      "sources": [
-        "google",
-        "bing"
-      ],
-      "variants": [
-        "how to app vault",
-        "vault and app",
-        "how to do a vault"
       ]
     },
     {
@@ -765,7 +598,7 @@
         "unspeakable hide and seek videos",
         "ms rachel videos hide and seek",
         "unspeakable's hide and seek videos",
-        "hide and seek jump parks videos",
+        "j. j. and mikey hide and seek videos",
         "brent rivera videos hide and seek"
       ]
     },
@@ -1011,18 +844,6 @@
       ]
     },
     {
-      "keyword": "the old lock up gallery",
-      "type": "guide",
-      "score": 34,
-      "sources": [
-        "bing"
-      ],
-      "variants": [
-        "the old lock up gallery cromford",
-        "gallery lock old version"
-      ]
-    },
-    {
       "keyword": "hide apps on home and apps screens",
       "type": "guide",
       "score": 33,
@@ -1063,17 +884,16 @@
       "variants": []
     },
     {
-      "keyword": "private photos delete recovery",
+      "keyword": "app lock enabled",
       "type": "guide",
       "score": 31,
       "sources": [
-        "google"
+        "google",
+        "bing"
       ],
       "variants": [
-        "lost private photos recovery android",
-        "private photo delete recovery app",
-        "private photo delete recovery",
-        "hidden photos delete recovery"
+        "app lock enabled authenticator",
+        "app lock enabled android"
       ]
     },
     {
@@ -1129,19 +949,6 @@
       ]
     },
     {
-      "keyword": "app lock enabled",
-      "type": "guide",
-      "score": 30,
-      "sources": [
-        "google",
-        "bing"
-      ],
-      "variants": [
-        "app lock enabled authenticator",
-        "app lock enabled android"
-      ]
-    },
-    {
       "keyword": "app lock vip",
       "type": "guide",
       "score": 29,
@@ -1165,6 +972,22 @@
         "hidden photos in realme",
         "hidden photos in realme phone",
         "realme phone hidden photos"
+      ]
+    },
+    {
+      "keyword": "private photo delete recovery app",
+      "type": "guide",
+      "score": 29,
+      "sources": [
+        "google"
+      ],
+      "variants": [
+        "private photo recovery app",
+        "private zone photo recovery",
+        "hide photo delete recovery",
+        "private safe photo recovery",
+        "hide photo delete recovery app",
+        "private photo delete recovery"
       ]
     },
     {
@@ -1510,6 +1333,17 @@
       "variants": []
     },
     {
+      "keyword": "boyfriend checks my phone",
+      "type": "scenario",
+      "score": 22,
+      "sources": [
+        "google"
+      ],
+      "variants": [
+        "my boyfriend always checks my phone"
+      ]
+    },
+    {
       "keyword": "private photo gallery",
       "type": "guide",
       "score": 22,
@@ -1574,31 +1408,6 @@
         "bing"
       ],
       "variants": []
-    },
-    {
-      "keyword": "gallery lock ela pettali",
-      "type": "guide",
-      "score": 21,
-      "sources": [
-        "google"
-      ],
-      "variants": [
-        "app lock ela pettali",
-        "app lock ela pettali in telugu",
-        "photo lock ela pettali"
-      ]
-    },
-    {
-      "keyword": "calculator app vault hide videos",
-      "type": "guide",
-      "score": 21,
-      "sources": [
-        "bing"
-      ],
-      "variants": [
-        "hide photo vault & videos",
-        "calculator app vault hide files"
-      ]
     },
     {
       "keyword": "lock photo in excel",
@@ -1666,6 +1475,15 @@
     },
     {
       "keyword": "gallery locker",
+      "type": "guide",
+      "score": 20,
+      "sources": [
+        "bing"
+      ],
+      "variants": []
+    },
+    {
+      "keyword": "how to protect your privacy on smartphones",
       "type": "guide",
       "score": 20,
       "sources": [
@@ -1820,18 +1638,6 @@
       ]
     },
     {
-      "keyword": "app lock software",
-      "type": "guide",
-      "score": 19,
-      "sources": [
-        "bing"
-      ],
-      "variants": [
-        "app lock recovery software",
-        "lock photo software"
-      ]
-    },
-    {
       "keyword": "photo vault your premium has expired",
       "type": "guide",
       "score": 19,
@@ -1842,6 +1648,18 @@
         "photo vault premium expired problem",
         "photo vault free premium expired",
         "photo vault premium expired"
+      ]
+    },
+    {
+      "keyword": "can my parents check my phone at 16",
+      "type": "scenario",
+      "score": 19,
+      "sources": [
+        "google"
+      ],
+      "variants": [
+        "can my parents check my phone at 18",
+        "can my parents check my phone at 17"
       ]
     },
     {
@@ -1907,16 +1725,13 @@
       "variants": []
     },
     {
-      "keyword": "gallery lock open without password",
+      "keyword": "privacy on samsung phone",
       "type": "guide",
       "score": 18,
       "sources": [
-        "google"
+        "bing"
       ],
-      "variants": [
-        "gallery lock change password",
-        "gallery lock password unlock"
-      ]
+      "variants": []
     },
     {
       "keyword": "taking photos on private property",
@@ -1963,18 +1778,6 @@
       "variants": [
         "private photo editor ai",
         "private ai photo editor"
-      ]
-    },
-    {
-      "keyword": "zanini india private limited photos",
-      "type": "guide",
-      "score": 18,
-      "sources": [
-        "bing"
-      ],
-      "variants": [
-        "navitasys india private limited photos",
-        "mitsuba india private limited photos"
       ]
     },
     {
@@ -2117,6 +1920,142 @@
         "iqoo phone app lock",
         "app lock in iqoo z10"
       ]
+    },
+    {
+      "keyword": "app lock kaise tode",
+      "type": "guide",
+      "score": 17,
+      "sources": [
+        "bing"
+      ],
+      "variants": [
+        "hide apps ka lock kaise tode",
+        "poco app lock kaise tode",
+        "app lock ka password kaise tode",
+        "infinix app lock kaise tode"
+      ]
+    },
+    {
+      "keyword": "navitasys india private limited photos",
+      "type": "guide",
+      "score": 17,
+      "sources": [
+        "bing"
+      ],
+      "variants": [
+        "zanini india private limited photos",
+        "mitsuba india private limited photos"
+      ]
+    },
+    {
+      "keyword": "private photo vault online",
+      "type": "guide",
+      "score": 17,
+      "sources": [
+        "bing"
+      ],
+      "variants": [
+        "private photo vault ultimate",
+        "photo vault online free",
+        "private photo vault free",
+        "private photo vault google",
+        "private photo vault cloud",
+        "private photo vault premium"
+      ]
+    },
+    {
+      "keyword": "hide photos in moto edge 50",
+      "type": "guide",
+      "score": 17,
+      "sources": [
+        "google"
+      ],
+      "variants": [
+        "hide photos in moto",
+        "hide photos in moto edge 50 pro",
+        "hide photos in moto edge 40"
+      ]
+    },
+    {
+      "keyword": "vault vs openbao",
+      "type": "compare",
+      "score": 17,
+      "sources": [
+        "google",
+        "bing"
+      ],
+      "variants": []
+    },
+    {
+      "keyword": "qwabi private game reserve photos",
+      "type": "guide",
+      "score": 17,
+      "sources": [
+        "bing"
+      ],
+      "variants": [
+        "dube private game reserve photos"
+      ]
+    },
+    {
+      "keyword": "hide photo quotes",
+      "type": "guide",
+      "score": 17,
+      "sources": [
+        "google"
+      ],
+      "variants": [
+        "face hide photo quotes",
+        "hide photo girl quotes"
+      ]
+    },
+    {
+      "keyword": "lock photo kaise nikale",
+      "type": "guide",
+      "score": 17,
+      "sources": [
+        "google"
+      ],
+      "variants": [
+        "lock photo kaise dekhe",
+        "gallery lock se photo kaise nikale"
+      ]
+    },
+    {
+      "keyword": "oppo hidden photos",
+      "type": "guide",
+      "score": 17,
+      "sources": [
+        "google"
+      ],
+      "variants": [
+        "hidden photos in oppo",
+        "oppo a54 hidden photos"
+      ]
+    },
+    {
+      "keyword": "lock photos with face id",
+      "type": "guide",
+      "score": 17,
+      "sources": [
+        "google"
+      ],
+      "variants": [
+        "hidden photos without face id",
+        "lock photos face id"
+      ]
+    },
+    {
+      "keyword": "azure app configuration vs key vault",
+      "type": "compare",
+      "score": 17,
+      "sources": [
+        "bing"
+      ],
+      "variants": [
+        "key vault vs app configuration",
+        "azure key vault vs app configuration"
+      ]
     }
   ],
   "alreadyCovered": [
@@ -2159,6 +2098,46 @@
         "hide videos app"
       ],
       "coveredBy": "guides/how-to-hide-photos-on-android"
+    },
+    {
+      "keyword": "gallery lock",
+      "type": "guide",
+      "score": 832,
+      "sources": [
+        "google",
+        "bing"
+      ],
+      "variants": [
+        "gallery lock app",
+        "how to lock gallery in android",
+        "gallery lock password",
+        "how to lock gallery in samsung",
+        "gallery lock pro",
+        "gallery lock on samsung",
+        "gallery lock open",
+        "gallery lock without app"
+      ],
+      "coveredBy": "guides/gallery-lock-android"
+    },
+    {
+      "keyword": "lock photos",
+      "type": "guide",
+      "score": 367,
+      "sources": [
+        "google",
+        "bing"
+      ],
+      "variants": [
+        "lock photos app",
+        "can i lock my photos",
+        "lock photos and videos app",
+        "lock photos on android",
+        "lock photos app android",
+        "lock box photos",
+        "lock photos google",
+        "can you put a lock on your photos"
+      ],
+      "coveredBy": "features/pattern-lock"
     },
     {
       "keyword": "hide photos in samsung",
@@ -2239,6 +2218,65 @@
         "hide whatsapp photos from gallery"
       ],
       "coveredBy": "guides/how-to-hide-photos-on-android"
+    },
+    {
+      "keyword": "app lock in samsung",
+      "type": "guide",
+      "score": 210,
+      "sources": [
+        "google",
+        "bing"
+      ],
+      "variants": [
+        "app lock on samsung",
+        "app lock samsung",
+        "samsung app lock",
+        "how to app lock in samsung",
+        "best app lock for samsung",
+        "app lock apps for samsung",
+        "lock photos samsung",
+        "lock folder android samsung"
+      ],
+      "coveredBy": "guides/gallery-lock-android"
+    },
+    {
+      "keyword": "how to lock a folder on android",
+      "type": "guide",
+      "score": 196,
+      "sources": [
+        "bing"
+      ],
+      "variants": [
+        "folder lock encryption for android",
+        "how to lock folder in android mobile",
+        "lock a folder app",
+        "folder lock youtube",
+        "lock folder android",
+        "how to lock folder android",
+        "folder lock without software",
+        "folder quick lock"
+      ],
+      "coveredBy": "guides/lock-folder-android"
+    },
+    {
+      "keyword": "app lock android",
+      "type": "guide",
+      "score": 182,
+      "sources": [
+        "bing",
+        "google"
+      ],
+      "variants": [
+        "app lock",
+        "best app lock for android",
+        "app lock app",
+        "how to app lock",
+        "best app lock",
+        "app lock in android",
+        "app lock without app",
+        "app lock best app"
+      ],
+      "coveredBy": "guides/gallery-lock-android"
     },
     {
       "keyword": "hide apps on desktop",
@@ -2334,6 +2372,46 @@
       "coveredBy": "guides/how-to-hide-photos-on-android"
     },
     {
+      "keyword": "calculator vault",
+      "type": "guide",
+      "score": 122,
+      "sources": [
+        "google",
+        "bing"
+      ],
+      "variants": [
+        "calculator vault app",
+        "calculator vault app hider",
+        "how to use calculator vault",
+        "calculator or vault app",
+        "veeam vault calculator",
+        "what is a calculator vault",
+        "how to open calculator vault",
+        "calculator app vault how to use"
+      ],
+      "coveredBy": "features/calculator-disguise"
+    },
+    {
+      "keyword": "app lock password",
+      "type": "guide",
+      "score": 92,
+      "sources": [
+        "google",
+        "bing"
+      ],
+      "variants": [
+        "app lock with password",
+        "app lock remove password",
+        "lock photo password",
+        "app lock password forgot",
+        "vivo app lock password",
+        "oppo app lock password",
+        "realme app lock password",
+        "app lock without password"
+      ],
+      "coveredBy": "guides/gallery-lock-android"
+    },
+    {
       "keyword": "how to hide a folder on android",
       "type": "guide",
       "score": 78,
@@ -2405,6 +2483,21 @@
       "coveredBy": "guides/how-to-hide-photos-on-android"
     },
     {
+      "keyword": "android encrypt phone photos",
+      "type": "guide",
+      "score": 56,
+      "sources": [
+        "bing"
+      ],
+      "variants": [
+        "how to encrypt photos",
+        "encrypt photos android",
+        "how to encrypt photos on android",
+        "can you encrypt photos"
+      ],
+      "coveredBy": "features/encryption"
+    },
+    {
       "keyword": "hide apps apple",
       "type": "guide",
       "score": 55,
@@ -2421,6 +2514,25 @@
         "hide apps apple phone"
       ],
       "coveredBy": "guides/hide-apps-on-android"
+    },
+    {
+      "keyword": "gallery lock kaise lagaye",
+      "type": "guide",
+      "score": 51,
+      "sources": [
+        "google"
+      ],
+      "variants": [
+        "gallery lock kaise tode",
+        "app lock kaise lagaye",
+        "gallery lock kaise hataye",
+        "lock photo kaise lagaye",
+        "motorola app lock kaise lagaye",
+        "gallery me lock kaise lagaye",
+        "gallery lock password kaise lagaye",
+        "app lock kaise lagaye vivo"
+      ],
+      "coveredBy": "guides/gallery-lock-android"
     },
     {
       "keyword": "hide photos in nothing phone",
@@ -2459,6 +2571,21 @@
         "how to hide photos in motorola"
       ],
       "coveredBy": "guides/hide-apps-on-android"
+    },
+    {
+      "keyword": "vault app",
+      "type": "guide",
+      "score": 46,
+      "sources": [
+        "google",
+        "bing"
+      ],
+      "variants": [
+        "how to app vault",
+        "vault and app",
+        "how to do a vault"
+      ],
+      "coveredBy": "features/calculator-disguise"
     },
     {
       "keyword": "hide apps huawei",
@@ -2539,6 +2666,19 @@
         "hide apps app store"
       ],
       "coveredBy": "guides/hide-apps-on-android"
+    },
+    {
+      "keyword": "the old lock up gallery",
+      "type": "guide",
+      "score": 34,
+      "sources": [
+        "bing"
+      ],
+      "variants": [
+        "the old lock up gallery cromford",
+        "gallery lock old version"
+      ],
+      "coveredBy": "guides/gallery-lock-android"
     },
     {
       "keyword": "hide photos xiaomi",
@@ -2706,6 +2846,33 @@
       "coveredBy": "guides/how-to-hide-photos-on-android"
     },
     {
+      "keyword": "gallery lock ela pettali",
+      "type": "guide",
+      "score": 21,
+      "sources": [
+        "google"
+      ],
+      "variants": [
+        "app lock ela pettali",
+        "app lock ela pettali in telugu",
+        "photo lock ela pettali"
+      ],
+      "coveredBy": "guides/gallery-lock-android"
+    },
+    {
+      "keyword": "calculator app vault hide videos",
+      "type": "guide",
+      "score": 21,
+      "sources": [
+        "bing"
+      ],
+      "variants": [
+        "hide photo vault & videos",
+        "calculator app vault hide files"
+      ],
+      "coveredBy": "features/calculator-disguise"
+    },
+    {
       "keyword": "how to hide photos in microsoft photos",
       "type": "guide",
       "score": 20,
@@ -2731,172 +2898,17 @@
       "coveredBy": "guides/how-to-hide-photos-on-android"
     },
     {
-      "keyword": "hide apps lock",
+      "keyword": "app lock software",
       "type": "guide",
       "score": 19,
       "sources": [
-        "google"
-      ],
-      "variants": [
-        "app lock hide",
-        "app lock hide code",
-        "hide apps and lock"
-      ],
-      "coveredBy": "guides/hide-apps-on-android"
-    },
-    {
-      "keyword": "hide photos girl",
-      "type": "guide",
-      "score": 18,
-      "sources": [
-        "google"
-      ],
-      "variants": [],
-      "coveredBy": "guides/how-to-hide-photos-on-android"
-    },
-    {
-      "keyword": "how to hide images",
-      "type": "guide",
-      "score": 18,
-      "sources": [
-        "bing"
-      ],
-      "variants": [],
-      "coveredBy": "guides/hide-apps-on-android"
-    },
-    {
-      "keyword": "how to hide a pic",
-      "type": "guide",
-      "score": 16,
-      "sources": [
-        "bing"
-      ],
-      "variants": [],
-      "coveredBy": "guides/hide-apps-on-android"
-    },
-    {
-      "keyword": "hide apps without deleting",
-      "type": "guide",
-      "score": 16,
-      "sources": [
-        "google"
-      ],
-      "variants": [
-        "hide app without deleting"
-      ],
-      "coveredBy": "guides/hide-apps-on-android"
-    },
-    {
-      "keyword": "hide apps app hider",
-      "type": "guide",
-      "score": 16,
-      "sources": [
-        "google"
-      ],
-      "variants": [
-        "how to hide apps in app hider"
-      ],
-      "coveredBy": "guides/hide-apps-on-android"
-    },
-    {
-      "keyword": "hide photos couple",
-      "type": "guide",
-      "score": 16,
-      "sources": [
-        "google"
-      ],
-      "variants": [
-        "hide photos for couple"
-      ],
-      "coveredBy": "guides/how-to-hide-photos-on-android"
-    },
-    {
-      "keyword": "hide photos locked calculator",
-      "type": "guide",
-      "score": 15,
-      "sources": [
-        "google"
-      ],
-      "variants": [
-        "hide photos my locked vault"
-      ],
-      "coveredBy": "guides/how-to-hide-photos-on-android"
-    },
-    {
-      "keyword": "hide photos for girls",
-      "type": "guide",
-      "score": 15,
-      "sources": [
-        "google"
-      ],
-      "variants": [
-        "hide photos of girls"
-      ],
-      "coveredBy": "guides/how-to-hide-photos-on-android"
-    },
-    {
-      "keyword": "hide photos recovery",
-      "type": "guide",
-      "score": 15,
-      "sources": [
-        "google"
-      ],
-      "variants": [
-        "hide photos recovery app"
-      ],
-      "coveredBy": "guides/how-to-hide-photos-on-android"
-    },
-    {
-      "keyword": "hide apps game",
-      "type": "guide",
-      "score": 15,
-      "sources": [
-        "google"
-      ],
-      "variants": [
-        "hide video game"
-      ],
-      "coveredBy": "guides/hide-apps-on-android"
-    },
-    {
-      "keyword": "how to hide apps in poco",
-      "type": "guide",
-      "score": 15,
-      "sources": [
         "bing"
       ],
       "variants": [
-        "hide apps poco"
+        "app lock recovery software",
+        "lock photo software"
       ],
-      "coveredBy": "guides/hide-apps-on-android"
-    },
-    {
-      "keyword": "hide apps code",
-      "type": "guide",
-      "score": 15,
-      "sources": [
-        "google"
-      ],
-      "variants": [
-        "hide apps with dial code",
-        "hide apps dialer code"
-      ],
-      "coveredBy": "guides/hide-apps-on-android"
-    },
-    {
-      "keyword": "hide apps launcher",
-      "type": "guide",
-      "score": 14,
-      "sources": [
-        "google"
-      ],
-      "variants": [
-        "hide apps without launcher",
-        "hide apps nova launcher",
-        "hide app launcher in edge",
-        "hide apps pixel launcher"
-      ],
-      "coveredBy": "guides/hide-apps-on-android"
+      "coveredBy": "guides/lock-folder-android"
     }
   ]
 }

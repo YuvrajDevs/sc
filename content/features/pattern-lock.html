@@ -1,0 +1,65 @@
+<!--meta {
+  "title": "Pattern lock for photos: a 5×5 grid only you know",
+  "navTitle": "Pattern lock",
+  "description": "Sealcloak locks your photos behind its own 5×5 pattern, separate from your phone's lock, with optional fingerprint unlock and growing waits after wrong tries.",
+  "keyword": "pattern lock for photos",
+  "summary": "Its own 5×5 pattern, separate from your phone's lock, with optional fingerprint.",
+  "date": "2026-11-08",
+  "readMins": 4,
+  "nav": "features",
+  "order": 1,
+  "faq": [
+    {
+      "q": "Can I use a PIN instead of a pattern?",
+      "a": "No. Each vault opens with its own pattern, plus optional fingerprint or face unlock. A pattern on a 5×5 grid has far more combinations than a typical 4-digit PIN."
+    },
+    {
+      "q": "What if I forget my pattern?",
+      "a": "Tap Forgot your pattern? and enter the 9-word recovery phrase you saved at setup, then draw a new pattern. Without the phrase, nobody can open the vault, including us."
+    },
+    {
+      "q": "Can someone see my pattern from the smudges on the screen?",
+      "a": "Smudge and shoulder-surfing attacks are possible with any pattern. Wipe the screen now and then, draw it out of sight, or use fingerprint unlock in public."
+    },
+    {
+      "q": "Is the pattern stored on my phone?",
+      "a": "No. The pattern is turned into a key with Argon2id, a deliberately slow function, and only the result is used to unlock your vault's key. The pattern itself isn't saved anywhere."
+    }
+  ],
+  "steps": [
+    "Install Sealcloak and tap Set up my vault.",
+    "Draw a pattern of at least 6 dots on the 5×5 grid, then draw it again.",
+    "Write down the 9-word recovery phrase on paper.",
+    "Optionally, turn on fingerprint unlock in Settings."
+  ]
+} -->
+<section class="panel">
+  <div class="panel-inner wrap">
+    <article class="article">
+      <div class="meta"><a href="{{root}}features">Features</a> · Pattern lock</div>
+      <h1>Pattern lock for photos: a 5×5 grid only you know</h1>
+      <p class="lead">Your vault opens with a pattern drawn on a 5×5 grid. It&#x27;s separate from your phone&#x27;s screen lock, so people who know your phone PIN still can&#x27;t get in.</p>
+      <div class="answer">
+        <div class="eyebrow">In short</div>
+        <p>Sealcloak uses its own pattern on a 5×5 grid, at least 6 dots long. The pattern is never stored: it&#x27;s turned into the key that unlocks your vault. Fingerprint or face unlock is optional, and the pattern always keeps working.</p>
+      </div>
+      <div class="prose">
+        <h2>Why 5×5 instead of the usual 3×3</h2>
+        <p>A 3×3 grid, like most phone lock screens, has a small number of possible patterns, and many people pick the same few shapes. A 5×5 grid has 25 dots, so there are vastly more patterns to choose from, and a 6-dot minimum stops the shortest, easiest-to-guess shapes. The setup screen shows how strong your pattern is as you draw it.</p>
+
+        <h2>Separate from your phone&#x27;s lock, on purpose</h2>
+        <p>Most built-in private albums open with the same PIN that unlocks your phone. The people most likely to look are often the ones who already know it. Sealcloak's pattern is its own, and each vault can have a different one.</p>
+
+        {{cta}}
+
+        <h2>What happens after wrong patterns</h2>
+        <p>The first 4 wrong patterns in a row are free. After that, the app makes you wait before the next try, and the wait grows each time. Changing the phone's clock doesn't skip it. If you want, you can also turn on <a href="{{root}}features/intruder-photos">intruder photos</a> and, with Pro, <a href="{{root}}features/erase-after-wrong-patterns">erase after wrong patterns</a>.</p>
+
+        <h2>Fingerprint or face, if you want it</h2>
+        <p>Turn on fingerprint unlock in Settings to open the vault with your fingerprint or face instead of drawing. Android checks the biometric; the app never sees your fingerprint. Your pattern always keeps working, and it's still what protects the files.</p>
+        {{faq}}
+      </div>
+      {{related}}
+    </article>
+  </div>
+</section>

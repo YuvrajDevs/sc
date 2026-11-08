@@ -34,7 +34,12 @@ function articles(dir) {
 }
 const guides = articles("guides");
 const compares = articles("compare");
-const allArticles = [...guides, ...compares];
+const scenarios = articles("scenarios");
+// One page per app feature, listed in their own order rather than by date.
+const features = articles("features").sort((a, b) => (a.order ?? 99) - (b.order ?? 99));
+const tools = articles("tools");
+const allArticles = [...guides, ...compares, ...scenarios, ...features, ...tools];
+const SECTION_NAMES = { guides: "Guides", compare: "Compare", scenarios: "Scenarios", features: "Features", tools: "Free tools" };
 
 // Play links carry the page they came from, so Play Console's acquisition report shows which articles bring installs.
 function playLink(section, slug) {
@@ -83,7 +88,7 @@ function layout({ meta, body, out }) {
   ];
   const art = allArticles.find((a) => a.out === out);
   if (art) {
-    const sectionName = art.section === "compare" ? "Compare" : "Guides";
+    const sectionName = SECTION_NAMES[art.section];
     jsonLd.push({ "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [
       { "@type": "ListItem", position: 1, name: "Home", item: SITE.url + "/" },
       { "@type": "ListItem", position: 2, name: sectionName, item: `${SITE.url}/${art.section}/` },
@@ -115,7 +120,10 @@ ${meta.faq.map((f) => `      <h3>${esc(f.q)}</h3>\n      <p>${esc(f.a)}</p>`).jo
     .replaceAll("{{email}}", SITE.email)
     .replace("{{latestGuides}}", guideCards(guides.slice(0, 3), root))
     .replace("{{allGuides}}", guideCards(guides, root))
-    .replace("{{allCompares}}", guideCards(compares, root));
+    .replace("{{allCompares}}", guideCards(compares, root))
+    .replace("{{allScenarios}}", guideCards(scenarios, root))
+    .replace("{{allFeatures}}", guideCards(features, root))
+    .replace("{{allTools}}", guideCards(tools, root));
 
   return `<!doctype html>
 <html lang="en" data-theme="dark">
@@ -188,6 +196,8 @@ ${body.trim()}
 ${guides.slice(0, 4).map((g) => `        <li><a href="${root}${g.out.replace(/\.html$/, "")}">${esc(g.navTitle || g.title)}</a></li>`).join("\n")}
         <li><a href="${root}guides/">All guides</a></li>
         <li><a href="${root}compare/">Compare apps</a></li>
+        <li><a href="${root}scenarios/">Real situations</a></li>
+        <li><a href="${root}tools/">Free privacy tools</a></li>
       </ul></div>
       <div><h4>Help</h4><ul>
         <li><a href="${root}faq">FAQ</a></li>

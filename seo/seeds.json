@@ -1,5 +1,5 @@
 {
-  "_about": "Search phrases the daily collector expands into real autocomplete suggestions. 'deep' seeds are also expanded with a–z.",
+  "_about": "Search phrases the daily collector expands into real autocomplete suggestions. 'deep' seeds are also expanded with a–z; 'situations' are the worried, real-life searches that become scenario pages.",
   "deep": [
     "hide photos",
     "photo vault",
@@ -32,5 +32,37 @@
     "hide whatsapp photos",
     "intruder selfie"
   ],
-  "brands": ["samsung", "redmi", "xiaomi", "vivo", "oppo", "realme", "oneplus", "poco", "motorola", "pixel", "infinix", "tecno", "iqoo", "nothing phone"]
+  "brands": [
+    "samsung",
+    "redmi",
+    "xiaomi",
+    "vivo",
+    "oppo",
+    "realme",
+    "oneplus",
+    "poco",
+    "motorola",
+    "pixel",
+    "infinix",
+    "tecno",
+    "iqoo",
+    "nothing phone"
+  ],
+  "situations": [
+    "someone went through my phone",
+    "partner checks my phone",
+    "how to know if someone looked at my photos",
+    "parents check my phone",
+    "boyfriend checks my phone",
+    "girlfriend checks my phone",
+    "giving phone for repair",
+    "lending my phone to a friend",
+    "kid saw photos on my phone",
+    "selling old phone private photos",
+    "shared phone privacy",
+    "stop family seeing my photos",
+    "someone screenshot my photos",
+    "lost my phone private photos",
+    "border phone search"
+  ]
 }

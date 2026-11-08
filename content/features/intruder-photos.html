@@ -1,0 +1,66 @@
+<!--meta {
+  "title": "Intruder photos: see who tried to open your vault",
+  "navTitle": "Intruder photos",
+  "description": "Turn on intruder photos and Sealcloak's front camera quietly photographs repeated wrong patterns. Only your vault can see the photos, after you unlock.",
+  "keyword": "intruder photos",
+  "alsoTargets": [
+    "intruder selfie",
+    "intruder selfie app"
+  ],
+  "summary": "From the 3rd wrong pattern in a row, the front camera photographs each attempt.",
+  "date": "2026-11-08",
+  "readMins": 4,
+  "nav": "features",
+  "order": 7,
+  "faq": [
+    {
+      "q": "Does it take a photo on my own mistakes?",
+      "a": "Only from the third wrong pattern in a row. Unlock successfully and the count starts again."
+    },
+    {
+      "q": "Where are intruder photos stored?",
+      "a": "Encrypted in the app's private storage. They never go to your gallery and never leave the phone."
+    },
+    {
+      "q": "Can the intruder see that a photo was taken?",
+      "a": "There's no sound or message from the app, but Android shows its camera indicator dot briefly while the camera is in use."
+    },
+    {
+      "q": "How many photos are kept?",
+      "a": "The newest 20. Older ones are removed so a long attack can't fill your phone."
+    }
+  ]
+} -->
+<section class="panel">
+  <div class="panel-inner wrap">
+    <article class="article">
+      <div class="meta"><a href="{{root}}features">Features</a> · Intruder photos</div>
+      <h1>Intruder photos: see who tried to open your vault</h1>
+      <p class="lead">Wondering whether someone tried to get into your vault? Intruder photos answer that, with a picture of who it was.</p>
+      <div class="answer">
+        <div class="eyebrow">In short</div>
+        <p>With intruder photos on, Sealcloak forgives the first two wrong patterns, then takes a front-camera photo of every wrong attempt from the third in a row. The photos are encrypted so that only the vault that turned the feature on can open them, and you see them after you unlock.</p>
+      </div>
+      <div class="prose">
+        <h2>Turning it on</h2>
+        <ol><li>In Settings, under Security, find Intruder photos and tap Turn on.</li><li>Allow camera access when asked.</li><li>That's it. Settings shows how many photos are waiting.</li></ol>
+
+        <h2>Why the first two are forgiven</h2>
+        <p>Everyone slips when drawing a pattern sometimes. Photographing every single mistake would fill the folder with pictures of you. The growing waits after wrong tries are explained under <a href="{{root}}features/pattern-lock">pattern lock</a>. From the third wrong pattern in a row, it's much more likely to be someone else.</p>
+
+        {{cta}}
+
+        <h2>Private even while locked</h2>
+        <p>While the vault is locked, the app has no key to read your files. Intruder photos are sealed to a public key: the app can add a photo, but only your unlocked vault can open them. They never appear in your gallery or in a notification. After you unlock, a banner tells you how many wrong attempts were photographed.</p>
+
+        <h2>The camera indicator</h2>
+        <p>On Android 12 and newer, the phone shows its own green camera dot whenever any app uses the camera. That's an Android privacy feature, and no app can hide it. The photo is taken quickly, so the dot only appears briefly.</p>
+
+        <h2>Use it lawfully</h2>
+        <p>Rules about photographing other people differ by country. You're responsible for using this feature lawfully where you live. More in our <a href="{{root}}terms">terms</a>.</p>
+        {{faq}}
+      </div>
+      {{related}}
+    </article>
+  </div>
+</section>

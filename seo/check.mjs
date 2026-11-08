@@ -50,13 +50,16 @@ if (!lead) fail('needs a <p class="lead"> intro right under the h1');
 if (!/<div class="answer">/.test(body)) fail('needs a <div class="answer"> quick-answer box near the top (this is what Google and AI answers quote)');
 else if (body.indexOf('class="answer"') > body.indexOf("<h2")) fail("the quick-answer box must come before the first <h2>");
 const h2s = [...body.matchAll(/<h2[^>]*>([\s\S]*?)<\/h2>/g)].map((x) => text(x[1]));
-if (h2s.length < 4) fail(`only ${h2s.length} <h2> sections; a full article has at least 4`);
-if (!/<ol>/.test(body) && !/<table>/.test(body)) fail("needs numbered steps (<ol>) or a comparison table");
+// Feature pages are shorter reference pages; guides, comparisons and scenarios are full articles.
+const isFeature = section === "features" || section === "tools";
+if (h2s.length < (isFeature ? 3 : 4)) fail(`only ${h2s.length} <h2> sections; needs at least ${isFeature ? 3 : 4}`);
+if (!isFeature && !/<ol>/.test(body) && !/<table>/.test(body)) fail("needs numbered steps (<ol>) or a comparison table");
 if (section === "compare" && !/<table>/.test(body)) fail("compare pages need a side-by-side <table>");
 if (/<table>/.test(body) && !/class="table-wrap"/.test(body)) fail('wrap tables in <div class="table-wrap"> so they scroll on phones');
 for (const ph of ["{{cta}}", "{{faq}}", "{{related}}"]) if (!body.includes(ph)) fail(`missing the ${ph} placeholder`);
 if ((body.match(/\{\{cta\}\}/g) || []).length > 2) fail("use {{cta}} at most twice");
-if (wordCount < 1100) fail(`only ~${wordCount} words; a page that can rank needs 1,100+ (aim 1,400–2,000)`);
+const minWords = isFeature ? 300 : 1100;
+if (wordCount < minWords) fail(`only ~${wordCount} words; needs ${minWords}+${isFeature ? " (feature pages: say it plainly, don't pad)" : " (aim 1,400–2,000)"}`);
 if (wordCount > 3200) warn(`~${wordCount} words is long; make sure every section earns its place`);
 
 // ---- Internal links must point at pages that exist
@@ -64,13 +67,13 @@ const links = [...body.matchAll(/href="\{\{root\}\}([^"#]*)"/g)].map((x) => x[1]
 const exists = (p) => { p = p.replace(/\/$/, ""); return p === "" || existsSync(join(ROOT, "content", p + ".html")) || existsSync(join(ROOT, "content", p, "index.html")); };
 const broken = links.filter((l) => !exists(l));
 if (broken.length) fail(`broken internal links: ${broken.join(", ")}`);
-const articleLinks = links.filter((l) => /^(guides|compare)\/./.test(l) && !l.endsWith(slug));
-if (articleLinks.length < 2) fail("link to at least 2 other guides or compare pages inside the text");
-if (links.filter((l) => /^(features|security|pricing|how-it-works|faq)/.test(l)).length < 1) fail("link to at least one main page (features, security, pricing, how-it-works or faq)");
+const articleLinks = links.filter((l) => /^(guides|compare|scenarios|features)\/./.test(l) && !l.endsWith(slug));
+if (articleLinks.length < (isFeature ? 1 : 2)) fail(`link to at least ${isFeature ? 1 : 2} other article(s) or feature page(s) inside the text`);
+if (!isFeature && links.filter((l) => /^(features|security|pricing|how-it-works|faq)/.test(l)).length < 1) fail("link to at least one main page (features, security, pricing, how-it-works or faq)");
 
 // ---- Never claim what the app doesn't do
 const app = prose.replace(/\s+/g, " ");
-const sentences = app.split(/(?<=[.!?])\s+/).filter((s) => /sealcloak/i.test(s));
+const sentences = app.split(/(?<=[.!?])\s+/).filter((s) => /sealcloak/i.test(s) && !s.trim().endsWith("?"));
 const FALSE = [
   [/\b(iphone|ios|ipad|mac|windows) (app|version)\b|available (on|for) (iphone|ios)/i, "Sealcloak is Android only"],
   [/\b(cloud (backup|sync|storage)|syncs?|uploads?) /i, "Sealcloak has no cloud, sync or upload"],
@@ -91,7 +94,7 @@ if (/\$\s?\d|₹\s?\d/.test(app)) {
 // ---- Not a near-copy of another article (shared 6-word phrases)
 const shingles = (t) => { const w = t.toLowerCase().replace(/[^a-z0-9 ]/g, " ").split(/\s+/).filter(Boolean); const s = new Set(); for (let i = 0; i + 6 <= w.length; i++) s.add(w.slice(i, i + 6).join(" ")); return s; };
 const mine = shingles(prose);
-for (const dir of ["guides", "compare"]) {
+for (const dir of ["guides", "compare", "scenarios", "features"]) {
   const d = join(ROOT, "content", dir);
   if (!existsSync(d)) continue;
   for (const f of readdirSync(d).filter((f) => f.endsWith(".html") && f !== "index.html" && join(d, f) !== join(ROOT, file) && !file.endsWith(`${dir}/${f}`))) {

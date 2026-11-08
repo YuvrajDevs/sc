@@ -237,6 +237,7 @@ p { margin: 0; }
   background: color-mix(in srgb, var(--accent) 14%, transparent); color: var(--accent); }
 .card .ico svg { width: 20px; height: 20px; }
 .card .pro { display: inline-block; margin-left: 8px; font: 600 10px/1 var(--mono); letter-spacing: .08em; padding: 4px 7px; border-radius: 6px; background: var(--accent); color: var(--on-accent); vertical-align: middle; }
+.article .meta .pro { display: inline-block; margin-left: 8px; font: 600 10px/1 var(--mono); letter-spacing: .08em; padding: 4px 7px; border-radius: 6px; background: var(--accent); color: var(--on-accent); vertical-align: middle; }
 a.card { text-decoration: none; transition: border-color .15s ease, transform .15s ease; }
 a.card:hover { border-color: var(--accent); transform: translateY(-2px); }
 
@@ -333,6 +334,18 @@ a.card:hover { border-color: var(--accent); transform: translateY(-2px); }
 .keep-reading { margin-top: 56px; }
 .keep-reading .cards { margin-top: 16px; }
 .sticky-cta { display: none; }
+
+/* Free tools: drop zone and results. */
+.meta-drop { margin: 32px 0; padding: 36px 24px; border: 2px dashed var(--border); border-radius: 22px; text-align: center; display: grid; justify-items: center; gap: 12px; background: var(--surface); transition: border-color .15s ease, background .15s ease; }
+.meta-drop.over { border-color: var(--accent); background: color-mix(in srgb, var(--accent) 10%, var(--surface)); }
+.meta-drop svg { width: 40px; height: 40px; color: var(--accent); }
+.meta-drop p { margin: 0; }
+.meta-results { list-style: none; padding: 0; margin: 0 0 32px; display: grid; gap: 12px; }
+.meta-row { display: flex; align-items: center; gap: 16px; justify-content: space-between; flex-wrap: wrap; padding: 18px 20px; border-radius: 18px; border: 1px solid var(--border); background: var(--surface); }
+.meta-row p { margin: 4px 0 0; font-size: 14px; }
+.meta-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+.meta-tag { font: 500 12px/1 var(--mono); padding: 6px 9px; border-radius: 999px; border: 1px solid var(--border); color: var(--dim); }
+.meta-tag.warn { border-color: #d9822b; color: #d9822b; }
 .toc { margin-top: 32px; padding: 20px 22px; border-radius: 16px; border: 1px solid var(--border); }
 .toc ol { margin: 10px 0 0; padding-left: 20px; font-size: 15px; }
 .toc a { color: var(--dim); text-decoration: none; }
