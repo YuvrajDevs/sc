@@ -1,0 +1,63 @@
+<!--meta {
+  "title": "Seguridad",
+  "description": "Cómo protege Sealcloak tus archivos: cifrado AES-256-GCM, derivación de llaves con Argon2id, Android Keystore, sin cuenta y sin permiso de internet.",
+  "nav": "security",
+  "sourceHash": "9f545eb7c0bb"
+} -->
+<section class="panel">
+  <div class="panel-inner wrap">
+    <div class="section-head">
+      <div class="eyebrow">Seguridad</div>
+      <h1 style="margin-top:20px">Hecha para que ni nosotros podamos mirar.</h1>
+      <p class="lead">Sealcloak no tiene servidores ni cuentas, y la app no tiene permiso para usar internet. Tus archivos se cifran en tu teléfono con llaves que solo tu patrón o tu frase pueden desbloquear.</p>
+    </div>
+    <div class="cards four reveal">
+      <div class="card"><h3>Sin cuenta</h3><p>Ni correo, ni número de teléfono, ni inicio de sesión. Nunca.</p></div>
+      <div class="card"><h3>Sin internet</h3><p>El permiso de internet está eliminado por completo de la app.</p></div>
+      <div class="card"><h3>Sin nube</h3><p>Los archivos se quedan en tu teléfono, solo en forma cifrada.</p></div>
+      <div class="card"><h3>Sin puerta trasera</h3><p>No podemos restablecer tu patrón ni abrir tu bóveda.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="panel">
+  <div class="panel-inner wrap">
+    <div class="split reveal">
+      <div>
+        <div class="eyebrow">Por dentro</div>
+        <h2 style="margin-top:16px">Cómo se protegen tus archivos.</h2>
+        <p class="lead" style="margin-top:16px">Para quienes quieren los detalles.</p>
+      </div>
+      <table class="spec">
+        <tr><th>Cifrado de archivos</th><td>AES-256-GCM. Cada archivo se cifra antes de escribirse en el almacenamiento, y su etiqueta detecta cualquier alteración.</td></tr>
+        <tr><th>Llave de la bóveda</th><td>Cada bóveda tiene su propia llave maestra aleatoria de 256 bits.</td></tr>
+        <tr><th>Patrón y frase</th><td>Se convierten en llaves con Argon2id (32 MiB de memoria), así que adivinarlos es lento incluso con hardware rápido.</td></tr>
+        <tr><th>Hardware</th><td>Los datos del patrón además se envuelven con una llave del Android Keystore, así que no se pueden copiar fuera del teléfono para atacarlos.</td></tr>
+        <tr><th>Patrones incorrectos</th><td>Tiempos de espera cada vez más largos después de intentos fallidos. Borrado opcional tras demasiados.</td></tr>
+        <tr><th>Copias de seguridad</th><td>Los archivos de respaldo siguen cifrados. La frase de cada bóveda restaura solo esa bóveda.</td></tr>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="panel">
+  <div class="panel-inner wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">Límites honestos</div>
+      <h2>Lo que Sealcloak no puede hacer.</h2>
+      <p class="lead">La buena seguridad también implica ser claros con esto.</p>
+    </div>
+    <div class="cards reveal">
+      <div class="card"><h3>Si olvidas ambos, lo pierdes todo</h3><p>Si olvidas tu patrón y pierdes tu frase de recuperación, nadie puede abrir la bóveda. Ni siquiera nosotros.</p></div>
+      <div class="card"><h3>Desinstalar borra</h3><p>Quitar la app elimina sus bóvedas. Guarda un archivo de respaldo en un lugar seguro.</p></div>
+      <div class="card"><h3>Un teléfono desbloqueado está abierto</h3><p>Mientras una bóveda está abierta, cualquiera que tenga el teléfono en la mano puede verla. Se vuelve a bloquear en cuanto sales de la app.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="panel final">
+  <div class="panel-inner wrap">
+    <h2>Privada desde el principio.</h2>
+    <div class="cta-row"><a class="btn btn-primary btn-lg" href="{{play}}">Descárgala en Google Play</a><a class="btn btn-ghost btn-lg" href="{{root}}privacy">Lee la política de privacidad</a></div>
+  </div>
+</section>

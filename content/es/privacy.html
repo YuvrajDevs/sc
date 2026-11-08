@@ -1,0 +1,73 @@
+<!--meta {
+  "title": "Política de privacidad",
+  "description": "Sealcloak no recopila datos. Sin cuenta, sin analítica, sin anuncios y sin permiso de internet. Aquí está exactamente lo que hacen y no hacen la app y este sitio.",
+  "nav": "privacy",
+  "date": "2026-11-03",
+  "sourceHash": "7827b14361db"
+} -->
+<section class="panel">
+  <div class="panel-inner wrap">
+    <article class="article">
+      <div class="meta">Última actualización: 3 de noviembre de 2026</div>
+      <h1>Política de privacidad</h1>
+      <p class="lead">Sealcloak es una bóveda privada sin conexión para Android. Tus archivos se cifran en tu teléfono con una llave aleatoria para cada bóveda, y esa llave solo se puede desbloquear con tu patrón o tu frase de recuperación. No operamos ningún servicio que reciba tus archivos, tu patrón o tus llaves.</p>
+      <div class="prose">
+        <h2>Resumen</h2>
+        <p>La app para Android no tiene el permiso de internet. Lo quitamos de la app a propósito, así que Sealcloak no puede enviar nada a ningún lado, ni siquiera por error. No hay cuenta, ni analítica, ni reportes de fallos, ni publicidad, ni rastreo dentro de la app.</p>
+
+        <h2>Lo que no recopilamos</h2>
+        <ul>
+          <li><strong>Tus fotos, videos, documentos, audios, notas o escaneos.</strong> Se cifran con AES-256-GCM en tu teléfono y se guardan solo en el almacenamiento privado de la app. Nunca los recibimos.</li>
+          <li><strong>Tu patrón.</strong> Se convierte en una llave en tu teléfono con Argon2id, una función de derivación de llaves lenta, hecha para resistir intentos de adivinar. El patrón en sí nunca se guarda.</li>
+          <li><strong>Tus llaves de cifrado.</strong> Cada bóveda tiene su propia llave maestra aleatoria. Se guarda envuelta, protegida por tu patrón y por una llave que vive en el Android Keystore respaldado por hardware. Las llaves se borran de la memoria cuando la bóveda se bloquea.</li>
+          <li><strong>Tu frase de recuperación.</strong> Se te muestra una sola vez al configurar la app y se guarda en tu teléfono solo de forma cifrada. No podemos verla ni restablecerla.</li>
+          <li><strong>Ningún tipo de cuenta.</strong> Ni correo, ni número de teléfono, ni inicio de sesión.</li>
+          <li><strong>La copia de seguridad en la nube de Android.</strong> La app se excluye del respaldo automático de apps de Android, así que tu bóveda no se copia a Google Drive a tus espaldas.</li>
+        </ul>
+
+        <h2>Permisos que usa la app</h2>
+        <ul>
+          <li><strong>Cámara:</strong> para la cámara y el escáner de documentos dentro de la app, y para las fotos de intrusos si las activas. Las imágenes se guardan cifradas dentro de tu bóveda, nunca en tu galería.</li>
+          <li><strong>Biometría:</strong> para desbloquear con tu huella o tu rostro, si lo activas. Android se encarga de la verificación biométrica; la app nunca ve tu huella ni tu rostro.</li>
+          <li><strong>Ejecutar al iniciar:</strong> para que un respaldo programado siga funcionando después de reiniciar el teléfono.</li>
+        </ul>
+        <p>La app no pide acceso a contactos, ubicación, micrófono, todo el almacenamiento ni internet. Los archivos que agregas se eligen con los selectores de archivos y fotos del propio Android, que solo le dan a la app los elementos que tú eliges.</p>
+
+        <h2>Fotos de intrusos</h2>
+        <p>Si activas esta función, la cámara frontal toma una foto después de varios patrones incorrectos. Mientras la bóveda está bloqueada, la foto se sella con una llave pública, así que la app puede agregar una foto pero no puede leer las que ya están guardadas. Solo la bóveda que activó la función puede abrirlas, después de que la desbloqueas. Las fotos nunca salen de tu teléfono y nunca aparecen en una notificación. Android muestra su indicador normal de cámara siempre que cualquier app usa la cámara, y la app no puede ocultarlo.</p>
+
+        <h2>Copias de seguridad que haces</h2>
+        <p>Los respaldos se crean solo cuando tú lo pides, o con un horario semanal o mensual que configuras, y se guardan en la carpeta que elijas. Un respaldo es un solo archivo, cifrado con la frase de recuperación de tu bóveda o con una frase de contraseña que eliges en ese momento. No recibimos los respaldos y no podemos abrirlos. Una vez que un respaldo está fuera de la app, qué tan seguro está depende de dónde lo guardes.</p>
+
+        <h2>Funciones de disfraz</h2>
+        <p>El disfraz de calculadora y el ícono personalizado solo cambian cómo se ve la app en tu teléfono: el ícono, el nombre y la pantalla con la que abre. El código secreto del modo calculadora se guarda como un hash lento, no como texto, y nunca sale de tu teléfono.</p>
+
+        <h2>Compras</h2>
+        <p>Sealcloak Pro se vende a través de Google Play. Google se encarga del pago y los reembolsos según la <a href="https://policies.google.com/privacy">política de privacidad de Google</a>. No recibimos tu nombre, tu tarjeta ni tus datos de pago. La app solo le pregunta a Google Play si Pro está activo en tu cuenta, usando el servicio de facturación de Google en tu dispositivo.</p>
+
+        <h2>Este sitio web</h2>
+        <p>Este sitio no tiene analítica, ni píxeles publicitarios, ni cookies. Guarda una pequeña preferencia en tu navegador, el tema claro u oscuro, usando el almacenamiento local de tu dispositivo únicamente. Las fuentes de la página se cargan desde Google Fonts, que puede ver tu dirección IP cuando tu navegador las descarga. El sitio está alojado en Vercel, que, como la mayoría de los servicios de hosting, puede guardar registros normales del servidor, como la dirección IP y la página solicitada. Si nos escribes un correo, recibimos tu dirección de correo y tu mensaje.</p>
+
+        <h2>Mensajes que nos envías</h2>
+        <p>Si nos escribes para pedir soporte, leemos tu mensaje y respondemos a la dirección de la que vino. Lo usamos para ayudarte y para mejorar la app. Lo conservamos solo el tiempo que lo necesitemos para eso. Por favor, nunca envíes tu patrón, tu frase de recuperación ni la frase de contraseña de un respaldo. Nunca te los vamos a pedir.</p>
+
+        <h2>Servicios de terceros</h2>
+        <ul>
+          <li><strong>Google Play y Google Play Billing:</strong> para instalar la app y procesar las compras.</li>
+          <li><strong>Android Keystore:</strong> en tu teléfono, para proteger las llaves que envuelven tus bóvedas.</li>
+          <li><strong>Google Fonts y Vercel:</strong> solo para este sitio web, como se describe arriba.</li>
+        </ul>
+        <p>La app en sí no se comunica con ninguno de ellos.</p>
+
+        <h2>Menores</h2>
+        <p>Sealcloak no está dirigida a menores de 13 años. La app no recopila información de nadie y no requiere cuenta.</p>
+
+        <h2>Cambios a esta política</h2>
+        <p>Si esta política cambia, actualizaremos esta página y la fecha de arriba. Si un cambio afectara lo que la app recopila, también lo diríamos en las notas de actualización de la app.</p>
+
+        <h2>Contacto</h2>
+        <p>¿Tienes preguntas sobre esta política? Visita nuestra <a href="{{root}}support">página de soporte</a> o escribe a <a href="mailto:{{email}}">{{email}}</a>.</p>
+      </div>
+    </article>
+  </div>
+</section>
