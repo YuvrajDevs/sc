@@ -1,0 +1,50 @@
+<!--meta {
+  "title": "Novidades do Sealcloak",
+  "description": "Notas de versão do Sealcloak, o cofre criptografado offline para Android: o que cada versão adiciona e corrige. A versão 1.0.0 é o primeiro lançamento.",
+  "nav": "about",
+  "date": "2026-11-08",
+  "sourceHash": "ba84710843dc"
+} -->
+<section class="panel">
+  <div class="panel-inner wrap">
+    <article class="article">
+      <div class="meta">Notas de versão</div>
+      <h1>Novidades</h1>
+      <p class="lead">Todas as versões do Sealcloak, da mais nova para a mais antiga. As atualizações chegam pelo Google Play. Como o app não consegue se conectar à internet, ele nunca baixa nada sozinho.</p>
+      <div class="prose">
+        <h2>Versão 1.0.0 <span class="dim" style="font-size:.6em">Primeiro lançamento</span></h2>
+        <p>A primeira versão pública do Sealcloak.</p>
+        <h3>Cofre e criptografia</h3>
+        <ul>
+          <li>Cada arquivo criptografado no celular com AES-256-GCM; cada cofre tem sua própria chave mestra aleatória, protegida com a ajuda do Android Keystore.</li>
+          <li>Bloqueio por padrão 5×5 de pelo menos 6 pontos, transformado em chave com Argon2id. Desbloqueio opcional por digital ou rosto.</li>
+          <li>Uma frase de recuperação de 9 palavras para cada cofre, ou uma frase criada por você.</li>
+          <li>Até 3 cofres no plano grátis, cada um com seu próprio padrão e nome; nada mostra quantos existem.</li>
+          <li>Depois de 4 padrões errados, esperas cada vez maiores que não dá para pular mudando o relógio do celular.</li>
+          <li>Capturas e gravação de tela bloqueadas dentro do app.</li>
+        </ul>
+        <h3>Arquivos</h3>
+        <ul>
+          <li>Fotos, vídeos, documentos, áudios, notas de texto e digitalizações, com pastas, busca, apresentação de slides, seleção múltipla, mover, copiar e exportar.</li>
+          <li>Câmera privada que salva direto no cofre, e um scanner de documentos que gera PDFs.</li>
+          <li>Compartilhamento seguro em um pacote protegido por senha.</li>
+          <li>Backups criptografados manuais, ou semanais ou mensais para uma pasta que você escolhe, e restauração em um celular novo.</li>
+        </ul>
+        <h3>Proteção</h3>
+        <ul>
+          <li>Fotos de intrusos: a partir do terceiro padrão errado seguido, a câmera frontal tira uma foto de cada tentativa, que só pode ser vista depois que você desbloqueia.</li>
+          <li>Coerce (Pro): um cofre de fachada com padrão próprio; opcionalmente apaga os outros cofres, vem desativado e exige digitar PERMIT.</li>
+          <li>Apagar após padrões errados (Pro): vem desativado e exige digitar PERMIT.</li>
+          <li>Disfarce de calculadora (Pro): uma calculadora que funciona; digite seu código e segure = por 2 segundos.</li>
+          <li>Ícone personalizado (Pro): qualquer imagem e nome na tela inicial.</li>
+        </ul>
+        <h3>Privacidade</h3>
+        <ul>
+          <li>Sem permissão de internet, sem conta, sem anúncios, sem analytics, sem relatórios de falhas.</li>
+          <li>Fica de fora do backup automático na nuvem que o Android faz dos dados dos apps.</li>
+        </ul>
+        <p>Encontrou um bug ou tem uma ideia para a próxima versão? Mande um e-mail para <a href="mailto:{{email}}">{{email}}</a>. Veja todos os <a href="{{root}}features">recursos</a>.</p>
+      </div>
+    </article>
+  </div>
+</section>
