@@ -1,0 +1,50 @@
+<!--meta {
+  "title": "Novedades de Sealcloak",
+  "description": "Notas de versión de Sealcloak, la bóveda cifrada sin conexión para Android: lo que agrega y corrige cada versión. La versión 1.0.0 es el primer lanzamiento.",
+  "nav": "about",
+  "date": "2026-11-08",
+  "sourceHash": "ba84710843dc"
+} -->
+<section class="panel">
+  <div class="panel-inner wrap">
+    <article class="article">
+      <div class="meta">Notas de versión</div>
+      <h1>Novedades</h1>
+      <p class="lead">Todas las versiones de Sealcloak, de la más nueva a la más antigua. Las actualizaciones llegan a través de Google Play. Como la app no puede conectarse a internet, nunca descarga nada por su cuenta.</p>
+      <div class="prose">
+        <h2>Versión 1.0.0 <span class="dim" style="font-size:.6em">Primer lanzamiento</span></h2>
+        <p>La primera versión pública de Sealcloak.</p>
+        <h3>Bóveda y cifrado</h3>
+        <ul>
+          <li>Cada archivo se cifra en el teléfono con AES-256-GCM; cada bóveda tiene su propia llave maestra aleatoria, protegida con ayuda del Android Keystore.</li>
+          <li>Bloqueo con patrón de 5×5 de al menos 6 puntos, convertido en llave con Argon2id. Desbloqueo opcional con huella o rostro.</li>
+          <li>Una frase de recuperación de 9 palabras para cada bóveda, o una frase tuya.</li>
+          <li>Hasta 3 bóvedas en el plan gratuito, cada una con su propio patrón y nombre; nada muestra cuántas existen.</li>
+          <li>Después de 4 patrones incorrectos, esperas cada vez más largas que no se saltan cambiando la hora del teléfono.</li>
+          <li>Capturas y grabación de pantalla bloqueadas dentro de la app.</li>
+        </ul>
+        <h3>Archivos</h3>
+        <ul>
+          <li>Fotos, videos, documentos, audios, notas de texto y escaneos, con carpetas, búsqueda, presentación, selección múltiple, mover, copiar y exportar.</li>
+          <li>Cámara privada que guarda directo en la bóveda, y un escáner de documentos que crea PDF.</li>
+          <li>Compartir de forma segura como un paquete protegido con frase de contraseña.</li>
+          <li>Copias de seguridad cifradas a mano, o semanales o mensuales en la carpeta que elijas, y restauración en un teléfono nuevo.</li>
+        </ul>
+        <h3>Protección</h3>
+        <ul>
+          <li>Fotos de intrusos: a partir del tercer patrón incorrecto seguido, la cámara frontal toma una foto de cada intento, que solo puedes ver después de desbloquear.</li>
+          <li>Coerce (Pro): una bóveda señuelo con su propio patrón; opcionalmente borra las demás bóvedas, viene desactivado y requiere escribir PERMIT.</li>
+          <li>Borrar tras patrones incorrectos (Pro): viene desactivado y requiere escribir PERMIT.</li>
+          <li>Disfraz de calculadora (Pro): una calculadora que funciona; escribe tu código y mantén presionado = durante 2 segundos.</li>
+          <li>Icono personalizado (Pro): cualquier imagen y nombre en la pantalla de inicio.</li>
+        </ul>
+        <h3>Privacidad</h3>
+        <ul>
+          <li>Sin permiso de internet, sin cuenta, sin anuncios, sin analíticas, sin reportes de fallos.</li>
+          <li>Excluida de la copia de seguridad automática en la nube que Android hace de los datos de las apps.</li>
+        </ul>
+        <p>¿Encontraste un error o tienes una idea para la próxima versión? Escribe a <a href="mailto:{{email}}">{{email}}</a>. Mira todas las <a href="{{root}}features">funciones</a>.</p>
+      </div>
+    </article>
+  </div>
+</section>
