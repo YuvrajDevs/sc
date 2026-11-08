@@ -1,0 +1,63 @@
+<!--meta {
+  "title": "Cómo cifra Sealcloak tus fotos y archivos",
+  "navTitle": "Cifrado",
+  "description": "Cada archivo en Sealcloak se cifra en tu teléfono con AES-256-GCM, con una llave aleatoria por bóveda protegida por tu patrón y el Android Keystore.",
+  "keyword": "cifrar fotos",
+  "summary": "AES-256-GCM en el teléfono, una llave aleatoria por bóveda, desbloqueada con tu patrón.",
+  "date": "2026-11-08",
+  "readMins": 4,
+  "nav": "features",
+  "order": 2,
+  "sourceHash": "5d2ec5b000c7",
+  "faq": [
+    {
+      "q": "¿AES-256 es realmente seguro?",
+      "a": "AES-256 es el estándar que se usa en todo el mundo para proteger datos sensibles, y no existe ningún ataque práctico contra él. En la práctica, los puntos débiles son las contraseñas y los patrones fáciles de adivinar, no el cifrado."
+    },
+    {
+      "q": "¿Sealcloak puede ver mis fotos?",
+      "a": "No. El cifrado ocurre en tu teléfono, la app no puede conectarse a internet y nunca tenemos tu patrón, tu frase ni tus llaves."
+    },
+    {
+      "q": "Si alguien copia los archivos de la app, ¿puede abrirlos?",
+      "a": "No sin la llave. Los archivos están cifrados, y la llave necesita tu patrón o tu frase de recuperación y, en el teléfono original, el Keystore."
+    },
+    {
+      "q": "¿Mis respaldos también están cifrados?",
+      "a": "Sí. Un archivo de respaldo se cifra con la frase de recuperación de tu bóveda o con una frase de contraseña que tú eliges. Sin ella, el archivo no se puede abrir."
+    }
+  ]
+} -->
+<section class="panel">
+  <div class="panel-inner wrap">
+    <article class="article">
+      <div class="meta"><a href="{{root}}features">Funciones</a> · Cifrado</div>
+      <h1>Cómo cifra Sealcloak tus fotos y archivos</h1>
+      <p class="lead">Ocultar una foto y cifrarla son cosas distintas. Sealcloak cifra cada archivo en tu teléfono, así que incluso una copia sacada de la app es ilegible sin tu llave.</p>
+      <div class="answer">
+        <div class="eyebrow">En resumen</div>
+        <p>Cada bóveda tiene su propia llave maestra aleatoria. Cada archivo se cifra con AES-256-GCM antes de guardarse. La llave maestra se envuelve con una llave derivada de tu patrón mediante Argon2id y con una llave guardada en el Keystore de Android, respaldado por hardware. Nada sale de tu teléfono, porque la app no tiene permiso de internet.</p>
+      </div>
+      <div class="prose">
+        <h2>Oculto no es lo mismo que cifrado</h2>
+        <p>Muchas apps para bloquear la galería mueven las fotos a una carpeta oculta y ponen una pantalla de contraseña delante. Cualquiera con un administrador de archivos o una computadora puede encontrar y abrir los archivos de todos modos. Con el cifrado, los archivos en sí quedan revueltos. Una copia no sirve de nada sin la llave, termine donde termine.</p>
+
+        <h2>Qué pasa cuando agregas una foto</h2>
+        <ol><li>El archivo se lee por partes y cada parte se cifra con AES-256-GCM, que además detecta cualquier alteración.</li><li>El archivo cifrado se escribe en el almacenamiento privado de la app, con un nombre aleatorio que no dice nada de lo que es.</li><li>El índice de la bóveda (nombres, carpetas, fechas) también se cifra.</li><li>La original se queda en tu galería hasta que tú la borres, así puedes revisar primero la copia de la bóveda.</li></ol>
+
+        {{cta}}
+
+        <h2>Cómo la desbloquea tu patrón</h2>
+        <p>Tu patrón pasa por Argon2id, una función lenta y que exige mucha memoria, hecha para resistir intentos de adivinar a gran escala. El resultado, junto con una llave que nunca sale del Keystore de Android, desenvuelve la llave maestra de tu bóveda. Cuando bloqueas la bóveda, las llaves se borran de la memoria.</p>
+
+        <h2>Ningún servidor que hackear</h2>
+        <p>Sealcloak no tiene cuenta, ni nube, ni permiso de internet. No hay copia de tus archivos o llaves en ningún lado, salvo en tu teléfono y en los <a href="{{root}}features/encrypted-backups">respaldos</a> que decidas hacer. Lee el panorama completo en la <a href="{{root}}security">página de seguridad</a>.</p>
+
+        <h2>Los límites, con honestidad</h2>
+        <p>Ninguna seguridad es absoluta. Un patrón fácil de adivinar, un teléfono ya comprometido por malware o una frase de recuperación guardada en una foto del mismo teléfono pueden echar abajo un buen cifrado. La Revisión de seguridad de la app, en Ajustes, señala los puntos débiles más comunes.</p>
+        {{faq}}
+      </div>
+      {{related}}
+    </article>
+  </div>
+</section>
