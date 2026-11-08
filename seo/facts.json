@@ -3,13 +3,6 @@
   "app": "Sealcloak",
   "listingTitle": "Photo Lock - Sealcloak",
   "platform": "Android 8.0 or newer only. No iPhone, iPad, Windows, Mac or web version.",
-  "price": {
-    "free": "3 vaults, 100 photos, 10 videos, 10 documents, 10 audio files",
-    "pro": "Unlimited files and vaults, calculator disguise, custom icon, Coerce, erase after wrong patterns",
-    "plansUSD": "Weekly $1.49, Monthly $4.99, Annual $14.99 (7-day free trial), Lifetime $29.99",
-    "plansINR": "Weekly ₹49, Monthly ₹149, Annual ₹599 (7-day free trial), Lifetime ₹999",
-    "billing": "Google Play"
-  },
   "privacy": [
     "No account, no email, no phone number",
     "The app has no internet permission at all, so it cannot upload anything",
@@ -52,5 +45,11 @@
     "It is not open source",
     "It cannot hide other apps; it can only disguise itself",
     "It does not hide files inside other apps such as WhatsApp; files must be added to the vault"
-  ]
+  ],
+  "plans": {
+    "free": "3 vaults, 100 photos, 10 videos, 10 documents, 10 audio files",
+    "pro": "Unlimited files and vaults, calculator disguise, custom icon, Coerce, erase after wrong patterns",
+    "billing": "Google Play",
+    "rule": "Never mention prices, plan lengths, trials or any money amounts for Sealcloak anywhere on the site. Free vs Pro features only."
+  }
 }

@@ -43,7 +43,7 @@ node seo/check-translation.mjs content/<code>/<path>.html
   - the word PERMIT, which the user types in the app
   - AES-256-GCM, Argon2id and Android Keystore
   - phone brands and model names, and other apps' names
-- **Keep every number exactly:** prices ($1.49, ₹49…), limits (100 photos, 10 videos), counts (9 words, 5×5, 6 dots, 4 to 8 digits), dates and durations. You may use local number formatting only if the digits stay the same.
+- **Keep every number exactly:** limits (100 photos, 10 videos), counts (9 words, 5×5, 6 dots, 4 to 8 digits), dates and durations. You may use local number formatting only if the digits stay the same.
 - **Tone:** plain, calm and friendly, matching the English. Use the polite "you" (usted is not needed for Spanish; Latin American "tú" is fine). Use German "du" to match the app's casual tone. Use Japanese です/ます and Korean 해요체.
 - **Arabic** reads right to left, and the build handles the layout. Write natural Modern Standard Arabic.
 - **Never add claims** that aren't in the English page, and never drop a sentence.

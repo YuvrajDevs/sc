@@ -1,5 +1,5 @@
 {
-  "nav": {"home": "Home", "features": "Features", "security": "Security", "how": "How it works", "pricing": "Pricing", "guides": "Guides", "faq": "FAQ", "support": "Support"},
+  "nav": {"home": "Home", "features": "Features", "security": "Security", "how": "How it works", "guides": "Guides", "faq": "FAQ", "support": "Support"},
   "getApp": "Get the app",
   "themeLabel": "Switch light or dark theme",
   "menuLabel": "Open menu",

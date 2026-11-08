@@ -69,7 +69,7 @@ const broken = links.filter((l) => !exists(l));
 if (broken.length) fail(`broken internal links: ${broken.join(", ")}`);
 const articleLinks = links.filter((l) => /^(guides|compare|scenarios|features)\/./.test(l) && !l.endsWith(slug));
 if (articleLinks.length < (isFeature ? 1 : 2)) fail(`link to at least ${isFeature ? 1 : 2} other article(s) or feature page(s) inside the text`);
-if (!isFeature && links.filter((l) => /^(features|security|pricing|how-it-works|faq)/.test(l)).length < 1) fail("link to at least one main page (features, security, pricing, how-it-works or faq)");
+if (!isFeature && links.filter((l) => /^(features|security|how-it-works|faq)/.test(l)).length < 1) fail("link to at least one main page (features, security, how-it-works or faq)");
 
 // ---- Never claim what the app doesn't do
 const app = prose.replace(/\s+/g, " ");
@@ -85,11 +85,7 @@ const FALSE = [
   [/\b(military[- ]grade|unhackable|100% (safe|secure)|impossible to (hack|crack))\b/i, "no absolute security claims"],
 ];
 for (const s of sentences) for (const [re, why] of FALSE) if (re.test(s) && !/\b(no|not|never|can't|cannot|doesn't|does not|without|isn't|only)\b/i.test(s)) fail(`possible false claim (${why}): "${s.slice(0, 140)}"`);
-if (/\$\s?\d|₹\s?\d/.test(app)) {
-  const facts = JSON.parse(readFileSync(join(ROOT, "seo/facts.json"), "utf8"));
-  const ok = `${facts.price.plansUSD} ${facts.price.plansINR}`;
-  for (const p of app.match(/(\$|₹)\s?\d[\d.,]*/g) || []) if (/sealcloak|pro|plan|lifetime|annual|monthly|weekly/i.test(app) && !ok.includes(p.replace(/\s/g, ""))) warn(`price ${p} isn't one of Sealcloak's; fine only if it's another app's price`);
-}
+if (/(\$|₹|€|£)\s?\d/.test(app) && /sealcloak|\bpro\b/i.test(app)) fail("no prices: the site never mentions what Sealcloak costs");
 
 // ---- Not a near-copy of another article (shared 6-word phrases)
 const shingles = (t) => { const w = t.toLowerCase().replace(/[^a-z0-9 ]/g, " ").split(/\s+/).filter(Boolean); const s = new Set(); for (let i = 0; i + 6 <= w.length; i++) s.add(w.slice(i, i + 6).join(" ")); return s; };

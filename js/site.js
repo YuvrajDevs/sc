@@ -1,5 +1,10 @@
-// Theme toggle, mobile menu, hero background, scroll reveal and local prices.
+// Theme toggle, mobile menu, hero background, scroll reveal.
 (() => {
+  // Picking a language remembers it for a year; the edge redirect then follows this choice instead of the browser's.
+  document.addEventListener("click", (e) => {
+    const a = e.target.closest && e.target.closest(".lang-menu a[data-lang]");
+    if (a) document.cookie = `sc_lang=${a.dataset.lang}; path=/; max-age=31536000; samesite=lax`;
+  });
   const root = document.documentElement;
 
   document.getElementById("theme-btn")?.addEventListener("click", () => {
@@ -57,15 +62,4 @@
   }, { rootMargin: "0px 0px -8% 0px" }) : null;
   document.querySelectorAll(".reveal").forEach((el) => io ? io.observe(el) : el.classList.add("in"));
 
-  // Prices: rupees for India, dollars elsewhere, matching the Play Console listing.
-  const toggle = document.querySelector(".price-toggle");
-  if (toggle) {
-    const show = (cur) => {
-      document.querySelectorAll("[data-usd]").forEach((el) => { el.textContent = el.dataset[cur]; });
-      toggle.querySelectorAll("button").forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.cur === cur)));
-    };
-    const india = /-IN$/i.test(navigator.language) || (Intl.DateTimeFormat().resolvedOptions().timeZone || "") === "Asia/Kolkata";
-    show(india ? "inr" : "usd");
-    toggle.addEventListener("click", (e) => { const b = e.target.closest("button"); if (b) show(b.dataset.cur); });
-  }
 })();

@@ -44,6 +44,8 @@ for (const l of LANGS) {
     return [rel.replace(/\.html$/, "") === "index" ? "index.html" : rel, { file: f, ...parse(f) }];
   }));
 }
+// A translation whose English page was removed is dropped, so it can't come back as an orphan.
+for (const l of LANGS) if (l.code !== "en") for (const k of PAGES[l.code].keys()) if (!PAGES.en.has(k)) PAGES[l.code].delete(k);
 
 const prefix = (code) => (code === "en" ? "" : `${code}/`);
 const clean = (out) => out.replace(/(^|\/)index\.html$/, "$1").replace(/\.html$/, "");
@@ -148,7 +150,7 @@ ${meta.faq.map((f) => `      <h3>${esc(f.q)}</h3>\n      <p>${esc(f.a)}</p>`).jo
     .replace("{{allScenarios}}", cards(lists.scenarios))
     .replace("{{allFeatures}}", cards(lists.features))
     .replace("{{allTools}}", cards(lists.tools))
-    .replace(/\{\{root\}\}([^"'\s<>)]*)/g, (_, p) => link(p));
+    .replace(/\{\{root\}\}([^"'\s<>)]*)/g, (_, p) => link(p === "pricing" ? "how-it-works" : p)); // pricing was removed; stale translations may still link it
 
   // The same page in every language that has it, for search engines and the language menu.
   const versions = LANGS.filter((l) => PAGES[l.code].has(out));
@@ -156,7 +158,7 @@ ${meta.faq.map((f) => `      <h3>${esc(f.q)}</h3>\n      <p>${esc(f.a)}</p>`).jo
     + (versions.length > 1 ? `\n<link rel="alternate" hreflang="x-default" href="${pageUrl("en", out)}">` : "");
   const langMenu = LANGS.map((l) => {
     const target = PAGES[l.code].has(out) ? out : "index.html";
-    return `<li><a href="${root}${prefix(l.code)}${clean(target)}" hreflang="${l.hreflang}" lang="${l.hreflang}"${l.code === lang.code ? ' aria-current="true"' : ""}>${esc(l.name)}</a></li>`;
+    return `<li><a href="${root}${prefix(l.code)}${clean(target)}" hreflang="${l.hreflang}" lang="${l.hreflang}" data-lang="${l.code}"${l.code === lang.code ? ' aria-current="true"' : ""}>${esc(l.name)}</a></li>`;
   }).join("");
   const navItem = (key, href) => `<li><a href="${link(href)}"${meta.nav === key ? ' aria-current="page"' : ""}>${esc(ui.nav[key])}</a></li>`;
   const fontLink = lang.fontQuery ? `\n<link href="https://fonts.googleapis.com/css2?family=${lang.fontQuery}&display=swap" rel="stylesheet">` : "";
@@ -199,14 +201,13 @@ ${hreflang}
         ${navItem("features", "features")}
         ${navItem("security", "security")}
         ${navItem("how", "how-it-works")}
-        ${navItem("pricing", "pricing")}
         ${navItem("guides", "guides/")}
         ${navItem("faq", "faq")}
         ${navItem("support", "support")}
       </ul>
       <div class="nav-actions">
         <details class="lang-menu">
-          <summary class="icon-btn" aria-label="${esc(ui.languageLabel)}">${GLOBE}</summary>
+          <summary class="lang-btn" aria-label="${esc(ui.languageLabel)}: ${esc(lang.name)}">${GLOBE}<span>${lang.code.split("-")[0].toUpperCase()}</span></summary>
           <ul>${langMenu}</ul>
         </details>
         <button class="icon-btn" id="theme-btn" type="button" aria-label="${esc(ui.themeLabel)}">
@@ -234,7 +235,6 @@ ${body.trim()}
         <li><a href="${link("features")}">${esc(ui.nav.features)}</a></li>
         <li><a href="${link("security")}">${esc(ui.nav.security)}</a></li>
         <li><a href="${link("how-it-works")}">${esc(ui.nav.how)}</a></li>
-        <li><a href="${link("pricing")}">${esc(ui.nav.pricing)}</a></li>
       </ul></div>
       <div><h4>${esc(ui.footGuides)}</h4><ul>
 ${lists.guides.slice(0, 4).map((g) => `        <li><a href="${link(g.out.replace(/\.html$/, ""))}">${esc(g.navTitle || g.title)}</a></li>`).join("\n")}

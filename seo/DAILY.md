@@ -23,11 +23,11 @@ Use the topic's `variants` as `alsoTargets` and as natural phrasing in headings 
 
 ## 3. Research before writing
 
-- Read `seo/facts.json`. It's the only source for what Sealcloak does. Never claim anything that isn't in it, and respect `notTrue`.
+- Read `seo/facts.json`. It's the only source for what Sealcloak does. Never claim anything that isn't in it, and respect `notTrue`. Never mention what Sealcloak costs: no prices, plan lengths or trials.
 - Read two existing articles in `content/guides/` for tone and to find pages to link.
 - **Get phone-specific steps right.** For menu paths on a brand's phone, for example Samsung Secure Folder or Xiaomi Hidden album, check the maker's current help pages with web search, and write the path as the maker describes it. If you can't confirm a path, describe it more generally instead of guessing.
 - **Claims that something was removed, discontinued or changed need proof.** Use at least one dated source from the last 12 months, ideally the maker's own page. Old news about a beta feature being pulled doesn't count. If you can't confirm a claim, leave it out.
-- **Get competitor facts right.** For another app, use its Play Store listing and its own site: price, account requirement, cloud, permissions. Be fair: say what it does well.
+- **Get competitor facts right.** For another app, use its Play Store listing and its own site: account requirement, cloud, permissions. Be fair: say what it does well.
 
 ## 4. Write the article
 

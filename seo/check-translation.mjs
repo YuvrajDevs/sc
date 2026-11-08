@@ -2,7 +2,7 @@
 // Exits 1 with a list of problems. Translation agents must get a clean pass before committing.
 //
 // A translation must keep the page's structure (headings, lists, tables, placeholders, links, FAQ and steps),
-// keep every number (prices, limits, counts) and the brand names, and actually be in the target language.
+// keep every number (limits, counts) and the brand names, and actually be in the target language.
 
 import { readFileSync, existsSync } from "node:fs";
 import { createHash } from "node:crypto";
@@ -63,7 +63,7 @@ const all = (p) => `${text(p.body)} ${JSON.stringify(p.meta)}`;
 const digits = (s) => s.match(/\d+/g) || [];
 const trDigits = digits(all(tr));
 const trDigitsBag = trDigits.join(" ");
-for (const d of new Set(digits(all(src)))) if (!trDigits.includes(d) && !trDigitsBag.includes(d)) fail(`the number ${d} from the English page is missing (keep prices, limits and counts)`);
+for (const d of new Set(digits(all(src)))) if (!trDigits.includes(d) && !trDigitsBag.includes(d)) fail(`the number ${d} from the English page is missing (keep limits and counts)`);
 for (const brand of ["Sealcloak", "Android", "Google Play", "PERMIT", "AES-256"]) if (all(src).includes(brand) && !all(tr).includes(brand)) fail(`"${brand}" must stay in the translation, untranslated`);
 
 // ---- Actually translated: little English left
