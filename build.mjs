@@ -164,6 +164,7 @@ ${meta.faq.map((f) => `      <h3>${esc(f.q)}</h3>\n      <p>${esc(f.a)}</p>`).jo
   const fontLink = lang.fontQuery ? `\n<link href="https://fonts.googleapis.com/css2?family=${lang.fontQuery}&display=swap" rel="stylesheet">` : "";
   const fontVars = lang.font ? `\n<style>:root{--sans:${lang.fontFirst ? `"${lang.font}","Outfit"` : `"Outfit","${lang.font}"`},system-ui,sans-serif;--mono:"Spline Sans Mono","${lang.font}",ui-monospace,monospace}</style>` : "";
   const toolStrings = /tool-metadata\.js/.test(body) ? `\n<script>window.SC_TOOL=${JSON.stringify(ui.tool)}</script>` : "";
+  const toolsStrings = /js\/tools\.js/.test(body) && ui.tools ? `\n<script>window.SC_TOOLS=${JSON.stringify(ui.tools)}</script>` : "";
 
   return `<!doctype html>
 <html lang="${lang.hreflang}" dir="${lang.dir}" data-theme="dark">
@@ -187,7 +188,7 @@ ${hreflang}
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300..700&display=swap" rel="stylesheet">${fontLink}
-<link rel="stylesheet" href="${root}css/site.css">${fontVars}${toolStrings}
+<link rel="stylesheet" href="${root}css/site.css">${fontVars}${toolStrings}${toolsStrings}
 <script>document.documentElement.classList.add("js");try{var t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
 <script type="application/ld+json">${JSON.stringify(jsonLd.length === 1 ? jsonLd[0] : jsonLd)}</script>
 </head>

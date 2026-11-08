@@ -1,0 +1,77 @@
+<!--meta {
+  "title": "WiFi QR code generator: share Wi-Fi without the password",
+  "navTitle": "Wi-Fi QR code",
+  "description": "Make a QR code that connects guests to your Wi-Fi with one scan. Free, works with Android and iPhone, and the password never leaves your device.",
+  "keyword": "wifi qr code",
+  "alsoTargets": [
+    "wifi qr code generator",
+    "share wifi password qr",
+    "qr code for wifi",
+    "guest wifi qr code"
+  ],
+  "summary": "One scan connects guests to your Wi-Fi. The password stays on your device.",
+  "date": "2026-11-08",
+  "readMins": 3,
+  "nav": "guides",
+  "faq": [
+    {
+      "q": "Do Android phones and iPhones scan Wi-Fi QR codes?",
+      "a": "Yes. Recent Android phones and iPhones read Wi-Fi codes straight from the camera app or Google Lens, then offer to join the network."
+    },
+    {
+      "q": "Is it safe to type my Wi-Fi password here?",
+      "a": "The code is generated in your browser and the password is never sent to a server. Anyone who scans the printed code can join, so use a guest network for public places."
+    },
+    {
+      "q": "What if I change my Wi-Fi password?",
+      "a": "The old code stops working, because the password is stored inside it. Make a new code with the new password and replace the printed one."
+    },
+    {
+      "q": "Which security type should I choose?",
+      "a": "Choose WPA for almost every modern router; it covers WPA, WPA2 and WPA3. Choose WEP only for very old equipment, and None for open networks."
+    }
+  ]
+} -->
+<section class="panel">
+  <div class="panel-inner wrap">
+    <article class="article">
+      <div class="meta"><a href="{{root}}tools/">Free tools</a> · Runs in your browser</div>
+      <h1>WiFi QR code generator</h1>
+      <p class="lead">Let guests join your Wi-Fi by pointing their camera at a code, with no reading out long passwords. Print it for your home, office, shop or Airbnb.</p>
+      <div class="tool" data-tool="qr" data-opt='{"type": "wifi"}'></div>
+      <div class="answer">
+        <div class="eyebrow">Quick answer</div>
+        <p>To make a Wi-Fi QR code, type your network name and password above, choose the security type (usually WPA), and download the code. Guests scan it with their phone camera and connect straight away. The password is never sent anywhere.</p>
+      </div>
+      <div class="prose">
+<h2>How to make your Wi-Fi QR code</h2>
+<ol>
+<li>Type the <strong>network name</strong> exactly as it appears in your Wi-Fi list, including capitals and spaces.</li>
+<li>Type the <strong>password</strong> and choose the security: WPA covers WPA, WPA2 and WPA3, which is almost every router today.</li>
+<li>Tick <strong>Hidden network</strong> only if your network doesn't appear in the Wi-Fi list.</li>
+<li>Download it and test with your phone: open the camera, point it at the code and tap Connect.</li>
+</ol>
+<h2>Where to find your network name and password</h2>
+<p>They're usually on a sticker on the router. On Android you can also open Settings, then Wi-Fi, tap your network and choose Share; on many phones this shows the password under a QR code after you unlock. On an iPhone, Settings, then Wi-Fi, then the ⓘ next to your network shows the password after Face ID.</p>
+<h2>Use a guest network</h2>
+<p>If your router supports it, create a separate guest network and put that on the code. Guests then can't see your other devices, and you can change the guest password at any time without reconnecting your own phones and TV.</p>
+<h2>Make it scan reliably</h2>
+<ul>
+<li><strong>Keep strong contrast:</strong> a dark code on a light background. Light codes on dark backgrounds don't scan on every phone.</li>
+<li><strong>Leave the white border</strong> around the code; scanners need it.</li>
+<li><strong>Print it big enough:</strong> at least 2 × 2 cm, and bigger for posters read from a distance.</li>
+<li><strong>Use higher error correction</strong> if the code may get scratched, folded or partly covered.</li>
+<li><strong>Test it</strong> with your phone camera before printing hundreds.</li>
+</ul>
+{{cta}}
+<h2>Private by design</h2><p>The code is generated inside this browser tab using a small open-source library. What you type, including Wi-Fi passwords, is never sent to a server, and there is no tracking. The code is static: it contains your text directly, so it never expires and doesn't depend on any website staying online.</p>
+<h2>SVG or PNG?</h2>
+<p>PNG is an image that works everywhere: messages, documents and social media. SVG is a vector file that stays perfectly sharp at any size, which is what print shops and designers prefer for posters, menus and packaging.</p>
+<p>Codes that open links are only as safe as the link. Be careful scanning codes from strangers; our guide to <a href="{{root}}guides/how-to-hide-photos-on-android">keeping photos private</a> and <a href="{{root}}features/encryption">how encryption protects your files</a> cover the basics of staying in control of your data.</p>
+        {{faq}}
+      </div>
+      {{related}}
+    </article>
+  </div>
+</section>
+<script src="{{root}}js/tools.js" defer></script>

@@ -1,0 +1,78 @@
+<!--meta {
+  "title": "Encrypt file with password: AES-256, free and private",
+  "navTitle": "Encrypt a file",
+  "description": "Password-protect any file with AES-256-GCM encryption before you send or store it. Free, runs in your browser, and the file is never uploaded.",
+  "keyword": "encrypt file with password",
+  "alsoTargets": [
+    "password protect file",
+    "encrypt file online",
+    "aes 256 file encryption",
+    "lock file with password"
+  ],
+  "summary": "Lock any file with a password using AES-256-GCM, on your device.",
+  "date": "2026-11-08",
+  "readMins": 2,
+  "nav": "guides",
+  "faq": [
+    {
+      "q": "How secure is the encryption?",
+      "a": "It uses AES-256-GCM with a key derived from your password by PBKDF2-SHA256 over 600,000 rounds. With a strong password, the file can't realistically be opened without it. A weak password is the main risk."
+    },
+    {
+      "q": "What happens if I forget the password?",
+      "a": "The file can't be opened. The password isn't stored anywhere and there's no reset or backdoor, which is exactly what keeps the file private."
+    },
+    {
+      "q": "How does the other person open the file?",
+      "a": "They open this page, type the password and choose the .locked file. It decrypts in their browser and gives back the original file with its name."
+    },
+    {
+      "q": "Is my file uploaded?",
+      "a": "No. Encryption and decryption happen in your browser on your own device. The file and the password are never sent anywhere."
+    },
+    {
+      "q": "Is there a file size limit?",
+      "a": "The limit is your device's memory. Files of a few hundred megabytes work on most computers; very large videos may be too much for a phone browser."
+    }
+  ]
+} -->
+<section class="panel">
+  <div class="panel-inner wrap">
+    <article class="article">
+      <div class="meta"><a href="{{root}}tools/">Free tools</a> · Runs in your browser</div>
+      <h1>Encrypt a file with a password</h1>
+      <p class="lead">Lock any file (a PDF, photo, video or document) with a password before you email it, put it on a USB stick or store it in the cloud. Only someone with the password can open it.</p>
+      <div class="tool" data-tool="encrypt" data-opt='{"drop": "Drop files here", "choose": "Choose files", "hint": "Any file type. Files never leave this device."}'></div>
+      <div class="answer">
+        <div class="eyebrow">Quick answer</div>
+        <p>To encrypt a file with a password, type a strong password above, then choose the file. You get a .locked copy encrypted with AES-256-GCM. To open it again, come back to this page, type the same password and choose the .locked file. Nothing is uploaded.</p>
+      </div>
+      <div class="prose">
+<h2>How to encrypt and decrypt a file</h2>
+<ol>
+<li>Type a strong password. A <a href="{{root}}tools/password-generator">random passphrase</a> is ideal.</li>
+<li>Choose the file. You get a copy ending in <strong>.locked</strong>; the original isn't changed.</li>
+<li>Send or store the .locked file. Share the password a different way, for example by phone call rather than in the same email.</li>
+<li>To open it: on this page, type the same password and choose the .locked file. The original file comes back with its name.</li>
+</ol>
+<h2>How the encryption works</h2>
+<p>Your password is stretched into a 256-bit key with PBKDF2-SHA256 over 600,000 rounds and a random salt, which makes guessing passwords slow. The file is then encrypted with AES-256-GCM, which also detects tampering: if a single byte of the .locked file is changed, it refuses to decrypt instead of giving you a corrupted file. Everything runs through your browser's built-in Web Crypto, on your device.</p>
+<div class="table-wrap"><table>
+<thead><tr><th>Part</th><th>What it does</th></tr></thead>
+<tbody>
+<tr><td>AES-256-GCM</td><td>Encrypts the file and detects any change to it</td></tr>
+<tr><td>PBKDF2-SHA256, 600,000 rounds</td><td>Turns your password into a key and slows down guessing</td></tr>
+<tr><td>Random salt and IV per file</td><td>The same file and password never produce the same output</td></tr>
+</tbody></table></div>
+{{cta}}
+<h2>Private by design</h2>
+<p>The file is read, encrypted and saved inside this browser tab. It's never sent to a server, and the password is never stored. That also means nobody can recover a forgotten password, including us, so keep it somewhere safe.</p>
+<h2>For files on your phone</h2>
+<p>This tool is for one-off files you send or store elsewhere. For photos, videos and documents you keep on your Android phone, Sealcloak does the same kind of protection automatically: every file is <a href="{{root}}features/encryption">encrypted with AES-256-GCM</a> as you add it, inside <a href="{{root}}features/hidden-vaults">vaults</a> that open with your own pattern, and it can make <a href="{{root}}features/secure-sharing">passphrase-locked packages</a> for sharing.</p>
+        {{faq}}
+      </div>
+      {{related}}
+    </article>
+  </div>
+</section>
+<script src="{{root}}js/tools.js" defer></script>

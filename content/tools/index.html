@@ -1,16 +1,60 @@
 <!--meta {
-  "title": "Free privacy tools for your photos",
-  "description": "Free tools that run entirely in your browser to keep your photos private. Nothing is uploaded, no account, no tracking.",
+  "title": "Free privacy and photo tools that never upload your files",
+  "description": "Free tools that run in your browser: remove photo location, blur faces, encrypt files, make passwords, compress and convert images. Nothing is uploaded.",
   "nav": "guides"
 } -->
 <section class="panel">
   <div class="panel-inner wrap">
     <div class="section-head">
       <div class="eyebrow">Free tools</div>
-      <h1 style="margin-top:20px">Privacy tools that stay on your device.</h1>
-      <p class="lead" style="margin-top:16px">Everything runs in your browser. Your photos are never uploaded.</p>
+      <h1 style="margin-top:20px">Tools that keep your files on your device.</h1>
+      <p class="lead" style="margin-top:16px">Most free online tools make you upload your photos and documents to their servers. These don't. Every tool runs inside your browser, so your files never leave your phone or computer. No account, no watermark, no tracking.</p>
     </div>
-    <div class="cards" style="margin-top:32px">{{allTools}}
+
+    <h2 class="tools-group">Privacy</h2>
+    <p class="dim tools-sub">Check what a photo gives away, and hide it before you share.</p>
+    <div class="cards">
+      <a class="card" href="{{root}}tools/remove-photo-location"><h3>Remove photo location</h3><p>See and strip the hidden GPS location, phone model and date.</p></a>
+      <a class="card" href="{{root}}tools/blur-face"><h3>Blur faces</h3><p>Blur or pixelate faces, plates and addresses before posting.</p></a>
+      <a class="card" href="{{root}}tools/crop-image"><h3>Crop image</h3><p>Cut out what shouldn't be in the picture, to any shape.</p></a>
+    </div>
+
+    <h2 class="tools-group">Security</h2>
+    <p class="dim tools-sub">Lock files and make passwords nobody can guess.</p>
+    <div class="cards">
+      <a class="card" href="{{root}}tools/encrypt-file"><h3>Encrypt a file</h3><p>Password-protect any file with AES-256-GCM.</p></a>
+      <a class="card" href="{{root}}tools/password-generator"><h3>Password generator</h3><p>Strong random passwords and memorable passphrases.</p></a>
+      <a class="card" href="{{root}}tools/wifi-qr-code"><h3>Wi-Fi QR code</h3><p>Let guests join your Wi-Fi without reading out the password.</p></a>
+    </div>
+
+    <h2 class="tools-group">Compress</h2>
+    <p class="dim tools-sub">Shrink photos for forms and email, without handing them to a stranger's server.</p>
+    <div class="cards">
+      <a class="card" href="{{root}}tools/compress-image"><h3>Compress image</h3><p>Any target size in KB, best quality that fits.</p></a>
+      <a class="card" href="{{root}}tools/compress-image-to-100kb"><h3>Compress to 100 KB</h3><p>For application and visa forms.</p></a>
+      <a class="card" href="{{root}}tools/compress-image-to-50kb"><h3>Compress to 50 KB</h3><p>For exam and recruitment forms.</p></a>
+      <a class="card" href="{{root}}tools/compress-image-to-20kb"><h3>Compress to 20 KB</h3><p>For signatures and small ID photos.</p></a>
+      <a class="card" href="{{root}}tools/resize-image"><h3>Resize image</h3><p>Exact pixels or a percentage.</p></a>
+      <a class="card" href="{{root}}tools/passport-photo-maker"><h3>Passport photo maker</h3><p>2×2 in, 35×45 mm and more, plus a 4×6 print sheet.</p></a>
+    </div>
+
+    <h2 class="tools-group">Convert</h2>
+    <p class="dim tools-sub">Change formats on your own device, even for ID scans and private photos.</p>
+    <div class="cards">
+      <a class="card" href="{{root}}tools/jpg-to-pdf"><h3>JPG to PDF</h3><p>Combine photos and scans into one PDF.</p></a>
+      <a class="card" href="{{root}}tools/heic-to-jpg"><h3>HEIC to JPG</h3><p>Open iPhone photos anywhere.</p></a>
+      <a class="card" href="{{root}}tools/webp-to-jpg"><h3>WebP to JPG</h3><p>For images saved from websites.</p></a>
+      <a class="card" href="{{root}}tools/webp-to-png"><h3>WebP to PNG</h3><p>Keeps transparency.</p></a>
+      <a class="card" href="{{root}}tools/png-to-jpg"><h3>PNG to JPG</h3><p>Much smaller files.</p></a>
+      <a class="card" href="{{root}}tools/jpg-to-png"><h3>JPG to PNG</h3><p>For apps that only take PNG.</p></a>
+      <a class="card" href="{{root}}tools/png-to-webp"><h3>PNG to WebP</h3><p>Smallest files for websites.</p></a>
+      <a class="card" href="{{root}}tools/brighten-photo"><h3>Brighten photo</h3><p>Fix dark and dull pictures in one tap.</p></a>
+      <a class="card" href="{{root}}tools/qr-code-generator"><h3>QR code generator</h3><p>Links, text, email and more. Never expires.</p></a>
+    </div>
+
+    <div class="answer" style="margin-top:48px">
+      <div class="eyebrow">Why no uploads?</div>
+      <p>We make Sealcloak, a photo vault for Android that has no internet permission at all: your files are encrypted on your phone and never leave it. These tools follow the same rule. See <a href="{{root}}security">how Sealcloak protects your files</a>.</p>
     </div>
   </div>
 </section>

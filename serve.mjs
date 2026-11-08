@@ -22,5 +22,5 @@ createServer(async (req, res) => {
   const path = "." + normalize(decodeURIComponent(new URL(req.url, "http://x").pathname));
   const file = await resolve(path);
   res.writeHead(file ? 200 : 404, { "content-type": types[extname(file || ".html")] || "application/octet-stream" });
-  res.end(await readFile(file || "404.html"));
+  res.end(await readFile(file || "404.html").catch(() => "Not found (rebuilding?)"));
 }).listen(port, () => console.log(`http://localhost:${port}`));
