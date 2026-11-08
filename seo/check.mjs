@@ -60,7 +60,7 @@ if (section === "compare" && !/<table>/.test(body)) fail("compare pages need a s
 if (/<table>/.test(body) && !/class="table-wrap"/.test(body)) fail('wrap tables in <div class="table-wrap"> so they scroll on phones');
 for (const ph of ["{{cta}}", "{{faq}}", "{{related}}"]) if (!body.includes(ph)) fail(`missing the ${ph} placeholder`);
 if ((body.match(/\{\{cta\}\}/g) || []).length > 2) fail("use {{cta}} at most twice");
-const minWords = isToolHowTo ? 350 : isFeature ? 300 : 1100;
+const minWords = isToolHowTo ? 350 : isFeature ? 300 : section === "scenarios" ? 750 : 1100;
 if (wordCount < minWords) fail(`only ~${wordCount} words; needs ${minWords}+${isFeature ? " (feature pages: say it plainly, don't pad)" : " (aim 1,400–2,000)"}`);
 if (wordCount > 3200) warn(`~${wordCount} words is long; make sure every section earns its place`);
 
