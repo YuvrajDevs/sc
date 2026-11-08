@@ -1,0 +1,42 @@
+<!--meta {
+  "title": "El manifiesto de Sealcloak: privacidad que no depende de confiar",
+  "description": "Por qué Sealcloak no tiene internet, ni cuenta, ni puerta trasera. Siete principios detrás de una bóveda que mantiene tus archivos privados en tu teléfono.",
+  "nav": "about",
+  "date": "2026-11-08",
+  "sourceHash": "01623dba76fa"
+} -->
+<section class="panel">
+  <div class="panel-inner wrap">
+    <article class="article">
+      <div class="meta">Manifiesto</div>
+      <h1>Tu privacidad no debería depender de confiar en nosotros.</h1>
+      <p class="lead">Toda app de privacidad te pide que confíes en ella. Nosotros preferimos crear una donde la confianza importe lo menos posible. Estos son los principios sobre los que está construida Sealcloak, y las promesas que no vamos a romper.</p>
+      <div class="prose">
+        <h2>1. Lo que no está en línea no se puede filtrar en línea.</h2>
+        <p>Los servidores sufren hackeos. Las empresas se venden. Las políticas cambian, en silencio, en correos que nadie lee. La única copia de tus fotos privadas que nada de eso puede exponer es la que nunca salió de tu teléfono. Por eso Sealcloak no tiene permiso de internet, y el propio Android le impide conectarse.</p>
+
+        <h2>2. La mejor cuenta es no tener cuenta.</h2>
+        <p>Una cuenta es un usuario, un correo y una contraseña guardados en algún lugar que no controlas, y una puerta a la que otra persona puede tocar. Una bóveda no necesita cuenta. Sealcloak nunca te pregunta quién eres.</p>
+
+        <h2>3. Oculto no es protegido. Cifrado, sí.</h2>
+        <p>Mover una foto a una carpeta oculta solo la saca de una pantalla. Cualquiera con un administrador de archivos o una computadora todavía puede abrirla. Cada archivo en Sealcloak se cifra con AES-256-GCM, con una llave creada a partir de tu patrón, así que sin ese patrón los archivos son puro ruido.</p>
+
+        <h2>4. Sin puertas traseras, tampoco para nosotros.</h2>
+        <p>No podemos abrir tu bóveda, restablecer tu patrón ni recuperar tus archivos. No es una limitación por la que pidamos disculpas; es justamente el punto. Una bóveda que su creador puede abrir es una bóveda que puede abrir cualquiera que presione a su creador. Tu frase de recuperación es la única llave de repuesto, y es tuya.</p>
+
+        <h2>5. La vida real incluye presión.</h2>
+        <p>Las herramientas de privacidad suelen diseñarse pensando en desconocidos. Pero las personas que más probablemente te exijan el teléfono suelen ser cercanas. Por eso Sealcloak tiene <a href="{{root}}features/coerce">Coerce</a>, una bóveda señuelo creíble; por eso nunca muestra cuántas bóvedas existen, y por eso las <a href="{{root}}features/intruder-photos">fotos de intrusos</a> te dicen quién lo intentó.</p>
+
+        <h2>6. Las funciones destructivas quedan apagadas hasta que de verdad lo decidas.</h2>
+        <p>Borrar una bóveda después de patrones incorrectos, o cuando se usa Coerce, puede proteger a personas en peligro. También puede destruir las fotos de una familia porque un niño pequeño jugó con el teléfono. Por eso todas las funciones de borrado vienen desactivadas, y activar una implica escribir PERMIT. Tú decides, a conciencia.</p>
+
+        <h2>7. Pagas con dinero, no con datos.</h2>
+        <p>Las apps gratis que muestran anuncios o comparten identificadores del dispositivo se pagan con información sobre ti. Sealcloak tiene un plan gratuito con límites y una versión Pro de pago a través de Google Play. Sin anuncios, sin analíticas, sin rastreadores, sin datos que vender.</p>
+
+        <h2>Qué significa esto en la práctica</h2>
+        <p>Tú eres responsable de una cosa que no podemos hacer por ti: las copias de seguridad. Como nada está en una nube, perder el teléfono sin una copia significa perder lo que tenía. Sealcloak lo hace fácil con <a href="{{root}}features/encrypted-backups">copias de seguridad cifradas programadas</a> en el lugar que elijas. Creemos que es un trato justo a cambio de una bóveda a la que nadie más puede llegar.</p>
+        <p>Si alguna vez nos ves romper uno de estos principios, dínoslo en <a href="mailto:{{email}}">{{email}}</a>. Lee más <a href="{{root}}about">sobre Sealcloak</a> o mira <a href="{{root}}security">cómo funciona la seguridad</a>.</p>
+      </div>
+    </article>
+  </div>
+</section>

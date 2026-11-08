@@ -2,7 +2,55 @@
   "title": "Sealcloak",
   "description": "Oculta fotos, videos y archivos en Android dentro de una bóveda cifrada que solo abre tu patrón. Sin cuenta, sin nube, sin permiso de internet.",
   "nav": "home",
-  "sourceHash": "885cab6bb186"
+  "sourceHash": "c1c27c3ebe11",
+  "jsonLd": [
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "¿Sealcloak sube mis fotos a algún lado?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. La app no tiene permiso de internet, así que no puede subir nada. Tus archivos están cifrados y se quedan en tu teléfono."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Qué pasa si olvido mi patrón?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Toca Usar frase de recuperación en la pantalla del patrón y escribe la frase que guardaste al configurar la app. Luego dibuja un patrón nuevo."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Qué pasa si pierdo mi patrón y mi frase de recuperación?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Entonces nadie puede abrir esa bóveda, ni siquiera nosotros. No hay puerta trasera. Guarda tu frase en papel en un lugar seguro."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cómo paso mi bóveda a un teléfono nuevo?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Exporta una copia de seguridad en el teléfono anterior, copia el archivo al teléfono nuevo, instala Sealcloak e impórtala con la frase de recuperación de esa bóveda."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Sealcloak está disponible para iPhone?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Todavía no. Sealcloak es una app para Android."
+          }
+        }
+      ]
+    }
+  ]
 } -->
 <section class="panel hero">
   <div class="bars" aria-hidden="true"></div>
@@ -16,9 +64,12 @@
     </div>
     <div class="trust"><span>Gratis para empezar</span><span>Sin cuenta</span><span>Sin permiso de internet</span></div>
     <div class="mock-trio" aria-hidden="true">
-      <figure class="mock side"><img src="{{root}}assets/screens/unlock.jpg" alt="" loading="eager" width="450" height="1000"></figure>
-      <figure class="mock"><img src="{{root}}assets/screens/home.jpg" alt="" loading="eager" width="450" height="1000"></figure>
-      <figure class="mock side"><img src="{{root}}assets/screens/images.jpg" alt="" loading="eager" width="450" height="1000"></figure>
+      <figure class="mock side"><div class="mock-screen"><img src="{{root}}assets/screens/unlock.jpg" alt="" loading="eager" width="450" height="1000">
+        <svg class="mock-fx fx-unlock" viewBox="0 0 405 900"><polyline class="fx-line" points="59,332 131,332 202,332 202,404 202,475 274,547 345,618"/><circle class="fx-dot" style="--d:0" cx="59" cy="332" r="13"/><circle class="fx-dot" style="--d:1" cx="131" cy="332" r="13"/><circle class="fx-dot" style="--d:2" cx="202" cy="332" r="13"/><circle class="fx-dot" style="--d:3" cx="202" cy="404" r="13"/><circle class="fx-dot" style="--d:4" cx="202" cy="475" r="13"/><circle class="fx-dot" style="--d:5" cx="274" cy="547" r="13"/><circle class="fx-dot" style="--d:6" cx="345" cy="618" r="13"/><circle class="fx-finger" r="18"/><rect class="fx-ok" x="0" y="0" width="405" height="900"/></svg></div></figure>
+      <figure class="mock"><div class="mock-screen"><img src="{{root}}assets/screens/home.jpg" alt="" loading="eager" width="450" height="1000">
+        <svg class="mock-fx fx-home" viewBox="0 0 405 900"><rect class="fx-press" x="24" y="216" width="170" height="170" rx="30"/><circle class="fx-tap fx-tap1" cx="109" cy="300" r="22"/><rect class="fx-press fx-press2" x="323" y="794" width="60" height="60" rx="30"/><circle class="fx-tap fx-tap2" cx="352" cy="824" r="22"/></svg></div></figure>
+      <figure class="mock side"><div class="mock-screen"><img src="{{root}}assets/screens/images.jpg" alt="" loading="eager" width="450" height="1000">
+        <svg class="mock-fx fx-images" viewBox="0 0 405 900"><rect class="fx-cover" style="--i:0" x="26" y="190" width="114" height="114" rx="10"/><rect class="fx-cover" style="--i:1" x="146" y="190" width="114" height="114" rx="10"/><rect class="fx-cover" style="--i:2" x="265" y="190" width="114" height="114" rx="10"/><rect class="fx-cover" style="--i:3" x="26" y="310" width="114" height="114" rx="10"/><rect class="fx-cover" style="--i:4" x="146" y="310" width="114" height="114" rx="10"/><rect class="fx-cover" style="--i:5" x="265" y="310" width="114" height="114" rx="10"/><g class="fx-badge"><rect x="122" y="440" width="160" height="40" rx="20"/><text x="202" y="466" text-anchor="middle">Cifrado ✓</text></g></svg></div></figure>
     </div>
   </div>
 </section>
@@ -101,10 +152,42 @@
 <section class="panel">
   <div class="panel-inner wrap">
     <div class="section-head reveal">
-      <div class="eyebrow">Guías</div>
+      <div class="eyebrow">Aprende</div>
       <h2>Aprende a mantener tus cosas en privado.</h2>
     </div>
     <div class="cards reveal">{{latestGuides}}
+    </div>
+  </div>
+</section>
+
+<section class="panel" id="faq">
+  <div class="panel-inner wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">Preguntas frecuentes</div>
+      <h2>Tus preguntas, respondidas.</h2>
+    </div>
+    <div class="faq reveal">
+    <h2 class="mono dim faq-group">Privacidad</h2>
+    <details><summary>¿Sealcloak sube mis fotos a algún lado?</summary><p>No. La app no tiene permiso de internet, así que no puede subir nada. Tus archivos están cifrados y se quedan en tu teléfono.</p></details>
+    <details><summary>¿Necesito una cuenta?</summary><p>No. Sin correo, sin número de teléfono, sin iniciar sesión. Tu patrón es la única llave.</p></details>
+    <details><summary>¿Ustedes pueden ver mis archivos?</summary><p>No. No tenemos servidores ni ninguna copia de tus archivos o llaves. Todo se cifra en tu teléfono.</p></details>
+    <details><summary>¿Las fotos se quedan en mi galería?</summary><p>Al añadir una foto se crea una copia cifrada en la bóveda. El original sigue en tu galería hasta que lo borres ahí, así puedes revisar primero la copia de la bóveda.</p></details>
+
+    <h2 class="mono dim faq-group">Cómo entrar</h2>
+    <details><summary>¿Qué pasa si olvido mi patrón?</summary><p>Toca “Usar frase de recuperación” en la pantalla del patrón y escribe la frase que guardaste al configurar la app. Luego dibuja un patrón nuevo.</p></details>
+    <details><summary>¿Qué pasa si pierdo mi patrón y mi frase de recuperación?</summary><p>Entonces nadie puede abrir esa bóveda, ni siquiera nosotros. No hay puerta trasera. Guarda tu frase en papel en un lugar seguro.</p></details>
+    <details><summary>¿Puedo usar mi huella digital?</summary><p>Sí. Activa el desbloqueo con huella en Ajustes. Tu patrón también sigue funcionando.</p></details>
+    <details><summary>¿Qué es Coerce?</summary><p>Una segunda bóveda de apariencia inofensiva con su propio patrón. Si alguien te obliga a desbloquear la app, dibuja ese patrón.</p><p>También puede borrar tus otras bóvedas al abrirse, pero eso viene desactivado y necesitas escribir PERMIT para activarlo.</p></details>
+
+    <h2 class="mono dim faq-group">Copias de seguridad y teléfonos</h2>
+    <details><summary>¿Cómo paso mi bóveda a un teléfono nuevo?</summary><p>Exporta una copia de seguridad en el teléfono anterior, copia el archivo al teléfono nuevo, instala Sealcloak e impórtala con la frase de recuperación de esa bóveda.</p></details>
+    <details><summary>¿Qué pasa si desinstalo la app?</summary><p>Sus bóvedas se borran del teléfono. Las copias de seguridad que exportaste antes se conservan y puedes volver a importarlas.</p></details>
+    <details><summary>¿Las copias de seguridad están cifradas?</summary><p>Sí. Un archivo de copia de seguridad no sirve de nada sin la frase de recuperación de esa bóveda.</p></details>
+    <details><summary>¿Sealcloak está disponible para iPhone?</summary><p>Todavía no. Sealcloak es una app para Android.</p></details>
+
+    <h2 class="mono dim faq-group">Pro</h2>
+    <details><summary>¿Qué añade Pro?</summary><p>Bóvedas y archivos ilimitados, además de disfrazar la app como otra app con tu propio icono y nombre.</p></details>
+    <details><summary>¿Pierdo mis archivos si dejo de pagar?</summary><p>No. Todo se queda y sigue funcionando. Solo no puedes añadir más allá de los límites gratuitos.</p></details>
     </div>
   </div>
 </section>
