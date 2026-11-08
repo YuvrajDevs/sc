@@ -1,0 +1,93 @@
+<!--meta {
+  "title": "Cifrar archivo con contraseña: AES-256, gratis y privado",
+  "navTitle": "Cifrar un archivo",
+  "description": "Protege con contraseña cualquier archivo usando cifrado AES-256-GCM antes de enviarlo o guardarlo. Gratis, funciona en tu navegador y el archivo nunca se sube.",
+  "keyword": "cifrar archivo con contraseña",
+  "alsoTargets": [
+    "proteger archivo con contraseña",
+    "cifrar archivo en línea",
+    "cifrado de archivos aes 256",
+    "ponerle contraseña a un archivo"
+  ],
+  "summary": "Bloquea cualquier archivo con contraseña usando AES-256-GCM, en tu dispositivo.",
+  "date": "2026-11-08",
+  "readMins": 2,
+  "nav": "guides",
+  "sourceHash": "2db7d4962caf",
+  "faq": [
+    {
+      "q": "¿Qué tan seguro es el cifrado?",
+      "a": "Usa AES-256-GCM con una llave derivada de tu contraseña mediante PBKDF2-SHA256 con 600,000 rondas. Con una contraseña fuerte, en la práctica el archivo no se puede abrir sin ella. El principal riesgo es una contraseña débil."
+    },
+    {
+      "q": "¿Qué pasa si olvido la contraseña?",
+      "a": "El archivo no se puede abrir. La contraseña no se guarda en ningún lado y no hay forma de restablecerla ni puerta trasera, que es justo lo que mantiene el archivo privado."
+    },
+    {
+      "q": "¿Cómo abre el archivo la otra persona?",
+      "a": "Abre esta página, escribe la contraseña y elige el archivo .locked. Se descifra en su navegador y le devuelve el archivo original con su nombre."
+    },
+    {
+      "q": "¿Mi archivo se sube a algún lado?",
+      "a": "No. El cifrado y el descifrado ocurren en tu navegador, en tu propio dispositivo. El archivo y la contraseña nunca se envían a ningún lado."
+    },
+    {
+      "q": "¿Hay un límite de tamaño de archivo?",
+      "a": "El límite es la memoria de tu dispositivo. Archivos de unos cientos de megabytes funcionan en la mayoría de las computadoras; los videos muy grandes pueden ser demasiado para el navegador de un celular."
+    }
+  ],
+  "steps": [
+    "Escribe una contraseña fuerte. Lo ideal es una frase de contraseña aleatoria.",
+    "Elige el archivo. Obtienes una copia que termina en .locked; el original no cambia.",
+    "Envía o guarda el archivo .locked. Comparte la contraseña por otro medio, por ejemplo en una llamada en vez de en el mismo correo.",
+    "Para abrirlo: en esta página, escribe la misma contraseña y elige el archivo .locked. El archivo original vuelve con su nombre."
+  ],
+  "category": "SecurityApplication",
+  "features": [
+    "Funciona por completo en tu navegador",
+    "Los archivos nunca se suben",
+    "Sin registro",
+    "Sin marca de agua",
+    "Gratis"
+  ]
+} -->
+<section class="panel">
+  <div class="panel-inner wrap">
+    <article class="article">
+      <div class="meta"><a href="{{root}}tools/">Herramientas gratis</a> · Funciona en tu navegador</div>
+      <h1>Cifrar un archivo con contraseña</h1>
+      <p class="lead">Bloquea cualquier archivo (un PDF, una foto, un video o un documento) con una contraseña antes de enviarlo por correo, pasarlo a una memoria USB o guardarlo en la nube. Solo alguien con la contraseña puede abrirlo.</p>
+      <div class="tool" data-tool="encrypt" data-opt='{"drop": "Drop files here", "choose": "Choose files", "hint": "Any file type. Files never leave this device."}'></div>
+      <div class="answer">
+        <div class="eyebrow">Respuesta rápida</div>
+        <p>Para cifrar un archivo con contraseña, escribe una contraseña fuerte arriba y luego elige el archivo. Obtienes una copia .locked cifrada con AES-256-GCM. Para abrirla de nuevo, vuelve a esta página, escribe la misma contraseña y elige el archivo .locked. No se sube nada.</p>
+      </div>
+      <div class="prose">
+<h2>Cómo cifrar y descifrar un archivo</h2>
+<ol>
+<li>Escribe una contraseña fuerte. Lo ideal es una <a href="{{root}}tools/password-generator">frase de contraseña aleatoria</a>.</li>
+<li>Elige el archivo. Obtienes una copia que termina en <strong>.locked</strong>; el original no cambia.</li>
+<li>Envía o guarda el archivo .locked. Comparte la contraseña por otro medio, por ejemplo en una llamada en vez de en el mismo correo.</li>
+<li>Para abrirlo: en esta página, escribe la misma contraseña y elige el archivo .locked. El archivo original vuelve con su nombre.</li>
+</ol>
+<h2>Cómo funciona el cifrado</h2>
+<p>Tu contraseña se convierte en una llave de 256 bits con PBKDF2-SHA256, con 600,000 rondas y una sal aleatoria, lo que hace lento adivinar contraseñas. Después el archivo se cifra con AES-256-GCM, que además detecta alteraciones: si cambia un solo byte del archivo .locked, se niega a descifrarlo en lugar de darte un archivo dañado. Todo pasa por el Web Crypto integrado de tu navegador, en tu dispositivo.</p>
+<div class="table-wrap"><table>
+<thead><tr><th>Parte</th><th>Qué hace</th></tr></thead>
+<tbody>
+<tr><td>AES-256-GCM</td><td>Cifra el archivo y detecta cualquier cambio en él</td></tr>
+<tr><td>PBKDF2-SHA256, 600,000 rondas</td><td>Convierte tu contraseña en una llave y hace más lento adivinarla</td></tr>
+<tr><td>Sal e IV aleatorios por archivo</td><td>El mismo archivo con la misma contraseña nunca da el mismo resultado</td></tr>
+</tbody></table></div>
+{{cta}}
+<h2>Privada desde el diseño</h2>
+<p>El archivo se lee, se cifra y se guarda dentro de esta pestaña del navegador. Nunca se envía a un servidor, y la contraseña nunca se guarda. Eso también significa que nadie puede recuperar una contraseña olvidada, ni siquiera nosotros, así que guárdala en un lugar seguro.</p>
+<h2>Para archivos en tu teléfono</h2>
+<p>Esta herramienta es para archivos sueltos que envías o guardas en otro lugar. Para las fotos, videos y documentos que guardas en tu teléfono Android, Sealcloak da el mismo tipo de protección automáticamente: cada archivo se <a href="{{root}}features/encryption">cifra con AES-256-GCM</a> al añadirlo, dentro de <a href="{{root}}features/hidden-vaults">bóvedas</a> que se abren con tu propio patrón, y puede crear <a href="{{root}}features/secure-sharing">paquetes protegidos con frase de contraseña</a> para compartir.</p>
+        {{faq}}
+      </div>
+      {{related}}
+    </article>
+  </div>
+</section>
+<script src="{{root}}js/tools.js" defer></script>
