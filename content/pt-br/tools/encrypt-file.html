@@ -1,0 +1,93 @@
+<!--meta {
+  "title": "Criptografar arquivo com senha: AES-256, grátis e privado",
+  "navTitle": "Criptografar um arquivo",
+  "description": "Proteja qualquer arquivo com senha usando criptografia AES-256-GCM antes de enviar ou guardar. Grátis, roda no navegador, e o arquivo nunca é enviado.",
+  "keyword": "criptografar arquivo com senha",
+  "alsoTargets": [
+    "colocar senha em arquivo",
+    "criptografar arquivo online",
+    "criptografia de arquivo aes 256",
+    "proteger arquivo com senha"
+  ],
+  "summary": "Tranque qualquer arquivo com senha usando AES-256-GCM, no seu aparelho.",
+  "date": "2026-11-08",
+  "readMins": 2,
+  "nav": "guides",
+  "sourceHash": "2db7d4962caf",
+  "faq": [
+    {
+      "q": "Quão segura é a criptografia?",
+      "a": "Ela usa AES-256-GCM com uma chave derivada da sua senha por PBKDF2-SHA256 em 600.000 rodadas. Com uma senha forte, o arquivo não pode, na prática, ser aberto sem ela. O principal risco é uma senha fraca."
+    },
+    {
+      "q": "O que acontece se eu esquecer a senha?",
+      "a": "O arquivo não pode ser aberto. A senha não fica guardada em lugar nenhum e não existe redefinição nem porta dos fundos, e é justamente isso que mantém o arquivo privado."
+    },
+    {
+      "q": "Como a outra pessoa abre o arquivo?",
+      "a": "Ela abre esta página, digita a senha e escolhe o arquivo .locked. Ele é descriptografado no navegador dela e devolve o arquivo original, com o nome original."
+    },
+    {
+      "q": "Meu arquivo é enviado para algum lugar?",
+      "a": "Não. A criptografia e a descriptografia acontecem no seu navegador, no seu próprio aparelho. O arquivo e a senha nunca são enviados para lugar nenhum."
+    },
+    {
+      "q": "Existe limite de tamanho de arquivo?",
+      "a": "O limite é a memória do seu aparelho. Arquivos de algumas centenas de megabytes funcionam na maioria dos computadores; vídeos muito grandes podem ser demais para o navegador de um celular."
+    }
+  ],
+  "steps": [
+    "Digite uma senha forte. Uma frase-senha aleatória é o ideal.",
+    "Escolha o arquivo. Você recebe uma cópia terminada em .locked; o original não é alterado.",
+    "Envie ou guarde o arquivo .locked. Passe a senha por outro meio, por exemplo numa ligação em vez de no mesmo e-mail.",
+    "Para abrir: nesta página, digite a mesma senha e escolha o arquivo .locked. O arquivo original volta com o nome dele."
+  ],
+  "category": "SecurityApplication",
+  "features": [
+    "Roda inteiramente no seu navegador",
+    "Os arquivos nunca são enviados",
+    "Sem cadastro",
+    "Sem marca d’água",
+    "Grátis"
+  ]
+} -->
+<section class="panel">
+  <div class="panel-inner wrap">
+    <article class="article">
+      <div class="meta"><a href="{{root}}tools/">Ferramentas grátis</a> · Roda no seu navegador</div>
+      <h1>Criptografar um arquivo com senha</h1>
+      <p class="lead">Tranque qualquer arquivo (um PDF, foto, vídeo ou documento) com uma senha antes de mandar por e-mail, colocar num pen drive ou guardar na nuvem. Só quem tem a senha consegue abrir.</p>
+      <div class="tool" data-tool="encrypt" data-opt='{"drop": "Solte os arquivos aqui", "choose": "Escolher arquivos", "hint": "Qualquer tipo de arquivo. Os arquivos nunca saem deste aparelho."}'></div>
+      <div class="answer">
+        <div class="eyebrow">Resposta rápida</div>
+        <p>Para criptografar um arquivo com senha, digite uma senha forte acima e escolha o arquivo. Você recebe uma cópia .locked criptografada com AES-256-GCM. Para abrir de novo, volte a esta página, digite a mesma senha e escolha o arquivo .locked. Nada é enviado.</p>
+      </div>
+      <div class="prose">
+<h2>Como criptografar e descriptografar um arquivo</h2>
+<ol>
+<li>Digite uma senha forte. Uma <a href="{{root}}tools/password-generator">frase-senha aleatória</a> é o ideal.</li>
+<li>Escolha o arquivo. Você recebe uma cópia terminada em <strong>.locked</strong>; o original não é alterado.</li>
+<li>Envie ou guarde o arquivo .locked. Passe a senha por outro meio, por exemplo numa ligação em vez de no mesmo e-mail.</li>
+<li>Para abrir: nesta página, digite a mesma senha e escolha o arquivo .locked. O arquivo original volta com o nome dele.</li>
+</ol>
+<h2>Como a criptografia funciona</h2>
+<p>Sua senha é transformada em uma chave de 256 bits com PBKDF2-SHA256 em 600.000 rodadas e um salt aleatório, o que deixa lento tentar adivinhar senhas. Depois o arquivo é criptografado com AES-256-GCM, que também detecta adulteração: se um único byte do arquivo .locked for alterado, ele se recusa a descriptografar em vez de entregar um arquivo corrompido. Tudo roda pelo Web Crypto embutido no seu navegador, no seu aparelho.</p>
+<div class="table-wrap"><table>
+<thead><tr><th>Parte</th><th>O que faz</th></tr></thead>
+<tbody>
+<tr><td>AES-256-GCM</td><td>Criptografa o arquivo e detecta qualquer alteração nele</td></tr>
+<tr><td>PBKDF2-SHA256, 600.000 rodadas</td><td>Transforma sua senha em uma chave e deixa as tentativas de adivinhar mais lentas</td></tr>
+<tr><td>Salt e IV aleatórios por arquivo</td><td>O mesmo arquivo com a mesma senha nunca gera o mesmo resultado</td></tr>
+</tbody></table></div>
+{{cta}}
+<h2>Privado por natureza</h2>
+<p>O arquivo é lido, criptografado e salvo dentro desta aba do navegador. Ele nunca é enviado para um servidor, e a senha nunca é guardada. Isso também significa que ninguém consegue recuperar uma senha esquecida, nem nós, então guarde-a em um lugar seguro.</p>
+<h2>Para arquivos no seu celular</h2>
+<p>Esta ferramenta é para arquivos avulsos que você envia ou guarda em outro lugar. Para fotos, vídeos e documentos que você mantém no seu celular Android, o Sealcloak faz o mesmo tipo de proteção automaticamente: cada arquivo é <a href="{{root}}features/encryption">criptografado com AES-256-GCM</a> assim que você o adiciona, dentro de <a href="{{root}}features/hidden-vaults">cofres</a> que abrem com o seu próprio padrão, e ele pode criar <a href="{{root}}features/secure-sharing">pacotes protegidos por senha</a> para compartilhar.</p>
+        {{faq}}
+      </div>
+      {{related}}
+    </article>
+  </div>
+</section>
+<script src="{{root}}js/tools.js" defer></script>
