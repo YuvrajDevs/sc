@@ -1,0 +1,78 @@
+<!--meta {
+  "sourceHash": "dfcb8276cf96",
+  "title": "Remover localização de fotos: grátis, privado, no seu navegador",
+  "navTitle": "Remover localização da foto",
+  "description": "Veja e remova a localização GPS oculta, o modelo do celular e a data das suas fotos antes de compartilhar. Grátis, roda no navegador, nada é enviado.",
+  "keyword": "remover localização de fotos",
+  "alsoTargets": ["remover gps da foto", "remover dados exif", "removedor de metadados de fotos", "tirar localização da foto android"],
+  "summary": "Veja o que uma foto revela e remova a localização GPS antes de compartilhar. Nada é enviado.",
+  "date": "2026-11-08",
+  "readMins": 4,
+  "nav": "guides",
+  "faq": [
+    {"q": "Minha foto é enviada para algum lugar?", "a": "Não. A ferramenta roda inteiramente na aba do seu navegador. Sua foto é lida, limpa e devolvida no seu próprio aparelho, e a página não faz nenhuma requisição de rede com ela."},
+    {"q": "Remover a localização diminui a qualidade da foto?", "a": "Não. A ferramenta remove apenas os blocos de dados ocultos. A imagem em si é copiada byte por byte, então nada é comprimido de novo."},
+    {"q": "Minha foto vai ficar de lado depois da limpeza?", "a": "Não deveria. Os celulares guardam a rotação nos mesmos dados ocultos, então a ferramenta grava de volta só a rotação e mais nada."},
+    {"q": "O WhatsApp e o Instagram já não removem a localização?", "a": "A maioria dos grandes apps remove a localização ao comprimir uma foto, mas arquivos enviados como documento, por e-mail, Bluetooth, links de nuvem ou USB geralmente mantêm tudo. Limpar antes significa não depender disso."},
+    {"q": "Posso impedir que o celular adicione a localização?", "a": "Sim. Nas configurações do app de câmera, desative as tags de localização (muitas vezes chamadas de Salvar localização ou Tags de localização). Assim, as novas fotos não vão incluir coordenadas GPS."}
+  ]
+} -->
+<section class="panel">
+  <div class="panel-inner wrap">
+    <article class="article">
+      <div class="meta"><a href="{{root}}tools/">Ferramentas grátis</a> · Roda no seu navegador</div>
+      <h1>Remover localização de fotos</h1>
+      <p class="lead">A maioria das fotos de celular carrega dados ocultos: o ponto GPS exato onde foram tiradas, o modelo do seu celular e a data e a hora. Confira uma foto aqui e baixe uma cópia limpa antes de compartilhar.</p>
+
+      <div class="meta-drop" id="meta-drop">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/><path d="M4 4l16 16"/></svg>
+        <p><strong>Solte as fotos aqui</strong> ou</p>
+        <label class="btn btn-primary">Escolher fotos<input id="meta-input" type="file" accept="image/jpeg,image/png" multiple hidden></label>
+        <p class="dim">JPEG e PNG. Suas fotos nunca saem deste aparelho.</p>
+      </div>
+      <ul class="meta-results" id="meta-results" aria-live="polite"></ul>
+
+      <div class="answer">
+        <div class="eyebrow">Resposta rápida</div>
+        <p>Para remover a localização de uma foto, abra-a na ferramenta acima e baixe a cópia limpa. Ela remove as coordenadas GPS, o modelo do celular, a data e outros dados ocultos sem mexer na imagem. Para que as novas fotos não recebam localização, desative as tags de localização nas configurações do app de câmera.</p>
+      </div>
+      <div class="prose">
+        <h2>O que uma foto pode revelar</h2>
+        <p>As fotos guardam detalhes extras chamados metadados EXIF. Dependendo do celular e das configurações, uma única foto pode incluir:</p>
+        <ul>
+          <li><strong>Coordenadas GPS</strong>, muitas vezes com precisão de poucos metros. Uma foto tirada em casa pode revelar seu endereço.</li>
+          <li><strong>Data e hora</strong>, até o segundo.</li>
+          <li><strong>Marca e modelo do celular</strong> e, às vezes, a lente e as configurações da câmera.</li>
+          <li><strong>Histórico de edição e notas de texto</strong> adicionados por alguns apps.</li>
+        </ul>
+        <p>Nada disso aparece quando você olha a foto. Esses dados vão junto com o arquivo sempre que você o envia como documento, sobe para um site, publica em um fórum ou compartilha por e-mail, Bluetooth ou link de nuvem.</p>
+
+        <h2>Como impedir que o seu Android adicione localização</h2>
+        <ol>
+          <li>Abra o app <strong>Câmera</strong> e entre nas configurações dele (geralmente um ícone de engrenagem).</li>
+          <li>Procure <strong>Tags de localização</strong>, <strong>Salvar localização</strong> ou <strong>Tag GPS</strong> e desative.</li>
+          <li>Tire uma foto de teste e confira aqui: nenhuma localização deve aparecer.</li>
+        </ol>
+        <p>O nome muda de marca para marca (Samsung, Xiaomi, vivo, OPPO e Pixel usam nomes um pouco diferentes). As fotos que você já tirou continuam com a localização, então limpe essas antes de compartilhar.</p>
+
+        <h2>Como esta ferramenta funciona</h2>
+        <p>A ferramenta lê a foto dentro do seu navegador, remove os blocos que guardam dados ocultos (EXIF e XMP, IPTC e comentários em JPEGs, e blocos de texto em PNGs) e entrega um arquivo novo. Os dados da imagem em si são copiados exatamente, então não há perda de qualidade. Como os celulares guardam a rotação no mesmo lugar, ela grava de volta só a rotação, para a foto continuar na posição certa.</p>
+        <p>Não há envio, conta nem rastreamento neste site. Você pode até carregar a página, desligar a internet, e ela continua funcionando.</p>
+
+        {{cta}}
+
+        <h2>Quando a localização mais importa</h2>
+        <ul>
+          <li>Ao vender algo pela internet a partir de casa.</li>
+          <li>Ao mandar fotos para alguém que você só conhece pela internet.</li>
+          <li>Ao postar fotos dos seus filhos, do seu carro ou da sua casa.</li>
+          <li>Ao compartilhar provas ou documentos em que sua localização deve ficar em sigilo.</li>
+        </ul>
+        <p>Fotos privadas que você não quer compartilhar de jeito nenhum ficam melhor longe da galeria. Veja <a href="{{root}}guides/how-to-hide-photos-on-android">como esconder fotos no Android</a> e como a <a href="{{root}}features/encryption">criptografia</a> do Sealcloak as mantém ilegíveis.</p>
+        {{faq}}
+      </div>
+      {{related}}
+    </article>
+  </div>
+</section>
+<script src="{{root}}js/tool-metadata.js" defer></script>
