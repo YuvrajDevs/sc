@@ -12,7 +12,7 @@
     {"q": "Is Keepsafe safe to use?", "a": "Keepsafe is a long-running, widely used vault with encryption, a PIN or pattern lock and break-in alerts. Its main trade-off is that your photos can be stored in its Private Cloud, so you're trusting its servers as well as your phone."},
     {"q": "Can I move my photos from Keepsafe to Sealcloak?", "a": "Yes. Unhide or export the photos from Keepsafe back to your gallery, add them to a Sealcloak vault, check they open, then delete the copies from your gallery and from Keepsafe."},
     {"q": "Does Sealcloak have a cloud backup like Keepsafe?", "a": "No, by design. Sealcloak has no internet permission. Instead it makes encrypted backup files on a schedule, which you can keep on your phone, a memory card or a computer, and restore with your recovery phrase."},
-    {"q": "Which is more private, Keepsafe or Sealcloak?", "a": "Sealcloak, if privacy means nothing leaving the phone. It needs no account, collects no data and can't connect to the internet. Keepsafe is more convenient if you want automatic cloud backup across devices."},
+    {"q": "Which is more private, Keepsafe or Sealcloak?", "a": "Sealcloak. It needs no account, collects no data and can't connect to the internet, so your photos never leave your phone. Scheduled encrypted backups protect you against losing the phone."},
     {"q": "Does Keepsafe have a decoy vault?", "a": "Yes. Keepsafe Premium lists a Fake PIN that opens a decoy vault. Sealcloak's equivalent is Coerce, a decoy vault with its own pattern."}
   ]
 } -->
@@ -21,10 +21,10 @@
     <article class="article">
       <div class="meta">Compare · 7 min read</div>
       <h1>Sealcloak vs Keepsafe: the Keepsafe alternative that stays offline</h1>
-      <p class="lead">Keepsafe is one of the best-known photo vaults on Android, with more than 50 million installs. It's built around a Private Cloud that backs your vault up and syncs it. Sealcloak goes the other way: no account, no cloud and no internet permission at all. Here's how they compare, and who each one suits.</p>
+      <p class="lead">Keepsafe is one of the best-known photo vaults on Android, with more than 50 million installs. It's built around a Private Cloud that backs your vault up and syncs it. Sealcloak goes the other way: no account, no cloud and no internet permission at all. Here's why keeping your vault offline is the safer choice.</p>
       <div class="answer">
         <div class="eyebrow">Quick answer</div>
-        <p>Choose Keepsafe if you want your hidden photos backed up to the cloud automatically and available on another device. Choose Sealcloak if you want a vault that never connects to the internet, needs no account and shares no data, with encrypted backups you hold yourself. Both lock photos behind a pattern or fingerprint and offer a decoy vault.</p>
+        <p>Sealcloak is the more secure Keepsafe alternative. Every file is encrypted on your phone with AES-256-GCM using a key made from your pattern, the app has no internet permission, needs no account and collects no data. Your private photos exist in one place only, your phone, with encrypted backups that you hold yourself.</p>
       </div>
       <div class="prose">
         <h2>Side by side</h2>
@@ -46,14 +46,32 @@
         </table></div>
         <p>Keepsafe details come from its Google Play listing and data safety section in November 2026. Listings change, so check the current version before you decide.</p>
 
-        <h2>Where Keepsafe is better</h2>
-        <p>Keepsafe's biggest strength is that you don't have to think about backups. Its Private Cloud keeps a copy of your vault online, so if your phone is lost, stolen or broken you can sign in on a new one and your photos come back. It can also sync between devices. For many people, that safety net matters more than anything else.</p>
-        <p>It has years of polish too. Face-down auto lock closes the vault when you put the phone face down, Safe Send lets you share a photo that disappears 20 seconds after it's received, and Space Saver compresses photos on the phone while keeping originals in the cloud, which frees up storage. Trash recovery brings back photos you deleted by mistake. If you want those conveniences, Keepsafe delivers them.</p>
+        <h2>Why Sealcloak is the safer choice</h2>
+        <p>Keepsafe's headline feature is its Private Cloud: a copy of your vault on Keepsafe's servers, tied to an account. That's convenient, but every copy of a private photo is another place it can be exposed, through a breach, a hijacked account, a change of ownership or a legal request. Sealcloak removes that whole category of risk. There is no server, no account and no copy anywhere except your phone and the encrypted backups you choose to make.</p>
+        <p>Protection on the phone is just as strict. Your pattern is never stored; Argon2id turns it into the key that unlocks your vault, so there's nothing to steal and nothing to reset. Every vault has its own random master key, and every file is sealed with AES-256-GCM, which also detects tampering. After four wrong patterns, Sealcloak forces growing waits that changing the phone's clock can't skip.
 
         <h2>Where Sealcloak is different</h2>
         <p>Sealcloak is built on one rule: your files never leave your phone. The app doesn't have Android's internet permission, so it can't upload, sync or phone home even if something went wrong. There's no account to create, so there's no email or password that could leak in someone else's breach. And it collects no data at all, not even crash reports.</p>
         <p>Every file is <a href="{{root}}features/encryption">encrypted with AES-256-GCM</a> as you add it, with a key made from your pattern using Argon2id, a method designed to make guessing slow. Each vault has its own key, and you can have up to three <a href="{{root}}features/hidden-vaults">separate vaults</a> on the free plan, each with its own pattern, with nothing in the app showing how many exist.</p>
         <p>For pressure situations, <a href="{{root}}features/coerce">Coerce</a> gives you a harmless decoy vault to open when someone demands to see inside. <a href="{{root}}features/intruder-photos">Intruder photos</a> capture whoever keeps guessing your pattern, and the <a href="{{root}}features/calculator-disguise">calculator disguise</a> makes the app look and work like a calculator.</p>
+
+        <!--shared-->
+        <h2>Everything Sealcloak does to keep you safe</h2>
+        <div class="caps">
+          <div><strong>AES-256-GCM on every file</strong><span>Encrypted the moment it's added, and tamper-evident.</span></div>
+          <div><strong>Key made from your pattern</strong><span>Argon2id turns your pattern into the key; it's never stored.</span></div>
+          <div><strong>No internet permission</strong><span>Android itself stops the app from connecting anywhere.</span></div>
+          <div><strong>No account, no data collected</strong><span>No email, no analytics, no ads, no crash reports.</span></div>
+          <div><strong>Up to 3 hidden vaults</strong><span>Each with its own pattern; nothing shows how many exist.</span></div>
+          <div><strong>Coerce decoy vault</strong><span>A believable vault to open when someone forces you.</span></div>
+          <div><strong>Intruder photos</strong><span>From the third wrong pattern in a row, see who tried.</span></div>
+          <div><strong>Lockout that can't be skipped</strong><span>Growing waits after 4 wrong patterns; clock changes don't help.</span></div>
+          <div><strong>Calculator or custom icon</strong><span>Looks like a working calculator, or anything you choose.</span></div>
+          <div><strong>Screenshots blocked</strong><span>Nothing on screen can be captured, even in recent apps.</span></div>
+          <div><strong>9-word recovery phrase</strong><span>The only spare key, and it's yours alone.</span></div>
+          <div><strong>Encrypted backups you hold</strong><span>Weekly or monthly, to a folder you pick; restore on any phone.</span></div>
+        </div>
+        <!--/shared-->
 
         {{cta}}
 
@@ -72,16 +90,17 @@
         </ol>
         <p>The full walkthrough is in <a href="{{root}}guides/how-to-hide-photos-on-android">how to hide photos on Android</a>.</p>
 
-        <h2>Which one fits you</h2>
+        <h2>Who Sealcloak is for</h2>
         <ul>
-          <li><strong>You switch phones often or worry about losing yours:</strong> Keepsafe's cloud restore is the easier path.</li>
-          <li><strong>You don't want any company holding your photos:</strong> Sealcloak.</li>
-          <li><strong>You share a phone or someone checks it:</strong> both have decoy vaults; Sealcloak also hides how many vaults exist and can look like a calculator.</li>
-          <li><strong>You're on mobile data or offline a lot:</strong> Sealcloak never needs a connection; nothing waits to sync.</li>
+          <li><strong>You don't want any company holding your photos:</strong> nothing ever leaves your phone.</li>
+          <li><strong>You share a phone or someone checks it:</strong> hidden vaults, a decoy, intruder photos and a calculator disguise.</li>
+          <li><strong>You don't want another account:</strong> no email, no password, nothing to leak in a breach.</li>
+          <li><strong>You're often offline:</strong> everything works without a connection, always.</li>
         </ul>
 
         <h2>Bottom line</h2>
-        <p>Keepsafe and Sealcloak solve the same problem with opposite philosophies. If you'd rather a company look after a copy of your vault so you never lose it, Keepsafe is a mature, popular choice. If you'd rather nobody else ever hold your private photos, and you're happy to keep your own encrypted backup, Sealcloak gives you a vault that simply can't go online. Read <a href="{{root}}security">how Sealcloak's security works</a> for the details.</p>
+        <p>Keepsafe asks you to trust its cloud with your most private photos. Sealcloak doesn't ask you to trust anyone: your files are encrypted on your phone, the app can't go online, and only your pattern or recovery phrase opens them. Add scheduled encrypted backups and you have a vault that's both private and safe from loss. Read <a href="{{root}}security">how Sealcloak's security works</a>.</p>
+
         {{faq}}
       </div>
       {{related}}

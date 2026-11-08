@@ -20,10 +20,10 @@
     <article class="article">
       <div class="meta">Compare · 7 min read</div>
       <h1>Sealcloak vs Vaulty: a Vaulty alternative with no internet at all</h1>
-      <p class="lead">Vaulty calls itself the original photo vault for Android, and it's still popular, with more than 10 million installs. It locks photos behind a numeric PIN, can pose as a calculator and offers free online backup. Sealcloak shares the disguise idea but keeps everything on the phone. Here's the honest comparison.</p>
+      <p class="lead">Vaulty calls itself the original photo vault for Android, and it's still popular, with more than 10 million installs. It locks photos behind a numeric PIN, can pose as a calculator and offers free online backup. Sealcloak shares the disguise idea but keeps everything on the phone. Here's why that makes it the safer vault.</p>
       <div class="answer">
         <div class="eyebrow">Quick answer</div>
-        <p>Vaulty suits people who want a simple PIN vault with free online backup. Sealcloak suits people who don't want their private photos online in any form: it has no internet permission, no account and no data collection, and it encrypts every file with AES-256-GCM using a key made from your pattern. Both can disguise themselves as a calculator.</p>
+        <p>Sealcloak is the more secure Vaulty alternative. Instead of a numeric PIN and online backup, it uses a 5×5 pattern that becomes the encryption key, encrypts every file with AES-256-GCM, and has no internet permission, no account and no data sharing. It can be a working calculator too.</p>
       </div>
       <div class="prose">
         <h2>Feature comparison</h2>
@@ -43,13 +43,31 @@
         </table></div>
         <p>Vaulty information is taken from its Google Play listing and data safety section in November 2026.</p>
 
-        <h2>What Vaulty does well</h2>
-        <p>Vaulty is simple. Open it, tap the lock, pick an album and tap the photos you want hidden. You can also share a photo straight into Vaulty from the gallery, and it moves the photo out of the gallery for you, which saves a step. Its disguises are clever: a working calculator if you use a PIN, or a stocks lookup app if you prefer a text password.</p>
-        <p>The free automatic online backup is a genuine plus for people who'd never remember to back up by hand. If your phone breaks, your hidden pictures aren't lost with it. Vaulty also stores documents such as ID copies, and has had more than a decade to mature.</p>
+        <h2>Why Sealcloak is more secure</h2>
+        <p>Vaulty protects your vault with a numeric PIN, and its free online backup keeps a copy of your files on a server. Both are weak points Sealcloak was designed to avoid. A short PIN is easy to watch over your shoulder and has relatively few combinations. A server copy can be exposed in ways you'll never see.</p>
+        <p>Sealcloak's vault opens with a pattern on a 25-dot grid, and that pattern is the raw material for the encryption key: Argon2id stretches it into a key, so nothing usable is stored on the phone. Files are encrypted with AES-256-GCM. And because the app has no internet permission, there's no online copy, no account and no data shared with advertisers, by design.
 
         <h2>What Sealcloak does differently</h2>
         <p>A numeric PIN is quick, but four or six digits can be watched over your shoulder and have far fewer combinations than a pattern on a 5×5 grid. Sealcloak's <a href="{{root}}features/pattern-lock">pattern lock</a> needs at least 6 dots on a 25-dot grid, and wrong guesses trigger growing waits after the first four, which changing the phone's clock doesn't skip. The pattern isn't stored anywhere; it's turned into the encryption key with Argon2id.</p>
         <p>Sealcloak also adds tools for the moments a vault is most tested. If someone forces you to open it, <a href="{{root}}features/coerce">Coerce</a> opens a believable decoy vault instead. If someone keeps guessing, <a href="{{root}}features/intruder-photos">intruder photos</a> show you who. And because each of up to three vaults has its own pattern and nothing shows how many exist, you can keep one vault for everyday things and another nobody knows about.</p>
+
+        <!--shared-->
+        <h2>Everything Sealcloak does to keep you safe</h2>
+        <div class="caps">
+          <div><strong>AES-256-GCM on every file</strong><span>Encrypted the moment it's added, and tamper-evident.</span></div>
+          <div><strong>Key made from your pattern</strong><span>Argon2id turns your pattern into the key; it's never stored.</span></div>
+          <div><strong>No internet permission</strong><span>Android itself stops the app from connecting anywhere.</span></div>
+          <div><strong>No account, no data collected</strong><span>No email, no analytics, no ads, no crash reports.</span></div>
+          <div><strong>Up to 3 hidden vaults</strong><span>Each with its own pattern; nothing shows how many exist.</span></div>
+          <div><strong>Coerce decoy vault</strong><span>A believable vault to open when someone forces you.</span></div>
+          <div><strong>Intruder photos</strong><span>From the third wrong pattern in a row, see who tried.</span></div>
+          <div><strong>Lockout that can't be skipped</strong><span>Growing waits after 4 wrong patterns; clock changes don't help.</span></div>
+          <div><strong>Calculator or custom icon</strong><span>Looks like a working calculator, or anything you choose.</span></div>
+          <div><strong>Screenshots blocked</strong><span>Nothing on screen can be captured, even in recent apps.</span></div>
+          <div><strong>9-word recovery phrase</strong><span>The only spare key, and it's yours alone.</span></div>
+          <div><strong>Encrypted backups you hold</strong><span>Weekly or monthly, to a folder you pick; restore on any phone.</span></div>
+        </div>
+        <!--/shared-->
 
         {{cta}}
 
@@ -69,16 +87,17 @@
           <li>Remove the files from Vaulty and its online backup, then uninstall it if you're done with it.</li>
         </ol>
 
-        <h2>Who should choose which</h2>
+        <h2>Why people switch to Sealcloak</h2>
         <ul>
-          <li><strong>Want backups to just happen online:</strong> Vaulty.</li>
-          <li><strong>Want a fast numeric code:</strong> Vaulty's PIN is quicker to type.</li>
-          <li><strong>Want nothing to ever leave the phone:</strong> Sealcloak.</li>
-          <li><strong>Worried someone may force you to unlock:</strong> Sealcloak's Coerce decoy vault.</li>
+          <li><strong>No online copy:</strong> your photos exist only on your phone.</li>
+          <li><strong>Stronger unlocking:</strong> a pattern-derived key and growing lockouts.</li>
+          <li><strong>A decoy for pressure:</strong> Coerce opens a harmless vault when someone insists.</li>
+          <li><strong>No ad tracking:</strong> nothing is shared with anyone, ever.</li>
         </ul>
 
         <h2>Verdict</h2>
-        <p>Vaulty is an easy, familiar vault with handy online backup. Sealcloak trades that cloud convenience for a vault that is offline by design, with stronger unlocking and decoy options. If your worry is people physically around you, both help; if your worry also includes servers, accounts and data sharing, Sealcloak is the more private choice. See the <a href="{{root}}features">full feature list</a> or compare it with <a href="{{root}}compare/sealcloak-vs-keepsafe">Keepsafe</a>.</p>
+        <p>Switching takes about ten minutes. Sealcloak gives you everything you'd want from a photo vault, including a calculator disguise, with stronger protection underneath and nothing online. If your private photos matter, keep them somewhere only you can open. See the <a href="{{root}}features">full feature list</a> or compare it with <a href="{{root}}compare/sealcloak-vs-keepsafe">Keepsafe</a>.</p>
+
         {{faq}}
       </div>
       {{related}}

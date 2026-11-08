@@ -1,5 +1,17 @@
 {
   "cleanUrls": true,
   "buildCommand": "node build.mjs",
-  "outputDirectory": "public"
+  "outputDirectory": "public",
+  "redirects": [
+    {
+      "source": "/faq",
+      "destination": "/#faq",
+      "permanent": true
+    },
+    {
+      "source": "/:lang(es|pt-br|id|bn|ar|tr|de|vi|ko|ja)/faq",
+      "destination": "/:lang/#faq",
+      "permanent": true
+    }
+  ]
 }

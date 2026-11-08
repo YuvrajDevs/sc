@@ -121,6 +121,11 @@ function buildPage(lang, out, { meta, body }) {
     mainEntity: meta.faq.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })) });
   if (meta.steps?.length) jsonLd.push({ "@context": "https://schema.org", "@type": "HowTo", name: meta.title, inLanguage: lang.hreflang,
     step: meta.steps.map((t, i) => ({ "@type": "HowToStep", position: i + 1, text: t })) });
+  // Tool pages are free web apps that run in the browser: describe them as such for rich results.
+  if (art?.section === "tools") jsonLd.push({ "@context": "https://schema.org", "@type": "WebApplication", name: meta.navTitle || meta.title,
+    description: meta.description, url, inLanguage: lang.hreflang, applicationCategory: meta.category || "MultimediaApplication",
+    operatingSystem: "Any (runs in a web browser)", browserRequirements: "Requires JavaScript", isAccessibleForFree: true,
+    featureList: meta.features || [], provider: { "@type": "Organization", name: SITE.name, url: SITE.url } });
   if (meta.date) jsonLd.push({ "@context": "https://schema.org", "@type": "Article", headline: meta.title, inLanguage: lang.hreflang,
     description: meta.description, datePublished: meta.date, dateModified: meta.updated || meta.date,
     author: { "@type": "Organization", name: SITE.name }, mainEntityOfPage: url });
@@ -150,7 +155,7 @@ ${meta.faq.map((f) => `      <h3>${esc(f.q)}</h3>\n      <p>${esc(f.a)}</p>`).jo
     .replace("{{allScenarios}}", cards(lists.scenarios))
     .replace("{{allFeatures}}", cards(lists.features))
     .replace("{{allTools}}", cards(lists.tools))
-    .replace(/\{\{root\}\}([^"'\s<>)]*)/g, (_, p) => link(p === "pricing" ? "how-it-works" : p)); // pricing was removed; stale translations may still link it
+    .replace(/\{\{root\}\}([^"'\s<>)]*)/g, (_, p) => p === "faq" ? link("") + "#faq" : link(p === "pricing" ? "how-it-works" : p)); // pricing was removed; stale translations may still link it
 
   // The same page in every language that has it, for search engines and the language menu.
   const versions = LANGS.filter((l) => PAGES[l.code].has(out));
@@ -160,7 +165,9 @@ ${meta.faq.map((f) => `      <h3>${esc(f.q)}</h3>\n      <p>${esc(f.a)}</p>`).jo
     const target = PAGES[l.code].has(out) ? out : "index.html";
     return `<li><a href="${root}${prefix(l.code)}${clean(target)}" hreflang="${l.hreflang}" lang="${l.hreflang}" data-lang="${l.code}"${l.code === lang.code ? ' aria-current="true"' : ""}>${esc(l.name)}</a></li>`;
   }).join("");
-  const navItem = (key, href) => `<li><a href="${link(href)}"${meta.nav === key ? ' aria-current="page"' : ""}>${esc(ui.nav[key])}</a></li>`;
+  // The section a page belongs to in the main menu: compare and tools have their own, guides and situations live under Learn.
+  const active = /^compare\//.test(out) ? "compare" : /^tools\//.test(out) ? "tools" : /^(guides|scenarios)\//.test(out) ? "learn" : meta.nav;
+  const navItem = (key, href) => `<li><a href="${link(href)}"${active === key ? ' aria-current="page"' : ""}>${esc(ui.nav[key])}</a></li>`;
   const fontLink = lang.fontQuery ? `\n<link href="https://fonts.googleapis.com/css2?family=${lang.fontQuery}&display=swap" rel="stylesheet">` : "";
   const fontVars = lang.font ? `\n<style>:root{--sans:${lang.fontFirst ? `"${lang.font}","Outfit"` : `"Outfit","${lang.font}"`},system-ui,sans-serif;--mono:"Spline Sans Mono","${lang.font}",ui-monospace,monospace}</style>` : "";
   const toolStrings = /tool-metadata\.js/.test(body) ? `\n<script>window.SC_TOOL=${JSON.stringify(ui.tool)}</script>` : "";
@@ -201,9 +208,9 @@ ${hreflang}
         ${navItem("home", "")}
         ${navItem("features", "features")}
         ${navItem("security", "security")}
-        ${navItem("how", "how-it-works")}
-        ${navItem("guides", "guides/")}
-        ${navItem("faq", "faq")}
+        ${navItem("learn", "guides/")}
+        ${navItem("compare", "compare/")}
+        ${navItem("tools", "tools/")}
         ${navItem("support", "support")}
       </ul>
       <div class="nav-actions">
@@ -236,16 +243,16 @@ ${body.trim()}
         <li><a href="${link("features")}">${esc(ui.nav.features)}</a></li>
         <li><a href="${link("security")}">${esc(ui.nav.security)}</a></li>
         <li><a href="${link("how-it-works")}">${esc(ui.nav.how)}</a></li>
+        <li><a href="${link("compare/")}">${esc(ui.nav.compare)}</a></li>
+        <li><a href="${link("tools/")}">${esc(ui.nav.tools)}</a></li>
       </ul></div>
-      <div><h4>${esc(ui.footGuides)}</h4><ul>
+      <div><h4>${esc(ui.footLearn)}</h4><ul>
 ${lists.guides.slice(0, 4).map((g) => `        <li><a href="${link(g.out.replace(/\.html$/, ""))}">${esc(g.navTitle || g.title)}</a></li>`).join("\n")}
         <li><a href="${link("guides/")}">${esc(ui.allGuides)}</a></li>
-        <li><a href="${link("compare/")}">${esc(ui.compareApps)}</a></li>
         <li><a href="${link("scenarios/")}">${esc(ui.realSituations)}</a></li>
-        <li><a href="${link("tools/")}">${esc(ui.freeTools)}</a></li>
       </ul></div>
       <div><h4>${esc(ui.footHelp)}</h4><ul>
-        <li><a href="${link("faq")}">${esc(ui.nav.faq)}</a></li>
+        <li><a href="${link("")}#faq">${esc(ui.nav.faq)}</a></li>
         <li><a href="${link("support")}">${esc(ui.nav.support)}</a></li>
         <li><a href="${link("about")}">${esc(ui.about)}</a></li>
         <li><a href="${link("manifesto")}">${esc(ui.manifesto)}</a></li>

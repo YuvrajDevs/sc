@@ -1,7 +1,55 @@
 <!--meta {
   "title": "Sealcloak",
   "description": "Hide photos, videos and files on Android in an encrypted vault only your pattern opens. No account, no cloud, no internet permission.",
-  "nav": "home"
+  "nav": "home",
+  "jsonLd": [
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Does Sealcloak upload my photos anywhere?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. The app has no internet permission, so it cannot upload anything. Your files are encrypted and stay on your phone."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What if I forget my pattern?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Tap Use recovery phrase on the pattern screen and type the phrase you saved at setup. Then draw a new pattern."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What if I lose my pattern and my recovery phrase?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Then nobody can open that vault, including us. There is no back door. Keep your phrase on paper somewhere safe."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I move my vault to a new phone?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Export a backup on the old phone, copy the file to the new phone, install Sealcloak and import it with that vault's recovery phrase."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is Sealcloak available on iPhone?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Not yet. Sealcloak is an Android app."
+          }
+        }
+      ]
+    }
+  ]
 } -->
 <section class="panel hero">
   <div class="bars" aria-hidden="true"></div>
@@ -15,9 +63,12 @@
     </div>
     <div class="trust"><span>Free to start</span><span>No account</span><span>No internet permission</span></div>
     <div class="mock-trio" aria-hidden="true">
-      <figure class="mock side"><img src="{{root}}assets/screens/unlock.jpg" alt="" loading="eager" width="450" height="1000"></figure>
-      <figure class="mock"><img src="{{root}}assets/screens/home.jpg" alt="" loading="eager" width="450" height="1000"></figure>
-      <figure class="mock side"><img src="{{root}}assets/screens/images.jpg" alt="" loading="eager" width="450" height="1000"></figure>
+      <figure class="mock side"><div class="mock-screen"><img src="{{root}}assets/screens/unlock.jpg" alt="" loading="eager" width="450" height="1000">
+        <svg class="mock-fx fx-unlock" viewBox="0 0 405 900"><polyline class="fx-line" points="59,332 131,332 202,332 202,404 202,475 274,547 345,618"/><circle class="fx-dot" style="--d:0" cx="59" cy="332" r="13"/><circle class="fx-dot" style="--d:1" cx="131" cy="332" r="13"/><circle class="fx-dot" style="--d:2" cx="202" cy="332" r="13"/><circle class="fx-dot" style="--d:3" cx="202" cy="404" r="13"/><circle class="fx-dot" style="--d:4" cx="202" cy="475" r="13"/><circle class="fx-dot" style="--d:5" cx="274" cy="547" r="13"/><circle class="fx-dot" style="--d:6" cx="345" cy="618" r="13"/><circle class="fx-finger" r="18"/><rect class="fx-ok" x="0" y="0" width="405" height="900"/></svg></div></figure>
+      <figure class="mock"><div class="mock-screen"><img src="{{root}}assets/screens/home.jpg" alt="" loading="eager" width="450" height="1000">
+        <svg class="mock-fx fx-home" viewBox="0 0 405 900"><rect class="fx-press" x="24" y="216" width="170" height="170" rx="30"/><circle class="fx-tap fx-tap1" cx="109" cy="300" r="22"/><rect class="fx-press fx-press2" x="323" y="794" width="60" height="60" rx="30"/><circle class="fx-tap fx-tap2" cx="352" cy="824" r="22"/></svg></div></figure>
+      <figure class="mock side"><div class="mock-screen"><img src="{{root}}assets/screens/images.jpg" alt="" loading="eager" width="450" height="1000">
+        <svg class="mock-fx fx-images" viewBox="0 0 405 900"><rect class="fx-cover" style="--i:0" x="26" y="190" width="114" height="114" rx="10"/><rect class="fx-cover" style="--i:1" x="146" y="190" width="114" height="114" rx="10"/><rect class="fx-cover" style="--i:2" x="265" y="190" width="114" height="114" rx="10"/><rect class="fx-cover" style="--i:3" x="26" y="310" width="114" height="114" rx="10"/><rect class="fx-cover" style="--i:4" x="146" y="310" width="114" height="114" rx="10"/><rect class="fx-cover" style="--i:5" x="265" y="310" width="114" height="114" rx="10"/><g class="fx-badge"><rect x="122" y="440" width="160" height="40" rx="20"/><text x="202" y="466" text-anchor="middle">Encrypted ✓</text></g></svg></div></figure>
     </div>
   </div>
 </section>
@@ -100,10 +151,42 @@
 <section class="panel">
   <div class="panel-inner wrap">
     <div class="section-head reveal">
-      <div class="eyebrow">Guides</div>
+      <div class="eyebrow">Learn</div>
       <h2>Learn to keep things private.</h2>
     </div>
     <div class="cards reveal">{{latestGuides}}
+    </div>
+  </div>
+</section>
+
+<section class="panel" id="faq">
+  <div class="panel-inner wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">FAQ</div>
+      <h2>Questions, answered.</h2>
+    </div>
+    <div class="faq reveal">
+    <h2 class="mono dim faq-group">Privacy</h2>
+    <details><summary>Does Sealcloak upload my photos anywhere?</summary><p>No. The app has no internet permission, so it cannot upload anything. Your files are encrypted and stay on your phone.</p></details>
+    <details><summary>Do I need an account?</summary><p>No. No email, no phone number, no sign-in. Your pattern is the only key.</p></details>
+    <details><summary>Can you see my files?</summary><p>No. We have no servers and no copy of your files or keys. Everything is encrypted on your phone.</p></details>
+    <details><summary>Do the photos stay in my gallery?</summary><p>Adding a photo makes an encrypted copy in the vault. The original stays in your gallery until you delete it there, so you can check the vault copy first.</p></details>
+
+    <h2 class="mono dim faq-group">Getting in</h2>
+    <details><summary>What if I forget my pattern?</summary><p>Tap “Use recovery phrase” on the pattern screen and type the phrase you saved at setup. Then draw a new pattern.</p></details>
+    <details><summary>What if I lose my pattern and my recovery phrase?</summary><p>Then nobody can open that vault, including us. There is no back door. Keep your phrase on paper somewhere safe.</p></details>
+    <details><summary>Can I use my fingerprint?</summary><p>Yes. Turn on fingerprint unlock in Settings. Your pattern still works too.</p></details>
+    <details><summary>What is Coerce?</summary><p>A second, harmless-looking vault with its own pattern. If someone forces you to unlock the app, draw that pattern instead.</p><p>It can also erase your other vaults when opened, but that’s off by default and needs you to type PERMIT.</p></details>
+
+    <h2 class="mono dim faq-group">Backups & phones</h2>
+    <details><summary>How do I move my vault to a new phone?</summary><p>Export a backup on the old phone, copy the file to the new phone, install Sealcloak and import it with that vault’s recovery phrase.</p></details>
+    <details><summary>What happens if I uninstall the app?</summary><p>Its vaults are deleted from the phone. Backup files you exported earlier are kept and can be imported again.</p></details>
+    <details><summary>Are backups encrypted?</summary><p>Yes. A backup file is useless without that vault’s recovery phrase.</p></details>
+    <details><summary>Is Sealcloak available on iPhone?</summary><p>Not yet. Sealcloak is an Android app.</p></details>
+
+    <h2 class="mono dim faq-group">Pro</h2>
+    <details><summary>What does Pro add?</summary><p>Unlimited vaults and files, plus disguising the app as another app with your own icon and name.</p></details>
+    <details><summary>Will I lose files if I stop paying?</summary><p>No. Everything stays and keeps working. You just can’t add more beyond the free limits.</p></details>
     </div>
   </div>
 </section>

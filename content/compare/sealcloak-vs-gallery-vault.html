@@ -20,10 +20,10 @@
     <article class="article">
       <div class="meta">Compare · 7 min read</div>
       <h1>Sealcloak vs Gallery Vault: a focused Gallery Vault alternative</h1>
-      <p class="lead">Gallery Vault, by ThinkYeah, is one of the most installed vault apps on Android, with more than 50 million downloads. It does a lot: encrypted hiding, a private browser, a video downloader, SD card support and break-in alerts. Sealcloak does less on purpose. This page explains what you gain and give up with each.</p>
+      <p class="lead">Gallery Vault, by ThinkYeah, is one of the most installed vault apps on Android, with more than 50 million downloads. It does a lot: encrypted hiding, a private browser, a video downloader, SD card support and break-in alerts. Sealcloak does one thing, keeping your files safe, with nothing online. Here's why that matters.</p>
       <div class="answer">
         <div class="eyebrow">Quick answer</div>
-        <p>Gallery Vault is an all-in-one app: vault, private browser and downloader together. Sealcloak is only a vault, built to be as private as possible: no internet permission, no account, no location or analytics, with every file encrypted by AES-256-GCM. If you want extras, Gallery Vault has more. If you want the least data exposure, Sealcloak.</p>
+        <p>Sealcloak is the more secure Gallery Vault alternative. It's a focused vault with no internet permission, no account, no location or ad data, and every file encrypted with AES-256-GCM using a key made from your pattern. Hidden vaults, a decoy, intruder photos and a calculator disguise are built in.</p>
       </div>
       <div class="prose">
         <h2>Comparison at a glance</h2>
@@ -44,13 +44,31 @@
         </table></div>
         <p>Gallery Vault details come from its Google Play listing and data safety section, November 2026.</p>
 
-        <h2>Why people like Gallery Vault</h2>
-        <p>Gallery Vault is genuinely feature-rich. Beyond hiding photos and videos, it can hide any file type, sort and search, play GIFs, and move encrypted files to an SD card to save space. Its private browser keeps your browsing history out of the main browser, and its downloader saves videos from websites and social apps straight into the vault. Shake-to-close shuts the app quickly if someone walks in, and break-in alerts show failed unlock attempts. It also supports dark mode and a fingerprint unlock, so day-to-day use is quick and comfortable on most phones.</p>
-        <p>For people who want one app to do everything private on their phone, that bundle is appealing, and the polished design has won it a big audience.</p>
+        <h2>Why focus makes Sealcloak safer</h2>
+        <p>Gallery Vault bundles a vault with a web browser, a video downloader and advertising. Every one of those needs the internet, and its Play data safety section lists approximate location and device IDs collected or shared, including for advertising. That's a lot of moving parts around your most private files.</p>
+        <p>Sealcloak does one job and does it with nothing attached. No browser, no downloader, no ads, no analytics and no internet permission, so Android itself won't let the app connect. What remains is the vault: AES-256-GCM on every file, a pattern-derived key, separate vaults with separate keys, and protection for the moments that matter most.
 
         <h2>Why Sealcloak stays small</h2>
         <p>Every feature that talks to the internet is also a way for data to leave the phone. A browser and a downloader need network access; ads and analytics need it too. Sealcloak removes all of that. Without the internet permission, Android won't let it connect anywhere, so the only place your files can exist is encrypted on your phone and in the backups you make yourself.</p>
         <p>What's left is a vault done carefully. A <a href="{{root}}features/pattern-lock">5×5 pattern</a> becomes your encryption key through Argon2id. Up to three <a href="{{root}}features/hidden-vaults">independent vaults</a> each have their own pattern and key, and nothing in the app reveals how many exist. <a href="{{root}}features/coerce">Coerce</a> opens a decoy when you're pressured, and <a href="{{root}}features/erase-after-wrong-patterns">erase after wrong patterns</a> is available for people who need it, off by default and protected by typing PERMIT.</p>
+
+        <!--shared-->
+        <h2>Everything Sealcloak does to keep you safe</h2>
+        <div class="caps">
+          <div><strong>AES-256-GCM on every file</strong><span>Encrypted the moment it's added, and tamper-evident.</span></div>
+          <div><strong>Key made from your pattern</strong><span>Argon2id turns your pattern into the key; it's never stored.</span></div>
+          <div><strong>No internet permission</strong><span>Android itself stops the app from connecting anywhere.</span></div>
+          <div><strong>No account, no data collected</strong><span>No email, no analytics, no ads, no crash reports.</span></div>
+          <div><strong>Up to 3 hidden vaults</strong><span>Each with its own pattern; nothing shows how many exist.</span></div>
+          <div><strong>Coerce decoy vault</strong><span>A believable vault to open when someone forces you.</span></div>
+          <div><strong>Intruder photos</strong><span>From the third wrong pattern in a row, see who tried.</span></div>
+          <div><strong>Lockout that can't be skipped</strong><span>Growing waits after 4 wrong patterns; clock changes don't help.</span></div>
+          <div><strong>Calculator or custom icon</strong><span>Looks like a working calculator, or anything you choose.</span></div>
+          <div><strong>Screenshots blocked</strong><span>Nothing on screen can be captured, even in recent apps.</span></div>
+          <div><strong>9-word recovery phrase</strong><span>The only spare key, and it's yours alone.</span></div>
+          <div><strong>Encrypted backups you hold</strong><span>Weekly or monthly, to a folder you pick; restore on any phone.</span></div>
+        </div>
+        <!--/shared-->
 
         {{cta}}
 
@@ -58,8 +76,8 @@
         <p>Gallery Vault's data safety section lists approximate location collected for advertising or marketing, plus device IDs, diagnostics and app interactions shared with other companies for analytics, advertising and account management. That's common for free apps supported by ads, and it doesn't mean your hidden photos are shared. But if your reason for using a vault is privacy, it's worth knowing what the app itself reports.</p>
         <p>Sealcloak declares no data collected or shared, and has no advertising. It even blocks screenshots and screen recording inside the app so other apps can't capture what's on screen.</p>
 
-        <h2>Using both for different jobs</h2>
-        <p>If you rely on Gallery Vault's browser or downloader, you don't have to give them up to get an offline vault. Some people keep a browser for downloads and keep their most personal photos, ID scans and documents in Sealcloak, which never syncs or reports anything. Files you download can be added to a Sealcloak vault and then deleted from the original location.</p>
+        <h2>Built for the moment someone asks to see</h2>
+        <p>A vault is tested when someone is standing next to you. Sealcloak's <a href="{{root}}features/coerce">Coerce</a> opens a believable decoy vault with its own pattern. Up to three vaults can exist without any sign of how many. Intruder photos record who keeps guessing. And the app can be a working calculator. Each of these works offline and leaves no trace outside the app. Screenshots and screen recording are blocked inside Sealcloak too, so the recent apps screen shows a blank card instead of your photos.</p>
 
         <h2>Hidden vs encrypted: how to check any vault</h2>
         <p>Whichever app you use, it's worth knowing the difference. A hidden file has only been moved or renamed so the gallery skips it; plug the phone into a computer, or open a file manager, and it can often be viewed. An encrypted file is scrambled with a key, so even someone who copies it sees nothing useful. Both apps here encrypt, which is the important part.</p>
@@ -76,7 +94,8 @@
         </ol>
 
         <h2>The verdict</h2>
-        <p>Gallery Vault is the better pick if you want many features in one place, including browsing and downloading. Sealcloak is the better pick if you want a vault that collects nothing, shows no ads and cannot reach the internet. For more options, see <a href="{{root}}compare/sealcloak-vs-lockmypix">Sealcloak vs LockMyPix</a> or the <a href="{{root}}features">full feature list</a>.</p>
+        <p>Downloads and browsing can live in any app you like; your most private photos, ID scans and documents deserve a place with no network access at all. For a vault that collects nothing, shows no ads and cannot reach the internet, with strong encryption and real-world protection built in, Sealcloak is the safer home for your private files. See <a href="{{root}}compare/sealcloak-vs-lockmypix">Sealcloak vs LockMyPix</a> or the <a href="{{root}}features">full feature list</a>.</p>
+
         {{faq}}
       </div>
       {{related}}

@@ -6,7 +6,10 @@
     "how": "작동 방식",
     "guides": "가이드",
     "faq": "자주 묻는 질문",
-    "support": "지원"
+    "support": "지원",
+    "learn": "알아보기",
+    "compare": "비교",
+    "tools": "도구"
   },
   "getApp": "앱 받기",
   "themeLabel": "라이트 또는 다크 테마로 전환",
@@ -53,5 +56,8 @@
   },
   "about": "소개",
   "manifesto": "선언문",
-  "whatsNew": "새로운 기능"
+  "whatsNew": "새로운 기능",
+  "learnGuides": "가이드",
+  "learnSituations": "실제 상황",
+  "footLearn": "알아보기"
 }

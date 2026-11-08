@@ -6,7 +6,10 @@
     "how": "Cách hoạt động",
     "guides": "Hướng dẫn",
     "faq": "Hỏi đáp",
-    "support": "Hỗ trợ"
+    "support": "Hỗ trợ",
+    "learn": "Tìm hiểu",
+    "compare": "So sánh",
+    "tools": "Công cụ"
   },
   "getApp": "Tải ứng dụng",
   "themeLabel": "Chuyển giao diện sáng hoặc tối",
@@ -53,5 +56,8 @@
   },
   "about": "Giới thiệu",
   "manifesto": "Tuyên ngôn",
-  "whatsNew": "Có gì mới"
+  "whatsNew": "Có gì mới",
+  "learnGuides": "Hướng dẫn",
+  "learnSituations": "Tình huống thực tế",
+  "footLearn": "Tìm hiểu"
 }

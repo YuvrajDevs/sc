@@ -6,7 +6,10 @@
     "how": "Nasıl çalışır",
     "guides": "Rehberler",
     "faq": "SSS",
-    "support": "Destek"
+    "support": "Destek",
+    "learn": "Öğren",
+    "compare": "Karşılaştır",
+    "tools": "Araçlar"
   },
   "getApp": "Uygulamayı indir",
   "themeLabel": "Açık veya koyu temaya geç",
@@ -53,5 +56,8 @@
   },
   "about": "Hakkında",
   "manifesto": "Manifesto",
-  "whatsNew": "Yenilikler"
+  "whatsNew": "Yenilikler",
+  "learnGuides": "Rehberler",
+  "learnSituations": "Gerçek durumlar",
+  "footLearn": "Öğren"
 }

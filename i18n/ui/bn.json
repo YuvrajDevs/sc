@@ -6,7 +6,10 @@
     "how": "কীভাবে কাজ করে",
     "guides": "গাইড",
     "faq": "প্রশ্নোত্তর",
-    "support": "সাহায্য"
+    "support": "সাহায্য",
+    "learn": "শিখুন",
+    "compare": "তুলনা",
+    "tools": "টুলস"
   },
   "getApp": "অ্যাপটি নিন",
   "themeLabel": "লাইট বা ডার্ক থিম বদলান",
@@ -53,5 +56,8 @@
   },
   "about": "আমাদের সম্পর্কে",
   "manifesto": "ইশতেহার",
-  "whatsNew": "নতুন কী"
+  "whatsNew": "নতুন কী",
+  "learnGuides": "গাইড",
+  "learnSituations": "বাস্তব পরিস্থিতি",
+  "footLearn": "শিখুন"
 }

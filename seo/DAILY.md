@@ -27,7 +27,7 @@ Use the topic's `variants` as `alsoTargets` and as natural phrasing in headings 
 - Read two existing articles in `content/guides/` for tone and to find pages to link.
 - **Get phone-specific steps right.** For menu paths on a brand's phone, for example Samsung Secure Folder or Xiaomi Hidden album, check the maker's current help pages with web search, and write the path as the maker describes it. If you can't confirm a path, describe it more generally instead of guessing.
 - **Claims that something was removed, discontinued or changed need proof.** Use at least one dated source from the last 12 months, ideally the maker's own page. Old news about a beta feature being pulled doesn't count. If you can't confirm a claim, leave it out.
-- **Get competitor facts right.** For another app, use its Play Store listing and its own site: account requirement, cloud, permissions. Be fair: say what it does well.
+- **Get competitor facts right.** For another app, use its Play Store listing and its own site: account requirement, cloud, permissions. Comparison pages promote Sealcloak: don't write sections praising the other app; show its real weak points (from its listing and data safety section) and every Sealcloak capability that answers them. Never invent facts about another app.
 
 ## 4. Write the article
 

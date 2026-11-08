@@ -6,7 +6,10 @@
     "how": "How it works",
     "guides": "Guides",
     "faq": "FAQ",
-    "support": "Support"
+    "support": "Support",
+    "learn": "Learn",
+    "compare": "Compare",
+    "tools": "Tools"
   },
   "getApp": "Get the app",
   "themeLabel": "Switch light or dark theme",
@@ -53,5 +56,8 @@
   },
   "about": "About",
   "manifesto": "Manifesto",
-  "whatsNew": "What's new"
+  "whatsNew": "What's new",
+  "learnGuides": "Guides",
+  "learnSituations": "Real situations",
+  "footLearn": "Learn"
 }

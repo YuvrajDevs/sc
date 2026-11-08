@@ -532,6 +532,11 @@ for t in T:
     words = len(re.sub(r"<[^>]+>", " ", t["body"] + t["lead"] + t["answer"] + " ".join(f["q"] + f["a"] for f in t["faq"])).split())
     meta = {"title": t["title"], "navTitle": t["nav"], "description": t["desc"], "keyword": t["kw"], "alsoTargets": t["also"],
             "summary": t["summary"], "date": DATE, "readMins": max(2, round(words / 220)), "nav": "guides", "faq": t["faq"]}
+    # How-to steps (from the page's first numbered list) and what the tool does, for HowTo and WebApplication rich results
+    ol = re.search(r"<ol>([\s\S]*?)</ol>", t["body"])
+    meta["steps"] = [re.sub(r"\s+", " ", re.sub(r"<[^>]+>", "", li)).strip() for li in re.findall(r"<li>([\s\S]*?)</li>", ol.group(1))] if ol else []
+    meta["category"] = "SecurityApplication" if t["tool"] in ("password", "encrypt") else "DesignApplication" if t["tool"] in ("qr",) else "MultimediaApplication"
+    meta["features"] = ["Runs entirely in your browser", "Files are never uploaded", "No sign-up", "No watermark", "Free"]
     html = SKELETON.format(meta=json.dumps(meta, indent=2, ensure_ascii=False), h1=t["h1"], lead=t["lead"], tool=t["tool"],
                            opt=json.dumps(t["opt"]), answer=t["answer"], body=t["body"])
     open(os.path.join(ROOT, t["slug"] + ".html"), "w").write(html)

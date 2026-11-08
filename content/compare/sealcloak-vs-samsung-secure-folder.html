@@ -20,10 +20,10 @@
     <article class="article">
       <div class="meta">Compare · 7 min read</div>
       <h1>Sealcloak vs Samsung Secure Folder: when you need an alternative</h1>
-      <p class="lead">If you have a Samsung Galaxy phone, you already own one of the best privacy features on Android: Secure Folder. It's a separate locked space for apps and files, protected by Samsung Knox. So why would anyone want another app? Here's where Secure Folder shines, where a vault like Sealcloak fits better, and how to use them together.</p>
+      <p class="lead">If you have a Samsung Galaxy phone, you already have Secure Folder. It's a separate locked space for apps and files, protected by Samsung Knox. So why would anyone want another app? Because Secure Folder leaves gaps that matter: decoys, intruder alerts, offline backups and phones that aren't Galaxies. Here's how Sealcloak fills them.</p>
       <div class="answer">
         <div class="eyebrow">Quick answer</div>
-        <p>On a Galaxy phone, Secure Folder is excellent for keeping whole apps (a second WhatsApp, a private browser) in a separate locked space. Sealcloak is for files: it works on any Android phone, adds decoy vaults, a calculator disguise, intruder photos and encrypted backup files you control. Many people use both.</p>
+        <p>Sealcloak works on every Android phone and adds what Secure Folder doesn't: up to three hidden vaults, a Coerce decoy, intruder photos, a calculator disguise and encrypted backups you hold. Every file is encrypted with AES-256-GCM from your pattern, and the app has no internet permission.</p>
       </div>
       <div class="prose">
         <h2>Secure Folder and Sealcloak compared</h2>
@@ -44,14 +44,32 @@
         </table></div>
         <p>Secure Folder menus and options vary by phone model and One UI version. Check your phone's Settings, under security and privacy, for the exact options.</p>
 
-        <h2>Where Secure Folder is the better tool</h2>
-        <p>Secure Folder works at the system level. It isn't just a hidden album; it's a separate space with its own apps, its own copies of those apps' data, and its own lock. You can install a second WhatsApp or a separate browser inside it and they won't share anything with the copies outside. Photos taken by the camera inside Secure Folder stay inside it. For hiding whole apps and their activity, nothing in a normal app can match that.</p>
-        <p>It's also backed by Samsung Knox, the security platform built into Galaxy hardware, and it costs nothing extra. If you have a Galaxy phone and haven't set it up, it's worth doing.</p>
+        <h2>What Secure Folder doesn't cover</h2>
+        <p>Secure Folder is a separate space on Samsung Galaxy phones, and it's a solid start. But it's one space with one lock, it doesn't show a decoy when someone pressures you, it doesn't tell you who tried to get in, and it isn't offline: apps inside it can sync and send data like any app. And if you ever move to a phone that isn't a Galaxy, it doesn't come with you.</p>
+        <p>Sealcloak is built for exactly those gaps. Separate vaults with separate patterns and no visible count. A decoy vault for pressure. Intruder photos. A disguise that looks like a working calculator. Encrypted backups that restore on any Android phone. And an app with no internet permission at all.
 
         <h2>Where Sealcloak fits better</h2>
         <p>The obvious one: <strong>Secure Folder only exists on Samsung Galaxy phones</strong>. Xiaomi, Redmi, Pixel, Motorola, vivo, OPPO, realme, OnePlus and Infinix owners need something else, and families with mixed phones can't share one approach. Sealcloak runs on any Android phone from Android 8.0.</p>
         <p>It also adds things Secure Folder doesn't try to do. You can have up to three <a href="{{root}}features/hidden-vaults">separate vaults</a>, each with its own pattern, and nothing reveals how many exist. <a href="{{root}}features/coerce">Coerce</a> opens a believable decoy vault if someone forces you to unlock. <a href="{{root}}features/intruder-photos">Intruder photos</a> show who tried to get in. And the vault can be disguised as a <a href="{{root}}features/calculator-disguise">working calculator</a>.</p>
         <p>Backups are the other big difference. Sealcloak's <a href="{{root}}features/encrypted-backups">encrypted backups</a> are files you keep wherever you like, and they restore on any Android phone with your recovery phrase. If you move from a Galaxy to another brand, your vault comes with you.</p>
+
+        <!--shared-->
+        <h2>Everything Sealcloak does to keep you safe</h2>
+        <div class="caps">
+          <div><strong>AES-256-GCM on every file</strong><span>Encrypted the moment it's added, and tamper-evident.</span></div>
+          <div><strong>Key made from your pattern</strong><span>Argon2id turns your pattern into the key; it's never stored.</span></div>
+          <div><strong>No internet permission</strong><span>Android itself stops the app from connecting anywhere.</span></div>
+          <div><strong>No account, no data collected</strong><span>No email, no analytics, no ads, no crash reports.</span></div>
+          <div><strong>Up to 3 hidden vaults</strong><span>Each with its own pattern; nothing shows how many exist.</span></div>
+          <div><strong>Coerce decoy vault</strong><span>A believable vault to open when someone forces you.</span></div>
+          <div><strong>Intruder photos</strong><span>From the third wrong pattern in a row, see who tried.</span></div>
+          <div><strong>Lockout that can't be skipped</strong><span>Growing waits after 4 wrong patterns; clock changes don't help.</span></div>
+          <div><strong>Calculator or custom icon</strong><span>Looks like a working calculator, or anything you choose.</span></div>
+          <div><strong>Screenshots blocked</strong><span>Nothing on screen can be captured, even in recent apps.</span></div>
+          <div><strong>9-word recovery phrase</strong><span>The only spare key, and it's yours alone.</span></div>
+          <div><strong>Encrypted backups you hold</strong><span>Weekly or monthly, to a folder you pick; restore on any phone.</span></div>
+        </div>
+        <!--/shared-->
 
         {{cta}}
 
@@ -77,7 +95,8 @@
         <p>If your phone isn't a Galaxy, check whether your Android version offers Private space, Android's own separate area for apps, or whether your brand has its own version (names differ by brand). For files and photos, a vault app is the most consistent option across brands. Our guides on <a href="{{root}}guides/how-to-hide-photos-on-android">hiding photos on Android</a> and <a href="{{root}}guides/hide-apps-on-android">hiding apps</a> cover each brand's built-in options.</p>
 
         <h2>Verdict</h2>
-        <p>On a Galaxy phone, keep Secure Folder for apps; it's excellent at that. For photos and files, Sealcloak adds what Secure Folder doesn't do: multiple vaults, a decoy, intruder photos, a calculator disguise and offline encrypted backups that move with you to any Android phone. On every other Android phone, Sealcloak gives you a private vault Samsung owners already take for granted.</p>
+        <p>On any Android phone, including a Galaxy, Sealcloak is the safest place for your private photos and files: AES-256-GCM encryption from your own pattern, no internet, no account, and protection built for real-life pressure. Read <a href="{{root}}security">how Sealcloak's security works</a>.</p>
+
         {{faq}}
       </div>
       {{related}}

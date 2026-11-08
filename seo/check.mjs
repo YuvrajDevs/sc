@@ -21,7 +21,7 @@ if (!m) { console.error("missing <!--meta {...} --> header"); process.exit(1); }
 let meta;
 try { meta = JSON.parse(m[1]); } catch (e) { console.error("meta is not valid JSON: " + e.message); process.exit(1); }
 const body = raw.slice(m[0].length);
-const text = (h) => h.replace(/<script[\s\S]*?<\/script>/g, " ").replace(/<[^>]+>/g, " ").replace(/&[a-z#0-9]+;/g, " ").replace(/\{\{[a-zA-Z]+\}\}/g, " ").replace(/\s+/g, " ").trim();
+const text = (h) => h.replace(/<!--shared-->[\s\S]*?<!--\/shared-->/g, " ").replace(/<script[\s\S]*?<\/script>/g, " ").replace(/<[^>]+>/g, " ").replace(/&[a-z#0-9]+;/g, " ").replace(/\{\{[a-zA-Z]+\}\}/g, " ").replace(/\s+/g, " ").trim();
 const prose = text(body) + " " + (meta.faq || []).map((f) => `${f.q} ${f.a}`).join(" ");
 const wordCount = prose.split(" ").length;
 const slug = basename(file, ".html");
@@ -64,7 +64,7 @@ if (wordCount > 3200) warn(`~${wordCount} words is long; make sure every section
 
 // ---- Internal links must point at pages that exist
 const links = [...body.matchAll(/href="\{\{root\}\}([^"#]*)"/g)].map((x) => x[1]);
-const exists = (p) => { p = p.replace(/\/$/, ""); return p === "" || existsSync(join(ROOT, "content", p + ".html")) || existsSync(join(ROOT, "content", p, "index.html")); };
+const exists = (p) => { p = p.replace(/\/$/, ""); return p === "" || p === "faq" || existsSync(join(ROOT, "content", p + ".html")) || existsSync(join(ROOT, "content", p, "index.html")); };
 const broken = links.filter((l) => !exists(l));
 if (broken.length) fail(`broken internal links: ${broken.join(", ")}`);
 const articleLinks = links.filter((l) => /^(guides|compare|scenarios|features)\/./.test(l) && !l.endsWith(slug));

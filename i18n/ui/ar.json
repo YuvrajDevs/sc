@@ -6,7 +6,10 @@
     "how": "طريقة العمل",
     "guides": "أدلة",
     "faq": "الأسئلة الشائعة",
-    "support": "الدعم"
+    "support": "الدعم",
+    "learn": "تعلّم",
+    "compare": "مقارنة",
+    "tools": "أدوات"
   },
   "getApp": "حمّل التطبيق",
   "themeLabel": "التبديل بين الوضع الفاتح والداكن",
@@ -53,5 +56,8 @@
   },
   "about": "من نحن",
   "manifesto": "البيان",
-  "whatsNew": "ما الجديد"
+  "whatsNew": "ما الجديد",
+  "learnGuides": "أدلة",
+  "learnSituations": "مواقف حقيقية",
+  "footLearn": "تعلّم"
 }

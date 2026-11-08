@@ -23,7 +23,7 @@
       <p class="lead">Calculator vault apps are a whole category on Google Play: a calculator that really works, with a secret vault behind it. One of the most installed is "Calculator: Photo, Video Vault", with more than 10 million downloads. Sealcloak can turn into a calculator too. The disguise looks the same; what's behind it isn't.</p>
       <div class="answer">
         <div class="eyebrow">Quick answer</div>
-        <p>A calculator disguise stops a casual look, but your photos are only as safe as the vault behind it. Calculator: Photo, Video Vault adds an incognito browser, downloader and fake password, and shares device IDs for advertising. Sealcloak's calculator opens a vault where every file is encrypted with AES-256-GCM, with no internet permission and no data shared.</p>
+        <p>Sealcloak is the safer calculator vault app. Its working calculator sits in front of a real encrypted vault: every file is protected with AES-256-GCM using a key made from your pattern, the app has no internet permission, shows no ads and shares no data, and it adds a decoy vault and intruder photos.</p>
       </div>
       <div class="prose">
         <h2>Calculator vault vs Sealcloak</h2>
@@ -42,13 +42,31 @@
         </table></div>
         <p>Details for Calculator: Photo, Video Vault are from its Google Play listing and data safety section, November 2026. Other calculator vault apps vary, so read each listing.</p>
 
-        <h2>Why the calculator trick works</h2>
-        <p>Nobody looks twice at a calculator. It sits on the home screen, it adds numbers when someone opens it, and it gives no hint that anything else is there. That's why calculator vaults are so popular with people who share a phone or hand it to family. Children borrowing a phone for games, a partner checking a message or a friend scrolling through holiday pictures all walk straight past it. The disguise is about avoiding questions, not about cryptography.</p>
-        <p>Calculator: Photo, Video Vault builds on that with useful extras: a fake password that opens harmless content, an incognito browser that downloads straight into the vault, direct sharing from the vault to social apps, and a face-down action that closes the app or opens another one if someone walks up.</p>
+        <h2>A calculator is only the front door</h2>
+        <p>Nobody looks twice at a calculator, which is why the disguise is so popular. But a disguise only protects you until someone looks past it, and most calculator vault apps are free, ad-supported and online. Calculator: Photo, Video Vault's own data safety section lists device IDs shared for advertising, and its listing doesn't describe how files are encrypted.</p>
+        <p>Sealcloak treats the calculator as a front door to a properly locked room. The calculator works normally. Your secret code opens the door, your pattern unlocks the vault, and the files behind it are encrypted with AES-256-GCM. No ads, no tracking, no internet.
 
         <h2>What matters behind the calculator</h2>
         <p>A disguise only protects you until someone looks past it, for instance by checking the app list, plugging the phone into a computer or browsing storage with a file manager. At that point, the only thing between them and your photos is whether the files are encrypted, and how.</p>
         <p>Sealcloak's <a href="{{root}}features/calculator-disguise">calculator disguise</a> is a layer on top of a fully encrypted vault. The calculator works normally. Your secret code of 4 to 8 digits, held on the equals key for two seconds, only opens the door; you still need your <a href="{{root}}features/pattern-lock">pattern</a> or fingerprint, and the files themselves are AES-256-GCM encrypted with a key derived from that pattern. Someone who finds the files without it gets unreadable data.</p>
+
+        <!--shared-->
+        <h2>Everything Sealcloak does to keep you safe</h2>
+        <div class="caps">
+          <div><strong>AES-256-GCM on every file</strong><span>Encrypted the moment it's added, and tamper-evident.</span></div>
+          <div><strong>Key made from your pattern</strong><span>Argon2id turns your pattern into the key; it's never stored.</span></div>
+          <div><strong>No internet permission</strong><span>Android itself stops the app from connecting anywhere.</span></div>
+          <div><strong>No account, no data collected</strong><span>No email, no analytics, no ads, no crash reports.</span></div>
+          <div><strong>Up to 3 hidden vaults</strong><span>Each with its own pattern; nothing shows how many exist.</span></div>
+          <div><strong>Coerce decoy vault</strong><span>A believable vault to open when someone forces you.</span></div>
+          <div><strong>Intruder photos</strong><span>From the third wrong pattern in a row, see who tried.</span></div>
+          <div><strong>Lockout that can't be skipped</strong><span>Growing waits after 4 wrong patterns; clock changes don't help.</span></div>
+          <div><strong>Calculator or custom icon</strong><span>Looks like a working calculator, or anything you choose.</span></div>
+          <div><strong>Screenshots blocked</strong><span>Nothing on screen can be captured, even in recent apps.</span></div>
+          <div><strong>9-word recovery phrase</strong><span>The only spare key, and it's yours alone.</span></div>
+          <div><strong>Encrypted backups you hold</strong><span>Weekly or monthly, to a folder you pick; restore on any phone.</span></div>
+        </div>
+        <!--/shared-->
 
         {{cta}}
 
@@ -79,7 +97,8 @@
         </ol>
 
         <h2>Bottom line</h2>
-        <p>If all you need is to keep photos away from a quick glance, any calculator vault does that. If you want them unreadable even when someone looks past the disguise, and you don't want ads or tracking in your vault, Sealcloak's calculator sits in front of real encryption and an app that can't go online. Compare more options in <a href="{{root}}guides/gallery-lock-android">our gallery lock guide</a>.</p>
+        <p>Picking a calculator vault is really picking who you trust with your photos. With Sealcloak the answer is nobody but you: no servers, no ad networks and no account between your photos and the outside world. A calculator disguise is only as good as the vault behind it. Sealcloak's calculator sits in front of real encryption, a pattern-derived key and an app that can't go online, so your photos stay unreadable even if someone looks past the disguise. Compare more options in <a href="{{root}}guides/gallery-lock-android">our gallery lock guide</a>.</p>
+
         {{faq}}
       </div>
       {{related}}

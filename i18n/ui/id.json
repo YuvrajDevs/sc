@@ -6,7 +6,10 @@
     "how": "Cara kerja",
     "guides": "Panduan",
     "faq": "Tanya jawab",
-    "support": "Bantuan"
+    "support": "Bantuan",
+    "learn": "Pelajari",
+    "compare": "Bandingkan",
+    "tools": "Alat"
   },
   "getApp": "Unduh aplikasinya",
   "themeLabel": "Ganti tema terang atau gelap",
@@ -53,5 +56,8 @@
   },
   "about": "Tentang",
   "manifesto": "Manifesto",
-  "whatsNew": "Yang baru"
+  "whatsNew": "Yang baru",
+  "learnGuides": "Panduan",
+  "learnSituations": "Situasi nyata",
+  "footLearn": "Pelajari"
 }

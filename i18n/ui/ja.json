@@ -6,7 +6,10 @@
     "how": "使い方",
     "guides": "ガイド",
     "faq": "よくある質問",
-    "support": "サポート"
+    "support": "サポート",
+    "learn": "学ぶ",
+    "compare": "比較",
+    "tools": "ツール"
   },
   "getApp": "アプリを入手",
   "themeLabel": "ライト／ダークテーマを切り替え",
@@ -53,5 +56,8 @@
   },
   "about": "Sealcloakについて",
   "manifesto": "マニフェスト",
-  "whatsNew": "新機能"
+  "whatsNew": "新機能",
+  "learnGuides": "ガイド",
+  "learnSituations": "よくある状況",
+  "footLearn": "学ぶ"
 }
