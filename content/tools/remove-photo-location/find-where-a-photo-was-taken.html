@@ -1,0 +1,72 @@
+<!--meta {
+  "title": "Find where a photo was taken: check its hidden GPS location",
+  "navTitle": "Find where a photo was taken",
+  "description": "See the GPS location, date and phone hidden inside a photo, and open it on a map. Works on phone and computer, free, and the photo is never uploaded.",
+  "keyword": "find where a photo was taken",
+  "alsoTargets": [
+    "how to see location of a photo",
+    "photo gps location finder",
+    "check photo metadata location"
+  ],
+  "summary": "Read a photo's hidden location, date and phone model.",
+  "date": "2026-11-08",
+  "readMins": 2,
+  "nav": "guides",
+  "parent": "remove-photo-location",
+  "steps": [],
+  "faq": [
+    {
+      "q": "Can I see where a photo was taken?",
+      "a": "Only if the original file still contains GPS data. Drop it in the tool above; if there's a location, you'll see the coordinates to open on a map."
+    },
+    {
+      "q": "Why does my photo show no location?",
+      "a": "Location tags were off, or the photo passed through an app such as WhatsApp or Instagram that removes it, or it's a screenshot."
+    },
+    {
+      "q": "Can I find the location of a photo someone sent me?",
+      "a": "Only if they sent the original file, for example as a document or email attachment. Normal photo messages usually have it removed."
+    },
+    {
+      "q": "Is the photo uploaded?",
+      "a": "No. The data is read in your browser on your own device. Nothing is stored, logged or shared."
+    }
+  ]
+} -->
+<section class="panel">
+  <div class="panel-inner wrap">
+    <article class="article">
+      <div class="meta"><a href="{{root}}tools/">Free tools</a> · <a href="{{root}}tools/remove-photo-location">Remove photo location</a></div>
+      <h1>Find where a photo was taken</h1>
+      <p class="lead">Many photos carry the exact place they were taken, hidden in their EXIF data. Drop a photo here to see the coordinates, the date and the phone that took it.</p>
+      <div class="meta-drop" id="meta-drop">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/><path d="M4 4l16 16"/></svg>
+        <p><strong>Drop photos here</strong> or</p>
+        <label class="btn btn-primary">Choose photos<input id="meta-input" type="file" accept="image/jpeg,image/png" multiple hidden></label>
+        <p class="dim">JPEG and PNG. Your photos never leave this device.</p>
+      </div>
+      <ul class="meta-results" id="meta-results" aria-live="polite"></ul>
+      <div class="answer">
+        <div class="eyebrow">Quick answer</div>
+        <p>To find where a photo was taken, drop the original file in the tool above. If it has GPS data, you'll see the coordinates; paste them into Google Maps to see the spot. Photos sent through WhatsApp or downloaded from social media usually have the location removed.</p>
+      </div>
+      <div class="prose">
+<h2>What you can find out</h2>
+<ul><li><strong>GPS coordinates</strong>, often accurate to a few metres.</li><li><strong>Date and time</strong> the photo was taken.</li>
+<li><strong>Phone make and model.</strong></li></ul>
+<p>To see the place, copy the two numbers (latitude, longitude) into the search box of Google Maps or any map app.</p>
+<h2>When there's no location</h2>
+<ul><li>The camera had location tags turned off.</li><li>The photo was sent through WhatsApp, Instagram, Facebook or similar apps, which usually strip it.</li>
+<li>It's a screenshot, which never has a location.</li><li>It was edited or saved by an app that removed the data.</li></ul>
+{{cta}}
+<h2>Check your own photos before sharing</h2>
+<p>The same data that helps you find where a photo was taken lets anyone else find out where you were, including your home. Before posting or sending originals, use the tool's "Download clean copy" to <a href="{{root}}tools/remove-photo-location">remove the location</a>, and learn how to <a href="{{root}}tools/remove-photo-location/turn-off-camera-location-android">stop your camera adding it</a>.</p>
+<h2>Private by design</h2>
+<p>The remove photo location tool on this page runs entirely inside your browser tab. Your files are opened, processed and saved on your own device and are never sent to a server, so there's nothing for anyone to store, scan or leak. There's no sign-up, no watermark and no limit, and once the page has loaded it keeps working even if you switch off your internet.</p>
+        {{faq}}
+      </div>
+      {{related}}
+    </article>
+  </div>
+</section>
+<script src="{{root}}js/tool-metadata.js" defer></script>

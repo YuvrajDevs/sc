@@ -1,0 +1,76 @@
+<!--meta {
+  "title": "How to send files securely: lock them before they leave",
+  "navTitle": "How to send files securely",
+  "description": "Send sensitive files safely by encrypting them with a password before you email or upload them, then sharing the password another way. Free and private.",
+  "keyword": "send files securely",
+  "alsoTargets": [
+    "send sensitive documents securely",
+    "share files with password",
+    "secure file transfer free"
+  ],
+  "summary": "Encrypt files before sending, share the password separately.",
+  "date": "2026-11-08",
+  "readMins": 2,
+  "nav": "guides",
+  "parent": "encrypt-file",
+  "steps": [
+    "Make a strong password; a random passphrase is easy to read out.",
+    "Encrypt the file above. You get name.locked, encrypted with AES-256-GCM.",
+    "Send the .locked file any way you like.",
+    "Share the password separately: a call, a text to a different app, or in person.",
+    "The recipient opens this page, types the password and chooses the .locked file."
+  ],
+  "faq": [
+    {
+      "q": "What is the safest way to send a sensitive file?",
+      "a": "Encrypt it with a strong password before sending, and share the password through a different channel, such as a phone call."
+    },
+    {
+      "q": "Does the recipient need special software?",
+      "a": "No. They open this page in any modern browser, type the password and choose the .locked file to get the original back."
+    },
+    {
+      "q": "Can I send the password in the same email?",
+      "a": "Don't. Anyone who gets the email would then have both. Use a call, a different app or tell them in person."
+    },
+    {
+      "q": "Is my file uploaded when I encrypt it?",
+      "a": "No. Encryption happens in your browser on your own device. Nothing is stored, logged or shared."
+    }
+  ]
+} -->
+<section class="panel">
+  <div class="panel-inner wrap">
+    <article class="article">
+      <div class="meta"><a href="{{root}}tools/">Free tools</a> · <a href="{{root}}tools/encrypt-file">Encrypt a file</a></div>
+      <h1>How to send files securely</h1>
+      <p class="lead">Email, chat apps and cloud links weren't designed for passports, contracts and medical records. The simplest safe habit: encrypt the file with a password first, then send the password a different way.</p>
+      <div class="tool" data-tool="encrypt" data-opt='{"drop": "Drop files here", "choose": "Choose files", "hint": "Any file type. Files never leave this device."}'></div>
+      <div class="answer">
+        <div class="eyebrow">Quick answer</div>
+        <p>Type a strong password above, choose the file, and send the .locked copy by email, chat or cloud link. Tell the recipient the password by phone call or in person, not in the same message. They open this page, enter the password and get the original file back.</p>
+      </div>
+      <div class="prose">
+<h2>Step by step</h2>
+<ol><li>Make a strong password; a <a href="{{root}}tools/password-generator">random passphrase</a> is easy to read out.</li>
+<li>Encrypt the file above. You get name.locked, encrypted with AES-256-GCM.</li>
+<li>Send the .locked file any way you like.</li><li>Share the password separately: a call, a text to a different app, or in person.</li>
+<li>The recipient opens this page, types the password and chooses the .locked file.</li></ol>
+<h2>Why encrypt before sending</h2>
+<ul><li>Emails sit in inboxes, backups and servers for years.</li><li>Forwarded or misaddressed messages expose attachments.</li>
+<li>Cloud links can be shared further than you intended.</li></ul>
+<p>An encrypted file stays unreadable in all those places without the password.</p>
+{{cta}}
+<h2>Good practice</h2>
+<ul><li>Never put the password in the same email or chat as the file.</li><li>Use a different password for each recipient or batch.</li>
+<li>Delete your unencrypted copy from Downloads once it's sent, or keep it in an encrypted <a href="{{root}}features/hidden-vaults">vault</a>.</li></ul>
+<p>Sealcloak can also send files from your vault as a <a href="{{root}}features/secure-sharing">passphrase-locked package</a>.</p>
+<h2>Private by design</h2>
+<p>The encrypt a file tool on this page runs entirely inside your browser tab. Your files are opened, processed and saved on your own device and are never sent to a server, so there's nothing for anyone to store, scan or leak. There's no sign-up, no watermark and no limit, and once the page has loaded it keeps working even if you switch off your internet.</p>
+        {{faq}}
+      </div>
+      {{related}}
+    </article>
+  </div>
+</section>
+<script src="{{root}}js/tools.js" defer></script>

@@ -1,0 +1,79 @@
+<!--meta {
+  "title": "Turn off camera location on Android: Samsung, Pixel and more",
+  "navTitle": "Turn off camera location on Android",
+  "description": "Stop your Android camera saving GPS location in every photo. Steps for Samsung, Pixel, Xiaomi and others, plus how to clean photos you already took.",
+  "keyword": "turn off location on camera android",
+  "alsoTargets": [
+    "stop camera saving location",
+    "samsung camera location tags off",
+    "remove gps from camera android"
+  ],
+  "summary": "Stop new photos recording where you are.",
+  "date": "2026-11-08",
+  "readMins": 2,
+  "nav": "guides",
+  "parent": "remove-photo-location",
+  "steps": [
+    "Take a test photo.",
+    "Drop it into the tool above.",
+    "If no location appears, you're done."
+  ],
+  "faq": [
+    {
+      "q": "How do I stop my Samsung camera saving location?",
+      "a": "Open the Camera app, tap the gear icon, and turn off Location tags. New photos won't include GPS data."
+    },
+    {
+      "q": "Does turning off location remove it from old photos?",
+      "a": "No. It only affects new photos. Clean older ones with the tool above before you share them."
+    },
+    {
+      "q": "Can I keep location for some photos?",
+      "a": "Yes. Leave location on, and clean only the photos you share. Many people turn it off simply so they don't have to remember."
+    },
+    {
+      "q": "Do apps like Google Photos still know where I was?",
+      "a": "They may estimate places from other data such as your Google account location history. Check those settings separately."
+    }
+  ]
+} -->
+<section class="panel">
+  <div class="panel-inner wrap">
+    <article class="article">
+      <div class="meta"><a href="{{root}}tools/">Free tools</a> · <a href="{{root}}tools/remove-photo-location">Remove photo location</a></div>
+      <h1>Turn off camera location on Android</h1>
+      <p class="lead">Your camera may be quietly saving the exact GPS spot of every photo. Turning it off takes ten seconds, and it protects every picture you take from now on.</p>
+      <div class="meta-drop" id="meta-drop">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/><path d="M4 4l16 16"/></svg>
+        <p><strong>Drop photos here</strong> or</p>
+        <label class="btn btn-primary">Choose photos<input id="meta-input" type="file" accept="image/jpeg,image/png" multiple hidden></label>
+        <p class="dim">JPEG and PNG. Your photos never leave this device.</p>
+      </div>
+      <ul class="meta-results" id="meta-results" aria-live="polite"></ul>
+      <div class="answer">
+        <div class="eyebrow">Quick answer</div>
+        <p>Open your Camera app's settings and turn off the option called Location tags, Save location or GPS tag. On Samsung it's Location tags; on Pixel it's Save location. Photos you've already taken keep their location, so clean those with the tool above before sharing.</p>
+      </div>
+      <div class="prose">
+<h2>Where to find it</h2>
+<div class="table-wrap"><table><thead><tr><th>Phone</th><th>Setting</th></tr></thead><tbody>
+<tr><td>Samsung Galaxy</td><td>Camera → Settings (gear) → Location tags</td></tr>
+<tr><td>Google Pixel</td><td>Camera → Settings → Save location</td></tr>
+<tr><td>Xiaomi, Redmi, POCO</td><td>Camera → Settings → Save location info</td></tr>
+<tr><td>OPPO, realme, OnePlus</td><td>Camera → Settings → Location</td></tr>
+<tr><td>vivo</td><td>Camera → Settings → Location / GPS tag</td></tr></tbody></table></div>
+<p>Wording changes between versions. If you can't find it, search the Settings app for "location" and look under Camera, or remove the camera app's location permission in Settings → Apps → Camera → Permissions.</p>
+<h2>Check it worked</h2>
+<ol><li>Take a test photo.</li><li>Drop it into the tool above.</li><li>If no location appears, you're done.</li></ol>
+{{cta}}
+<h2>Photos you already took</h2>
+<p>Turning off location tags doesn't change existing photos. Use the tool to download clean copies of anything you share. For photos you never want seen, keep them out of the gallery altogether: Sealcloak's <a href="{{root}}features/private-camera-and-scanner">private camera</a> saves straight into an encrypted vault. See also how to <a href="{{root}}tools/remove-photo-location/find-where-a-photo-was-taken">check a photo's location</a>.</p>
+<h2>Private by design</h2>
+<p>The remove photo location tool on this page runs entirely inside your browser tab. Your files are opened, processed and saved on your own device and are never sent to a server, so there's nothing for anyone to store, scan or leak. There's no sign-up, no watermark and no limit, and once the page has loaded it keeps working even if you switch off your internet.</p>
+        {{faq}}
+      </div>
+      {{related}}
+    </article>
+  </div>
+</section>
+<script src="{{root}}js/tool-metadata.js" defer></script>

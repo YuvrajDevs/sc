@@ -136,6 +136,13 @@ function buildPage(lang, out, { meta, body }) {
     description: meta.description, datePublished: meta.date, dateModified: meta.updated || meta.date,
     author: { "@type": "Organization", name: SITE.name }, mainEntityOfPage: url });
 
+  // A tool page lists the how-to pages filed under it (content/tools/<tool>/…); a how-to links back to its siblings.
+  const howTos = (a) => {
+    if (a.section !== "tools") return "";
+    const base = a.slug.split("/")[0];
+    const kids = lists.tools.filter((t) => t.slug.startsWith(base + "/") && t.slug !== a.slug);
+    return kids.length ? `<div class="keep-reading"><div class="eyebrow">${esc(ui.howToGuides || "How-to guides")}</div><div class="cards">${cards(kids)}\n        </div></div>` : "";
+  };
   if (art) {
     const faq = meta.faq?.length ? `
       <h2>${esc(ui.faqTitle)}</h2>
@@ -148,7 +155,7 @@ ${meta.faq.map((f) => `      <h3>${esc(f.q)}</h3>\n      <p>${esc(f.a)}</p>`).jo
           <a class="btn btn-primary" href="${play}">${esc(ui.ctaButton)}</a>
         </div>`)
       .replaceAll("{{play}}", play)
-      .replace("{{related}}", `<div class="keep-reading"><div class="eyebrow">${esc(ui.keepReading)}</div><div class="cards">${cards(related(all, art))}
+      .replace("{{related}}", `${howTos(art)}<div class="keep-reading"><div class="eyebrow">${esc(ui.keepReading)}</div><div class="cards">${cards(related(all, art))}
         </div></div>`);
     body += `\n<div class="sticky-cta"><span>${esc(ui.stickyText)}</span><a class="btn btn-primary" href="${play}">${esc(ui.stickyButton)}</a></div>`;
   }
@@ -160,7 +167,8 @@ ${meta.faq.map((f) => `      <h3>${esc(f.q)}</h3>\n      <p>${esc(f.a)}</p>`).jo
     .replace("{{allCompares}}", cards(lists.compare))
     .replace("{{allScenarios}}", cards(lists.scenarios))
     .replace("{{allFeatures}}", cards(lists.features))
-    .replace("{{allTools}}", cards(lists.tools))
+    .replace("{{allTools}}", cards(lists.tools.filter((t) => !t.slug.includes("/"))))
+    .replace("{{allToolGuides}}", cards(lists.tools.filter((t) => t.slug.includes("/"))))
     .replace(/\{\{root\}\}([^"'\s<>)]*)/g, (_, p) => p === "faq" ? link("") + "#faq" : link(p === "pricing" ? "how-it-works" : p)); // pricing was removed; stale translations may still link it
 
   // The same page in every language that has it, for search engines and the language menu.

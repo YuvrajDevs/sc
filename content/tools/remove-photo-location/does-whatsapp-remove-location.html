@@ -1,0 +1,79 @@
+<!--meta {
+  "title": "Does WhatsApp remove location from photos? Mostly, with one catch",
+  "navTitle": "Does WhatsApp remove location from photos?",
+  "description": "WhatsApp usually strips location from photos sent normally, but not from photos sent as documents. Check any photo's hidden data here, free and private.",
+  "keyword": "does whatsapp remove location from photos",
+  "alsoTargets": [
+    "whatsapp exif data",
+    "whatsapp photo metadata",
+    "whatsapp document photo location"
+  ],
+  "summary": "When WhatsApp keeps your photo's location, and when it doesn't.",
+  "date": "2026-11-08",
+  "readMins": 2,
+  "nav": "guides",
+  "parent": "remove-photo-location",
+  "steps": [
+    "Send the photo to yourself (Message yourself) the same way you plan to send it.",
+    "Save the received photo, then drop it in the tool above.",
+    "If coordinates appear, clean the original and send the clean copy instead."
+  ],
+  "faq": [
+    {
+      "q": "Does WhatsApp keep the location in photos?",
+      "a": "Photos sent normally are generally compressed and lose their location data. Photos sent as documents keep it."
+    },
+    {
+      "q": "How do I send a photo on WhatsApp without location?",
+      "a": "Send it as a normal photo, or if you need the original quality as a document, remove the location first with the tool above."
+    },
+    {
+      "q": "Can someone find my location from a WhatsApp photo?",
+      "a": "From a normal photo message, usually not from the file itself. From a photo sent as a document, yes, if location tags were on when it was taken."
+    },
+    {
+      "q": "Does this tool upload my photo?",
+      "a": "No. It works in your browser on your own device. Nothing is stored, logged or shared."
+    }
+  ]
+} -->
+<section class="panel">
+  <div class="panel-inner wrap">
+    <article class="article">
+      <div class="meta"><a href="{{root}}tools/">Free tools</a> · <a href="{{root}}tools/remove-photo-location">Remove photo location</a></div>
+      <h1>Does WhatsApp remove location from photos?</h1>
+      <p class="lead">Normally, yes: photos sent the usual way are compressed and lose their hidden data. But send the same photo as a document, and it arrives exactly as it left your camera, location included.</p>
+      <div class="meta-drop" id="meta-drop">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/><path d="M4 4l16 16"/></svg>
+        <p><strong>Drop photos here</strong> or</p>
+        <label class="btn btn-primary">Choose photos<input id="meta-input" type="file" accept="image/jpeg,image/png" multiple hidden></label>
+        <p class="dim">JPEG and PNG. Your photos never leave this device.</p>
+      </div>
+      <ul class="meta-results" id="meta-results" aria-live="polite"></ul>
+      <div class="answer">
+        <div class="eyebrow">Quick answer</div>
+        <p>Photos sent normally on WhatsApp are compressed and generally lose their location data. Photos sent as a document keep everything, including GPS coordinates. If you send originals, clean them first with the tool above.</p>
+      </div>
+      <div class="prose">
+<h2>Normal photo vs document</h2>
+<div class="table-wrap"><table><thead><tr><th>How you send it</th><th>Location data</th><th>Quality</th></tr></thead><tbody>
+<tr><td>As a photo</td><td>Generally removed</td><td>Compressed</td></tr>
+<tr><td>As a document (file)</td><td>Kept</td><td>Original</td></tr>
+<tr><td>HD photo option</td><td>Check with the tool</td><td>Higher</td></tr></tbody></table></div>
+<p>Behaviour can change with app updates. The only way to be sure is to check the file the other person receives, or to clean it before sending.</p>
+<h2>How to check</h2>
+<ol><li>Send the photo to yourself (Message yourself) the same way you plan to send it.</li>
+<li>Save the received photo, then drop it in the tool above.</li>
+<li>If coordinates appear, clean the original and send the clean copy instead.</li></ol>
+{{cta}}
+<h2>Other apps</h2>
+<p>Most social apps strip location from images they display, but email, Bluetooth, cloud links and USB transfers send the original file. When in doubt, <a href="{{root}}tools/remove-photo-location">remove the location</a> first, and keep private photos in an encrypted <a href="{{root}}features/hidden-vaults">vault</a> rather than in chats.</p>
+<h2>Private by design</h2>
+<p>The remove photo location tool on this page runs entirely inside your browser tab. Your files are opened, processed and saved on your own device and are never sent to a server, so there's nothing for anyone to store, scan or leak. There's no sign-up, no watermark and no limit, and once the page has loaded it keeps working even if you switch off your internet.</p>
+        {{faq}}
+      </div>
+      {{related}}
+    </article>
+  </div>
+</section>
+<script src="{{root}}js/tool-metadata.js" defer></script>

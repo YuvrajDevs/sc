@@ -51,14 +51,16 @@ if (!/<div class="answer">/.test(body)) fail('needs a <div class="answer"> quick
 else if (body.indexOf('class="answer"') > body.indexOf("<h2")) fail("the quick-answer box must come before the first <h2>");
 const h2s = [...body.matchAll(/<h2[^>]*>([\s\S]*?)<\/h2>/g)].map((x) => text(x[1]));
 // Feature pages are shorter reference pages; guides, comparisons and scenarios are full articles.
-const isFeature = section === "features" || section === "tools";
+// Tool how-to pages live under content/tools/<tool>/ and are short, practical companions to the tool.
+const isToolHowTo = /content\/tools\/[^/]+\/[^/]+\.html$/.test(file);
+const isFeature = section === "features" || section === "tools" || isToolHowTo;
 if (h2s.length < (isFeature ? 3 : 4)) fail(`only ${h2s.length} <h2> sections; needs at least ${isFeature ? 3 : 4}`);
 if (!isFeature && !/<ol>/.test(body) && !/<table>/.test(body)) fail("needs numbered steps (<ol>) or a comparison table");
 if (section === "compare" && !/<table>/.test(body)) fail("compare pages need a side-by-side <table>");
 if (/<table>/.test(body) && !/class="table-wrap"/.test(body)) fail('wrap tables in <div class="table-wrap"> so they scroll on phones');
 for (const ph of ["{{cta}}", "{{faq}}", "{{related}}"]) if (!body.includes(ph)) fail(`missing the ${ph} placeholder`);
 if ((body.match(/\{\{cta\}\}/g) || []).length > 2) fail("use {{cta}} at most twice");
-const minWords = isFeature ? 300 : 1100;
+const minWords = isToolHowTo ? 350 : isFeature ? 300 : 1100;
 if (wordCount < minWords) fail(`only ~${wordCount} words; needs ${minWords}+${isFeature ? " (feature pages: say it plainly, don't pad)" : " (aim 1,400–2,000)"}`);
 if (wordCount > 3200) warn(`~${wordCount} words is long; make sure every section earns its place`);
 
@@ -67,7 +69,7 @@ const links = [...body.matchAll(/href="\{\{root\}\}([^"#]*)"/g)].map((x) => x[1]
 const exists = (p) => { p = p.replace(/\/$/, ""); return p === "" || p === "faq" || existsSync(join(ROOT, "content", p + ".html")) || existsSync(join(ROOT, "content", p, "index.html")); };
 const broken = links.filter((l) => !exists(l));
 if (broken.length) fail(`broken internal links: ${broken.join(", ")}`);
-const articleLinks = links.filter((l) => /^(guides|compare|scenarios|features)\/./.test(l) && !l.endsWith(slug));
+const articleLinks = links.filter((l) => /^(guides|compare|scenarios|features|tools)\/./.test(l) && !l.endsWith(slug));
 if (articleLinks.length < (isFeature ? 1 : 2)) fail(`link to at least ${isFeature ? 1 : 2} other article(s) or feature page(s) inside the text`);
 if (!isFeature && links.filter((l) => /^(features|security|how-it-works|faq)/.test(l)).length < 1) fail("link to at least one main page (features, security, how-it-works or faq)");
 
