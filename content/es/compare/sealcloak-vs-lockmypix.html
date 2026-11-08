@@ -1,0 +1,106 @@
+<!--meta {
+  "title": "Alternativa a LockMyPix: Sealcloak vs LockMyPix comparadas",
+  "navTitle": "Sealcloak vs LockMyPix",
+  "description": "LockMyPix y Sealcloak cifran tus fotos con AES. La diferencia está en las cuentas, los anuncios y el acceso a internet. Mira por qué Sealcloak es la opción más privada.",
+  "keyword": "alternativa a lockmypix",
+  "alsoTargets": ["sealcloak vs lockmypix", "opiniones de lockmypix", "es segura lockmypix", "apps como lockmypix"],
+  "summary": "Dos bóvedas que cifran; una nunca toca internet.",
+  "date": "2026-11-08",
+  "readMins": 7,
+  "nav": "guides",
+  "sourceHash": "c9c616f45389",
+  "faq": [
+    {"q": "¿LockMyPix realmente cifra?", "a": "Sí. La ficha de LockMyPix dice que usa cifrado AES en lugar de solo ocultar archivos, y tiene el sello ePrivacy App Seal. Eso la coloca entre las apps de bóveda más sólidas."},
+    {"q": "¿LockMyPix necesita una cuenta?", "a": "Su sección de seguridad de los datos en Play indica una dirección de correo como dato opcional que recopila para el funcionamiento de la app y la gestión de la cuenta, así que el correo es opcional, no obligatorio."},
+    {"q": "¿Cuál es la diferencia principal entre LockMyPix y Sealcloak?", "a": "Ambas cifran los archivos en el teléfono y ofrecen bóvedas señuelo y detección de intrusos. Sealcloak no tiene permiso de internet y no recopila datos; la sección de seguridad de los datos de LockMyPix dice que comparte ID del dispositivo para publicidad."},
+    {"q": "¿Puedo usar un PIN con Sealcloak como en LockMyPix?", "a": "No. Sealcloak se desbloquea con un patrón de 5×5, con desbloqueo opcional con huella o rostro además. LockMyPix ofrece PIN, contraseña, patrón, huella y rostro."}
+  ]
+} -->
+<section class="panel">
+  <div class="panel-inner wrap">
+    <article class="article">
+      <div class="meta">Comparativa · 7 min de lectura</div>
+      <h1>Sealcloak vs LockMyPix: ¿qué alternativa a LockMyPix es más privada?</h1>
+      <p class="lead">LockMyPix es una de las pocas bóvedas populares que claramente cifra tus archivos en lugar de solo ocultarlos, y tiene más de 10 millones de instalaciones que lo respaldan. Sealcloak también cifra. La diferencia está en todo lo que rodea al cifrado: cómo se crea la llave, qué comparte la app y si puede conectarse a internet o no.</p>
+      <div class="answer">
+        <div class="eyebrow">Respuesta rápida</div>
+        <p>Sealcloak es la alternativa más privada a LockMyPix. Ambas cifran, pero Sealcloak usa AES-256-GCM con una llave creada a partir de tu patrón, no tiene permiso de internet, nunca pide un correo, no muestra anuncios y no comparte datos. Suma hasta tres bóvedas ocultas, el señuelo Coerce y fotos de intrusos.</p>
+      </div>
+      <div class="prose">
+        <h2>Las dos apps en una tabla</h2>
+        <div class="table-wrap"><table>
+          <thead><tr><th>Función</th><th>Sealcloak</th><th>LockMyPix</th></tr></thead>
+          <tbody>
+            <tr><td>Cifrado</td><td>AES-256-GCM, llave Argon2id creada a partir de tu patrón</td><td>AES (modo CTR, según su ficha)</td></tr>
+            <tr><td>Desbloqueo</td><td>Patrón de 5×5, huella o rostro opcional</td><td>PIN, contraseña, patrón, huella o rostro</td></tr>
+            <tr><td>Bóveda señuelo</td><td>Coerce (Pro)</td><td>Bóveda falsa con un código aparte</td></tr>
+            <tr><td>Detección de intrusos</td><td>Fotos de intrusos</td><td>Sí</td></tr>
+            <tr><td>Disfraz</td><td>Calculadora o icono personalizado (Pro)</td><td>Disfrazar y ocultar la bóveda</td></tr>
+            <tr><td>Permiso de internet</td><td>No</td><td>Sí</td></tr>
+            <tr><td>Correo</td><td>Nunca lo pide</td><td>Opcional</td></tr>
+            <tr><td>Datos compartidos (seguridad de los datos en Play)</td><td>No recopila ninguno</td><td>ID del dispositivo, para publicidad o marketing</td></tr>
+            <tr><td>Almacenamiento</td><td>Teléfono, copias de seguridad cifradas en la carpeta que elijas</td><td>Teléfono y tarjeta SD</td></tr>
+            <tr><td>Plan gratuito</td><td>3 bóvedas, 100 fotos, 10 videos</td><td>Gratis con mejora a Premium</td></tr>
+          </tbody>
+        </table></div>
+        <p>Los datos de LockMyPix provienen de su ficha en Google Play y su sección de seguridad de los datos, noviembre de 2026.</p>
+
+        <h2>Por qué Sealcloak va más allá</h2>
+        <p>El cifrado es el punto de partida de una bóveda de verdad, no la meta. Lo que importa después es todo lo que lo rodea: cómo se protege la llave, qué puede enviar la app y cómo se comporta bajo presión. La ficha de LockMyPix describe AES en modo CTR; su sección de seguridad de los datos en Play indica ID del dispositivo compartidos para publicidad y un correo opcional.</p>
+        <p>Sealcloak refuerza cada uno de esos puntos. AES-256-GCM sella cada archivo y detecta alteraciones. Tu patrón se convierte en la llave mediante Argon2id y nunca se guarda. Cada bóveda tiene su propia llave maestra aleatoria, protegida con ayuda del Android Keystore. No hay permiso de internet, así que no hay ID de publicidad, ni analíticas, ni correo. Y con hasta tres bóvedas independientes, el señuelo Coerce y las fotos de intrusos, está hecha para situaciones de la vida real, no solo para desconocidos.
+
+        <h2>El enfoque de Sealcloak</h2>
+        <p>Sealcloak ofrece a propósito menos formas de entrar. La bóveda se abre con un patrón en una cuadrícula de 5×5; puedes agregar desbloqueo con huella o rostro para ir más rápido, pero el patrón siempre funciona y es de donde sale la llave de cifrado. Argon2id convierte ese patrón en la llave, lo que hace cada intento lento y costoso, y después de cuatro intentos fallidos Sealcloak añade esperas cada vez más largas que no se saltan cambiando la hora.</p>
+        <p>Donde las apps realmente se separan es en internet. Sealcloak viene sin el permiso de internet de Android, así que no tiene anuncios, ni analíticas, ni forma de enviar nada a ningún lado. Nunca pide un correo. La <a href="{{root}}features/coerce">bóveda señuelo Coerce</a> puede, si así lo eliges, borrar también tus otras bóvedas al abrirse; viene desactivado y necesitas escribir PERMIT para activarlo.</p>
+
+        <!--shared-->
+        <h2>Todo lo que hace Sealcloak para protegerte</h2>
+        <div class="caps">
+          <div><strong>AES-256-GCM en cada archivo</strong><span>Se cifra en cuanto se añade, y cualquier alteración se detecta.</span></div>
+          <div><strong>Llave creada a partir de tu patrón</strong><span>Argon2id convierte tu patrón en la llave; nunca se guarda.</span></div>
+          <div><strong>Sin permiso de internet</strong><span>El propio Android impide que la app se conecte a cualquier lugar.</span></div>
+          <div><strong>Sin cuenta, sin recopilar datos</strong><span>Sin correo, sin analíticas, sin anuncios, sin reportes de fallos.</span></div>
+          <div><strong>Hasta 3 bóvedas ocultas</strong><span>Cada una con su propio patrón; nada muestra cuántas existen.</span></div>
+          <div><strong>Bóveda señuelo Coerce</strong><span>Una bóveda creíble para abrir cuando alguien te obliga.</span></div>
+          <div><strong>Fotos de intrusos</strong><span>A partir del tercer patrón incorrecto seguido, ve quién lo intentó.</span></div>
+          <div><strong>Bloqueo que no se puede saltar</strong><span>Esperas cada vez más largas tras 4 patrones incorrectos; cambiar la hora no sirve.</span></div>
+          <div><strong>Calculadora o icono personalizado</strong><span>Se ve como una calculadora que funciona, o como lo que tú elijas.</span></div>
+          <div><strong>Capturas de pantalla bloqueadas</strong><span>Nada en pantalla se puede capturar, ni siquiera en apps recientes.</span></div>
+          <div><strong>Frase de recuperación de 9 palabras</strong><span>La única llave de repuesto, y solo tú la tienes.</span></div>
+          <div><strong>Copias de seguridad cifradas que guardas tú</strong><span>Semanales o mensuales, en la carpeta que elijas; restáuralas en cualquier teléfono.</span></div>
+        </div>
+        <!--/shared-->
+
+        {{cta}}
+
+        <h2>AES-CTR y AES-GCM en palabras sencillas</h2>
+        <p>Ambas apps usan AES, el mismo cifrado en el que confían bancos y gobiernos. El modo es la parte después del guion. El modo CTR mantiene los archivos en secreto, pero por sí solo no detecta si un archivo cifrado fue alterado o dañado; las apps que lo usan necesitan una verificación aparte para eso. El modo GCM mantiene los archivos en secreto y además incluye un sello integrado, así que si cambia aunque sea un byte de un archivo cifrado, el descifrado falla en lugar de producir en silencio un archivo roto o alterado.</p>
+        <p>Sealcloak usa AES-256-GCM en cada archivo, y cada bóveda tiene su propia llave maestra aleatoria protegida con ayuda del Android Keystore. Ninguna de estas decisiones es algo que notes en el día a día; importan en qué tan robusta es la bóveda cuando algo sale mal. Más detalles en <a href="{{root}}features/encryption">cómo funciona el cifrado de Sealcloak</a>.</p>
+
+        <h2>Copias de seguridad y teléfonos nuevos</h2>
+        <p>Cambiar de teléfono es donde se ponen a prueba las apps de bóveda. Con Sealcloak, haces una <a href="{{root}}features/encrypted-backups">copia de seguridad cifrada</a> a mano o con una programación semanal o mensual, copias el archivo al teléfono nuevo y la restauras con tu frase de recuperación o con la frase de contraseña de la copia. Nada depende de que una cuenta o un servidor sigan existiendo. Con cualquier bóveda, prueba una restauración una vez antes de necesitarla.</p>
+
+        <h2>Lo que cada app sabe de ti</h2>
+        <p>La sección de seguridad de los datos de Google Play es donde los desarrolladores declaran qué recopila y comparte una app. LockMyPix indica ID del dispositivo u otros ID compartidos para publicidad o marketing, y la recopilación de un correo opcional, registros de fallos y diagnósticos. Nada de eso incluye tus fotos, que siguen cifradas, pero sí significa que la app se comunica con servicios externos.</p>
+        <p>Sealcloak declara que no recopila ni comparte datos. Como no tiene permiso de internet, no es solo una política; el propio Android le impide conectarse. Lee la <a href="{{root}}security">página de seguridad de Sealcloak</a> para saber exactamente cómo se manejan las llaves y los archivos.</p>
+
+        <h2>De LockMyPix a Sealcloak, paso a paso</h2>
+        <ol>
+          <li>Instala Sealcloak, define tu patrón y copia en papel la frase de recuperación de 9 palabras.</li>
+          <li>En LockMyPix, abre tus álbumes, selecciona todo y expórtalo o vuelve a mostrarlo en la galería.</li>
+          <li>Añade los archivos a una bóveda de Sealcloak, con la misma estructura de carpetas si quieres.</li>
+          <li>Abre una muestra de fotos y videos en Sealcloak para confirmar que llegaron todos.</li>
+          <li>Borra de la galería las copias exportadas y luego vacía la papelera.</li>
+          <li>Vacía tu bóveda de LockMyPix y desinstálala cuando estés conforme.</li>
+        </ol>
+        <p>Revisa también dónde estaban tus archivos anteriores en la tarjeta SD; borra ahí también cualquier exportación que haya quedado. Nuestra <a href="{{root}}guides/lock-folder-android">guía para bloquear carpetas en Android</a> explica por qué importan esos restos.</p>
+
+        <h2>Veredicto final</h2>
+        <p>Si quieres un cifrado en el que puedas confiar, en una app que no puede hablar con nadie, Sealcloak es la opción más sólida: AES-256-GCM, una llave derivada del patrón, sin internet, sin cuenta, sin anuncios, y protección con señuelo y contra intrusos integrada. Lee <a href="{{root}}security">los detalles de seguridad</a>.</p>
+
+        {{faq}}
+      </div>
+      {{related}}
+    </article>
+  </div>
+</section>
