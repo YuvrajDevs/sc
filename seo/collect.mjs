@@ -106,6 +106,12 @@ for (const t of topics.sort((a, b) => b.score - a.score)) {
   if (c) skipped.push({ ...item, coveredBy: c.page }); else queue.push(item);
 }
 
+// A blocked network returns nothing. Keep yesterday's queue rather than wiping it.
+if (scores.size === 0) {
+  console.error("No suggestions came back (network blocked?). Keeping the existing seo/keywords.json.");
+  process.exit(3);
+}
+
 const out = { updated: new Date().toISOString(), queries: qs.length, phrases: scores.size, queue: queue.slice(0, 150), alreadyCovered: skipped.slice(0, 50) };
 writeFileSync(join(ROOT, "seo/keywords.json"), JSON.stringify(out, null, 2) + "\n");
 console.log(`${scores.size} on-topic phrases, ${topics.length} topics, ${queue.length} not yet covered.`);
