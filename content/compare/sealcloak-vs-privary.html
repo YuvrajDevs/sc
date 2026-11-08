@@ -1,0 +1,125 @@
+<!--meta {
+  "title": "PRIVARY alternative: Sealcloak vs PRIVARY Photo Vault",
+  "navTitle": "Sealcloak vs PRIVARY",
+  "description": "PRIVARY encrypts with AES-CTR and shares device IDs for advertising. Sealcloak uses AES-256-GCM with a pattern-derived key, no internet and no data shared.",
+  "keyword": "privary alternative",
+  "alsoTargets": [
+    "sealcloak vs privary",
+    "privary secure photo vault review",
+    "is privary safe",
+    "apps like privary"
+  ],
+  "summary": "Two encrypting vaults; only one is offline and tamper-evident.",
+  "date": "2026-11-08",
+  "readMins": 7,
+  "nav": "guides",
+  "faq": [
+    {
+      "q": "Is PRIVARY Secure Photo Vault safe?",
+      "a": "PRIVARY encrypts files with AES in CTR mode, according to its listing, which is far better than apps that only hide files. Its Play data safety section also lists device IDs shared for advertising and an optional email collected."
+    },
+    {
+      "q": "What's the difference between AES-CTR and AES-GCM?",
+      "a": "Both keep files secret. GCM also seals each file so any change or corruption is detected and decryption refuses to run, while CTR on its own doesn't detect tampering. Sealcloak uses AES-256-GCM."
+    },
+    {
+      "q": "Does Sealcloak need an email like PRIVARY?",
+      "a": "No. Sealcloak never asks for an email or any account. Each vault has a 9-word recovery phrase instead, which only you hold."
+    },
+    {
+      "q": "How do I switch from PRIVARY to Sealcloak?",
+      "a": "Export your files from PRIVARY to the gallery or a folder, add them to a Sealcloak vault, check they open, then delete the exported copies and empty the trash."
+    },
+    {
+      "q": "Does Sealcloak work without the internet?",
+      "a": "Always. Sealcloak has no internet permission, so it never needs a connection for anything: opening vaults, adding files, making backups or restoring them all happen on your phone."
+    }
+  ]
+} -->
+<section class="panel">
+  <div class="panel-inner wrap">
+    <article class="article">
+      <div class="meta">Compare · 7 min read</div>
+      <h1>Sealcloak vs PRIVARY: a PRIVARY alternative with nothing online</h1>
+      <p class="lead">PRIVARY Secure Photo Vault, from the makers of LockMyPix, is one of the apps that actually encrypts your files rather than just hiding them. That's a good start. Sealcloak goes further on the details that decide how safe encrypted files really are: how the key is made, whether tampering is detected, and whether the app can reach the internet at all.</p>
+      <div class="answer">
+        <div class="eyebrow">Quick answer</div>
+        <p>Sealcloak is the stronger PRIVARY alternative. Both encrypt, but Sealcloak uses AES-256-GCM, which detects tampering, with a key made from your pattern by Argon2id. It has no internet permission, never asks for an email and shares no data, while PRIVARY's data safety section lists device IDs shared for advertising.</p>
+      </div>
+      <div class="prose">
+        <h2>Comparison table</h2>
+        <div class="table-wrap"><table>
+          <thead><tr><th>Feature</th><th>Sealcloak</th><th>PRIVARY</th></tr></thead>
+          <tbody>
+            <tr><td>Cipher</td><td>AES-256-GCM (tamper-evident)</td><td>AES CTR, per its listing</td></tr>
+            <tr><td>Key</td><td>Derived from your pattern with Argon2id</td><td>See its listing</td></tr>
+            <tr><td>Unlock</td><td>5×5 pattern, optional fingerprint or face</td><td>PIN, password, face or fingerprint</td></tr>
+            <tr><td>Internet permission</td><td>None</td><td>Yes</td></tr>
+            <tr><td>Email</td><td>Never asked</td><td>Optional</td></tr>
+            <tr><td>Data shared (Play data safety)</td><td>None</td><td>Device IDs, for advertising or marketing</td></tr>
+            <tr><td>Hidden vaults</td><td>Up to 3, no visible count</td><td>See its listing</td></tr>
+            <tr><td>Decoy for pressure</td><td>Coerce</td><td>See its listing</td></tr>
+            <tr><td>Recovery</td><td>9-word phrase only you hold</td><td>See its listing</td></tr>
+          </tbody>
+        </table></div>
+        <p>PRIVARY details come from its Google Play listing and data safety section, November 2026.</p>
+
+        <h2>Encryption is only as good as its details</h2>
+        <p>PRIVARY's listing is right to make a point of encryption: an app that only moves files to a hidden folder offers no protection once someone opens a file manager. But "encrypted" covers a wide range of designs, and three details make the difference.</p>
+        <p><strong>Tamper detection.</strong> PRIVARY describes AES in CTR mode. CTR keeps a file's contents secret, but on its own it can't tell if the encrypted file has been altered or damaged. Sealcloak uses AES-256-GCM, which adds an authentication seal to every file: change a single byte and decryption refuses to run, instead of silently producing a corrupted or manipulated file.</p>
+        <p><strong>Where the key comes from.</strong> In Sealcloak, your pattern is never stored. Argon2id, a memory-hard function designed to make guessing slow and expensive, turns it into the key that unlocks your vault's own random master key, which is protected with help from the Android Keystore.</p>
+        <p><strong>What else the app can do.</strong> A vault that can reach the internet can, in principle, send things. PRIVARY's data safety section lists device IDs shared for advertising and an optional email for account management. Sealcloak can't send anything: it doesn't have Android's internet permission.</p>
+
+        <h2>Protection for real situations</h2>
+        <p>Strong encryption protects against someone who copies your files. Daily life brings other risks: someone who knows your screen lock, someone who grabs the phone, someone who insists you open the vault. Sealcloak covers those too. Up to three <a href="{{root}}features/hidden-vaults">independent vaults</a> each open with their own pattern, and nothing reveals how many there are. <a href="{{root}}features/coerce">Coerce</a> opens a harmless decoy when you're pressured. <a href="{{root}}features/intruder-photos">Intruder photos</a> capture who's guessing. And after four wrong patterns, waits grow longer each time, and changing the phone's clock doesn't skip them.</p>
+
+        <!--shared-->
+        <h2>Everything Sealcloak does to keep you safe</h2>
+        <div class="caps">
+          <div><strong>AES-256-GCM on every file</strong><span>Encrypted the moment it's added, and tamper-evident.</span></div>
+          <div><strong>Key made from your pattern</strong><span>Argon2id turns your pattern into the key; it's never stored.</span></div>
+          <div><strong>No internet permission</strong><span>Android itself stops the app from connecting anywhere.</span></div>
+          <div><strong>No account, no data collected</strong><span>No email, no analytics, no ads, no crash reports.</span></div>
+          <div><strong>Up to 3 hidden vaults</strong><span>Each with its own pattern; nothing shows how many exist.</span></div>
+          <div><strong>Coerce decoy vault</strong><span>A believable vault to open when someone forces you.</span></div>
+          <div><strong>Intruder photos</strong><span>From the third wrong pattern in a row, see who tried.</span></div>
+          <div><strong>Lockout that can't be skipped</strong><span>Growing waits after 4 wrong patterns; clock changes don't help.</span></div>
+          <div><strong>Calculator or custom icon</strong><span>Looks like a working calculator, or anything you choose.</span></div>
+          <div><strong>Screenshots blocked</strong><span>Nothing on screen can be captured, even in recent apps.</span></div>
+          <div><strong>9-word recovery phrase</strong><span>The only spare key, and it's yours alone.</span></div>
+          <div><strong>Encrypted backups you hold</strong><span>Weekly or monthly, to a folder you pick; restore on any phone.</span></div>
+        </div>
+        <!--/shared-->
+
+        {{cta}}
+
+        <h2>No email, still recoverable</h2>
+        <p>An optional email can make recovery easier, but it ties your vault to an identity and an inbox. Sealcloak never asks for one. Instead, each vault gets a <a href="{{root}}features/recovery-phrase">9-word recovery phrase</a>, or a sentence of your own if you prefer. Keep it on paper. It opens that vault if you forget the pattern, and there's no other way in, for anyone.</p>
+
+        <h2>Backups that stay encrypted</h2>
+        <p>Sealcloak's <a href="{{root}}features/encrypted-backups">encrypted backups</a> run by hand or on a weekly or monthly schedule to a folder you choose. Each backup is an encrypted file you can copy to a computer or memory card, and restoring it on a new phone needs the recovery phrase or the passphrase you set. No server, no account, no third party in the middle.</p>
+
+        <h2>Switching from PRIVARY</h2>
+        <ol>
+          <li>Install Sealcloak, draw a pattern of at least six dots and write down the recovery phrase.</li>
+          <li>In PRIVARY, select your files and export them to the gallery or a folder.</li>
+          <li>Add them to Sealcloak, recreating your albums as folders if you like.</li>
+          <li>Open some photos, videos and documents to check them.</li>
+          <li>Delete the exported copies from the gallery and any folder, and empty the trash.</li>
+          <li>Clear PRIVARY and uninstall it.</li>
+        </ol>
+        <p>If your old files were on a memory card, check the card for leftovers too. Our guide on <a href="{{root}}guides/lock-folder-android">locking folders on Android</a> explains why leftovers matter.</p>
+
+        <h2>Questions people ask before switching</h2>
+        <p><strong>Is a pattern weaker than a password?</strong> Not here. Sealcloak's grid has 25 dots and patterns must use at least six, which gives a huge number of combinations. Every attempt is slowed by Argon2id, and after four wrong patterns the app adds growing waits. Above all, the pattern isn't a screen lock in front of the files; it's the raw material of the key.</p>
+        <p><strong>Can I still use my fingerprint?</strong> Yes. Turn on fingerprint or face unlock for speed. The pattern always works too, and it's what the encryption depends on.</p>
+        <p><strong>What about documents and audio?</strong> Sealcloak holds photos, videos, PDFs and other documents, audio and text notes, and its private camera and document scanner save straight into the vault without touching the gallery.</p>
+
+        <h2>Bottom line</h2>
+        <p>PRIVARY encrypts, which already puts it ahead of many vaults. Sealcloak adds what makes encryption trustworthy in practice: tamper-evident AES-256-GCM, a key that only exists when you draw your pattern, no internet, no email and no data shared, plus hidden vaults and a decoy. Compare with <a href="{{root}}compare/sealcloak-vs-lockmypix">LockMyPix</a>, from the same developer, or read <a href="{{root}}security">the security details</a>.</p>
+        {{faq}}
+      </div>
+      {{related}}
+    </article>
+  </div>
+</section>

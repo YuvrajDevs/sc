@@ -1,0 +1,126 @@
+<!--meta {
+  "title": "Hide Something alternative: Sealcloak vs Hide Something",
+  "navTitle": "Sealcloak vs Hide Something",
+  "description": "Hide Something backs up to Google Drive and shares location and device IDs for ads. Sealcloak encrypts your photos offline and shares nothing at all.",
+  "keyword": "hide something alternative",
+  "alsoTargets": [
+    "sealcloak vs hide something",
+    "hide something app review",
+    "is hide something safe",
+    "apps like hide something"
+  ],
+  "summary": "Drive backup and ad data versus an encrypted vault that stays on your phone.",
+  "date": "2026-11-08",
+  "readMins": 7,
+  "nav": "guides",
+  "faq": [
+    {
+      "q": "Is Hide Something safe?",
+      "a": "Hide Something hides photos and videos behind a fingerprint, pattern or PIN and can back up to Google Drive. Its Play data safety section lists approximate location and device IDs shared for advertising and analytics."
+    },
+    {
+      "q": "Are files in Hide Something encrypted?",
+      "a": "Its listing focuses on hiding media and doesn't describe how files are encrypted. Sealcloak encrypts every file with AES-256-GCM using a key derived from your pattern."
+    },
+    {
+      "q": "Can I view my vault on a computer like Hide Something?",
+      "a": "Sealcloak deliberately has no network features, so there's no computer viewer. You can export files when you need them, or copy an encrypted backup to your computer for safekeeping."
+    },
+    {
+      "q": "How do I move my photos from Hide Something to Sealcloak?",
+      "a": "Unhide your media in Hide Something, add it to a Sealcloak vault, check it opens, then delete the gallery copies, empty the trash and remove the Google Drive backup."
+    },
+    {
+      "q": "Does Sealcloak work without the internet?",
+      "a": "Always. Sealcloak has no internet permission, so it never needs a connection: opening vaults, adding files, backups and restores all happen on your phone, even in flight mode."
+    },
+    {
+      "q": "What happens if I forget my pattern?",
+      "a": "Each Sealcloak vault has a 9-word recovery phrase that you write down when you create it. Type it on the pattern screen to get back in and set a new pattern. Nobody else holds a copy, including us."
+    }
+  ]
+} -->
+<section class="panel">
+  <div class="panel-inner wrap">
+    <article class="article">
+      <div class="meta">Compare · 7 min read</div>
+      <h1>Sealcloak vs Hide Something: the encrypted Hide Something alternative</h1>
+      <p class="lead">Hide Something is a friendly, popular way to tuck photos and videos away, with more than 10 million installs, Google Drive backup and even a way to browse your hidden gallery from a computer. Sealcloak is built around a stricter idea: your private media should be encrypted, should stay on your phone, and should never be reachable over a network.</p>
+      <div class="answer">
+        <div class="eyebrow">Quick answer</div>
+        <p>Sealcloak is the more secure Hide Something alternative. Every file is encrypted with AES-256-GCM using a key made from your pattern, the app has no internet permission, there's no Google Drive copy and nothing is shared. Hide Something's own data safety section lists approximate location and device IDs shared for advertising.</p>
+      </div>
+      <div class="prose">
+        <h2>Comparison at a glance</h2>
+        <div class="table-wrap"><table>
+          <thead><tr><th>Feature</th><th>Sealcloak</th><th>Hide Something</th></tr></thead>
+          <tbody>
+            <tr><td>Files encrypted</td><td>Every file, AES-256-GCM</td><td>Not described in its listing</td></tr>
+            <tr><td>Unlock</td><td>5×5 pattern that becomes the key, optional fingerprint</td><td>Fingerprint, pattern or PIN</td></tr>
+            <tr><td>Backup</td><td>Encrypted files you keep</td><td>Google Drive</td></tr>
+            <tr><td>Network access</td><td>None: no internet permission</td><td>Yes, including viewing on a computer</td></tr>
+            <tr><td>Location shared (Play data safety)</td><td>Never</td><td>Approximate location, for advertising</td></tr>
+            <tr><td>Device IDs shared</td><td>Never</td><td>For analytics and advertising</td></tr>
+            <tr><td>Hidden vaults</td><td>Up to 3, no visible count</td><td>Collections</td></tr>
+            <tr><td>Decoy and intruder photos</td><td>Coerce and intruder photos</td><td>See its listing</td></tr>
+          </tbody>
+        </table></div>
+        <p>Hide Something details are from its Google Play listing and data safety section, November 2026.</p>
+
+        <h2>Hidden isn't the same as protected</h2>
+        <p>Hide Something's listing talks about hiding: media disappears from the gallery and reappears behind your fingerprint, pattern or PIN. That stops someone scrolling your gallery. It doesn't say how the files themselves are protected if someone looks elsewhere, for instance with a file manager, a computer connection or a backup copy.</p>
+        <p>Sealcloak treats every file as if someone will eventually find it. Photos, videos, documents, audio, notes and scans are <a href="{{root}}features/encryption">encrypted with AES-256-GCM</a> as they're added. Without your pattern, which is turned into the key by Argon2id and never stored, the files are unreadable data. And GCM seals each one, so a tampered file is rejected rather than opened.</p>
+
+        <h2>Why we left out Drive and the computer viewer</h2>
+        <p>Viewing your secret gallery on a computer and backing it up to Google Drive are convenient. They also mean your private media travels across a network and sits in an online account. Hide Something's data safety section also lists approximate location, device IDs, app interactions and diagnostics shared with other companies, mostly for advertising and analytics.</p>
+        <p>Sealcloak has none of these, because it has no internet permission. Android itself prevents it from connecting. There are no ads, no analytics, no crash reports and no account. That's a deliberate trade: in exchange for giving up remote access, you get a vault that can't leak over a network, ever.</p>
+
+        <!--shared-->
+        <h2>Everything Sealcloak does to keep you safe</h2>
+        <div class="caps">
+          <div><strong>AES-256-GCM on every file</strong><span>Encrypted the moment it's added, and tamper-evident.</span></div>
+          <div><strong>Key made from your pattern</strong><span>Argon2id turns your pattern into the key; it's never stored.</span></div>
+          <div><strong>No internet permission</strong><span>Android itself stops the app from connecting anywhere.</span></div>
+          <div><strong>No account, no data collected</strong><span>No email, no analytics, no ads, no crash reports.</span></div>
+          <div><strong>Up to 3 hidden vaults</strong><span>Each with its own pattern; nothing shows how many exist.</span></div>
+          <div><strong>Coerce decoy vault</strong><span>A believable vault to open when someone forces you.</span></div>
+          <div><strong>Intruder photos</strong><span>From the third wrong pattern in a row, see who tried.</span></div>
+          <div><strong>Lockout that can't be skipped</strong><span>Growing waits after 4 wrong patterns; clock changes don't help.</span></div>
+          <div><strong>Calculator or custom icon</strong><span>Looks like a working calculator, or anything you choose.</span></div>
+          <div><strong>Screenshots blocked</strong><span>Nothing on screen can be captured, even in recent apps.</span></div>
+          <div><strong>9-word recovery phrase</strong><span>The only spare key, and it's yours alone.</span></div>
+          <div><strong>Encrypted backups you hold</strong><span>Weekly or monthly, to a folder you pick; restore on any phone.</span></div>
+        </div>
+        <!--/shared-->
+
+        {{cta}}
+
+        <h2>Backups you control</h2>
+        <p>You still need protection against losing your phone. Sealcloak creates <a href="{{root}}features/encrypted-backups">encrypted backup files</a> by hand, or every week or month, in a folder you choose. Copy them to your computer or a memory card. They're encrypted, so a backup on a shared computer reveals nothing, and only your <a href="{{root}}features/recovery-phrase">recovery phrase</a> or the passphrase you set can restore it on a new phone.</p>
+
+        <h2>Built for the people around you</h2>
+        <p>Hide Something lets you make collections for different friends and family. Sealcloak goes further with up to three <a href="{{root}}features/hidden-vaults">separate vaults</a>, each opened by its own pattern, and nothing in the app shows how many exist. Open your everyday vault when someone's watching; the others stay invisible. If someone insists, <a href="{{root}}features/coerce">Coerce</a> opens a believable decoy. <a href="{{root}}features/intruder-photos">Intruder photos</a> show you who tried to guess, and the <a href="{{root}}features/calculator-disguise">calculator disguise</a> keeps the app from looking like a vault at all.</p>
+
+        <h2>Switching in a few minutes</h2>
+        <ol>
+          <li>Install Sealcloak, draw a pattern of six or more dots, and write down your recovery phrase.</li>
+          <li>In Hide Something, select your hidden media and unhide it so it returns to the gallery.</li>
+          <li>Add it to Sealcloak. Make folders that match your old collections if you like.</li>
+          <li>Open a few photos and videos to check they're all there.</li>
+          <li>Delete the gallery copies and empty the gallery's recently deleted folder.</li>
+          <li>Delete Hide Something's Google Drive backup, so no copy stays online, then uninstall it.</li>
+        </ol>
+        <p>See <a href="{{root}}guides/how-to-hide-photos-on-android">how to hide photos on Android</a> for more detail.</p>
+
+        <h2>Everyday use</h2>
+        <p>Inside, Sealcloak works like a private gallery: folders, search, a full-screen viewer, slideshow and video playback, with multi-select to move, copy or export. It holds more than photos and videos, too: PDFs and other documents, audio and text notes. The <a href="{{root}}features/private-camera-and-scanner">private camera and document scanner</a> save new pictures and scans straight into the vault, so they never sit in the gallery first. Screenshots and screen recording are blocked inside the app, which also keeps your photos out of the recent apps screen.</p>
+        <p>When you need to send something, <a href="{{root}}features/secure-sharing">secure sharing</a> wraps files in a passphrase-locked package, so the person receiving it needs the passphrase to open it. Nothing goes through our servers, because there aren't any.</p>
+
+        <h2>Bottom line</h2>
+        <p>Hide Something makes hiding easy and puts copies in the cloud. Sealcloak makes your media unreadable and keeps it off every network, with a stronger lock, hidden vaults, a decoy and backups only you can open. For photos that must stay private, choose the vault that can't go online. Read <a href="{{root}}security">how the security works</a>.</p>
+        {{faq}}
+      </div>
+      {{related}}
+    </article>
+  </div>
+</section>

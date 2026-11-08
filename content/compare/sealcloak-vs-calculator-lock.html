@@ -1,0 +1,126 @@
+<!--meta {
+  "title": "Calculator Lock alternative: Sealcloak vs Calculator Lock",
+  "navTitle": "Sealcloak vs Calculator Lock",
+  "description": "Calculator Lock - Hide Photos syncs to online storage and shares device IDs for ads. Sealcloak's calculator hides a fully encrypted, offline vault.",
+  "keyword": "calculator lock alternative",
+  "alsoTargets": [
+    "sealcloak vs calculator lock",
+    "calculator lock hide photos review",
+    "is calculator lock safe",
+    "calculator lock app"
+  ],
+  "summary": "Two calculator disguises; only one hides an offline, encrypted vault.",
+  "date": "2026-11-08",
+  "readMins": 7,
+  "nav": "guides",
+  "faq": [
+    {
+      "q": "Is Calculator Lock - Hide Photos safe?",
+      "a": "It hides photos behind a working calculator and offers online storage that syncs across devices. Its Play data safety section lists device IDs shared for analytics and advertising, and says data can't be deleted on request."
+    },
+    {
+      "q": "Does Sealcloak look like a calculator?",
+      "a": "Yes, with the calculator disguise turned on. It's a working calculator; to open the vault you type your secret code of 4 to 8 digits and hold the equals key for two seconds, then draw your pattern."
+    },
+    {
+      "q": "Does Calculator Lock store my photos online?",
+      "a": "Its listing offers safe online storage and syncing across devices. Sealcloak never stores anything online; it has no internet permission and keeps encrypted backups only where you put them."
+    },
+    {
+      "q": "How do I switch from Calculator Lock to Sealcloak?",
+      "a": "Unhide or export your files from Calculator Lock, add them to Sealcloak, check they open, delete the gallery copies and the online copies, then turn on Sealcloak's calculator disguise."
+    },
+    {
+      "q": "What if someone sees me type the calculator code?",
+      "a": "They still can't open your vault. In Sealcloak the code only reveals the vault's door; you also need your pattern or fingerprint, and the files are encrypted with a key made from that pattern."
+    },
+    {
+      "q": "Does Sealcloak show ads?",
+      "a": "No. There are no ads, no analytics and no tracking. Sealcloak has no internet permission, so it can't load ads or send anything off your phone, and your vault stays completely private."
+    }
+  ]
+} -->
+<section class="panel">
+  <div class="panel-inner wrap">
+    <article class="article">
+      <div class="meta">Compare · 7 min read</div>
+      <h1>Sealcloak vs Calculator Lock: a calculator lock that's truly private</h1>
+      <p class="lead">Calculator Lock - Hide Photos has more than 50 million installs and the classic trick: a calculator on the outside, hidden photos on the inside, plus online storage shared between your devices. Sealcloak can be a working calculator too. The difference is what's behind the keypad: an encrypted vault that never touches the internet.</p>
+      <div class="answer">
+        <div class="eyebrow">Quick answer</div>
+        <p>Sealcloak is the more private Calculator Lock alternative. Its calculator opens a vault where every file is encrypted with AES-256-GCM using a key from your pattern, with no internet permission, no online storage and no data shared. Calculator Lock's data safety section lists device IDs shared for advertising and says data can't be deleted on request.</p>
+      </div>
+      <div class="prose">
+        <h2>How the two calculators compare</h2>
+        <div class="table-wrap"><table>
+          <thead><tr><th></th><th>Sealcloak</th><th>Calculator Lock</th></tr></thead>
+          <tbody>
+            <tr><td>Working calculator</td><td>Yes (Pro)</td><td>Yes</td></tr>
+            <tr><td>Opening the vault</td><td>Secret code, hold = for 2 s, then your pattern</td><td>Passcode on the calculator</td></tr>
+            <tr><td>Encryption</td><td>AES-256-GCM, key from your pattern</td><td>Not described in its listing</td></tr>
+            <tr><td>Online storage</td><td>None</td><td>Safe online storage, synced across devices</td></tr>
+            <tr><td>Internet permission</td><td>None</td><td>Yes</td></tr>
+            <tr><td>Device IDs shared (Play data safety)</td><td>Never</td><td>For analytics and advertising</td></tr>
+            <tr><td>Delete your data on request</td><td>Nothing is held anywhere but your phone</td><td>"Data can't be deleted"</td></tr>
+            <tr><td>Decoy and intruder photos</td><td>Coerce and intruder photos</td><td>See its listing</td></tr>
+          </tbody>
+        </table></div>
+        <p>Calculator Lock details come from its Google Play listing and data safety section, November 2026.</p>
+
+        <h2>Two locks, not one</h2>
+        <p>With many calculator vaults, the passcode typed on the keypad is the only thing standing between someone and your photos. Anyone who sees you type it once has everything. Sealcloak splits that in two. Your secret code of 4 to 8 digits, followed by holding the equals key for two seconds, only reveals the door. Your <a href="{{root}}features/pattern-lock">pattern</a>, or fingerprint if you've turned it on, opens the vault. And that pattern isn't just checked; it's turned into the encryption key with Argon2id.</p>
+
+        <h2>Behind the keypad: encryption, not hiding</h2>
+        <p>Calculator Lock's listing describes hiding photos and videos and storing files in online storage, but not how the files on your phone are encrypted. Sealcloak <a href="{{root}}features/encryption">encrypts every file with AES-256-GCM</a> as it's added. If someone finds the app's storage, copies it or connects the phone to a computer, they see unreadable data. Each vault has its own random master key, protected with help from the Android Keystore.</p>
+
+        <h2>Online storage you can't delete</h2>
+        <p>Syncing your hidden photos across devices means they live on a server. Calculator Lock's Play data safety section also states that data can't be deleted on request, and lists device IDs shared for analytics and advertising. Once private photos are on a server you don't control, you can't be sure where they are or when they're truly gone.</p>
+        <p>Sealcloak keeps no online copy of anything, because it can't: it has no internet permission. Your protection against losing the phone is an <a href="{{root}}features/encrypted-backups">encrypted backup</a> that you make by hand or on a weekly or monthly schedule, saved in a folder you choose and openable only with your recovery phrase or passphrase.</p>
+
+        <!--shared-->
+        <h2>Everything Sealcloak does to keep you safe</h2>
+        <div class="caps">
+          <div><strong>AES-256-GCM on every file</strong><span>Encrypted the moment it's added, and tamper-evident.</span></div>
+          <div><strong>Key made from your pattern</strong><span>Argon2id turns your pattern into the key; it's never stored.</span></div>
+          <div><strong>No internet permission</strong><span>Android itself stops the app from connecting anywhere.</span></div>
+          <div><strong>No account, no data collected</strong><span>No email, no analytics, no ads, no crash reports.</span></div>
+          <div><strong>Up to 3 hidden vaults</strong><span>Each with its own pattern; nothing shows how many exist.</span></div>
+          <div><strong>Coerce decoy vault</strong><span>A believable vault to open when someone forces you.</span></div>
+          <div><strong>Intruder photos</strong><span>From the third wrong pattern in a row, see who tried.</span></div>
+          <div><strong>Lockout that can't be skipped</strong><span>Growing waits after 4 wrong patterns; clock changes don't help.</span></div>
+          <div><strong>Calculator or custom icon</strong><span>Looks like a working calculator, or anything you choose.</span></div>
+          <div><strong>Screenshots blocked</strong><span>Nothing on screen can be captured, even in recent apps.</span></div>
+          <div><strong>9-word recovery phrase</strong><span>The only spare key, and it's yours alone.</span></div>
+          <div><strong>Encrypted backups you hold</strong><span>Weekly or monthly, to a folder you pick; restore on any phone.</span></div>
+        </div>
+        <!--/shared-->
+
+        {{cta}}
+
+        <h2>More than one disguise</h2>
+        <p>Calculator vaults are so common that some people know to look for a second calculator. Sealcloak offers an alternative: a <a href="{{root}}features/custom-icon">custom icon</a> with any picture and name, so it can blend in as anything on your home screen. Whichever you choose, screenshots inside the app are blocked, so the recent apps screen shows a blank card instead of your photos.</p>
+
+        <h2>When someone won't take no for an answer</h2>
+        <p>A disguise helps until someone knows about it. Sealcloak's <a href="{{root}}features/coerce">Coerce</a> gives you a separate decoy vault with its own pattern: if you're made to open the app, open that one. Up to three <a href="{{root}}features/hidden-vaults">vaults</a> can exist without any sign of how many. <a href="{{root}}features/intruder-photos">Intruder photos</a> record who tried guessing, from the third wrong pattern in a row. And for people at serious risk, <a href="{{root}}features/erase-after-wrong-patterns">erase after wrong patterns</a> is available, off by default and only switched on by typing PERMIT.</p>
+
+        <h2>Life inside the vault</h2>
+        <p>Once you're in, Sealcloak is a full private gallery. Folders keep things organised, search finds files by name, and the viewer plays photos as a slideshow and videos in full screen. It isn't only for pictures: PDFs and other documents, audio recordings and text notes are encrypted the same way. The <a href="{{root}}features/private-camera-and-scanner">private camera and document scanner</a> capture straight into the vault, and <a href="{{root}}features/secure-sharing">secure sharing</a> sends files as a passphrase-locked package when you do need to share.</p>
+
+        <h2>Switching</h2>
+        <ol>
+          <li>Install Sealcloak, draw a pattern of six or more dots and write down the recovery phrase.</li>
+          <li>In Calculator Lock, unhide or export your photos, videos and documents to the gallery.</li>
+          <li>Add them to Sealcloak and open a few to check.</li>
+          <li>Delete the gallery copies, empty the trash, and remove your files from Calculator Lock's online storage.</li>
+          <li>In Sealcloak's settings, turn on the calculator disguise and choose your secret code.</li>
+        </ol>
+        <p>More options are covered in our <a href="{{root}}compare/sealcloak-vs-calculator-vault">calculator vault comparison</a>.</p>
+
+        <h2>Bottom line</h2>
+        <p>Both apps look like calculators. Only Sealcloak hides an encrypted vault with two separate locks, no internet access, no online copies and no ad tracking, plus a decoy for pressure and backups only you can open. Read <a href="{{root}}security">how the security works</a>.</p>
+        {{faq}}
+      </div>
+      {{related}}
+    </article>
+  </div>
+</section>

@@ -1,0 +1,126 @@
+<!--meta {
+  "title": "Google Photos Locked Folder alternative: Sealcloak compared",
+  "navTitle": "Sealcloak vs Locked Folder",
+  "description": "Google Photos Locked Folder opens with your phone's screen lock. Sealcloak uses its own pattern, encrypts every file and works for documents and audio too.",
+  "keyword": "google photos locked folder alternative",
+  "alsoTargets": [
+    "sealcloak vs locked folder",
+    "is google photos locked folder safe",
+    "locked folder vs photo vault",
+    "locked folder screen lock"
+  ],
+  "summary": "A folder behind your screen lock versus a vault with its own key.",
+  "date": "2026-11-08",
+  "readMins": 7,
+  "nav": "guides",
+  "faq": [
+    {
+      "q": "Is Google Photos Locked Folder safe?",
+      "a": "It keeps photos out of your main grid, albums, search and memories, and other apps can't see them. It opens with your phone's screen lock, so anyone who knows or watches your screen lock can open it too."
+    },
+    {
+      "q": "Does Locked Folder use a separate password?",
+      "a": "No. Locked Folder uses your device's screen lock, such as your PIN, pattern, password or fingerprint. Sealcloak has its own pattern, separate from the screen lock, and the encryption key comes from it."
+    },
+    {
+      "q": "Can I keep documents in Locked Folder?",
+      "a": "Locked Folder is for photos and videos in Google Photos. Sealcloak holds photos, videos, PDFs and other documents, audio and text notes, and can scan documents straight into the vault."
+    },
+    {
+      "q": "How do I move photos from Locked Folder to Sealcloak?",
+      "a": "In Locked Folder, select the items and move them out, add them to a Sealcloak vault, check they open, then delete them from Google Photos, its trash and any cloud backup."
+    },
+    {
+      "q": "Is Sealcloak free like Locked Folder?",
+      "a": "Sealcloak is free to start with 3 vaults, 100 photos, 10 videos, 10 documents and 10 audio files. Sealcloak Pro removes the limits and adds the disguises, Coerce and erase options."
+    },
+    {
+      "q": "Can someone tell Sealcloak is a vault?",
+      "a": "With the calculator disguise it looks and works like a calculator, or you can give it any icon and name. Screenshots are blocked inside it, so recent apps shows a blank card."
+    }
+  ]
+} -->
+<section class="panel">
+  <div class="panel-inner wrap">
+    <article class="article">
+      <div class="meta">Compare · 7 min read</div>
+      <h1>Sealcloak vs Google Photos Locked Folder: when you need more than a locked folder</h1>
+      <p class="lead">Google Photos' Locked Folder is already on most Android phones, and it's a sensible first step: photos you move there vanish from your grid, albums, search and memories. But it opens with the same screen lock as your phone, and it only holds photos and videos. If the people you're worried about know your screen lock, you need a vault with its own key.</p>
+      <div class="answer">
+        <div class="eyebrow">Quick answer</div>
+        <p>Choose Sealcloak when Locked Folder isn't enough. Locked Folder opens with your phone's screen lock, so anyone who knows it can get in. Sealcloak has its own pattern, encrypts every file with AES-256-GCM using a key made from that pattern, holds documents and audio too, and adds hidden vaults, a decoy and intruder photos, all offline.</p>
+      </div>
+      <div class="prose">
+        <h2>Locked Folder and Sealcloak compared</h2>
+        <div class="table-wrap"><table>
+          <thead><tr><th></th><th>Sealcloak</th><th>Locked Folder</th></tr></thead>
+          <tbody>
+            <tr><td>How it opens</td><td>Its own 5×5 pattern, separate from your screen lock</td><td>Your phone's screen lock</td></tr>
+            <tr><td>Encryption key</td><td>Made from your vault pattern with Argon2id</td><td>Tied to your device lock</td></tr>
+            <tr><td>What it holds</td><td>Photos, videos, documents, audio, notes, scans</td><td>Photos and videos</td></tr>
+            <tr><td>Multiple vaults</td><td>Up to 3, each with its own pattern</td><td>One folder</td></tr>
+            <tr><td>Decoy for pressure</td><td>Coerce</td><td>No</td></tr>
+            <tr><td>Intruder photos</td><td>Yes</td><td>No</td></tr>
+            <tr><td>Disguise</td><td>Calculator or custom icon</td><td>Inside the Google Photos app</td></tr>
+            <tr><td>Backups</td><td>Encrypted files you keep, offline</td><td>Optional backup to your Google account</td></tr>
+          </tbody>
+        </table></div>
+        <p>Locked Folder behaviour can vary by Google Photos version and phone. Check Google's help pages for your device.</p>
+
+        <h2>The screen-lock problem</h2>
+        <p>Locked Folder's protection is your phone's screen lock. That's convenient: no extra code to remember. It's also its biggest limit. The people most likely to look through your photos are the people closest to you, and they often know your screen lock already, or have watched you unlock your phone a hundred times. A partner, a parent, a sibling, a friend who borrowed the phone: for all of them, Locked Folder is one more tap away.</p>
+        <p>Sealcloak's vault has its own <a href="{{root}}features/pattern-lock">pattern</a> on a 5×5 grid, unrelated to your screen lock. Even with the phone unlocked in someone else's hands, the vault stays shut. And because the pattern is turned into the encryption key with Argon2id, the files are unreadable without it, not just hidden.</p>
+
+        <h2>Not just photos</h2>
+        <p>Private things on a phone aren't only photos. There are passport and ID scans, medical letters, voice notes, bank statements and things you write down. Locked Folder holds photos and videos inside Google Photos. Sealcloak holds all of them, <a href="{{root}}features/encryption">encrypted with AES-256-GCM</a>. Its <a href="{{root}}features/private-camera-and-scanner">document scanner</a> turns paper into a PDF inside the vault, and the private camera saves new photos straight into it.</p>
+
+        <h2>Built for pressure, not just privacy</h2>
+        <p>Locked Folder has one folder and one way in. Sealcloak is designed for the moments when someone is actively trying to see inside. Up to three <a href="{{root}}features/hidden-vaults">vaults</a> can exist, each with its own pattern, and none reveals the others. <a href="{{root}}features/coerce">Coerce</a> opens a harmless decoy vault when you're pushed to unlock. <a href="{{root}}features/intruder-photos">Intruder photos</a> show who tried guessing. The <a href="{{root}}features/calculator-disguise">calculator disguise</a> means there's no "Photos" app to point at in the first place.</p>
+
+        <!--shared-->
+        <h2>Everything Sealcloak does to keep you safe</h2>
+        <div class="caps">
+          <div><strong>AES-256-GCM on every file</strong><span>Encrypted the moment it's added, and tamper-evident.</span></div>
+          <div><strong>Key made from your pattern</strong><span>Argon2id turns your pattern into the key; it's never stored.</span></div>
+          <div><strong>No internet permission</strong><span>Android itself stops the app from connecting anywhere.</span></div>
+          <div><strong>No account, no data collected</strong><span>No email, no analytics, no ads, no crash reports.</span></div>
+          <div><strong>Up to 3 hidden vaults</strong><span>Each with its own pattern; nothing shows how many exist.</span></div>
+          <div><strong>Coerce decoy vault</strong><span>A believable vault to open when someone forces you.</span></div>
+          <div><strong>Intruder photos</strong><span>From the third wrong pattern in a row, see who tried.</span></div>
+          <div><strong>Lockout that can't be skipped</strong><span>Growing waits after 4 wrong patterns; clock changes don't help.</span></div>
+          <div><strong>Calculator or custom icon</strong><span>Looks like a working calculator, or anything you choose.</span></div>
+          <div><strong>Screenshots blocked</strong><span>Nothing on screen can be captured, even in recent apps.</span></div>
+          <div><strong>9-word recovery phrase</strong><span>The only spare key, and it's yours alone.</span></div>
+          <div><strong>Encrypted backups you hold</strong><span>Weekly or monthly, to a folder you pick; restore on any phone.</span></div>
+        </div>
+        <!--/shared-->
+
+        {{cta}}
+
+        <h2>Online backup or offline backup</h2>
+        <p>Google Photos can back up Locked Folder items to your Google account, which protects against losing your phone but puts a copy online, linked to your account. Sealcloak has no internet permission and no account, so nothing goes online. Instead, it makes <a href="{{root}}features/encrypted-backups">encrypted backup files</a> by hand or on a weekly or monthly schedule, saved where you choose. Only your recovery phrase or the passphrase you set can open them.</p>
+
+        <h2>When Locked Folder is enough</h2>
+        <p>If you just want a few photos out of your main gallery and nobody around you knows your screen lock, Locked Folder is a reasonable start, and our guide on <a href="{{root}}guides/how-to-hide-photos-on-android">hiding photos on Android</a> explains how to use it. The moment the risk is someone who knows your phone, or the files include documents, a separate encrypted vault is the safer place.</p>
+
+        <h2>Who outgrows Locked Folder</h2>
+        <p>People usually move on from Locked Folder after a specific moment: a partner who knows the screen lock, a child who unlocks the phone with a watched pattern, a phone handed over at a repair shop, or a scan of a passport that doesn't belong in Google Photos at all. In each case, the fix is the same: a separate key that nobody else has seen, and files that stay unreadable without it.</p>
+
+        <h2>Moving from Locked Folder</h2>
+        <ol>
+          <li>Install Sealcloak, draw a pattern that's different from your screen lock, and write down the recovery phrase.</li>
+          <li>In Google Photos, open Locked Folder, select the items and move them out.</li>
+          <li>Add them to Sealcloak and check a few photos and videos open properly.</li>
+          <li>Delete them from Google Photos, then empty Google Photos' trash.</li>
+          <li>If Locked Folder backup was on, make sure the copies are gone from your Google account too.</li>
+          <li>Set up a scheduled encrypted backup in Sealcloak.</li>
+        </ol>
+
+        <h2>Bottom line</h2>
+        <p>Locked Folder hides photos behind your screen lock. Sealcloak protects all your private files behind a separate pattern that becomes the encryption key, with hidden vaults, a decoy, intruder photos and offline backups only you can open. If anyone around you might know your screen lock, that separate key is what keeps your files private. Read <a href="{{root}}security">how the security works</a>.</p>
+        {{faq}}
+      </div>
+      {{related}}
+    </article>
+  </div>
+</section>

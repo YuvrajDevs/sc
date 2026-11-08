@@ -1,0 +1,102 @@
+<!--meta {
+  "title": "Private Photo Vault alternative: Sealcloak compared",
+  "navTitle": "Sealcloak vs Private Photo Vault",
+  "description": "Private Photo Vault - Pic Safe locks photos behind a PIN and shares device IDs for ads. Sealcloak encrypts every file offline with no data shared.",
+  "keyword": "private photo vault alternative",
+  "alsoTargets": ["sealcloak vs private photo vault", "private photo vault pic safe review", "is private photo vault safe", "apps like private photo vault"],
+  "summary": "A PIN vault with ad tracking versus an encrypted vault that never goes online.",
+  "date": "2026-11-08",
+  "readMins": 7,
+  "nav": "guides",
+  "faq": [
+    {"q": "Is Private Photo Vault - Pic Safe safe?", "a": "It locks your media behind a PIN or fingerprint and its listing mentions encryption. Its Google Play data safety section also says it shares device IDs for analytics and advertising, so the app does talk to outside companies."},
+    {"q": "Does Private Photo Vault need the internet?", "a": "It's an online, ad-supported app. Sealcloak is different: it has no internet permission at all, so Android itself prevents it from sending anything off your phone."},
+    {"q": "How do I move my photos from Private Photo Vault to Sealcloak?", "a": "Export the photos from Private Photo Vault back to your gallery, add them to a Sealcloak vault, open a few to check them, then delete the gallery copies and empty the gallery's trash."},
+    {"q": "Can Sealcloak use a PIN like Private Photo Vault?", "a": "No. Sealcloak uses a 5×5 pattern of at least 6 dots, which becomes the encryption key, with fingerprint or face unlock as an optional shortcut. A pattern on a 25-dot grid has far more combinations than a short PIN."}
+  ]
+} -->
+<section class="panel">
+  <div class="panel-inner wrap">
+    <article class="article">
+      <div class="meta">Compare · 7 min read</div>
+      <h1>Sealcloak vs Private Photo Vault: the private photo vault alternative</h1>
+      <p class="lead">Private Photo Vault - Pic Safe has more than 10 million installs and a simple promise: a PIN-protected place for photos and videos. Sealcloak makes a stronger promise: your files are encrypted on your phone with a key made from your pattern, and the app physically cannot send anything anywhere.</p>
+      <div class="answer">
+        <div class="eyebrow">Quick answer</div>
+        <p>Sealcloak is the more private alternative to Private Photo Vault. It encrypts every photo, video and document with AES-256-GCM, derives the key from your pattern with Argon2id, has no internet permission and no account, and shares no data with anyone. Private Photo Vault's own Play data safety section lists device IDs shared for analytics and advertising.</p>
+      </div>
+      <div class="prose">
+        <h2>Feature by feature</h2>
+        <div class="table-wrap"><table>
+          <thead><tr><th>Feature</th><th>Sealcloak</th><th>Private Photo Vault</th></tr></thead>
+          <tbody>
+            <tr><td>Lock</td><td>5×5 pattern that becomes the key, optional fingerprint</td><td>PIN or fingerprint</td></tr>
+            <tr><td>Encryption</td><td>AES-256-GCM on every file, Argon2id key</td><td>"Advanced encryption", per its listing</td></tr>
+            <tr><td>Internet permission</td><td>None</td><td>Yes</td></tr>
+            <tr><td>Data shared (Play data safety)</td><td>None</td><td>Device IDs, for analytics and advertising</td></tr>
+            <tr><td>Data collected</td><td>None</td><td>App interactions, crash logs, diagnostics, device IDs</td></tr>
+            <tr><td>Hidden vaults</td><td>Up to 3, each with its own pattern</td><td>Not listed</td></tr>
+            <tr><td>Decoy for pressure</td><td>Coerce decoy vault</td><td>Not listed</td></tr>
+            <tr><td>Intruder photos</td><td>Yes</td><td>Not listed</td></tr>
+            <tr><td>Disguise</td><td>Working calculator or any icon and name</td><td>Not listed</td></tr>
+            <tr><td>Backups</td><td>Encrypted files you keep</td><td>Not listed</td></tr>
+          </tbody>
+        </table></div>
+        <p>Private Photo Vault details are from its Google Play listing and data safety section, November 2026.</p>
+
+        <h2>Why a PIN and an ad SDK aren't enough</h2>
+        <p>Private Photo Vault does what its name says: it takes photos out of your gallery and puts them behind a PIN. For keeping a curious friend out of your pictures, that works. But two things matter more than the lock screen when the photos are genuinely private.</p>
+        <p>The first is what protects the files themselves. A PIN of four or six digits can be watched over your shoulder in a second, and short codes have relatively few combinations. Sealcloak's vault opens with a pattern on a 25-dot grid that must use at least six dots, and that pattern is never stored: Argon2id, a method designed to make every guess slow and costly, turns it into the key that unlocks your files.</p>
+        <p>The second is what the app does in the background. Private Photo Vault's data safety section lists device identifiers shared for analytics and advertising, and app interactions and diagnostics collected. Your photos aren't part of that, but it means the vault is in contact with advertising and analytics services. Sealcloak has none of that, because it has no internet permission to begin with.</p>
+
+        <h2>What Sealcloak gives you instead</h2>
+        <p>Every file you add is <a href="{{root}}features/encryption">encrypted with AES-256-GCM</a> before it's stored, and each vault has its own random master key. Up to three <a href="{{root}}features/hidden-vaults">separate vaults</a> can live in the app, each opened by its own pattern, and the app never shows how many exist. If someone insists you open the app, <a href="{{root}}features/coerce">Coerce</a> opens a believable decoy. If someone keeps guessing, <a href="{{root}}features/intruder-photos">intruder photos</a> show you who.</p>
+
+        <!--shared-->
+        <h2>Everything Sealcloak does to keep you safe</h2>
+        <div class="caps">
+          <div><strong>AES-256-GCM on every file</strong><span>Encrypted the moment it's added, and tamper-evident.</span></div>
+          <div><strong>Key made from your pattern</strong><span>Argon2id turns your pattern into the key; it's never stored.</span></div>
+          <div><strong>No internet permission</strong><span>Android itself stops the app from connecting anywhere.</span></div>
+          <div><strong>No account, no data collected</strong><span>No email, no analytics, no ads, no crash reports.</span></div>
+          <div><strong>Up to 3 hidden vaults</strong><span>Each with its own pattern; nothing shows how many exist.</span></div>
+          <div><strong>Coerce decoy vault</strong><span>A believable vault to open when someone forces you.</span></div>
+          <div><strong>Intruder photos</strong><span>From the third wrong pattern in a row, see who tried.</span></div>
+          <div><strong>Lockout that can't be skipped</strong><span>Growing waits after 4 wrong patterns; clock changes don't help.</span></div>
+          <div><strong>Calculator or custom icon</strong><span>Looks like a working calculator, or anything you choose.</span></div>
+          <div><strong>Screenshots blocked</strong><span>Nothing on screen can be captured, even in recent apps.</span></div>
+          <div><strong>9-word recovery phrase</strong><span>The only spare key, and it's yours alone.</span></div>
+          <div><strong>Encrypted backups you hold</strong><span>Weekly or monthly, to a folder you pick; restore on any phone.</span></div>
+        </div>
+        <!--/shared-->
+
+        {{cta}}
+
+        <h2>Forgetting the code: what happens next</h2>
+        <p>Every vault has to answer one awkward question: what if you forget how to open it? Many apps fall back on an email reset, which means an account and a way in that isn't yours alone. Sealcloak gives each vault a <a href="{{root}}features/recovery-phrase">9-word recovery phrase</a> when you create it. Write it on paper and keep it away from the phone. It opens that vault if the pattern is forgotten, and nobody else has a copy, including us.</p>
+
+        <h2>Keeping copies safe when you change phones</h2>
+        <p>A vault that lives only on one phone needs a reliable way to move. Sealcloak makes <a href="{{root}}features/encrypted-backups">encrypted backups</a> by hand or on a weekly or monthly schedule, saved to a folder you choose. Copy the backup file to your new phone or a computer; it's encrypted, so it's safe to carry around. Restore with the recovery phrase or the backup's own passphrase, and your vault is back exactly as it was.</p>
+
+        <h2>More than photos</h2>
+        <p>Private photos rarely come alone. There are ID scans, medical letters, voice notes and things you jot down. Sealcloak holds all of them in the same encrypted vault: photos, videos, PDFs and other documents, audio and plain text notes. Its <a href="{{root}}features/private-camera-and-scanner">private camera and document scanner</a> save new pictures and scans straight into the vault, so they never pass through the gallery first. Inside, you get folders, search, a slideshow and multi-select to move, copy or export, and screenshots are blocked so nothing on screen can be captured by another app.</p>
+
+        <h2>Switching from Private Photo Vault</h2>
+        <ol>
+          <li>Install Sealcloak, draw a pattern of six or more dots, and write down the recovery phrase.</li>
+          <li>In Private Photo Vault, open each album, select your items and export them to the gallery.</li>
+          <li>In Sealcloak, add them to a vault. Use folders if you want to keep your albums.</li>
+          <li>Open a handful of photos and videos to confirm everything arrived.</li>
+          <li>Delete the exported copies from the gallery, then empty the gallery's recently deleted folder.</li>
+          <li>Remove the old vault's contents, then uninstall it.</li>
+        </ol>
+        <p>Our guide to <a href="{{root}}guides/how-to-hide-photos-on-android">hiding photos on Android</a> has screenshots of each step.</p>
+
+        <h2>Bottom line</h2>
+        <p>Private Photo Vault keeps photos out of your gallery. Sealcloak keeps them unreadable, offline and out of reach of advertisers too, with a stronger lock, hidden vaults, a decoy and a recovery phrase only you hold. If the photos matter, that's the difference that counts. Moving takes about ten minutes, and you can keep both apps installed until you've checked every album arrived safely in the new vault. Read <a href="{{root}}security">how Sealcloak's security works</a>.</p>
+        {{faq}}
+      </div>
+      {{related}}
+    </article>
+  </div>
+</section>

@@ -1,0 +1,130 @@
+<!--meta {
+  "title": "Android Private Space vs a vault app: Sealcloak compared",
+  "navTitle": "Sealcloak vs Private space",
+  "description": "Android's Private space separates whole apps. Sealcloak encrypts your private files with its own pattern, and works on Android 8 and newer, not just Android 15.",
+  "keyword": "android private space alternative",
+  "alsoTargets": [
+    "sealcloak vs private space",
+    "android private space vs vault",
+    "private space android 15 photos",
+    "is android private space safe"
+  ],
+  "summary": "Separate apps with Private space; protect files with Sealcloak.",
+  "date": "2026-11-08",
+  "readMins": 7,
+  "nav": "guides",
+  "faq": [
+    {
+      "q": "What is Android Private space?",
+      "a": "Private space is a feature in Android 15 and newer that creates a separate, lockable area for apps. Apps inside it are hidden and paused when it's locked. Availability and menus depend on your phone maker."
+    },
+    {
+      "q": "Is Private space enough for private photos?",
+      "a": "It keeps apps and their data separate. For individual photos and documents, a vault like Sealcloak adds file-level encryption from its own pattern, hidden vaults, a decoy, intruder photos and portable encrypted backups."
+    },
+    {
+      "q": "Does Sealcloak work on phones without Private space?",
+      "a": "Yes. Sealcloak runs on Android 8.0 and newer, so it works on older phones and on brands that don't offer Private space."
+    },
+    {
+      "q": "Can I install Sealcloak inside Private space?",
+      "a": "Yes. You can install apps inside Private space, and Sealcloak works there like any app, adding its own pattern and encryption on top."
+    },
+    {
+      "q": "Is Sealcloak free?",
+      "a": "Yes, to start: 3 vaults, 100 photos, 10 videos, 10 documents and 10 audio files. Sealcloak Pro removes the limits and adds the calculator and icon disguises, Coerce and erase options."
+    },
+    {
+      "q": "Does Sealcloak hide my apps?",
+      "a": "No. Sealcloak protects files, not apps. Use Private space or your phone's own app hiding for apps, and Sealcloak for your private photos, videos and documents."
+    },
+    {
+      "q": "What if I forget my vault pattern?",
+      "a": "Each vault has a 9-word recovery phrase you write down when you create it. Type it on the pattern screen to get back in and choose a new pattern. Nobody else has a copy."
+    }
+  ]
+} -->
+<section class="panel">
+  <div class="panel-inner wrap">
+    <article class="article">
+      <div class="meta">Compare · 7 min read</div>
+      <h1>Sealcloak vs Android Private space: apps apart, files protected</h1>
+      <p class="lead">Android 15 introduced Private space: a separate, lockable area where apps can live out of sight. It's a welcome addition to Android, and it's great for a second messaging app or a private browser. But it's built around apps, not individual files, it needs a recent Android version, and it doesn't help when someone is pressuring you to unlock. That's where Sealcloak comes in.</p>
+      <div class="answer">
+        <div class="eyebrow">Quick answer</div>
+        <p>Use Private space to separate whole apps. Use Sealcloak to protect your private photos, videos and documents: every file encrypted with AES-256-GCM from its own pattern, up to three hidden vaults, a Coerce decoy, intruder photos and encrypted backups you can restore anywhere. It works on Android 8.0 and newer and has no internet permission.</p>
+      </div>
+      <div class="prose">
+        <h2>Private space and Sealcloak compared</h2>
+        <div class="table-wrap"><table>
+          <thead><tr><th></th><th>Sealcloak</th><th>Private space</th></tr></thead>
+          <tbody>
+            <tr><td>Built for</td><td>Private files: photos, videos, documents, audio, notes</td><td>Separate apps and their data</td></tr>
+            <tr><td>Android version</td><td>8.0 and newer</td><td>15 and newer, depending on the phone maker</td></tr>
+            <tr><td>Lock</td><td>Its own 5×5 pattern, which becomes the key</td><td>Screen lock or a separate lock</td></tr>
+            <tr><td>File encryption</td><td>AES-256-GCM per file, Argon2id key</td><td>Android's built-in storage protection</td></tr>
+            <tr><td>Multiple spaces</td><td>Up to 3 vaults, no visible count</td><td>One private space</td></tr>
+            <tr><td>Decoy for pressure</td><td>Coerce</td><td>No</td></tr>
+            <tr><td>Intruder photos</td><td>Yes</td><td>No</td></tr>
+            <tr><td>Moving to a new phone</td><td>Encrypted backup file you restore</td><td>Set up again on the new phone</td></tr>
+          </tbody>
+        </table></div>
+        <p>Private space options differ between Pixel, Samsung and other brands. Check your phone's Settings, under Security and privacy.</p>
+
+        <h2>Apps versus files</h2>
+        <p>Private space shines when you want whole apps kept apart: a second WhatsApp, a separate browser, a dating app nobody else should see. When it's locked, those apps are hidden and paused, and their notifications don't show. What it doesn't do is give you a gallery-like vault for individual files. Photos you take with your normal camera still land in your normal gallery, and documents still sit in normal folders unless you deliberately move them into an app inside the space.</p>
+        <p>Sealcloak is that vault. Add photos, videos, PDFs, audio and notes, or capture new ones with its <a href="{{root}}features/private-camera-and-scanner">private camera and document scanner</a>, and every file is <a href="{{root}}features/encryption">encrypted with AES-256-GCM</a> using a key made from your <a href="{{root}}features/pattern-lock">pattern</a>. You can find, view and organise them like a gallery, without them ever appearing in the main one.</p>
+
+        <h2>When someone wants you to unlock</h2>
+        <p>A private space is one space. If someone knows it exists and demands you open it, there's nothing else to show them. Sealcloak was designed with that moment in mind. Up to three <a href="{{root}}features/hidden-vaults">vaults</a> can live in the app, each opened by its own pattern, and none reveals the others. <a href="{{root}}features/coerce">Coerce</a> opens a harmless, believable decoy vault. <a href="{{root}}features/intruder-photos">Intruder photos</a> capture whoever keeps guessing. And the app can be a working <a href="{{root}}features/calculator-disguise">calculator</a>, so there's nothing that looks like a vault.</p>
+
+        <!--shared-->
+        <h2>Everything Sealcloak does to keep you safe</h2>
+        <div class="caps">
+          <div><strong>AES-256-GCM on every file</strong><span>Encrypted the moment it's added, and tamper-evident.</span></div>
+          <div><strong>Key made from your pattern</strong><span>Argon2id turns your pattern into the key; it's never stored.</span></div>
+          <div><strong>No internet permission</strong><span>Android itself stops the app from connecting anywhere.</span></div>
+          <div><strong>No account, no data collected</strong><span>No email, no analytics, no ads, no crash reports.</span></div>
+          <div><strong>Up to 3 hidden vaults</strong><span>Each with its own pattern; nothing shows how many exist.</span></div>
+          <div><strong>Coerce decoy vault</strong><span>A believable vault to open when someone forces you.</span></div>
+          <div><strong>Intruder photos</strong><span>From the third wrong pattern in a row, see who tried.</span></div>
+          <div><strong>Lockout that can't be skipped</strong><span>Growing waits after 4 wrong patterns; clock changes don't help.</span></div>
+          <div><strong>Calculator or custom icon</strong><span>Looks like a working calculator, or anything you choose.</span></div>
+          <div><strong>Screenshots blocked</strong><span>Nothing on screen can be captured, even in recent apps.</span></div>
+          <div><strong>9-word recovery phrase</strong><span>The only spare key, and it's yours alone.</span></div>
+          <div><strong>Encrypted backups you hold</strong><span>Weekly or monthly, to a folder you pick; restore on any phone.</span></div>
+        </div>
+        <!--/shared-->
+
+        {{cta}}
+
+        <h2>Works on the phone you already have</h2>
+        <p>Private space needs Android 15 or newer, and phone makers roll it out on their own schedules. Many popular phones in India, Indonesia, Brazil and elsewhere run older versions for years. Sealcloak runs on Android 8.0 and newer, on every brand, so the same protection works across your family's phones regardless of model.</p>
+
+        <h2>A backup that moves with you</h2>
+        <p>Changing phones is when private files most often get lost. Sealcloak makes <a href="{{root}}features/encrypted-backups">encrypted backups</a> by hand or on a weekly or monthly schedule, to a folder you choose. Copy the file to your new phone, install Sealcloak, and restore with your <a href="{{root}}features/recovery-phrase">recovery phrase</a> or the passphrase you set. No account and no cloud are involved: Sealcloak has no internet permission.</p>
+
+        <h2>Screenshots, recents and other leaks</h2>
+        <p>Private files leak in small ways: a thumbnail in the recent apps screen, a screenshot someone takes while you scroll, a photo that lands in the gallery before you move it. Sealcloak blocks screenshots and screen recording inside the app, so recents shows a blank card. Its camera saves straight into the vault. And because it has no internet permission, there's no sync, no cloud preview and no analytics that could reveal anything.</p>
+
+        <h2>Family phones and older devices</h2>
+        <p>Plenty of households hand phones down or share a tablet. A feature that only exists on the newest Android version doesn't help the person using last year's phone. Because Sealcloak works on Android 8.0 and newer, everyone can use the same vault app.</p>
+
+        <h2>Using both together</h2>
+        <ol>
+          <li>Set up Private space for the apps you want separate, if your phone offers it.</li>
+          <li>Install Sealcloak for your private photos, videos and documents; inside Private space if you want two layers.</li>
+          <li>Use a vault pattern that's different from your screen lock and Private space lock.</li>
+          <li>Write down each vault's recovery phrase and keep it away from the phone.</li>
+          <li>Schedule an encrypted backup and copy it off the phone now and then.</li>
+        </ol>
+        <p>For the app side, see our guide to <a href="{{root}}guides/hide-apps-on-android">hiding apps on Android</a>.</p>
+
+        <h2>Bottom line</h2>
+        <p>Private space keeps apps apart on new Android phones. Sealcloak keeps your files private on any Android phone: encrypted with a key only your pattern can make, with hidden vaults, a decoy, intruder photos and backups that move with you. Use Private space for apps and Sealcloak for what matters most. Read <a href="{{root}}security">how Sealcloak's security works</a>.</p>
+        {{faq}}
+      </div>
+      {{related}}
+    </article>
+  </div>
+</section>

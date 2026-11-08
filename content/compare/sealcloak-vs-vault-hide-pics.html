@@ -1,0 +1,102 @@
+<!--meta {
+  "title": "Vault - Hide Pics alternative: Sealcloak vs NQ Vault",
+  "navTitle": "Sealcloak vs Vault (NQ)",
+  "description": "Vault - Hide Pics, App Lock collects photos and videos for its Cloud Space and shares location for ads. Sealcloak keeps every file encrypted and offline.",
+  "keyword": "vault hide pics alternative",
+  "alsoTargets": ["nq vault alternative", "sealcloak vs vault hide pics", "is nq vault safe", "vault app lock review"],
+  "summary": "A cloud-backed all-in-one versus a vault that never leaves your phone.",
+  "date": "2026-11-08",
+  "readMins": 7,
+  "nav": "guides",
+  "faq": [
+    {"q": "Is Vault - Hide Pics, App Lock safe?", "a": "It hides photos and videos behind a password and offers app lock and cloud backup. Its Play data safety section says it collects photos, videos and files for app functionality, and shares approximate location and device IDs for advertising and analytics."},
+    {"q": "Does Vault upload my photos?", "a": "Its listing says photos and videos can be backed up to its Cloud Space, and its data safety section lists photos and videos as collected. Sealcloak can't upload anything: it has no internet permission."},
+    {"q": "Can Sealcloak lock other apps like Vault?", "a": "No. Sealcloak focuses on keeping your files encrypted and doesn't lock other apps. For apps, use your phone's own app lock or Private space; for private files, use Sealcloak."},
+    {"q": "How do I move from Vault to Sealcloak?", "a": "Restore or unhide your photos and videos from Vault to the gallery, add them to a Sealcloak vault, check they open, delete the gallery copies and empty the trash, then delete your Vault cloud backup."}
+  ]
+} -->
+<section class="panel">
+  <div class="panel-inner wrap">
+    <article class="article">
+      <div class="meta">Compare · 7 min read</div>
+      <h1>Sealcloak vs Vault - Hide Pics: an offline NQ Vault alternative</h1>
+      <p class="lead">Vault - Hide Pics, App Lock, the app many people still call NQ Vault, claims more than 100 million users. It bundles hidden photos with app lock, a private browser and cloud backup. Sealcloak takes the opposite route: one job, keeping your files private, done entirely on your phone with no internet access at all.</p>
+      <div class="answer">
+        <div class="eyebrow">Quick answer</div>
+        <p>Sealcloak is the more private Vault alternative. Vault's own Play data safety section lists your photos, videos and files as collected for its features, and approximate location and device IDs shared for advertising. Sealcloak encrypts every file on the phone with AES-256-GCM, needs no account, has no internet permission and shares nothing.</p>
+      </div>
+      <div class="prose">
+        <h2>Side by side</h2>
+        <div class="table-wrap"><table>
+          <thead><tr><th>Feature</th><th>Sealcloak</th><th>Vault - Hide Pics</th></tr></thead>
+          <tbody>
+            <tr><td>Where your photos live</td><td>Only on your phone, encrypted</td><td>Phone, plus optional Cloud Space</td></tr>
+            <tr><td>Photos and videos collected (Play data safety)</td><td>Never</td><td>Listed as collected for app functionality</td></tr>
+            <tr><td>Location shared</td><td>Never</td><td>Approximate location, for advertising</td></tr>
+            <tr><td>Device IDs shared</td><td>Never</td><td>For analytics and advertising</td></tr>
+            <tr><td>Encryption</td><td>AES-256-GCM, key from your pattern</td><td>Password protected, per its listing</td></tr>
+            <tr><td>Internet permission</td><td>None</td><td>Yes</td></tr>
+            <tr><td>Decoy vault</td><td>Coerce</td><td>See its listing</td></tr>
+            <tr><td>Intruder photos</td><td>Yes</td><td>See its listing</td></tr>
+            <tr><td>Backups</td><td>Encrypted files you keep</td><td>Cloud Space</td></tr>
+          </tbody>
+        </table></div>
+        <p>Vault details are taken from its Google Play listing and data safety section, November 2026.</p>
+
+        <h2>The problem with an all-in-one privacy app</h2>
+        <p>Vault offers a lot: hidden photos and videos, app lock for social and messaging apps, a private browser with bookmarks, and Cloud Space to back up your media and move it to a new phone. Each of those features needs broad permissions or a network connection. The result, according to the developer's own declarations on Google Play, is an app that collects your photos, videos and files for its features, and shares approximate location and device identifiers with other companies for advertising and analytics.</p>
+        <p>For an app whose job is privacy, that's a lot of moving parts. Every connection is a path data could take, and every copy in a cloud is a copy you can't fully control: it can be exposed in a breach, reached through a compromised account, or affected by a change of ownership or policy years from now.</p>
+
+        <h2>One job, done offline</h2>
+        <p>Sealcloak has no app lock, no browser and no cloud, on purpose. It doesn't even have Android's internet permission, so the system won't let it connect to anything. What it does have is a vault built carefully from the ground up. Every photo, video, document, audio file, note and scan is <a href="{{root}}features/encryption">encrypted with AES-256-GCM</a> the moment you add it. The key comes from your <a href="{{root}}features/pattern-lock">5×5 pattern</a> through Argon2id, and the pattern itself is never stored.</p>
+        <p>Around that core sit the features people actually need when a vault is tested: up to three <a href="{{root}}features/hidden-vaults">separate vaults</a> with separate patterns and no visible count, the <a href="{{root}}features/coerce">Coerce</a> decoy vault for when someone insists, <a href="{{root}}features/intruder-photos">intruder photos</a> from the third wrong pattern in a row, and a <a href="{{root}}features/calculator-disguise">calculator disguise</a> that really works as a calculator.</p>
+
+        <!--shared-->
+        <h2>Everything Sealcloak does to keep you safe</h2>
+        <div class="caps">
+          <div><strong>AES-256-GCM on every file</strong><span>Encrypted the moment it's added, and tamper-evident.</span></div>
+          <div><strong>Key made from your pattern</strong><span>Argon2id turns your pattern into the key; it's never stored.</span></div>
+          <div><strong>No internet permission</strong><span>Android itself stops the app from connecting anywhere.</span></div>
+          <div><strong>No account, no data collected</strong><span>No email, no analytics, no ads, no crash reports.</span></div>
+          <div><strong>Up to 3 hidden vaults</strong><span>Each with its own pattern; nothing shows how many exist.</span></div>
+          <div><strong>Coerce decoy vault</strong><span>A believable vault to open when someone forces you.</span></div>
+          <div><strong>Intruder photos</strong><span>From the third wrong pattern in a row, see who tried.</span></div>
+          <div><strong>Lockout that can't be skipped</strong><span>Growing waits after 4 wrong patterns; clock changes don't help.</span></div>
+          <div><strong>Calculator or custom icon</strong><span>Looks like a working calculator, or anything you choose.</span></div>
+          <div><strong>Screenshots blocked</strong><span>Nothing on screen can be captured, even in recent apps.</span></div>
+          <div><strong>9-word recovery phrase</strong><span>The only spare key, and it's yours alone.</span></div>
+          <div><strong>Encrypted backups you hold</strong><span>Weekly or monthly, to a folder you pick; restore on any phone.</span></div>
+        </div>
+        <!--/shared-->
+
+        {{cta}}
+
+        <h2>Backups without a cloud</h2>
+        <p>The main reason people like cloud backup is peace of mind if the phone is lost. You can have that without handing your photos to a server. Sealcloak creates <a href="{{root}}features/encrypted-backups">encrypted backup files</a> by hand, or automatically every week or month, in a folder you choose: internal storage, a memory card, or a folder you copy to your computer. The file is useless without your recovery phrase or the passphrase you set, so it's safe wherever you keep it. On a new phone, install Sealcloak, restore, and your vault is back.</p>
+
+        <h2>App lock: use what your phone already has</h2>
+        <p>If you used Vault mainly to lock apps, you may not need a separate app for that any more. Many Android phones include app lock or hidden apps in Settings, and recent Android versions offer Private space, a separate locked area for apps. Our guide to <a href="{{root}}guides/hide-apps-on-android">hiding apps on Android</a> covers each brand. Use those for apps, and keep your private files in a vault that never goes online.</p>
+
+        <h2>Moving from Vault to Sealcloak</h2>
+        <ol>
+          <li>Install Sealcloak, draw a pattern of six or more dots, and copy the 9-word recovery phrase onto paper.</li>
+          <li>In Vault, restore your hidden photos and videos to the gallery. If some exist only in Cloud Space, download them first.</li>
+          <li>Add everything to a Sealcloak vault and open a few files to check them, especially long videos.</li>
+          <li>Delete the restored copies from the gallery and empty the gallery's trash.</li>
+          <li>Delete your media from Vault's Cloud Space so no copy stays on a server.</li>
+          <li>Uninstall Vault once you're happy, and set up a scheduled encrypted backup in Sealcloak.</li>
+        </ol>
+
+        <h2>What people switching usually ask</h2>
+        <p><strong>Will I lose my albums?</strong> No. Create folders in Sealcloak with the same names and add each album's photos to its folder.</p>
+        <p><strong>Is a pattern really safer than a password?</strong> A pattern on Sealcloak's 25-dot grid has an enormous number of combinations, and every guess is slowed by Argon2id and by growing waits after four wrong attempts. What matters most is that the pattern becomes the encryption key, rather than just unlocking a screen.</p>
+        <p><strong>Can anyone see that I use a vault?</strong> With the calculator disguise or a <a href="{{root}}features/custom-icon">custom icon</a>, Sealcloak looks like any other app on the home screen, and screenshots inside it are blocked, so the recent apps screen shows nothing.</p>
+
+        <h2>Bottom line</h2>
+        <p>Vault spreads your privacy across many features, a cloud and outside services. Sealcloak concentrates it in one place you control: an encrypted vault on your phone, with no internet, no account and no data shared, plus backups only you can open. For truly private photos, that's the safer home. See <a href="{{root}}security">how the security works</a>.</p>
+        {{faq}}
+      </div>
+      {{related}}
+    </article>
+  </div>
+</section>

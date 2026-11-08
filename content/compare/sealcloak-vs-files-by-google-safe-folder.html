@@ -1,0 +1,126 @@
+<!--meta {
+  "title": "Files by Google Safe Folder alternative: Sealcloak compared",
+  "navTitle": "Sealcloak vs Safe folder",
+  "description": "Files by Google's Safe folder hides files behind a PIN or pattern. Sealcloak adds AES-256-GCM encryption from your pattern, hidden vaults, a decoy and backups.",
+  "keyword": "safe folder alternative",
+  "alsoTargets": [
+    "sealcloak vs safe folder",
+    "files by google safe folder review",
+    "is safe folder secure",
+    "safe folder vs vault app"
+  ],
+  "summary": "A simple locked folder versus a full encrypted vault with backups.",
+  "date": "2026-11-08",
+  "readMins": 7,
+  "nav": "guides",
+  "faq": [
+    {
+      "q": "What is Safe folder in Files by Google?",
+      "a": "Safe folder is a section of the Files by Google app that you lock with a PIN or pattern. Files you move into it are kept out of other apps and the regular file list."
+    },
+    {
+      "q": "What happens to Safe folder if I uninstall Files by Google?",
+      "a": "Google's help pages warn that files in Safe folder are tied to the Files by Google app on that phone, so check how to move them out before uninstalling it, resetting the app or changing phones."
+    },
+    {
+      "q": "How is Sealcloak different from Safe folder?",
+      "a": "Sealcloak encrypts every file with AES-256-GCM using a key made from your pattern, supports up to three hidden vaults, a decoy vault and intruder photos, and makes encrypted backups you can restore on a new phone."
+    },
+    {
+      "q": "How do I move files from Safe folder to Sealcloak?",
+      "a": "In Files by Google, open Safe folder, select the files and move them out, add them to a Sealcloak vault, check they open, then delete the copies outside the vault."
+    },
+    {
+      "q": "Does Sealcloak need the internet or an account?",
+      "a": "Neither. Sealcloak has no internet permission and never asks you to sign in, so your files and backups are never sent anywhere and nothing about your vault exists online."
+    },
+    {
+      "q": "Is Sealcloak free?",
+      "a": "Sealcloak is free to start with 3 vaults, 100 photos, 10 videos, 10 documents and 10 audio files. Sealcloak Pro removes the limits and adds disguises, Coerce and erase options."
+    }
+  ]
+} -->
+<section class="panel">
+  <div class="panel-inner wrap">
+    <article class="article">
+      <div class="meta">Compare · 7 min read</div>
+      <h1>Sealcloak vs Files by Google Safe folder: a safe folder alternative</h1>
+      <p class="lead">Safe folder, inside the Files by Google app, is a quick way to lock away a few files with a PIN or pattern. For a handful of documents on a phone nobody touches, it's convenient. When the files really matter, or someone around you is curious, you need encryption you can see, more than one vault, a way to survive a lost phone, and protection when someone pushes you to open it.</p>
+      <div class="answer">
+        <div class="eyebrow">Quick answer</div>
+        <p>Choose Sealcloak for anything you can't afford to lose or expose. It encrypts every file with AES-256-GCM using a key made from your pattern, offers up to three hidden vaults, a decoy, intruder photos and a calculator disguise, and makes encrypted backups you can restore on a new phone. It has no internet permission and no account.</p>
+      </div>
+      <div class="prose">
+        <h2>Safe folder and Sealcloak at a glance</h2>
+        <div class="table-wrap"><table>
+          <thead><tr><th></th><th>Sealcloak</th><th>Safe folder</th></tr></thead>
+          <tbody>
+            <tr><td>Lock</td><td>5×5 pattern of 6+ dots, optional fingerprint</td><td>PIN or pattern</td></tr>
+            <tr><td>Encryption</td><td>AES-256-GCM on every file, key from your pattern</td><td>See Google's documentation</td></tr>
+            <tr><td>Multiple vaults</td><td>Up to 3, each with its own pattern</td><td>One folder</td></tr>
+            <tr><td>Decoy for pressure</td><td>Coerce</td><td>No</td></tr>
+            <tr><td>Intruder photos</td><td>Yes</td><td>No</td></tr>
+            <tr><td>Disguise</td><td>Calculator or custom icon</td><td>Inside the Files app</td></tr>
+            <tr><td>Moving to a new phone</td><td>Encrypted backup file, restore anywhere</td><td>Move files out first</td></tr>
+            <tr><td>Recovery if the lock is forgotten</td><td>9-word recovery phrase</td><td>See Google's documentation</td></tr>
+          </tbody>
+        </table></div>
+        <p>Safe folder behaviour can change with app updates. Check Google's help pages for the version on your phone.</p>
+
+        <h2>Why a locked folder isn't a vault</h2>
+        <p>A locked folder answers one question: can someone browse to these files without the code? A vault has to answer several more. Are the files themselves unreadable if they're copied? What if you forget the code? What happens when the phone breaks? What if someone stands over you and insists you open it? Safe folder is designed to be simple, so it leaves most of those to you.</p>
+        <p>Sealcloak is built around all of them. Files are <a href="{{root}}features/encryption">encrypted with AES-256-GCM</a> before they're stored, so a copy of the storage reveals nothing. The key comes from your <a href="{{root}}features/pattern-lock">pattern</a> through Argon2id, a method designed to make each guess slow, and after four wrong patterns the app adds waits that grow each time and can't be skipped by changing the clock.</p>
+
+        <h2>Not losing everything with the phone</h2>
+        <p>Locked folders tend to live and die with one app on one phone. Before you uninstall the app, reset it or switch phones, you have to remember to move everything out. Forget, and the files can be lost. Sealcloak gives you a proper path instead: <a href="{{root}}features/encrypted-backups">encrypted backups</a> by hand or on a weekly or monthly schedule, saved to a folder you choose, and a <a href="{{root}}features/recovery-phrase">recovery phrase</a> for each vault. On a new phone, install Sealcloak, restore the backup, and everything is back.</p>
+
+        <h2>For the people around you</h2>
+        <p>One folder with one code is easy to demand. Sealcloak lets you keep up to three <a href="{{root}}features/hidden-vaults">separate vaults</a> with separate patterns, and nothing reveals how many exist. If someone insists, <a href="{{root}}features/coerce">Coerce</a> opens a harmless decoy. <a href="{{root}}features/intruder-photos">Intruder photos</a> capture whoever keeps guessing. And with the <a href="{{root}}features/calculator-disguise">calculator disguise</a> or a <a href="{{root}}features/custom-icon">custom icon</a>, there's no obvious "safe" to point at.</p>
+
+        <!--shared-->
+        <h2>Everything Sealcloak does to keep you safe</h2>
+        <div class="caps">
+          <div><strong>AES-256-GCM on every file</strong><span>Encrypted the moment it's added, and tamper-evident.</span></div>
+          <div><strong>Key made from your pattern</strong><span>Argon2id turns your pattern into the key; it's never stored.</span></div>
+          <div><strong>No internet permission</strong><span>Android itself stops the app from connecting anywhere.</span></div>
+          <div><strong>No account, no data collected</strong><span>No email, no analytics, no ads, no crash reports.</span></div>
+          <div><strong>Up to 3 hidden vaults</strong><span>Each with its own pattern; nothing shows how many exist.</span></div>
+          <div><strong>Coerce decoy vault</strong><span>A believable vault to open when someone forces you.</span></div>
+          <div><strong>Intruder photos</strong><span>From the third wrong pattern in a row, see who tried.</span></div>
+          <div><strong>Lockout that can't be skipped</strong><span>Growing waits after 4 wrong patterns; clock changes don't help.</span></div>
+          <div><strong>Calculator or custom icon</strong><span>Looks like a working calculator, or anything you choose.</span></div>
+          <div><strong>Screenshots blocked</strong><span>Nothing on screen can be captured, even in recent apps.</span></div>
+          <div><strong>9-word recovery phrase</strong><span>The only spare key, and it's yours alone.</span></div>
+          <div><strong>Encrypted backups you hold</strong><span>Weekly or monthly, to a folder you pick; restore on any phone.</span></div>
+        </div>
+        <!--/shared-->
+
+        {{cta}}
+
+        <h2>Photos, documents and everything in between</h2>
+        <p>Safe folder is part of a file manager, so it's good at documents and downloads. Sealcloak handles those and is also a private gallery: photos and videos with a full-screen viewer and slideshow, audio, text notes, and a <a href="{{root}}features/private-camera-and-scanner">private camera and document scanner</a> that save directly into the vault, never touching the gallery. Folders, search and multi-select keep it organised, and screenshots are blocked inside the app.</p>
+
+        <h2>No internet, no account</h2>
+        <p>Sealcloak doesn't have Android's internet permission, so it can't send files or data anywhere, and it never asks you to sign in. Nothing about your vault exists outside your phone and the backups you choose to make.</p>
+
+        <h2>A quick check of any locked folder</h2>
+        <p>Here's a simple test for any built-in or third-party locker. Ask three questions. If someone copied the phone's storage, could they read the files? If the app were uninstalled or reset, where would the files go? If someone stood over you and demanded the code, would you have anything to show them except the real thing? Sealcloak's answers are no, into your encrypted backup, and yes, the Coerce decoy vault.</p>
+
+        <h2>Moving from Safe folder</h2>
+        <ol>
+          <li>Install Sealcloak, draw a pattern and write down the 9-word recovery phrase.</li>
+          <li>Open Files by Google, go to Safe folder, select your files and move them out.</li>
+          <li>Add them to a Sealcloak vault, recreating folders if you like.</li>
+          <li>Open a few to check them, then delete the copies outside the vault and empty any trash.</li>
+          <li>Make your first encrypted backup and copy it off the phone.</li>
+        </ol>
+        <p>More on the built-in options in our guide to <a href="{{root}}guides/lock-folder-android">locking a folder on Android</a>.</p>
+
+        <h2>Bottom line</h2>
+        <p>Safe folder is a lock on one folder. Sealcloak is a complete encrypted vault: a pattern-derived key, hidden vaults, a decoy, intruder photos, backups that move with you and no internet access. For files that truly matter, that's the difference between hidden and safe. Read <a href="{{root}}security">the security details</a>.</p>
+        {{faq}}
+      </div>
+      {{related}}
+    </article>
+  </div>
+</section>
