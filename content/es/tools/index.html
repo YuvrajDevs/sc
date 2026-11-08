@@ -1,17 +1,61 @@
 <!--meta {
-  "title": "Herramientas gratis de privacidad para tus fotos",
-  "description": "Herramientas gratis que funcionan por completo en tu navegador para mantener tus fotos en privado. No se sube nada, sin cuenta, sin rastreo.",
+  "title": "Herramientas gratis de privacidad y fotos que nunca suben tus archivos",
+  "description": "Herramientas gratis en tu navegador: quita la ubicación de fotos, difumina caras, cifra archivos, crea contraseñas, comprime y convierte imágenes. No se sube nada.",
   "nav": "guides",
-  "sourceHash": "fe9381e46a38"
+  "sourceHash": "4b0de28b5ccb"
 } -->
 <section class="panel">
   <div class="panel-inner wrap">
     <div class="section-head">
       <div class="eyebrow">Herramientas gratis</div>
-      <h1 style="margin-top:20px">Herramientas de privacidad que se quedan en tu dispositivo.</h1>
-      <p class="lead" style="margin-top:16px">Todo funciona en tu navegador. Tus fotos nunca se suben.</p>
+      <h1 style="margin-top:20px">Herramientas que mantienen tus archivos en tu dispositivo.</h1>
+      <p class="lead" style="margin-top:16px">La mayoría de las herramientas gratis en línea te hacen subir tus fotos y documentos a sus servidores. Estas no. Cada herramienta funciona dentro de tu navegador, así que tus archivos nunca salen de tu celular o tu computadora. Sin cuenta, sin marca de agua, sin rastreo.</p>
     </div>
-    <div class="cards" style="margin-top:32px">{{allTools}}
+
+    <h2 class="tools-group">Privacidad</h2>
+    <p class="dim tools-sub">Revisa lo que revela una foto y ocúltalo antes de compartirla.</p>
+    <div class="cards">
+      <a class="card" href="{{root}}tools/remove-photo-location"><h3>Quitar la ubicación de una foto</h3><p>Ve y elimina la ubicación GPS oculta, el modelo del teléfono y la fecha.</p></a>
+      <a class="card" href="{{root}}tools/blur-face"><h3>Difuminar caras</h3><p>Difumina o pixela caras, placas y direcciones antes de publicar.</p></a>
+      <a class="card" href="{{root}}tools/crop-image"><h3>Recortar imagen</h3><p>Corta lo que no debería estar en la foto, con cualquier forma.</p></a>
+    </div>
+
+    <h2 class="tools-group">Seguridad</h2>
+    <p class="dim tools-sub">Protege archivos y crea contraseñas que nadie pueda adivinar.</p>
+    <div class="cards">
+      <a class="card" href="{{root}}tools/encrypt-file"><h3>Cifrar un archivo</h3><p>Protege con contraseña cualquier archivo usando AES-256-GCM.</p></a>
+      <a class="card" href="{{root}}tools/password-generator"><h3>Generador de contraseñas</h3><p>Contraseñas aleatorias seguras y frases fáciles de recordar.</p></a>
+      <a class="card" href="{{root}}tools/wifi-qr-code"><h3>Código QR de Wi-Fi</h3><p>Deja que tus invitados se conecten a tu Wi-Fi sin dictarles la contraseña.</p></a>
+    </div>
+
+    <h2 class="tools-group">Comprimir</h2>
+    <p class="dim tools-sub">Reduce fotos para formularios y correos, sin entregarlas al servidor de un desconocido.</p>
+    <div class="cards">
+      <a class="card" href="{{root}}tools/compress-image"><h3>Comprimir imagen</h3><p>Cualquier tamaño en KB, con la mejor calidad que quepa.</p></a>
+      <a class="card" href="{{root}}tools/compress-image-to-100kb"><h3>Comprimir a 100 KB</h3><p>Para solicitudes y trámites de visa.</p></a>
+      <a class="card" href="{{root}}tools/compress-image-to-50kb"><h3>Comprimir a 50 KB</h3><p>Para formularios de exámenes y convocatorias de empleo.</p></a>
+      <a class="card" href="{{root}}tools/compress-image-to-20kb"><h3>Comprimir a 20 KB</h3><p>Para firmas y fotos de identificación pequeñas.</p></a>
+      <a class="card" href="{{root}}tools/resize-image"><h3>Cambiar tamaño de imagen</h3><p>Píxeles exactos o un porcentaje.</p></a>
+      <a class="card" href="{{root}}tools/passport-photo-maker"><h3>Foto para pasaporte</h3><p>2×2 in, 35×45 mm y más, además de una hoja de impresión de 4×6.</p></a>
+    </div>
+
+    <h2 class="tools-group">Convertir</h2>
+    <p class="dim tools-sub">Cambia formatos en tu propio dispositivo, incluso con escaneos de identificaciones y fotos privadas.</p>
+    <div class="cards">
+      <a class="card" href="{{root}}tools/jpg-to-pdf"><h3>JPG a PDF</h3><p>Une fotos y escaneos en un solo PDF.</p></a>
+      <a class="card" href="{{root}}tools/heic-to-jpg"><h3>HEIC a JPG</h3><p>Abre fotos de iPhone en cualquier lugar.</p></a>
+      <a class="card" href="{{root}}tools/webp-to-jpg"><h3>WebP a JPG</h3><p>Para imágenes guardadas de sitios web.</p></a>
+      <a class="card" href="{{root}}tools/webp-to-png"><h3>WebP a PNG</h3><p>Conserva la transparencia.</p></a>
+      <a class="card" href="{{root}}tools/png-to-jpg"><h3>PNG a JPG</h3><p>Archivos mucho más pequeños.</p></a>
+      <a class="card" href="{{root}}tools/jpg-to-png"><h3>JPG a PNG</h3><p>Para apps que solo aceptan PNG.</p></a>
+      <a class="card" href="{{root}}tools/png-to-webp"><h3>PNG a WebP</h3><p>Los archivos más pequeños para sitios web.</p></a>
+      <a class="card" href="{{root}}tools/brighten-photo"><h3>Aclarar foto</h3><p>Arregla fotos oscuras y apagadas con un toque.</p></a>
+      <a class="card" href="{{root}}tools/qr-code-generator"><h3>Generador de códigos QR</h3><p>Enlaces, texto, correo y más. Nunca caduca.</p></a>
+    </div>
+
+    <div class="answer" style="margin-top:48px">
+      <div class="eyebrow">¿Por qué no se sube nada?</div>
+      <p>Somos los creadores de Sealcloak, una bóveda de fotos para Android que no tiene ningún permiso de internet: tus archivos se cifran en tu teléfono y nunca salen de él. Estas herramientas siguen la misma regla. Mira <a href="{{root}}security">cómo Sealcloak protege tus archivos</a>.</p>
     </div>
   </div>
 </section>
