@@ -1,0 +1,107 @@
+<!--meta {
+  "title": "Alternativa ao Vaulty: Sealcloak vs Vaulty, cofre de fotos",
+  "navTitle": "Sealcloak vs Vaulty",
+  "description": "O Vaulty esconde fotos atrás de um PIN numérico, com backup online grátis. O Sealcloak usa padrão, sem conta e sem internet. Compare os dois antes de escolher.",
+  "keyword": "alternativa ao vaulty",
+  "alsoTargets": ["sealcloak vs vaulty", "vaulty cofre de fotos é bom", "apps parecidos com vaulty", "vaulty disfarce de calculadora"],
+  "summary": "PIN e backup online versus padrão e tudo offline.",
+  "date": "2026-11-08",
+  "readMins": 7,
+  "nav": "guides",
+  "sourceHash": "21fdbceb95dd",
+  "faq": [
+    {"q": "O Vaulty é seguro?", "a": "O Vaulty é um cofre antigo, com mais de 10 milhões de instalações, bloqueio por PIN, biometria e disfarce do app. A página dele oferece backup online automático grátis, e a seção de segurança dos dados diz que ele compartilha IDs do aparelho para analytics e publicidade."},
+    {"q": "O Vaulty usa PIN ou padrão?", "a": "A página do Vaulty descreve um PIN numérico, com desbloqueio por digital ou rosto nos celulares compatíveis, e uma senha de texto quando disfarçado de app de ações. O Sealcloak usa um padrão 5×5 de pelo menos 6 pontos, com digital opcional."},
+    {"q": "O Sealcloak pode parecer uma calculadora como o Vaulty?", "a": "Sim. Com o Pro, o Sealcloak vira uma calculadora que funciona; você digita seu código secreto e segura a tecla de igual por dois segundos para abrir o cofre."},
+    {"q": "Como passo minhas fotos do Vaulty para o Sealcloak?", "a": "Reexiba as fotos no Vaulty para que voltem à galeria, adicione-as a um cofre do Sealcloak, confira se abrem, e depois apague as cópias da galeria e esvazie a lixeira."}
+  ]
+} -->
+<section class="panel">
+  <div class="panel-inner wrap">
+    <article class="article">
+      <div class="meta">Comparar · 7 min de leitura</div>
+      <h1>Sealcloak vs Vaulty: uma alternativa ao Vaulty sem nenhuma internet</h1>
+      <p class="lead">O Vaulty se apresenta como o cofre de fotos original do Android, e continua popular, com mais de 10 milhões de instalações. Ele tranca fotos atrás de um PIN numérico, pode se passar por calculadora e oferece backup online grátis. O Sealcloak compartilha a ideia do disfarce, mas mantém tudo no celular. Veja por que isso faz dele o cofre mais seguro.</p>
+      <div class="answer">
+        <div class="eyebrow">Resposta rápida</div>
+        <p>O Sealcloak é a alternativa mais segura ao Vaulty. Em vez de um PIN numérico e backup online, ele usa um padrão 5×5 que vira a chave de criptografia, criptografa cada arquivo com AES-256-GCM e não tem permissão de internet, conta nem compartilhamento de dados. Ele também pode ser uma calculadora que funciona.</p>
+      </div>
+      <div class="prose">
+        <h2>Comparação de recursos</h2>
+        <div class="table-wrap"><table>
+          <thead><tr><th>Recurso</th><th>Sealcloak</th><th>Vaulty</th></tr></thead>
+          <tbody>
+            <tr><td>Bloqueio</td><td>Padrão 5×5 (6+ pontos), digital opcional</td><td>PIN numérico, digital ou rosto</td></tr>
+            <tr><td>Disfarce</td><td>Calculadora que funciona ou qualquer ícone e nome (Pro)</td><td>Calculadora (PIN) ou app de ações (senha de texto)</td></tr>
+            <tr><td>Backup</td><td>Arquivos criptografados, manuais ou programados, guardados onde você escolher</td><td>Backup online automático grátis</td></tr>
+            <tr><td>Internet</td><td>Nenhuma: sem permissão de internet</td><td>Usada para o backup online</td></tr>
+            <tr><td>Criptografia</td><td>AES-256-GCM, chave Argon2id gerada do seu padrão</td><td>Veja a página do app</td></tr>
+            <tr><td>Vários cofres</td><td>Até 3 grátis, cada um com seu próprio padrão</td><td>Vários cofres</td></tr>
+            <tr><td>Fachada para situações de pressão</td><td>Cofre de fachada Coerce (Pro)</td><td>Não informado</td></tr>
+            <tr><td>Fotos de intrusos</td><td>Sim, a partir do terceiro padrão errado seguido</td><td>Veja a página do app</td></tr>
+            <tr><td>Dados compartilhados (segurança dos dados na Play)</td><td>Nenhum dado coletado</td><td>IDs do aparelho, para analytics, publicidade ou marketing</td></tr>
+          </tbody>
+        </table></div>
+        <p>As informações do Vaulty vêm da página dele no Google Play e da seção de segurança dos dados, em novembro de 2026.</p>
+
+        <h2>Por que o Sealcloak é mais seguro</h2>
+        <p>O Vaulty protege seu cofre com um PIN numérico, e o backup online grátis dele guarda uma cópia dos seus arquivos num servidor. Os dois são pontos fracos que o Sealcloak foi feito para evitar. Um PIN curto é fácil de ver por cima do seu ombro e tem relativamente poucas combinações. Uma cópia num servidor pode ser exposta de jeitos que você nunca vai ver.</p>
+        <p>O cofre do Sealcloak abre com um padrão numa grade de 25 pontos, e esse padrão é a matéria-prima da chave de criptografia: o Argon2id o transforma numa chave, então nada que sirva para alguma coisa fica guardado no celular. Os arquivos são criptografados com AES-256-GCM. E, como o app não tem permissão de internet, não existe cópia online, nem conta, nem dados compartilhados com anunciantes, por definição.
+
+        <h2>O que o Sealcloak faz diferente</h2>
+        <p>Um PIN numérico é rápido, mas quatro ou seis dígitos podem ser vistos por cima do seu ombro e têm bem menos combinações do que um padrão numa grade 5×5. O <a href="{{root}}features/pattern-lock">bloqueio por padrão</a> do Sealcloak exige pelo menos 6 pontos numa grade de 25 pontos, e as tentativas erradas geram esperas cada vez maiores depois das quatro primeiras, que mudar o relógio do celular não pula. O padrão não fica guardado em lugar nenhum; ele é transformado na chave de criptografia com o Argon2id.</p>
+        <p>O Sealcloak também traz ferramentas para os momentos em que um cofre é mais testado. Se alguém obrigar você a abrir, o <a href="{{root}}features/coerce">Coerce</a> abre um cofre de fachada convincente no lugar. Se alguém fica tentando adivinhar, as <a href="{{root}}features/intruder-photos">fotos de intrusos</a> mostram quem foi. E, como cada um dos até três cofres tem seu próprio padrão e nada mostra quantos existem, você pode ter um cofre para as coisas do dia a dia e outro que ninguém sabe que existe.</p>
+
+        <!--shared-->
+        <h2>Tudo o que o Sealcloak faz para manter você seguro</h2>
+        <div class="caps">
+          <div><strong>AES-256-GCM em cada arquivo</strong><span>Criptografado no momento em que é adicionado, e à prova de adulteração.</span></div>
+          <div><strong>Chave gerada a partir do seu padrão</strong><span>O Argon2id transforma seu padrão na chave; ela nunca é guardada.</span></div>
+          <div><strong>Sem permissão de internet</strong><span>O próprio Android impede o app de se conectar a qualquer lugar.</span></div>
+          <div><strong>Sem conta, sem coleta de dados</strong><span>Sem e-mail, sem analytics, sem anúncios, sem relatórios de falhas.</span></div>
+          <div><strong>Até 3 cofres ocultos</strong><span>Cada um com seu próprio padrão; nada mostra quantos existem.</span></div>
+          <div><strong>Cofre de fachada Coerce</strong><span>Um cofre convincente para abrir quando alguém obrigar você.</span></div>
+          <div><strong>Fotos de intrusos</strong><span>A partir do terceiro padrão errado seguido, veja quem tentou.</span></div>
+          <div><strong>Bloqueio que não dá para pular</strong><span>Esperas cada vez maiores depois de 4 padrões errados; mudar o relógio não ajuda.</span></div>
+          <div><strong>Calculadora ou ícone personalizado</strong><span>Parece uma calculadora que funciona, ou o que você escolher.</span></div>
+          <div><strong>Capturas de tela bloqueadas</strong><span>Nada na tela pode ser capturado, nem nos apps recentes.</span></div>
+          <div><strong>Frase de recuperação de 9 palavras</strong><span>A única chave reserva, e ela é só sua.</span></div>
+          <div><strong>Backups criptografados que ficam com você</strong><span>Semanais ou mensais, numa pasta que você escolhe; restaure em qualquer celular.</span></div>
+        </div>
+        <!--/shared-->
+
+        {{cta}}
+
+        <h2>A diferença na privacidade</h2>
+        <p>A seção de segurança dos dados do Vaulty na Play diz que ele compartilha identificadores do aparelho para analytics e publicidade. Isso não significa que alguém vê suas fotos, mas significa que o app conversa com outras empresas. O backup online dele também significa que uma cópia do seu cofre fica num servidor.</p>
+        <p>O Sealcloak não consegue fazer nenhuma das duas coisas. O Android só deixa um app acessar a internet se ele declarar a permissão de internet, e o Sealcloak não declara. Ele não tem anúncios, nem analytics, nem relatórios de falhas, e fica de fora do backup automático na nuvem que o Android faz dos dados dos apps. Suas fotos existem num lugar só: criptografadas no seu celular. Para proteger você caso perca o celular, ele cria <a href="{{root}}features/encrypted-backups">arquivos de backup criptografados</a> que você guarda num cartão de memória, computador ou drive à sua escolha; só a sua frase de recuperação ou uma senha os abre.</p>
+
+        <h2>No dia a dia</h2>
+        <p>Os dois apps funcionam como uma galeria privada depois que você entra: álbuns ou pastas, visualizador em tela cheia e reprodução de vídeos. O Sealcloak acrescenta algumas coisas além das fotos. A <a href="{{root}}features/private-camera-and-scanner">câmera privada e o scanner de documentos</a> salvam fotos novas e digitalizações em PDF direto no cofre em vez da galeria, e ele também guarda áudios, documentos e notas de texto. Capturas e gravação de tela são bloqueadas dentro do app, então nada na tela pode ser capturado por outro app. Quando você quer mandar algo, o <a href="{{root}}features/secure-sharing">compartilhamento seguro</a> junta os arquivos num pacote protegido por senha em vez de enviá-los abertos.</p>
+
+        <h2>Do Vaulty para o Sealcloak</h2>
+        <ol>
+          <li>Configure o Sealcloak: desenhe um padrão e anote a frase de recuperação de 9 palavras que ele mostra.</li>
+          <li>No Vaulty, selecione suas fotos e vídeos ocultos e reexiba-os, para que voltem à galeria.</li>
+          <li>No Sealcloak, adicione tudo a um cofre. O Sealcloak oferece manter os originais; abra alguns arquivos para ter certeza de que está tudo lá.</li>
+          <li>Apague os originais da galeria e esvazie a lixeira dela, porque muitos celulares guardam fotos apagadas por 30 dias.</li>
+          <li>Remova os arquivos do Vaulty e do backup online dele, e depois desinstale-o se não for mais usar.</li>
+        </ol>
+
+        <h2>Por que as pessoas trocam para o Sealcloak</h2>
+        <ul>
+          <li><strong>Nenhuma cópia online:</strong> suas fotos existem só no seu celular.</li>
+          <li><strong>Desbloqueio mais forte:</strong> uma chave gerada do padrão e bloqueios cada vez mais longos.</li>
+          <li><strong>Uma fachada para situações de pressão:</strong> o Coerce abre um cofre inofensivo quando alguém insiste.</li>
+          <li><strong>Sem rastreamento de anúncios:</strong> nada é compartilhado com ninguém, nunca.</li>
+        </ul>
+
+        <h2>Veredito</h2>
+        <p>Trocar leva uns dez minutos. O Sealcloak dá tudo o que você espera de um cofre de fotos, incluindo disfarce de calculadora, com proteção mais forte por baixo e nada online. Se suas fotos privadas importam, guarde-as num lugar que só você consegue abrir. Veja a <a href="{{root}}features">lista completa de recursos</a> ou compare com o <a href="{{root}}compare/sealcloak-vs-keepsafe">Keepsafe</a>.</p>
+
+        {{faq}}
+      </div>
+      {{related}}
+    </article>
+  </div>
+</section>

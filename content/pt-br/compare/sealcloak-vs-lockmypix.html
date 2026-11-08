@@ -1,0 +1,106 @@
+<!--meta {
+  "title": "Alternativa ao LockMyPix: Sealcloak vs LockMyPix comparados",
+  "navTitle": "Sealcloak vs LockMyPix",
+  "description": "O LockMyPix e o Sealcloak criptografam suas fotos com AES. A diferença está em contas, anúncios e acesso à internet. Veja por que o Sealcloak é a escolha mais privada.",
+  "keyword": "alternativa ao lockmypix",
+  "alsoTargets": ["sealcloak vs lockmypix", "lockmypix é bom", "lockmypix é seguro", "apps parecidos com lockmypix"],
+  "summary": "Dois cofres que criptografam; um nunca toca na internet.",
+  "date": "2026-11-08",
+  "readMins": 7,
+  "nav": "guides",
+  "sourceHash": "c9c616f45389",
+  "faq": [
+    {"q": "O LockMyPix é criptografado de verdade?", "a": "Sim. A página do LockMyPix diz que ele usa criptografia AES em vez de só esconder os arquivos, e ele tem o selo ePrivacy App Seal. Isso o coloca entre os apps de cofre mais fortes."},
+    {"q": "O LockMyPix precisa de conta?", "a": "A seção de segurança dos dados dele na Play lista o endereço de e-mail como dado opcional coletado para funcionamento do app e gerenciamento de conta, então o e-mail é opcional, não obrigatório."},
+    {"q": "Qual é a principal diferença entre o LockMyPix e o Sealcloak?", "a": "Os dois criptografam os arquivos no celular e oferecem cofres de fachada e detecção de intrusos. O Sealcloak não tem permissão de internet e não coleta dados; a seção de segurança dos dados do LockMyPix diz que ele compartilha IDs do aparelho para publicidade."},
+    {"q": "Posso usar um PIN no Sealcloak como no LockMyPix?", "a": "Não. O Sealcloak desbloqueia com um padrão 5×5, com desbloqueio opcional por digital ou rosto por cima. O LockMyPix oferece PIN, senha, padrão, digital e rosto."}
+  ]
+} -->
+<section class="panel">
+  <div class="panel-inner wrap">
+    <article class="article">
+      <div class="meta">Comparar · 7 min de leitura</div>
+      <h1>Sealcloak vs LockMyPix: qual alternativa ao LockMyPix é mais privada?</h1>
+      <p class="lead">O LockMyPix é um dos poucos cofres populares que claramente criptografam seus arquivos em vez de só escondê-los, e ele tem mais de 10 milhões de instalações para provar. O Sealcloak também criptografa. A diferença está em tudo em volta da criptografia: como a chave é gerada, o que o app compartilha e se ele consegue ou não acessar a internet.</p>
+      <div class="answer">
+        <div class="eyebrow">Resposta rápida</div>
+        <p>O Sealcloak é a alternativa mais privada ao LockMyPix. Os dois criptografam, mas o Sealcloak usa AES-256-GCM com uma chave gerada a partir do seu padrão, não tem permissão de internet, nunca pede e-mail, não mostra anúncios e não compartilha dados. Ele ainda traz até três cofres ocultos, o cofre de fachada Coerce e fotos de intrusos.</p>
+      </div>
+      <div class="prose">
+        <h2>Os dois apps em uma tabela</h2>
+        <div class="table-wrap"><table>
+          <thead><tr><th>Recurso</th><th>Sealcloak</th><th>LockMyPix</th></tr></thead>
+          <tbody>
+            <tr><td>Criptografia</td><td>AES-256-GCM, chave Argon2id gerada do seu padrão</td><td>AES (modo CTR, segundo a página do app)</td></tr>
+            <tr><td>Desbloqueio</td><td>Padrão 5×5, digital ou rosto opcional</td><td>PIN, senha, padrão, digital ou rosto</td></tr>
+            <tr><td>Cofre de fachada</td><td>Coerce (Pro)</td><td>Cofre falso com um código separado</td></tr>
+            <tr><td>Detecção de intrusos</td><td>Fotos de intrusos</td><td>Sim</td></tr>
+            <tr><td>Disfarce</td><td>Calculadora ou ícone personalizado (Pro)</td><td>Disfarçar e esconder o cofre</td></tr>
+            <tr><td>Permissão de internet</td><td>Não</td><td>Sim</td></tr>
+            <tr><td>E-mail</td><td>Nunca pedido</td><td>Opcional</td></tr>
+            <tr><td>Dados compartilhados (segurança dos dados na Play)</td><td>Nenhum dado coletado</td><td>IDs do aparelho, para publicidade ou marketing</td></tr>
+            <tr><td>Armazenamento</td><td>Celular, backups criptografados numa pasta que você escolhe</td><td>Celular e cartão SD</td></tr>
+            <tr><td>Plano grátis</td><td>3 cofres, 100 fotos, 10 vídeos</td><td>Grátis com upgrade para o Premium</td></tr>
+          </tbody>
+        </table></div>
+        <p>Os detalhes do LockMyPix vêm da página dele no Google Play e da seção de segurança dos dados, em novembro de 2026.</p>
+
+        <h2>Por que o Sealcloak vai além</h2>
+        <p>A criptografia é o ponto de partida de um cofre de verdade, não a linha de chegada. O que importa depois é tudo em volta dela: como a chave é protegida, o que o app pode enviar e como ele se comporta sob pressão. A página do LockMyPix descreve AES no modo CTR; a seção de segurança dos dados dele na Play lista IDs do aparelho compartilhados para publicidade e um e-mail opcional.</p>
+        <p>O Sealcloak aperta cada um desses pontos. O AES-256-GCM lacra cada arquivo e detecta adulteração. Seu padrão vira a chave por meio do Argon2id e nunca é guardado. Cada cofre tem sua própria chave mestra aleatória, protegida com a ajuda do Android Keystore. Não há permissão de internet, então não há IDs de publicidade, nem analytics, nem e-mail. E, com até três cofres independentes, o cofre de fachada Coerce e as fotos de intrusos, ele é feito para situações da vida real, não só para estranhos.
+
+        <h2>A abordagem do Sealcloak</h2>
+        <p>O Sealcloak oferece, de propósito, menos portas de entrada. O cofre abre com um padrão numa grade 5×5; o desbloqueio por digital ou rosto pode ser adicionado para agilizar, mas o padrão sempre funciona e é dele que a chave de criptografia é gerada. O Argon2id transforma esse padrão na chave, o que deixa cada tentativa lenta e cara, e depois de quatro tentativas erradas o Sealcloak impõe esperas cada vez maiores que mudar o relógio não pula.</p>
+        <p>Onde os apps realmente se separam é na internet. O Sealcloak vem sem a permissão de internet do Android, então não tem anúncios, nem analytics, nem como enviar nada para lugar nenhum. Ele nunca pede e-mail. O <a href="{{root}}features/coerce">cofre de fachada Coerce</a> pode, se você quiser, também apagar seus outros cofres quando for aberto, o que vem desativado e exige que você digite PERMIT para ativar.</p>
+
+        <!--shared-->
+        <h2>Tudo o que o Sealcloak faz para manter você seguro</h2>
+        <div class="caps">
+          <div><strong>AES-256-GCM em cada arquivo</strong><span>Criptografado no momento em que é adicionado, e à prova de adulteração.</span></div>
+          <div><strong>Chave gerada a partir do seu padrão</strong><span>O Argon2id transforma seu padrão na chave; ela nunca é guardada.</span></div>
+          <div><strong>Sem permissão de internet</strong><span>O próprio Android impede o app de se conectar a qualquer lugar.</span></div>
+          <div><strong>Sem conta, sem coleta de dados</strong><span>Sem e-mail, sem analytics, sem anúncios, sem relatórios de falhas.</span></div>
+          <div><strong>Até 3 cofres ocultos</strong><span>Cada um com seu próprio padrão; nada mostra quantos existem.</span></div>
+          <div><strong>Cofre de fachada Coerce</strong><span>Um cofre convincente para abrir quando alguém obrigar você.</span></div>
+          <div><strong>Fotos de intrusos</strong><span>A partir do terceiro padrão errado seguido, veja quem tentou.</span></div>
+          <div><strong>Bloqueio que não dá para pular</strong><span>Esperas cada vez maiores depois de 4 padrões errados; mudar o relógio não ajuda.</span></div>
+          <div><strong>Calculadora ou ícone personalizado</strong><span>Parece uma calculadora que funciona, ou o que você escolher.</span></div>
+          <div><strong>Capturas de tela bloqueadas</strong><span>Nada na tela pode ser capturado, nem nos apps recentes.</span></div>
+          <div><strong>Frase de recuperação de 9 palavras</strong><span>A única chave reserva, e ela é só sua.</span></div>
+          <div><strong>Backups criptografados que ficam com você</strong><span>Semanais ou mensais, numa pasta que você escolhe; restaure em qualquer celular.</span></div>
+        </div>
+        <!--/shared-->
+
+        {{cta}}
+
+        <h2>AES-CTR e AES-GCM em palavras simples</h2>
+        <p>Os dois apps usam AES, a mesma cifra em que bancos e governos confiam. O modo é a parte depois do hífen. O modo CTR mantém os arquivos em segredo, mas sozinho não percebe se um arquivo criptografado foi alterado ou danificado; os apps que o usam precisam de uma verificação separada para isso. O modo GCM mantém os arquivos em segredo e também inclui um lacre embutido, então, se um único byte de um arquivo criptografado mudar, a descriptografia falha em vez de gerar silenciosamente um arquivo quebrado ou adulterado.</p>
+        <p>O Sealcloak usa AES-256-GCM em cada arquivo, e cada cofre tem sua própria chave mestra aleatória, protegida com a ajuda do Android Keystore. Nenhuma dessas escolhas é algo que você vai notar no dia a dia; elas importam para a robustez do cofre quando algo dá errado. Saiba mais em <a href="{{root}}features/encryption">como funciona a criptografia do Sealcloak</a>.</p>
+
+        <h2>Backups e celulares novos</h2>
+        <p>Trocar de celular é quando os apps de cofre são postos à prova. Com o Sealcloak, você faz um <a href="{{root}}features/encrypted-backups">backup criptografado</a> manualmente ou de forma programada, semanal ou mensal, copia o arquivo para o celular novo e restaura com sua frase de recuperação ou a senha do backup. Nada depende de uma conta ou de um servidor continuar existindo. Com qualquer cofre, teste uma restauração uma vez antes de precisar.</p>
+
+        <h2>O que cada app sabe sobre você</h2>
+        <p>A seção de segurança dos dados do Google Play é onde os desenvolvedores declaram o que um app coleta e compartilha. O LockMyPix lista IDs do aparelho ou outros IDs compartilhados para publicidade ou marketing, e e-mail opcional, registros de falhas e diagnósticos coletados. Nada disso inclui suas fotos, que continuam criptografadas, mas significa que o app se comunica com serviços externos.</p>
+        <p>O Sealcloak declara que não coleta e não compartilha dados. Como ele não tem permissão de internet, isso não é só uma política; o próprio Android o impede de se conectar. Leia a <a href="{{root}}security">página de segurança do Sealcloak</a> para ver exatamente como as chaves e os arquivos são tratados.</p>
+
+        <h2>Do LockMyPix para o Sealcloak, passo a passo</h2>
+        <ol>
+          <li>Instale o Sealcloak, defina seu padrão e copie a frase de recuperação de 9 palavras num papel.</li>
+          <li>No LockMyPix, abra seus álbuns, selecione tudo e exporte ou reexiba na galeria.</li>
+          <li>Adicione os arquivos a um cofre do Sealcloak, mantendo a mesma estrutura de pastas se quiser.</li>
+          <li>Abra uma amostra de fotos e vídeos no Sealcloak para confirmar que tudo chegou.</li>
+          <li>Apague da galeria as cópias exportadas e depois esvazie a lixeira.</li>
+          <li>Limpe o cofre do LockMyPix e desinstale-o quando estiver satisfeito.</li>
+        </ol>
+        <p>Confira também onde seus arquivos antigos ficavam no cartão SD; apague qualquer exportação que tenha sobrado por lá também. Nosso <a href="{{root}}guides/lock-folder-android">guia para trancar pastas no Android</a> explica por que as sobras importam.</p>
+
+        <h2>Veredito final</h2>
+        <p>Se você quer uma criptografia confiável num app que não consegue falar com ninguém, o Sealcloak é a escolha mais forte: AES-256-GCM, chave gerada do padrão, sem internet, sem conta, sem anúncios, e com proteção de fachada e contra intrusos já incluída. Leia <a href="{{root}}security">os detalhes de segurança</a>.</p>
+
+        {{faq}}
+      </div>
+      {{related}}
+    </article>
+  </div>
+</section>
