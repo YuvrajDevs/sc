@@ -1,0 +1,60 @@
+<!--meta {
+  "sourceHash": "54c93bd31a73",
+  "title": "Backups criptografados: leve seu cofre para um celular novo",
+  "navTitle": "Backups criptografados",
+  "description": "Faça backup do seu cofre do Sealcloak em um único arquivo criptografado, manualmente ou toda semana ou mês, na pasta que quiser. Restaure no celular novo com sua frase.",
+  "keyword": "backup do cofre de fotos",
+  "summary": "Um único arquivo criptografado, manual ou programado. Restaure em qualquer celular.",
+  "date": "2026-11-08",
+  "readMins": 4,
+  "nav": "features",
+  "order": 9,
+  "faq": [
+    {
+      "q": "O Sealcloak envia meus backups para algum lugar?",
+      "a": "Não. O app não tem permissão de internet. Ele salva o arquivo onde você escolher; levar o arquivo para outro lugar fica por sua conta."
+    },
+    {
+      "q": "Dá para abrir um backup sem a frase?",
+      "a": "Não. Um backup só abre com a frase de recuperação ou a senha usada para criá-lo."
+    },
+    {
+      "q": "Restaurar duas vezes duplica meus arquivos?",
+      "a": "Não. Os arquivos que já estão no cofre são pulados, então importar o mesmo backup de novo é seguro."
+    },
+    {
+      "q": "O que acontece se um backup estiver danificado?",
+      "a": "O Sealcloak restaura tudo o que consegue ler e informa quantos arquivos não puderam ser restaurados."
+    }
+  ]
+} -->
+<section class="panel">
+  <div class="panel-inner wrap">
+    <article class="article">
+      <div class="meta"><a href="{{root}}features">Recursos</a> · Backups criptografados</div>
+      <h1>Backups criptografados: leve seu cofre para um celular novo</h1>
+      <p class="lead">Um cofre offline precisa de um plano para celulares perdidos ou quebrados. Os backups do Sealcloak são arquivos únicos e criptografados que você guarda onde quiser.</p>
+      <div class="answer">
+        <div class="eyebrow">Resumindo</div>
+        <p>Exporte um backup nas Configurações e o Sealcloak grava um arquivo criptografado na pasta que você escolher, depois confere se ele pode ser lido de volta. Tranque o backup com sua frase de recuperação ou com uma senha. Para restaurar, instale o Sealcloak no celular novo, escolha Restaurar de um backup e digite a mesma frase ou senha. Backups programados podem rodar sozinhos toda semana ou todo mês.</p>
+      </div>
+      <div class="prose">
+        <h2>Como fazer um backup</h2>
+        <ol><li>Nas Configurações, em Backup, toque em Exportar backup.</li><li>Escolha Usar minha frase de recuperação (recomendado) ou uma senha de pelo menos 8 caracteres.</li><li>Escolha onde salvar o arquivo.</li><li>Espere aparecer Backup verificado. O app lê o arquivo de volta para conferir.</li></ol>
+
+        <h2>Backups programados</h2>
+        <p>Configure um backup programado para salvar um arquivo sozinho toda semana ou todo mês, na pasta que você escolher. Se essa pasta for monitorada pelo seu Drive ou outro app de sincronização, o arquivo criptografado sai do celular automaticamente, sem que o próprio Sealcloak toque na internet.</p>
+
+        {{cta}}
+
+        <h2>Como restaurar em um celular novo</h2>
+        <ol><li>Copie o arquivo de backup para o celular novo.</li><li>Instale o Sealcloak e toque em Restaurar de um backup.</li><li>Defina um padrão para o novo cofre e anote a frase de recuperação dele.</li><li>Escolha o arquivo de backup e digite a frase ou senha dele.</li></ol><p>Pode importar quantas vezes quiser: os arquivos que você já tem são pulados.</p>
+
+        <h2>Guarde o arquivo em segurança</h2>
+        <p>O arquivo é criptografado, mas só é tão privado quanto o lugar onde você o guarda, e qualquer pessoa com o arquivo e a chave dele consegue abri-lo. Guarde a chave no papel, separada do arquivo. A Verificação de segurança do app avisa se não houver um backup recente. Perdeu a frase também? Veja <a href="{{root}}features/recovery-phrase">frase de recuperação</a>.</p>
+        {{faq}}
+      </div>
+      {{related}}
+    </article>
+  </div>
+</section>

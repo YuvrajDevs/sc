@@ -1,0 +1,63 @@
+<!--meta {
+  "sourceHash": "5d2ec5b000c7",
+  "title": "Como o Sealcloak criptografa suas fotos e arquivos",
+  "navTitle": "Criptografia",
+  "description": "Cada arquivo no Sealcloak é criptografado no seu celular com AES-256-GCM, com uma chave aleatória por cofre protegida pelo seu padrão e pelo Android Keystore.",
+  "keyword": "criptografar fotos",
+  "summary": "AES-256-GCM no celular, uma chave aleatória por cofre, desbloqueada pelo seu padrão.",
+  "date": "2026-11-08",
+  "readMins": 4,
+  "nav": "features",
+  "order": 2,
+  "faq": [
+    {
+      "q": "O AES-256 é seguro mesmo?",
+      "a": "O AES-256 é o padrão usado no mundo todo para proteger dados sensíveis, e não existe ataque prático contra ele. Na prática, os pontos fracos são senhas e padrões fáceis de adivinhar, não a cifra."
+    },
+    {
+      "q": "O Sealcloak consegue ver minhas fotos?",
+      "a": "Não. A criptografia acontece no seu celular, o app não consegue se conectar à internet e nós nunca temos seu padrão, sua frase ou suas chaves."
+    },
+    {
+      "q": "Se alguém copiar os arquivos do app, consegue abri-los?",
+      "a": "Não sem a chave. Os arquivos são criptografados, e a chave exige seu padrão ou sua frase de recuperação e, no celular original, o Keystore."
+    },
+    {
+      "q": "Meus backups também são criptografados?",
+      "a": "Sim. Um arquivo de backup é criptografado com a frase de recuperação do seu cofre ou com uma senha que você escolhe. Sem ela, o arquivo não pode ser aberto."
+    }
+  ]
+} -->
+<section class="panel">
+  <div class="panel-inner wrap">
+    <article class="article">
+      <div class="meta"><a href="{{root}}features">Recursos</a> · Criptografia</div>
+      <h1>Como o Sealcloak criptografa suas fotos e arquivos</h1>
+      <p class="lead">Esconder uma foto e criptografá-la são coisas diferentes. O Sealcloak criptografa cada arquivo no seu celular, então até uma cópia tirada do app fica ilegível sem a sua chave.</p>
+      <div class="answer">
+        <div class="eyebrow">Resumindo</div>
+        <p>Cada cofre tem sua própria chave mestra aleatória. Cada arquivo é criptografado com AES-256-GCM antes de ser salvo. A chave mestra é encapsulada com uma chave derivada do seu padrão pelo Argon2id e com uma chave mantida no Keystore do Android, com suporte de hardware. Nada sai do seu celular, porque o app não tem permissão de internet.</p>
+      </div>
+      <div class="prose">
+        <h2>Escondido não é o mesmo que criptografado</h2>
+        <p>Muitos apps de bloqueio de galeria movem as fotos para uma pasta oculta e colocam uma tela de senha na frente. Qualquer pessoa com um gerenciador de arquivos ou um computador ainda consegue achar e abrir os arquivos. Com criptografia, os próprios arquivos ficam embaralhados. Uma cópia não serve para nada sem a chave, onde quer que ela vá parar.</p>
+
+        <h2>O que acontece quando você adiciona uma foto</h2>
+        <ol><li>O arquivo é lido em partes, e cada parte é criptografada com AES-256-GCM, que também detecta qualquer adulteração.</li><li>O arquivo criptografado é gravado no armazenamento privado do app, com um nome aleatório que não diz nada sobre o conteúdo.</li><li>O índice do cofre (nomes, pastas, datas) também é criptografado.</li><li>A original continua na sua galeria até você mesmo apagá-la, então dá para conferir a cópia do cofre antes.</li></ol>
+
+        {{cta}}
+
+        <h2>Como seu padrão desbloqueia tudo</h2>
+        <p>Seu padrão passa pelo Argon2id, uma função lenta e que exige muita memória, feita para resistir a tentativas de adivinhação em massa. O resultado, junto com uma chave que nunca sai do Keystore do Android, desencapsula a chave mestra do seu cofre. Quando você bloqueia o cofre, as chaves são apagadas da memória.</p>
+
+        <h2>Nenhum servidor para hackear</h2>
+        <p>O Sealcloak não tem conta, nem nuvem, nem permissão de internet. Não existe cópia dos seus arquivos ou chaves em lugar nenhum, a não ser no seu celular e nos <a href="{{root}}features/encrypted-backups">backups</a> que você escolher fazer. Veja o quadro completo na <a href="{{root}}security">página de segurança</a>.</p>
+
+        <h2>Os limites, com sinceridade</h2>
+        <p>Nenhuma segurança é absoluta. Um padrão fácil de adivinhar, um celular já comprometido por malware ou uma frase de recuperação guardada em uma foto no mesmo celular podem anular uma boa criptografia. A Verificação de segurança do app, nas Configurações, aponta os pontos fracos mais comuns.</p>
+        {{faq}}
+      </div>
+      {{related}}
+    </article>
+  </div>
+</section>
