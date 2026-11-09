@@ -1,0 +1,82 @@
+<!--meta {
+  "title": "Password protect a PDF: AES-256, free, nothing uploaded",
+  "navTitle": "Password protect a PDF",
+  "description": "Add a password to a PDF so it asks for it in any reader. AES-256 encryption, optional print and copy limits. Free, and the PDF never leaves your device.",
+  "keyword": "password protect pdf",
+  "alsoTargets": [
+    "add password to pdf",
+    "lock pdf with password",
+    "encrypt pdf",
+    "protect pdf online free"
+  ],
+  "summary": "Add a password that any PDF reader will ask for.",
+  "date": "2026-11-08",
+  "readMins": 2,
+  "nav": "guides",
+  "faq": [
+    {
+      "q": "How do I add a password to a PDF for free?",
+      "a": "Choose the PDF above, type and confirm a password, and tap Protect PDF. Download the protected copy; any PDF reader will ask for the password."
+    },
+    {
+      "q": "Will the recipient need special software?",
+      "a": "No. The protected file is a normal PDF. Adobe Reader, browsers, phones and other PDF readers ask for the password and then open it."
+    },
+    {
+      "q": "What encryption is used?",
+      "a": "AES-256, the strongest standard encryption for PDFs, applied by qpdf running in your browser."
+    },
+    {
+      "q": "Is my PDF uploaded?",
+      "a": "No. It's encrypted in your browser on your own device, and the password is never sent anywhere."
+    },
+    {
+      "q": "What if I forget the password?",
+      "a": "Keep the original unprotected file somewhere safe. A strongly protected PDF can't be opened without its password, by us or anyone."
+    }
+  ],
+  "steps": [
+    "Choose the PDF.",
+    "Type a strong password twice. A random passphrase is easy to read out over the phone.",
+    "Choose whether the recipient may print, copy text or edit.",
+    "Tap Protect PDF and download the protected copy.",
+    "Send the PDF, and share the password a different way, never in the same email."
+  ],
+  "category": "SecurityApplication",
+  "features": [
+    "Runs entirely in your browser",
+    "Files are never uploaded",
+    "No sign-up",
+    "No watermark",
+    "Free"
+  ]
+} -->
+<section class="panel">
+  <div class="panel-inner wrap">
+    <article class="article">
+      <div class="meta"><a href="{{root}}tools/">Free tools</a> · Runs in your browser</div>
+      <h1>Password protect a PDF</h1>
+      <p class="lead">Lock a PDF with a password before you email or share it. The result is a normal PDF: Adobe, Chrome, phones and every PDF reader ask for the password before showing anything.</p>
+      <div class="tool" data-tool="protect-pdf" data-opt='{}'></div>
+      <div class="answer">
+        <div class="eyebrow">Quick answer</div>
+        <p>To password protect a PDF, choose it above, type and confirm a password, choose whether printing, copying and editing are allowed, and tap Protect PDF. The file is encrypted with AES-256 on your device and opens in any PDF reader once the password is entered.</p>
+      </div>
+      <div class="prose">
+<h2>How to protect a PDF</h2>
+<ol><li>Choose the PDF.</li><li>Type a strong password twice. A <a href="{{root}}tools/password-generator">random passphrase</a> is easy to read out over the phone.</li>
+<li>Choose whether the recipient may print, copy text or edit.</li><li>Tap <strong>Protect PDF</strong> and download the protected copy.</li>
+<li>Send the PDF, and share the password a different way, never in the same email.</li></ol>
+<h2>How strong is it?</h2>
+<p>The PDF is encrypted with AES-256, the strongest standard PDF encryption, using qpdf, a widely used open-source PDF tool that runs here in your browser. Without the password, the pages can't be read. As always, the password is the weak point: use 12 or more characters, and nothing guessable like a date of birth.</p>
+<h2>Protect PDF vs encrypt a file</h2>
+<p>A protected PDF opens in any PDF reader, which is what most people need. Our <a href="{{root}}tools/encrypt-file">encrypt a file</a> tool works for any file type, and the recipient decrypts it on our page. Print and copy limits are honoured by most readers, but they're restrictions, not encryption; the password is what protects the content.</p>
+{{cta}}
+<h2>Private by design</h2><p>Most PDF websites upload your document to their servers to process it. This one doesn't. The PDF is opened, edited and saved inside this browser tab, on your own device, using open-source PDF libraries the page loads. Contracts, bank statements, ID scans and medical letters never leave your phone or computer. No sign-up, no watermark, no file limit.</p><p>Already have a protected PDF you can open but want without the password? Use <a href="{{root}}tools/unlock-pdf">unlock PDF</a>.</p>
+        {{faq}}
+      </div>
+      {{related}}
+    </article>
+  </div>
+</section>
+<script src="{{root}}js/tools.js" defer></script>

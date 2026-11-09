@@ -622,6 +622,47 @@ tool(slug="hash-generator", tool="hash", opt={}, kw="sha-256 checksum", also=["h
        {"q": "Is MD5 still safe?", "a": "Not for security: it can be deliberately forged. It's still fine for spotting accidental corruption. Use SHA-256 to verify downloads."},
        {"q": "Is my file uploaded?", "a": "No. It's hashed in your browser on your own device, however large it is."}])
 
+pdftool(slug="protect-pdf", tool="protect-pdf", opt={}, kw="password protect pdf", also=["add password to pdf", "lock pdf with password", "encrypt pdf", "protect pdf online free"],
+  title="Password protect a PDF: AES-256, free, nothing uploaded", h1="Password protect a PDF",
+  desc="Add a password to a PDF so it asks for it in any reader. AES-256 encryption, optional print and copy limits. Free, and the PDF never leaves your device.",
+  summary="Add a password that any PDF reader will ask for.",
+  lead="Lock a PDF with a password before you email or share it. The result is a normal PDF: Adobe, Chrome, phones and every PDF reader ask for the password before showing anything.",
+  answer="To password protect a PDF, choose it above, type and confirm a password, choose whether printing, copying and editing are allowed, and tap Protect PDF. The file is encrypted with AES-256 on your device and opens in any PDF reader once the password is entered.",
+  body="""<h2>How to protect a PDF</h2>
+<ol><li>Choose the PDF.</li><li>Type a strong password twice. A <a href="{{root}}tools/password-generator">random passphrase</a> is easy to read out over the phone.</li>
+<li>Choose whether the recipient may print, copy text or edit.</li><li>Tap <strong>Protect PDF</strong> and download the protected copy.</li>
+<li>Send the PDF, and share the password a different way, never in the same email.</li></ol>
+<h2>How strong is it?</h2>
+<p>The PDF is encrypted with AES-256, the strongest standard PDF encryption, using qpdf, a widely used open-source PDF tool that runs here in your browser. Without the password, the pages can't be read. As always, the password is the weak point: use 12 or more characters, and nothing guessable like a date of birth.</p>
+<h2>Protect PDF vs encrypt a file</h2>
+<p>A protected PDF opens in any PDF reader, which is what most people need. Our <a href="{{root}}tools/encrypt-file">encrypt a file</a> tool works for any file type, and the recipient decrypts it on our page. Print and copy limits are honoured by most readers, but they're restrictions, not encryption; the password is what protects the content.</p>
+{{cta}}
+""" + PDFPRIV + """<p>Already have a protected PDF you can open but want without the password? Use <a href="{{root}}tools/unlock-pdf">unlock PDF</a>.</p>""",
+  faq=[{"q": "How do I add a password to a PDF for free?", "a": "Choose the PDF above, type and confirm a password, and tap Protect PDF. Download the protected copy; any PDF reader will ask for the password."},
+       {"q": "Will the recipient need special software?", "a": "No. The protected file is a normal PDF. Adobe Reader, browsers, phones and other PDF readers ask for the password and then open it."},
+       {"q": "What encryption is used?", "a": "AES-256, the strongest standard encryption for PDFs, applied by qpdf running in your browser."},
+       {"q": "Is my PDF uploaded?", "a": "No. It's encrypted in your browser on your own device, and the password is never sent anywhere."},
+       {"q": "What if I forget the password?", "a": "Keep the original unprotected file somewhere safe. A strongly protected PDF can't be opened without its password, by us or anyone."}])
+
+pdftool(slug="unlock-pdf", tool="unlock-pdf", opt={}, kw="remove password from pdf", also=["unlock pdf", "remove pdf password", "pdf password remover", "unlock bank statement pdf"],
+  title="Remove password from a PDF you can open: free, private", h1="Remove password from a PDF",
+  desc="Tired of typing a password every time you open a statement? Remove it from a PDF you know the password for. Free, and the PDF never leaves your device.",
+  summary="Save a copy without the password, when you know it.",
+  lead="Bank statements, payslips and bills often arrive locked with your date of birth or account number. If you know the password, save a copy that opens without it.",
+  answer="To remove a password from a PDF, choose it above, type its current password and tap Unlock PDF. You get a copy without the password. This only works when you know the password; it doesn't crack or guess passwords. Nothing is uploaded.",
+  body="""<h2>How to unlock a PDF</h2>
+<ol><li>Choose the protected PDF.</li><li>Type the password you normally use to open it.</li><li>Tap <strong>Unlock PDF</strong> and download the unlocked copy.</li></ol>
+<h2>Common statement passwords</h2>
+<p>Banks, card issuers and payroll systems often build the password from your details, for example part of your name with your date of birth, or the last digits of your account or customer ID. The email that came with the statement usually explains the format. This tool needs that password; it doesn't guess or break passwords.</p>
+<h2>Keep unlocked copies safe</h2>
+<p>A statement without a password is easier to read, for you and for anyone who finds it. Don't leave unlocked copies in Downloads, email or a shared cloud folder. Keep them in an encrypted vault such as Sealcloak, which stores documents <a href="{{root}}features/encryption">encrypted on your phone</a> behind your own pattern, or add a new password with <a href="{{root}}tools/protect-pdf">protect PDF</a>.</p>
+{{cta}}
+""" + PDFPRIV,
+  faq=[{"q": "Can I unlock a PDF without the password?", "a": "No. This tool removes a password you already know. It doesn't crack or guess passwords, and you should only unlock documents you're entitled to open."},
+       {"q": "How do I remove the password from my bank statement PDF?", "a": "Choose the statement above, type the password you use to open it, often based on your name, date of birth or account number, and tap Unlock PDF."},
+       {"q": "Does unlocking change the document?", "a": "No. The pages are identical; only the password protection and its restrictions are removed."},
+       {"q": "Is my PDF or password uploaded?", "a": "No. The PDF is unlocked in your browser on your own device, and neither the file nor the password is sent anywhere."}])
+
 # ---------------------------------------------------------------- write
 # ---------------------------------------------------------------- security
 tool(slug="password-generator", tool="password", opt={"kind": "chars"}, kw="password generator",
@@ -735,7 +776,7 @@ for t in T:
     # How-to steps (from the page's first numbered list) and what the tool does, for HowTo and WebApplication rich results
     ol = re.search(r"<ol>([\s\S]*?)</ol>", t["body"])
     meta["steps"] = [re.sub(r"\s+", " ", re.sub(r"<[^>]+>", "", li)).strip() for li in re.findall(r"<li>([\s\S]*?)</li>", ol.group(1))] if ol else []
-    meta["category"] = "SecurityApplication" if t["tool"] in ("password", "encrypt", "encrypt-text", "password-strength", "hash") else "BusinessApplication" if "pdf" in t["tool"] else "DesignApplication" if t["tool"] in ("qr",) else "MultimediaApplication"
+    meta["category"] = "SecurityApplication" if t["tool"] in ("password", "encrypt", "encrypt-text", "password-strength", "hash", "protect-pdf", "unlock-pdf") else "BusinessApplication" if "pdf" in t["tool"] else "DesignApplication" if t["tool"] in ("qr",) else "MultimediaApplication"
     meta["features"] = ["Runs entirely in your browser", "Files are never uploaded", "No sign-up", "No watermark", "Free"]
     html = SKELETON.format(meta=json.dumps(meta, indent=2, ensure_ascii=False), h1=t["h1"], lead=t["lead"], tool=t["tool"],
                            opt=json.dumps(t["opt"]), answer=t["answer"], body=t["body"])

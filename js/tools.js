@@ -979,5 +979,71 @@
     out.addEventListener("click", async (e) => { const v = e.target.closest("button")?.dataset.v; if (v) try { await navigator.clipboard.writeText(v); e.target.textContent = "✓"; setTimeout(() => e.target.textContent = "⧉", 1200); } catch {} });
   }
 
+  // ---- Password-protect or unlock a PDF with qpdf (open source, compiled to WebAssembly).
+  // The result is a normal PDF that any reader opens; encryption is AES-256 (PDF 2.0 / R6).
+  const QPDF_CDN = "https://cdn.jsdelivr.net/npm/@neslinesli93/qpdf-wasm@0.3.1/dist/";
+  let qpdfP;
+  const qpdfFactory = () => qpdfP ||= loadScript(QPDF_CDN + "qpdf.js").then(() => window.Module);
+  async function runQpdf(args, input) {
+    const factory = await qpdfFactory();
+    let err = "";
+    const m = await factory({ locateFile: () => QPDF_CDN + "qpdf.wasm", noInitialRun: true, print: () => {}, printErr: (t) => { err += t + "\n"; } });
+    m.FS.writeFile("/in.pdf", input);
+    let code;
+    try { code = m.callMain(args); } catch (e) { code = typeof e?.status === "number" ? e.status : 2; if (!err) err = String(e?.message || e); }
+    // qpdf exits 0 on success and 3 on success with warnings
+    return { code, err, out: code === 0 || code === 3 ? (() => { try { return m.FS.readFile("/out.pdf"); } catch { return null; } })() : null };
+  }
+  function pdfPassword(mode) {
+    let file = null;
+    const protect = mode === "protect";
+    const form = controls(field(protect ? "Password to open the PDF" : "PDF password", `<input name="pw" type="password" autocomplete="${protect ? "new-password" : "current-password"}">`, "grow")
+      + (protect ? field("Confirm password", `<input name="pw2" type="password" autocomplete="new-password">`, "grow") : "")
+      + `<label class="check"><input name="show" type="checkbox"> Show</label>`
+      + (protect ? `<label class="check"><input name="print" type="checkbox" checked> Allow printing</label><label class="check"><input name="copy" type="checkbox" checked> Allow copying text</label><label class="check"><input name="edit" type="checkbox"> Allow editing</label>` : "")
+      + `<button class="btn btn-primary" name="go" type="button" disabled>${protect ? "Protect PDF" : "Unlock PDF"}</button>`);
+    const LABEL = protect ? "Protect PDF" : "Unlock PDF";
+    form.elements.show.addEventListener("change", () => form.querySelectorAll("input[type=password], input[data-pw]").forEach((i) => { i.dataset.pw = 1; i.type = form.elements.show.checked ? "text" : "password"; }));
+    const info = node(`<div class="pdf-info" hidden></div>`), results = list();
+    el.prepend(pdfDrop(false, async ([f]) => {
+      file = f;
+      const bytes = new Uint8Array(await f.arrayBuffer());
+      if (String.fromCharCode(...bytes.slice(0, 5)) !== "%PDF-") { errorRow(results, f, new Error("this file doesn't look like a PDF.")); return; }
+      const enc = /\/Encrypt\s/.test(new TextDecoder("latin1").decode(bytes.slice(Math.max(0, bytes.length - 4096))) + new TextDecoder("latin1").decode(bytes.slice(0, 4096)));
+      info.innerHTML = `<div class="meta-row"><div class="row-main"><span class="thumb pdf-thumb">PDF</span><div><strong>${esc(f.name)}</strong><p class="dim">${size(f.size)}${enc ? " · password protected" : ""}</p></div></div></div>`;
+      info.hidden = false; form.elements.go.disabled = false;
+    }));
+    el.append(info, results);
+    form.elements.go.addEventListener("click", async () => {
+      const pw = val(form, "pw");
+      if (protect) {
+        if (pw.length < 6) { errorRow(results, file, new Error("use a password of at least 6 characters; 12 or more is better.")); return; }
+        if (pw !== val(form, "pw2")) { errorRow(results, file, new Error("the two passwords don't match.")); return; }
+      }
+      busy(form.elements.go, true, LABEL);
+      try {
+        const input = new Uint8Array(await file.arrayBuffer());
+        let r;
+        if (protect) {
+          // A random owner password keeps the permission settings enforceable
+          const owner = [...crypto.getRandomValues(new Uint8Array(18))].map((b) => b.toString(16).padStart(2, "0")).join("");
+          const restrict = [];
+          if (!val(form, "print")) restrict.push("--print=none");
+          if (!val(form, "copy")) restrict.push("--extract=n");
+          if (!val(form, "edit")) restrict.push("--modify=none");
+          r = await runQpdf(["--encrypt", pw, owner, "256", ...restrict, "--", "/in.pdf", "/out.pdf"], input);
+          if (!r.out) throw new Error("couldn't protect this PDF. If it already has a password, unlock it first. " + (r.err.split("\n")[0] || ""));
+          row(results, null, pdfBlob(r.out), pdfName(file.name, "-protected"), `AES-256 password protection · opens in any PDF reader · ${size(r.out.length)}`);
+        } else {
+          r = await runQpdf(["--password=" + pw, "--decrypt", "/in.pdf", "/out.pdf"], input);
+          if (!r.out) throw new Error("the password didn't work. Check it (passwords are case-sensitive) and try again. " + (r.err.split("\n")[0] || ""));
+          row(results, null, pdfBlob(r.out), pdfName(file.name, "-unlocked"), `Password removed · ${size(r.out.length)}`);
+        }
+      } catch (e) { errorRow(results, file, e); }
+      busy(form.elements.go, false, LABEL);
+    });
+  }
+  Object.assign(TOOLS, { protectPdf() { pdfPassword("protect"); }, unlockPdf() { pdfPassword("unlock"); } });
+
   TOOLS[kind.replace(/-(\w)/g, (_, c) => c.toUpperCase())]?.();
 })();
