@@ -74,6 +74,8 @@ function playLink(lang, section, slug) {
 }
 
 const words = (a) => new Set(`${a.keyword || ""} ${a.title}`.toLowerCase().replace(/[^\p{L}\p{N} ]/gu, " ").split(/\s+/).filter((w) => w.length > 3));
+// The tools linked from every page's footer: the most searched ones, so search engines see them as key pages.
+const POPULAR_TOOLS = ["compress-image", "passport-photo-maker", "jpg-to-pdf", "merge-pdf", "compress-pdf", "protect-pdf", "remove-photo-location", "password-generator"];
 function related(all, me, n = 3) {
   const mine = words(me);
   return all.filter((a) => a.out !== me.out)
@@ -267,6 +269,10 @@ ${lists.guides.slice(0, 4).map((g) => `        <li><a href="${link(g.out.replace
         <li><a href="${link("guides/")}">${esc(ui.allGuides)}</a></li>
         <li><a href="${link("scenarios/")}">${esc(ui.realSituations)}</a></li>
       </ul></div>
+      <div><h4>${esc(ui.nav.tools)}</h4><ul>
+${POPULAR_TOOLS.map((t) => lists.tools.find((x) => x.slug === t)).filter(Boolean).map((t) => `        <li><a href="${link(t.out.replace(/\.html$/, ""))}">${esc(t.navTitle || t.title)}</a></li>`).join("\n")}
+        <li><a href="${link("tools/")}">${esc(ui.freeTools)}</a></li>
+      </ul></div>
       <div><h4>${esc(ui.footHelp)}</h4><ul>
         <li><a href="${link("")}#faq">${esc(ui.nav.faq)}</a></li>
         <li><a href="${link("support")}">${esc(ui.nav.support)}</a></li>
@@ -289,8 +295,16 @@ ${lists.guides.slice(0, 4).map((g) => `        <li><a href="${link(g.out.replace
 
 // Every Google Play button and link carries the Play logo.
 const PLAY_ICON = `<svg class="play-ico" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.3 2.4a1.4 1.4 0 0 0-.6 1.2v16.8c0 .5.2.9.6 1.2l9.5-9.6-9.5-9.6Zm10.6 10.7 2.6 2.6-11 6.3 8.4-8.9Zm3.8-3.4 2.6 1.5c.9.5.9 1.7 0 2.2l-2.7 1.6-2.9-2.8 3-2.5ZM6.5 1.9l11 6.3-2.6 2.7-8.4-9Z"/></svg>`;
-function playIcons(html) {
+function playIcons(html, ui) {
   const href = SITE.playUrl.replace(/[.?]/g, "\\$&");
+  // Until the app is published (site.json "appLive": true), every Play button and link becomes a
+  // non-clickable "Coming soon" badge, so nobody lands on a missing Play page.
+  if (!SITE.appLive) return html.replace(new RegExp(`<a ([^>]*?)href="${href}[^"]*"([^>]*)>([\\s\\S]*?)</a>`, "g"), (m, pre, post, inner) => {
+    const cls = (pre + post).match(/class="([^"]*)"/)?.[1] || "";
+    // Short buttons (header, sticky bar) get the short label
+    const short = [ui.getApp, ui.stickyButton].includes(inner.replace(/<[^>]+>/g, "").trim());
+    return `<span class="${cls} soon" aria-disabled="true">${cls.includes("btn") ? PLAY_ICON : ""}${esc(short ? ui.comingSoonShort || "Coming soon" : ui.comingSoon || "Coming soon to Google Play")}</span>`;
+  });
   return html.replace(new RegExp(`(<a [^>]*href="${href}[^"]*"[^>]*>)(?!<svg)`, "g"), `$1${PLAY_ICON}`);
 }
 
@@ -306,7 +320,7 @@ for (const lang of LANGS) {
     if (out === "404.html" && lang.code !== "en") continue;
     const dest = join(OUT, prefix(lang.code) + out);
     mkdirSync(dirname(dest), { recursive: true });
-    writeFileSync(dest, playIcons(buildPage(lang, out, page)));
+    writeFileSync(dest, playIcons(buildPage(lang, out, page), UI[lang.code]));
     counts[lang.code] = (counts[lang.code] || 0) + 1;
     if (!page.meta.noindex) sitemap.push({ lang, out, date: page.meta.updated || page.meta.date });
   }

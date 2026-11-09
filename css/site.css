@@ -361,7 +361,7 @@ a.card:hover { border-color: var(--accent); transform: translateY(-2px); }
 
 /* ---------- Footer ---------- */
 .site-footer { padding: 56px 0 40px; color: var(--dim); font-size: 14px; }
-.foot-grid { display: grid; grid-template-columns: 1.4fr repeat(3, 1fr); gap: 32px; }
+.foot-grid { display: grid; grid-template-columns: 1.4fr repeat(4, 1fr); gap: 32px; }
 .foot-grid h4 { margin: 0 0 14px; font: 500 12px/1 var(--mono); letter-spacing: .1em; text-transform: uppercase; color: var(--text); }
 .foot-grid ul { list-style: none; margin: 0; padding: 0; }
 .foot-grid li + li { margin-top: 8px; }
@@ -565,3 +565,7 @@ a.card:hover { border-color: var(--accent); transform: translateY(-2px); }
 .hash-row.match { border-color: #46a758; }
 .hash-out .ok { color: #46a758; } .hash-out .bad { color: #e5484d; }
 .enc-out { white-space: pre-wrap; }
+/* Play buttons before launch: same look, not clickable */
+.soon { cursor: default; opacity: .92; pointer-events: none; }
+.btn.soon { white-space: nowrap; }
+.foot-grid .soon, .prose .soon { color: var(--dim); }
