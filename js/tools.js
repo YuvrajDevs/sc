@@ -111,7 +111,7 @@
     results.prepend(li);
   }
   function errorRow(results, file, e) {
-    const li = node(`<li class="meta-row"><div><strong>${esc(file.name)}</strong><p class="dim">${esc(kind === "encrypt" ? "Couldn't process this file:" : T.unreadable)} ${esc(e.message || e)}</p></div></li>`);
+    const li = node(`<li class="meta-row"><div><strong>${esc(file.name)}</strong><p class="dim">${esc(/pdf|encrypt|hash/i.test(kind) ? "Couldn't finish:" : T.unreadable)} ${esc(e.message || e)}</p></div></li>`);
     results.prepend(li);
   }
 
@@ -671,5 +671,313 @@
     render();
   }
 
-  TOOLS[kind]?.();
+  // =====================================================================================
+  // PDF tools. pdf-lib (editing) and pdf.js (rendering pages to images) are loaded into this
+  // page only when needed; the PDF itself is read and written on this device and never uploaded.
+  const loadScript = (src) => new Promise((ok, bad) => { const s = document.createElement("script"); s.src = src; s.onload = ok; s.onerror = () => bad(new Error("Couldn't load a needed component. Check your connection and reload.")); document.head.appendChild(s); });
+  let pdfLibP, pdfJsP;
+  const PDFJS_CDN = "https://cdn.jsdelivr.net/npm/pdfjs-dist@3.11.174/";
+  const PDFLib = () => pdfLibP ||= loadScript("https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js").then(() => window.PDFLib);
+  const PDFJS = () => pdfJsP ||= loadScript(PDFJS_CDN + "build/pdf.min.js").then(() => {
+    // Workers can't start from another origin, so start a same-origin one that imports the real worker script.
+    const w = PDFJS_CDN + "build/pdf.worker.min.js";
+    window.pdfjsLib.GlobalWorkerOptions.workerSrc = URL.createObjectURL(new Blob([`importScripts("${w}");`], { type: "text/javascript" }));
+    return window.pdfjsLib; });
+  const PDF_ICON = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h4"/></svg>`;
+  const pdfName = (n, suffix) => n.replace(/\.pdf$/i, "") + suffix + ".pdf";
+  const pdfBlob = (bytes) => new Blob([bytes], { type: "application/pdf" });
+  // "1-3, 5, 8-" -> zero-based page indexes within [0, count)
+  function parsePages(spec, count) {
+    const out = new Set();
+    for (const part of String(spec || "").split(/[,\s]+/).filter(Boolean)) {
+      const m = part.match(/^(\d*)\s*-\s*(\d*)$/);
+      let a, b;
+      if (m) { a = m[1] ? +m[1] : 1; b = m[2] ? +m[2] : count; } else if (/^\d+$/.test(part)) a = b = +part; else throw new Error(`"${part}" isn't a page or range, like 1-3 or 5`);
+      for (let i = Math.max(1, a); i <= Math.min(count, b); i++) out.add(i - 1);
+    }
+    return [...out].sort((x, y) => x - y);
+  }
+  async function openPdf(file) {
+    const L = await PDFLib();
+    const bytes = await file.arrayBuffer();
+    try { return await L.PDFDocument.load(bytes, { updateMetadata: false }); }
+    catch (e) { if (/encrypt/i.test(e.message)) throw new Error("this PDF is password-protected. Remove the password in the app that made it, then try again."); throw new Error("this file doesn't look like a valid PDF."); }
+  }
+  function pdfDrop(multiple, onFiles) {
+    const z = node(`<div class="meta-drop">${PDF_ICON}
+      <p><strong>${esc(multiple ? "Drop PDFs here" : "Drop a PDF here")}</strong> ${esc(T.or)}</p>
+      <label class="btn btn-primary">${esc(multiple ? "Choose PDFs" : "Choose a PDF")}<input type="file" accept="application/pdf,.pdf" ${multiple ? "multiple" : ""} hidden></label>
+      <p class="dim">Your files never leave this device.</p></div>`);
+    const input = z.querySelector("input");
+    input.addEventListener("change", () => { const f = [...input.files]; input.value = ""; if (f.length) onFiles(f); });
+    ["dragenter", "dragover"].forEach((t) => z.addEventListener(t, (e) => { e.preventDefault(); z.classList.add("over"); }));
+    ["dragleave", "drop"].forEach((t) => z.addEventListener(t, (e) => { e.preventDefault(); z.classList.remove("over"); }));
+    z.addEventListener("drop", (e) => { const f = [...e.dataTransfer.files].filter((x) => /pdf$/i.test(x.type) || /\.pdf$/i.test(x.name)); if (f.length) onFiles(multiple ? f : f.slice(0, 1)); });
+    return z;
+  }
+  const busy = (btn, on, label) => { btn.disabled = on; btn.textContent = on ? T.working : label; };
+
+  Object.assign(TOOLS, {
+    // Merge several PDFs into one, in the order you set
+    async mergePdf() {
+      const items = [];
+      const form = controls(`<button class="btn btn-primary" name="go" type="button" disabled>Merge PDFs</button>`);
+      const queue = node(`<ul class="meta-results pdf-queue"></ul>`), results = list();
+      const render = () => {
+        queue.innerHTML = "";
+        items.forEach((it, i) => {
+          const li = node(`<li class="meta-row"><div class="row-main"><span class="thumb pdf-thumb">PDF</span><div><strong>${i + 1}. ${esc(it.file.name)}</strong><p class="dim">${it.pages} pages · ${size(it.file.size)}</p></div></div>
+            <div class="row-btns"><button class="icon-btn" type="button" data-a="up" aria-label="Up">↑</button><button class="icon-btn" type="button" data-a="down" aria-label="Down">↓</button><button class="icon-btn" type="button" data-a="del" aria-label="Remove">×</button></div></li>`);
+          li.addEventListener("click", (e) => {
+            const a = e.target.closest("button")?.dataset.a; if (!a) return;
+            if (a === "del") items.splice(i, 1);
+            if (a === "up" && i > 0) items.splice(i - 1, 0, items.splice(i, 1)[0]);
+            if (a === "down" && i < items.length - 1) items.splice(i + 1, 0, items.splice(i, 1)[0]);
+            render();
+          });
+          queue.appendChild(li);
+        });
+        form.elements.go.disabled = items.length < 2;
+      };
+      el.prepend(pdfDrop(true, async (files) => {
+        for (const f of files) { try { const d = await openPdf(f); items.push({ file: f, doc: d, pages: d.getPageCount() }); } catch (e) { errorRow(results, f, e); } }
+        render();
+      }));
+      el.append(queue, results);
+      form.elements.go.addEventListener("click", async () => {
+        busy(form.elements.go, true, "Merge PDFs");
+        try {
+          const L = await PDFLib(), out = await L.PDFDocument.create();
+          for (const it of items) (await out.copyPages(it.doc, it.doc.getPageIndices())).forEach((p) => out.addPage(p));
+          const blob = pdfBlob(await out.save());
+          row(results, null, blob, "merged.pdf", `${out.getPageCount()} pages from ${items.length} files · ${size(blob.size)}`);
+        } catch (e) { errorRow(results, { name: "merged.pdf" }, e); }
+        busy(form.elements.go, false, "Merge PDFs"); form.elements.go.disabled = items.length < 2;
+      });
+    },
+
+    // Extract pages, or every page as its own file
+    async splitPdf() { pageTool("split"); },
+    async rotatePdf() { pageTool("rotate"); },
+    async deletePdfPages() { pageTool("delete"); },
+    async pdfToJpg() { pageTool("images"); },
+    async compressPdf() { pageTool("compress"); },
+    async pdfMetadata() { pageTool("metadata"); },
+    encryptText() { encryptText(); },
+    passwordStrength() { passwordStrength(); },
+    hash() { hashTool(); },
+  });
+
+  function pageTool(mode) {
+    let file = null, doc = null;
+    const F = {
+      split: field("Pages", `<input name="pages" type="text" placeholder="e.g. 1-3, 5" autocomplete="off">`, "grow") + field("Output", select("how", [["one", "Selected pages in one PDF"], ["each", "Every page as its own PDF"]], "one")) + `<button class="btn btn-primary" name="go" type="button" disabled>Split PDF</button>`,
+      rotate: field("Rotate", select("deg", [[90, "90° clockwise"], [180, "180°"], [270, "90° anticlockwise"]], 90)) + field("Pages (blank = all)", `<input name="pages" type="text" placeholder="e.g. 2, 4-6" autocomplete="off">`, "grow") + `<button class="btn btn-primary" name="go" type="button" disabled>Rotate PDF</button>`,
+      delete: field("Pages to remove", `<input name="pages" type="text" placeholder="e.g. 2, 7-9" autocomplete="off">`, "grow") + `<button class="btn btn-primary" name="go" type="button" disabled>Remove pages</button>`,
+      images: field("Quality", select("scale", [[1.5, "Standard (108 dpi)"], [2, "High (144 dpi)"], [3, "Very high (216 dpi)"]], 2)) + field("Format", select("fmt", [["image/jpeg", "JPG"], ["image/png", "PNG"]], "image/jpeg")) + `<button class="btn btn-primary" name="go" type="button" disabled>Convert to images</button>`,
+      compress: field("Compression", select("level", [["1.4:0.72", "Recommended"], ["1.1:0.6", "Strong (smaller)"], ["2:0.82", "Light (sharper)"]], "1.4:0.72")) + `<button class="btn btn-primary" name="go" type="button" disabled>Compress PDF</button>`,
+      metadata: `<button class="btn btn-primary" name="go" type="button" disabled>Remove metadata</button>`,
+    }[mode];
+    const LABEL = { split: "Split PDF", rotate: "Rotate PDF", delete: "Remove pages", images: "Convert to images", compress: "Compress PDF", metadata: "Remove metadata" }[mode];
+    const form = controls(F), info = node(`<div class="pdf-info" hidden></div>`), results = list();
+    el.prepend(pdfDrop(false, async ([f]) => {
+      try {
+        file = f; doc = await openPdf(f);
+        let extra = "";
+        if (mode === "metadata") {
+          const m = { Title: doc.getTitle(), Author: doc.getAuthor(), Subject: doc.getSubject(), Keywords: doc.getKeywords(), "Made with": doc.getCreator(), Producer: doc.getProducer(), Created: doc.getCreationDate()?.toLocaleString(), Modified: doc.getModificationDate()?.toLocaleString() };
+          const found = Object.entries(m).filter(([, v]) => v);
+          extra = `<div class="meta-tags">${found.length ? found.map(([k, v]) => `<span class="meta-tag${/Author|Title|Subject/.test(k) ? " warn" : ""}">${esc(k)}: ${esc(String(v).slice(0, 60))}</span>`).join("") : `<span class="meta-tag">No document properties found</span>`}</div>`;
+        }
+        info.innerHTML = `<div class="meta-row"><div class="row-main"><span class="thumb pdf-thumb">PDF</span><div><strong>${esc(f.name)}</strong><p class="dim">${doc.getPageCount()} page${doc.getPageCount() === 1 ? "" : "s"} · ${size(f.size)}</p>${extra}</div></div></div>`;
+        info.hidden = false; form.elements.go.disabled = false;
+      } catch (e) { errorRow(results, f, e); }
+    }));
+    el.append(info, results);
+    form.elements.go.addEventListener("click", async () => {
+      busy(form.elements.go, true, LABEL);
+      try { await run(); } catch (e) { errorRow(results, file, e); }
+      busy(form.elements.go, false, LABEL);
+    });
+    async function run() {
+      const L = await PDFLib(), n = doc.getPageCount();
+      if (mode === "split") {
+        const idx = val(form, "pages").trim() ? parsePages(val(form, "pages"), n) : doc.getPageIndices();
+        if (!idx.length) throw new Error("no pages match. Pages run from 1 to " + n + ".");
+        if (val(form, "how") === "each") {
+          for (const i of idx.slice().reverse()) { const out = await L.PDFDocument.create(); const [p] = await out.copyPages(doc, [i]); out.addPage(p); const b = pdfBlob(await out.save()); row(results, null, b, pdfName(file.name, `-page-${i + 1}`), `Page ${i + 1} · ${size(b.size)}`); }
+        } else {
+          const out = await L.PDFDocument.create(); (await out.copyPages(doc, idx)).forEach((p) => out.addPage(p));
+          const b = pdfBlob(await out.save()); row(results, null, b, pdfName(file.name, "-pages"), `${idx.length} of ${n} pages · ${size(b.size)}`);
+        }
+      }
+      if (mode === "rotate") {
+        const idx = val(form, "pages").trim() ? parsePages(val(form, "pages"), n) : doc.getPageIndices();
+        const d = Number(val(form, "deg"));
+        idx.forEach((i) => { const p = doc.getPage(i); p.setRotation(L.degrees((p.getRotation().angle + d) % 360)); });
+        const b = pdfBlob(await doc.save()); doc = await L.PDFDocument.load(await file.arrayBuffer(), { updateMetadata: false });
+        row(results, null, b, pdfName(file.name, "-rotated"), `${idx.length} page${idx.length === 1 ? "" : "s"} rotated · ${size(b.size)}`);
+      }
+      if (mode === "delete") {
+        const del = parsePages(val(form, "pages"), n);
+        if (!del.length) throw new Error("type the pages to remove, like 2 or 4-6.");
+        if (del.length >= n) throw new Error("that would remove every page.");
+        const keep = doc.getPageIndices().filter((i) => !del.includes(i));
+        const out = await L.PDFDocument.create(); (await out.copyPages(doc, keep)).forEach((p) => out.addPage(p));
+        const b = pdfBlob(await out.save()); row(results, null, b, pdfName(file.name, "-edited"), `Removed ${del.length}, kept ${keep.length} pages · ${size(b.size)}`);
+      }
+      if (mode === "metadata") {
+        ["setTitle", "setAuthor", "setSubject", "setCreator", "setProducer"].forEach((fn) => doc[fn](""));
+        doc.setKeywords([]); doc.setCreationDate(new Date(0)); doc.setModificationDate(new Date(0));
+        const cat = doc.catalog; if (cat.has(L.PDFName.of("Metadata"))) cat.delete(L.PDFName.of("Metadata"));
+        // Remove the Info dictionary entirely so nothing is left behind
+        doc.context.trailerInfo.Info = undefined;
+        const b = pdfBlob(await doc.save({ updateFieldAppearances: false }));
+        doc = await L.PDFDocument.load(await file.arrayBuffer(), { updateMetadata: false });
+        row(results, null, b, pdfName(file.name, "-clean"), `Title, author, software, dates and XMP metadata removed · ${size(b.size)}`);
+      }
+      if (mode === "images" || mode === "compress") {
+        const J = await PDFJS(), pdf = await J.getDocument({ data: new Uint8Array(await file.arrayBuffer()), standardFontDataUrl: PDFJS_CDN + "standard_fonts/", cMapUrl: PDFJS_CDN + "cmaps/", cMapPacked: true }).promise;
+        const [scale, q] = mode === "compress" ? val(form, "level").split(":").map(Number) : [Number(val(form, "scale")), 0.9];
+        const type = mode === "compress" ? "image/jpeg" : val(form, "fmt");
+        const pages = [];
+        for (let step = 1; step <= pdf.numPages; step++) {
+          // Results are added to the top of the list, so images are rendered last page first to read in order.
+          const i = mode === "images" ? pdf.numPages - step + 1 : step;
+          form.elements.go.textContent = `${T.working} ${step}/${pdf.numPages}`;
+          const page = await pdf.getPage(i), vp = page.getViewport({ scale });
+          const c = document.createElement("canvas"); c.width = Math.ceil(vp.width); c.height = Math.ceil(vp.height);
+          const k = c.getContext("2d"); k.fillStyle = "#fff"; k.fillRect(0, 0, c.width, c.height);
+          await page.render({ canvasContext: k, viewport: vp }).promise;
+          const b = await toBlob(c, type, q);
+          if (mode === "images") row(results, null, b, file.name.replace(/\.pdf$/i, "") + `-page-${i}.` + EXT[type], `Page ${i} · ${c.width} × ${c.height} · ${size(b.size)}`);
+          else { const base = page.getViewport({ scale: 1 }); pages.push({ jpg: new Uint8Array(await b.arrayBuffer()), w: c.width, h: c.height, pw: base.width, ph: base.height, margin: 0 }); }
+        }
+        if (mode === "compress") {
+          const out = makePdf(pages);
+          if (out.size >= file.size) row(results, null, file, file.name, `${size(file.size)}. This PDF is already well compressed, so the original is kept.`);
+          else row(results, null, out, pdfName(file.name, "-compressed"), `${size(file.size)} → <strong>${size(out.size)}</strong> (${Math.round((1 - out.size / file.size) * 100)}% ${esc(T.saved)})`);
+        }
+      }
+    }
+  }
+
+  // ---- Encrypt or decrypt a short text with a password (AES-256-GCM, PBKDF2-SHA256 600,000 rounds).
+  // Output is "sc1." + base64url(salt · iv · ciphertext), so it can be pasted into any chat or email.
+  function encryptText() {
+    const form = controls(field("Text", `<textarea name="text" rows="5" placeholder="Type a message, or paste an encrypted one starting with sc1." spellcheck="false"></textarea>`, "grow wide")
+      + field("Password", `<input name="pw" type="password" autocomplete="new-password">`, "grow")
+      + `<label class="check"><input name="show" type="checkbox"> Show</label>`
+      + `<button class="btn btn-primary" name="enc" type="button">Encrypt</button><button class="btn btn-ghost" name="dec" type="button">Decrypt</button>`);
+    form.elements.show.addEventListener("change", () => form.elements.pw.type = form.elements.show.checked ? "text" : "password");
+    const out = node(`<div class="pw-out" hidden><output class="pw-value enc-out"></output><p class="dim pw-strength"></p><div class="tool-actions"><button class="btn btn-primary" type="button" data-a="copy">Copy</button></div></div>`);
+    el.appendChild(out);
+    const b64 = (u) => btoa(String.fromCharCode(...u)).replace(/\+/g, "-").replace(/\//g, "_").replace(/=+$/, "");
+    const unb64 = (s) => Uint8Array.from(atob(s.replace(/-/g, "+").replace(/_/g, "/")), (c) => c.charCodeAt(0));
+    const key = async (pw, salt) => crypto.subtle.deriveKey({ name: "PBKDF2", hash: "SHA-256", salt, iterations: 600000 }, await crypto.subtle.importKey("raw", new TextEncoder().encode(pw), "PBKDF2", false, ["deriveKey"]), { name: "AES-GCM", length: 256 }, false, ["encrypt", "decrypt"]);
+    const show = (text, note) => { out.hidden = false; out.querySelector(".enc-out").textContent = text; out.querySelector(".pw-strength").textContent = note; };
+    form.elements.enc.addEventListener("click", async () => {
+      const pw = val(form, "pw"), text = val(form, "text");
+      if (!text) return show("", "Type the text you want to encrypt.");
+      if (pw.length < 8) return show("", "Use a password of at least 8 characters.");
+      const salt = crypto.getRandomValues(new Uint8Array(16)), iv = crypto.getRandomValues(new Uint8Array(12));
+      const ct = new Uint8Array(await crypto.subtle.encrypt({ name: "AES-GCM", iv }, await key(pw, salt), new TextEncoder().encode(text)));
+      const all = new Uint8Array(28 + ct.length); all.set(salt); all.set(iv, 16); all.set(ct, 28);
+      show("sc1." + b64(all), "Encrypted with AES-256-GCM. Share the password a different way, never in the same message.");
+    });
+    form.elements.dec.addEventListener("click", async () => {
+      const pw = val(form, "pw"), text = val(form, "text").trim();
+      if (!text.startsWith("sc1.")) return show("", "Paste an encrypted message that starts with sc1.");
+      try {
+        const all = unb64(text.slice(4)), salt = all.slice(0, 16), iv = all.slice(16, 28);
+        const pt = await crypto.subtle.decrypt({ name: "AES-GCM", iv }, await key(pw, salt), all.slice(28));
+        show(new TextDecoder().decode(pt), "Decrypted.");
+      } catch { show("", "Couldn't decrypt: wrong password, or the message was changed or cut off."); }
+    });
+    out.addEventListener("click", async (e) => {
+      if (e.target.closest("button")?.dataset.a !== "copy") return;
+      try { await navigator.clipboard.writeText(out.querySelector(".enc-out").textContent); e.target.textContent = "Copied"; setTimeout(() => e.target.textContent = "Copy", 1500); } catch {}
+    });
+  }
+
+  // ---- Password strength: estimates guesses from length, character variety and common patterns.
+  // Nothing is sent anywhere; the password never leaves this field.
+  const COMMON = "123456 password 123456789 12345678 12345 qwerty 1234567 111111 123123 abc123 password1 1234 iloveyou 1q2w3e4r 000000 qwerty123 zaq12wsx dragon sunshine princess letmein 654321 monkey 27653 1qaz2wsx 123321 qwertyuiop superman asdfghjkl 112233 football baseball welcome admin login master hello freedom whatever trustno1 shadow michael charlie jordan liverpool chelsea arsenal india pakistan bangladesh indonesia brasil mexico ferrari samsung google computer internet 987654321 secret starwars pokemon naruto loveyou lovely flower anything 666666 888888 121212 7777777 159753 147258369 mustang killer hunter ranger buster soccer hockey batman thomas andrew daniel jessica ashley nicole tigger summer winter spring autumn".split(" ");
+  function passwordStrength() {
+    const form = controls(field("Password to check", `<input name="pw" type="password" autocomplete="off" spellcheck="false">`, "grow wide") + `<label class="check"><input name="show" type="checkbox"> Show</label>`);
+    form.elements.show.addEventListener("change", () => form.elements.pw.type = form.elements.show.checked ? "text" : "password");
+    const out = node(`<div class="pw-out"><div class="meter"><span></span></div><p class="pw-verdict"><strong>Type a password to check it.</strong></p><ul class="pw-notes dim"></ul></div>`);
+    el.appendChild(out);
+    const human = (s) => s < 1 ? "instantly" : s < 60 ? `${Math.round(s)} seconds` : s < 3600 ? `${Math.round(s / 60)} minutes` : s < 86400 ? `${Math.round(s / 3600)} hours` : s < 31536000 ? `${Math.round(s / 86400)} days` : s < 3.15e9 ? `${Math.round(s / 31536000)} years` : "centuries";
+    form.addEventListener("input", () => {
+      const pw = val(form, "pw"), notes = [];
+      if (!pw) { out.querySelector(".pw-verdict").innerHTML = "<strong>Type a password to check it.</strong>"; out.querySelector(".pw-notes").innerHTML = ""; out.querySelector(".meter span").style.width = "0"; return; }
+      let pool = 0;
+      if (/[a-z]/.test(pw)) pool += 26; if (/[A-Z]/.test(pw)) pool += 26; if (/\d/.test(pw)) pool += 10; if (/[^a-zA-Z0-9]/.test(pw)) pool += 33;
+      let bits = pw.length * Math.log2(Math.max(pool, 1));
+      const low = pw.toLowerCase(), base = low.replace(/[^a-z]/g, "").replace(/0/g, "o");
+      if (COMMON.includes(low) || COMMON.includes(low.replace(/[\d!@#$%^&*]+$/, ""))) { bits = Math.min(bits, 10); notes.push("It's one of the most common passwords, or one with a number or symbol added. These are guessed first."); }
+      if (/(.)\1{2,}/.test(pw)) { bits -= 8; notes.push("Repeated characters (like aaa or 111) make it easier to guess."); }
+      if (/(0123|1234|2345|3456|4567|5678|6789|abcd|bcde|qwer|wert|asdf|sdfg|zxcv)/i.test(pw)) { bits -= 10; notes.push("Sequences like 1234, abcd or qwerty are tried early."); }
+      if (/(19|20)\d{2}/.test(pw)) { bits -= 6; notes.push("It contains a year. Birthdays and years are common guesses."); }
+      if (/^[A-Z][a-z]+\d+[!@#$%]?$/.test(pw)) { bits -= 10; notes.push("A capital first letter, a word, then numbers is the most predictable pattern."); }
+      if (pw.length < 12) notes.push("It's short. Aim for at least 16 characters, or 5 random words.");
+      if (pool <= 26 && pw.length < 20) notes.push("Mix in other character types, or make it longer.");
+      bits = Math.max(Math.min(8, pw.length * 2), bits);
+      const offline = Math.pow(2, bits) / 2 / 1e10, online = Math.pow(2, bits) / 2 / 100;
+      const [label, pct, col] = bits < 28 ? ["Very weak", 10, "#e5484d"] : bits < 40 ? ["Weak", 30, "#e5484d"] : bits < 60 ? ["Fair", 55, "#d9822b"] : bits < 80 ? ["Strong", 80, "#46a758"] : ["Very strong", 100, "#46a758"];
+      const bar = out.querySelector(".meter span"); bar.style.width = pct + "%"; bar.style.background = col;
+      out.querySelector(".pw-verdict").innerHTML = `<strong>${label}</strong> · about ${Math.round(bits)} bits. Cracking it from a stolen password database: ${human(offline)}. Guessing it online: ${human(online)}.`;
+      out.querySelector(".pw-notes").innerHTML = (notes.length ? notes : ["No common weaknesses found. Make sure you don't use it anywhere else."]).map((n) => `<li>${esc(n)}</li>`).join("");
+    });
+  }
+
+  // ---- Hash / checksum: SHA-256, SHA-1 and SHA-512 via Web Crypto, MD5 by a small implementation below.
+  function md5(bytes) {
+    const K = new Uint32Array(64).map((_, i) => Math.floor(Math.abs(Math.sin(i + 1)) * 2 ** 32) >>> 0);
+    const S = [7, 12, 17, 22, 5, 9, 14, 20, 4, 11, 16, 23, 6, 10, 15, 21];
+    const n = bytes.length, total = (((n + 8) >>> 6) + 1) * 64, m = new Uint8Array(total);
+    m.set(bytes); m[n] = 0x80; const dv = new DataView(m.buffer);
+    dv.setUint32(total - 8, (n * 8) >>> 0, true); dv.setUint32(total - 4, Math.floor(n / 2 ** 29), true);
+    let a0 = 0x67452301, b0 = 0xefcdab89, c0 = 0x98badcfe, d0 = 0x10325476;
+    for (let off = 0; off < total; off += 64) {
+      let A = a0, B = b0, C = c0, D = d0;
+      for (let i = 0; i < 64; i++) {
+        let F, g, r = i >> 4;
+        if (r === 0) { F = (B & C) | (~B & D); g = i; } else if (r === 1) { F = (D & B) | (~D & C); g = (5 * i + 1) % 16; }
+        else if (r === 2) { F = B ^ C ^ D; g = (3 * i + 5) % 16; } else { F = C ^ (B | ~D); g = (7 * i) % 16; }
+        F = (F + A + K[i] + dv.getUint32(off + g * 4, true)) >>> 0;
+        A = D; D = C; C = B; const s = S[r * 4 + (i % 4)]; B = (B + ((F << s) | (F >>> (32 - s)))) >>> 0;
+      }
+      a0 = (a0 + A) >>> 0; b0 = (b0 + B) >>> 0; c0 = (c0 + C) >>> 0; d0 = (d0 + D) >>> 0;
+    }
+    return [a0, b0, c0, d0].map((x) => [0, 8, 16, 24].map((s) => ((x >>> s) & 255).toString(16).padStart(2, "0")).join("")).join("");
+  }
+  function hashTool() {
+    const form = controls(field("Text", `<textarea name="text" rows="3" placeholder="Type or paste text, or choose a file below" spellcheck="false"></textarea>`, "grow wide")
+      + field("Compare with (optional)", `<input name="cmp" type="text" placeholder="Paste an expected checksum to verify" autocomplete="off" spellcheck="false">`, "grow wide"));
+    const z = node(`<div class="meta-drop">${PDF_ICON}<p><strong>Drop a file here</strong> ${esc(T.or)}</p><label class="btn btn-primary">Choose a file<input type="file" hidden></label><p class="dim">Any file. It's hashed on this device and never uploaded.</p></div>`);
+    const out = node(`<div class="hash-out"></div>`);
+    el.append(z, out);
+    let last = null;
+    const hex = (buf) => [...new Uint8Array(buf)].map((b) => b.toString(16).padStart(2, "0")).join("");
+    async function compute(bytes, label) {
+      last = { bytes, label };
+      const res = { "MD5": md5(bytes), "SHA-1": hex(await crypto.subtle.digest("SHA-1", bytes)), "SHA-256": hex(await crypto.subtle.digest("SHA-256", bytes)), "SHA-512": hex(await crypto.subtle.digest("SHA-512", bytes)) };
+      const cmp = val(form, "cmp").trim().toLowerCase().replace(/\s/g, "");
+      out.innerHTML = `<p class="dim">${esc(label)}</p>` + Object.entries(res).map(([k, v]) => `<div class="hash-row${cmp && cmp === v ? " match" : ""}"><span>${k}</span><code>${v}</code><button class="icon-btn" type="button" data-v="${v}" aria-label="Copy ${k}">⧉</button></div>`).join("")
+        + (cmp ? `<p class="${Object.values(res).includes(cmp) ? "ok" : "bad"}"><strong>${Object.values(res).includes(cmp) ? "✓ Match: the file or text is identical." : "✗ No match: the file or text is different, or the checksum is for another algorithm."}</strong></p>` : "");
+    }
+    form.elements.text.addEventListener("input", () => compute(new TextEncoder().encode(val(form, "text")), "Text · UTF-8"));
+    form.elements.cmp.addEventListener("input", () => last && compute(last.bytes, last.label));
+    const input = z.querySelector("input");
+    const onFile = async (f) => { out.innerHTML = `<p class="dim">${esc(T.working)}</p>`; compute(new Uint8Array(await f.arrayBuffer()), `${f.name} · ${size(f.size)}`); };
+    input.addEventListener("change", () => { if (input.files[0]) onFile(input.files[0]); input.value = ""; });
+    ["dragenter", "dragover"].forEach((t) => z.addEventListener(t, (e) => { e.preventDefault(); z.classList.add("over"); }));
+    ["dragleave", "drop"].forEach((t) => z.addEventListener(t, (e) => { e.preventDefault(); z.classList.remove("over"); }));
+    z.addEventListener("drop", (e) => { if (e.dataTransfer.files[0]) onFile(e.dataTransfer.files[0]); });
+    out.addEventListener("click", async (e) => { const v = e.target.closest("button")?.dataset.v; if (v) try { await navigator.clipboard.writeText(v); e.target.textContent = "✓"; setTimeout(() => e.target.textContent = "⧉", 1200); } catch {} });
+  }
+
+  TOOLS[kind.replace(/-(\w)/g, (_, c) => c.toUpperCase())]?.();
 })();

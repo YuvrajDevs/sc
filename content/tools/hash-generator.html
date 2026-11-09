@@ -1,0 +1,76 @@
+<!--meta {
+  "title": "SHA-256 and MD5 checksum: hash text or files, free",
+  "navTitle": "Hash and checksum",
+  "description": "Get the SHA-256, SHA-1, SHA-512 and MD5 checksum of any file or text, and verify a download matches. Runs in your browser; files are never uploaded.",
+  "keyword": "sha-256 checksum",
+  "alsoTargets": [
+    "hash generator",
+    "md5 checksum",
+    "verify file checksum",
+    "sha256 hash generator online"
+  ],
+  "summary": "Checksums for files and text, and verify downloads.",
+  "date": "2026-11-08",
+  "readMins": 2,
+  "nav": "guides",
+  "faq": [
+    {
+      "q": "How do I check a file's SHA-256 checksum?",
+      "a": "Drop the file above and read the SHA-256 line. To verify it, paste the expected checksum into the compare box and look for the match message."
+    },
+    {
+      "q": "What's the difference between hashing and encryption?",
+      "a": "A hash is a one-way fingerprint that can't be turned back into the file. Encryption scrambles data so it can be unlocked with a key or password."
+    },
+    {
+      "q": "Is MD5 still safe?",
+      "a": "Not for security: it can be deliberately forged. It's still fine for spotting accidental corruption. Use SHA-256 to verify downloads."
+    },
+    {
+      "q": "Is my file uploaded?",
+      "a": "No. It's hashed in your browser on your own device, however large it is."
+    }
+  ],
+  "steps": [
+    "Find the checksum on the publisher's download page, usually labelled SHA-256.",
+    "Paste it into Compare with.",
+    "Drop the downloaded file above.",
+    "A ✓ match means the file is exactly what the publisher released."
+  ],
+  "category": "SecurityApplication",
+  "features": [
+    "Runs entirely in your browser",
+    "Files are never uploaded",
+    "No sign-up",
+    "No watermark",
+    "Free"
+  ]
+} -->
+<section class="panel">
+  <div class="panel-inner wrap">
+    <article class="article">
+      <div class="meta"><a href="{{root}}tools/">Free tools</a> · Runs in your browser</div>
+      <h1>SHA-256 and MD5 checksum generator</h1>
+      <p class="lead">Check that a download hasn't been changed or corrupted, or get the fingerprint of any file or text. Paste an expected checksum to compare automatically.</p>
+      <div class="tool" data-tool="hash" data-opt='{}'></div>
+      <div class="answer">
+        <div class="eyebrow">Quick answer</div>
+        <p>To get a file's checksum, drop it above; you'll see its MD5, SHA-1, SHA-256 and SHA-512 hashes. To verify a download, paste the checksum the publisher gives into the compare box; a green match means the file is identical. Nothing is uploaded.</p>
+      </div>
+      <div class="prose">
+<h2>How to verify a download</h2>
+<ol><li>Find the checksum on the publisher's download page, usually labelled SHA-256.</li><li>Paste it into <strong>Compare with</strong>.</li>
+<li>Drop the downloaded file above.</li><li>A ✓ match means the file is exactly what the publisher released.</li></ol>
+<h2>Which algorithm?</h2>
+<div class="table-wrap"><table><thead><tr><th>Algorithm</th><th>Use today</th></tr></thead><tbody>
+<tr><td>SHA-256</td><td>The standard choice for verifying downloads</td></tr><tr><td>SHA-512</td><td>Also secure; longer output</td></tr>
+<tr><td>SHA-1</td><td>Legacy; not safe against deliberate tampering</td></tr><tr><td>MD5</td><td>Legacy; fine for spotting accidental corruption only</td></tr></tbody></table></div>
+{{cta}}
+<h2>Private by design</h2><p>Files and text are hashed in your browser with its built-in Web Crypto (and a small MD5 routine), so even large files never leave your device. Encryption is a different thing from hashing: to lock a file with a password, use <a href="{{root}}tools/encrypt-file">encrypt a file</a>.</p>
+        {{faq}}
+      </div>
+      {{related}}
+    </article>
+  </div>
+</section>
+<script src="{{root}}js/tools.js" defer></script>

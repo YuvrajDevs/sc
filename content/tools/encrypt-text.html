@@ -1,0 +1,75 @@
+<!--meta {
+  "title": "Encrypt text with a password: AES-256, free and private",
+  "navTitle": "Encrypt text",
+  "description": "Turn a message into unreadable text with a password, and decrypt it again. AES-256-GCM in your browser. Free, and nothing you type is ever sent anywhere.",
+  "keyword": "encrypt text",
+  "alsoTargets": [
+    "encrypt message with password",
+    "text encryption online",
+    "aes encrypt text",
+    "decrypt text online"
+  ],
+  "summary": "Lock a message with a password, AES-256-GCM.",
+  "date": "2026-11-08",
+  "readMins": 2,
+  "nav": "guides",
+  "faq": [
+    {
+      "q": "Is it safe to encrypt text online?",
+      "a": "Here, yes: the text is encrypted in your browser and never sent anywhere. Be careful with sites that process your text on their servers."
+    },
+    {
+      "q": "What encryption does it use?",
+      "a": "AES-256-GCM, with the key derived from your password using PBKDF2-SHA256 and 600,000 iterations with a random salt."
+    },
+    {
+      "q": "What if I forget the password?",
+      "a": "The message can't be decrypted. There's no reset or backdoor, which is what keeps it private."
+    },
+    {
+      "q": "Can the recipient decrypt it on their phone?",
+      "a": "Yes. They open this page in any modern browser, paste the text, type the password and tap Decrypt."
+    }
+  ],
+  "steps": [
+    "Type or paste your message.",
+    "Choose a strong password; a random passphrase is easy to share by phone.",
+    "Tap Encrypt and copy the result.",
+    "Send it by chat or email, and share the password a different way.",
+    "To read it, paste the encrypted text here, type the password and tap Decrypt."
+  ],
+  "category": "SecurityApplication",
+  "features": [
+    "Runs entirely in your browser",
+    "Files are never uploaded",
+    "No sign-up",
+    "No watermark",
+    "Free"
+  ]
+} -->
+<section class="panel">
+  <div class="panel-inner wrap">
+    <article class="article">
+      <div class="meta"><a href="{{root}}tools/">Free tools</a> · Runs in your browser</div>
+      <h1>Encrypt text with a password</h1>
+      <p class="lead">Send a private note, an address or a code through any chat or email as scrambled text that only someone with the password can read.</p>
+      <div class="tool" data-tool="encrypt-text" data-opt='{}'></div>
+      <div class="answer">
+        <div class="eyebrow">Quick answer</div>
+        <p>To encrypt text, type your message and a password above and tap Encrypt. Copy the result, which starts with sc1., and send it anywhere. The recipient pastes it here with the same password and taps Decrypt. Encryption uses AES-256-GCM in your browser.</p>
+      </div>
+      <div class="prose">
+<h2>How to use it</h2>
+<ol><li>Type or paste your message.</li><li>Choose a strong password; a <a href="{{root}}tools/password-generator">random passphrase</a> is easy to share by phone.</li>
+<li>Tap <strong>Encrypt</strong> and copy the result.</li><li>Send it by chat or email, and share the password a different way.</li><li>To read it, paste the encrypted text here, type the password and tap <strong>Decrypt</strong>.</li></ol>
+<h2>How secure is it?</h2>
+<p>Your password is stretched into a key with PBKDF2-SHA256 over 600,000 rounds and a random salt, and the message is encrypted with AES-256-GCM, which also detects any change to the encrypted text. With a strong password, the message can't realistically be read without it. A weak password is the main risk, so check it with the <a href="{{root}}tools/password-strength-checker">password strength checker</a>.</p>
+{{cta}}
+<h2>Private by design</h2><p>Everything happens in this browser tab using your browser's built-in Web Crypto. Your message and password are never sent to a server or stored. For files instead of text, use <a href="{{root}}tools/encrypt-file">encrypt a file</a>.</p>
+        {{faq}}
+      </div>
+      {{related}}
+    </article>
+  </div>
+</section>
+<script src="{{root}}js/tools.js" defer></script>

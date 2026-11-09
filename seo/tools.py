@@ -422,6 +422,206 @@ tool(slug="wifi-qr-code", tool="qr", opt={"type": "wifi"}, kw="wifi qr code", al
         {"q": "Which security type should I choose?", "a": "Choose WPA for almost every modern router; it covers WPA, WPA2 and WPA3. Choose WEP only for very old equipment, and None for open networks."},
      ])
 
+# ---------------------------------------------------------------- PDF and security tools (added 2026-11-09)
+PDFPRIV = ("<h2>Private by design</h2><p>Most PDF websites upload your document to their servers to process it. This one doesn't. "
+           "The PDF is opened, edited and saved inside this browser tab, on your own device, using open-source PDF libraries the page loads. "
+           "Contracts, bank statements, ID scans and medical letters never leave your phone or computer. No sign-up, no watermark, no file limit.</p>")
+def pdftool(**k):
+    k.setdefault("nav", k["h1"]); tool(**k)
+
+pdftool(slug="merge-pdf", tool="merge-pdf", opt={}, kw="merge pdf", also=["combine pdf files", "merge pdf online free", "join pdf", "merge pdf without uploading"],
+  title="Merge PDF: combine PDF files free, without uploading", h1="Merge PDF",
+  desc="Combine several PDF files into one, in the order you choose. Free, no sign-up or watermark, and your documents are merged on your device, never uploaded.",
+  summary="Combine PDFs into one file, in your order.",
+  lead="Join several PDFs into a single document: statements, scans, forms and attachments. Put them in order, merge, done. Nothing is uploaded.",
+  answer="To merge PDF files, choose two or more PDFs above, use the arrows to set the order, and tap Merge PDFs. You get one PDF with every page, in that order. The merge happens on your device, so your documents are never uploaded.",
+  body="""<h2>How to merge PDFs</h2>
+<ol><li>Choose or drop two or more PDF files.</li><li>Use ↑ and ↓ to put them in order, and × to remove one.</li><li>Tap <strong>Merge PDFs</strong> and download <em>merged.pdf</em>.</li></ol>
+<h2>Good to know</h2>
+<ul><li>Pages keep their original size, orientation and quality; nothing is re-compressed.</li>
+<li>Password-protected PDFs can't be merged until the password is removed in the app that created them.</li>
+<li>To merge photos rather than PDFs, use <a href="{{root}}tools/jpg-to-pdf">JPG to PDF</a>. To drop pages first, use <a href="{{root}}tools/delete-pdf-pages">delete PDF pages</a>.</li></ul>
+{{cta}}
+""" + PDFPRIV + """<p>Merged documents often contain personal details. Keep them in an encrypted place afterwards; Sealcloak's <a href="{{root}}features/encryption">vault</a> keeps PDFs out of your Downloads folder and cloud.</p>""",
+  faq=[{"q": "Is it safe to merge PDFs here?", "a": "Yes. The PDFs are merged in your browser on your own device and never sent to a server, so nobody else can see or keep them."},
+       {"q": "Is there a limit on files or pages?", "a": "No fixed limit. Very large documents depend on your device's memory, but dozens of files and hundreds of pages work on a normal computer or phone."},
+       {"q": "Will merging reduce quality?", "a": "No. Pages are copied as they are, so text, images and links stay exactly the same as in the original files."},
+       {"q": "Can I merge PDFs on my phone?", "a": "Yes. It works in Chrome, Samsung Internet, Firefox and Safari on Android and iPhone."}])
+
+pdftool(slug="split-pdf", tool="split-pdf", opt={}, kw="split pdf", also=["extract pages from pdf", "split pdf into pages", "separate pdf pages", "split pdf online free"],
+  title="Split PDF: extract pages or save each page, free and private", h1="Split PDF",
+  desc="Extract the pages you need from a PDF, or save every page as its own file. Free, works on your phone, and the PDF is never uploaded anywhere.",
+  summary="Extract pages, or save every page separately.",
+  lead="Pull out just the pages you need, like one bank statement page or a single signed form, or split a PDF into separate one-page files.",
+  answer="To split a PDF, choose it above, type the pages you want (for example 1-3, 5), choose whether to keep them in one PDF or save each page separately, and tap Split PDF. The PDF is split on your device and never uploaded.",
+  body="""<h2>How to split a PDF</h2>
+<ol><li>Choose the PDF. You'll see how many pages it has.</li><li>Type pages and ranges, such as <code>2</code>, <code>1-3, 7</code> or <code>5-</code> for page 5 to the end. Leave it blank for all pages.</li>
+<li>Choose <strong>Selected pages in one PDF</strong> or <strong>Every page as its own PDF</strong>.</li><li>Tap <strong>Split PDF</strong> and download the results.</li></ol>
+<h2>When it's useful</h2>
+<ul><li>Sending only the relevant page of a long statement or contract.</li><li>Uploading a single page to a form that limits file size.</li>
+<li>Sharing part of a document without exposing the rest of your personal details.</li></ul>
+{{cta}}
+""" + PDFPRIV + """<p>Need the opposite? <a href="{{root}}tools/merge-pdf">Merge PDFs</a> into one. Want pages as images instead? Try <a href="{{root}}tools/pdf-to-jpg">PDF to JPG</a>.</p>""",
+  faq=[{"q": "How do I extract one page from a PDF?", "a": "Choose the PDF, type the page number in the Pages box, keep 'Selected pages in one PDF', and tap Split PDF. You get a PDF with just that page."},
+       {"q": "Can I split every page into a separate file?", "a": "Yes. Choose 'Every page as its own PDF' and leave Pages blank. Each page becomes its own PDF with its own download button."},
+       {"q": "Does splitting reduce quality?", "a": "No. Pages are copied unchanged, so text stays selectable and images keep their quality."},
+       {"q": "Is my PDF uploaded?", "a": "No. Splitting happens in your browser on your own device, so the document never leaves it."}])
+
+pdftool(slug="rotate-pdf", tool="rotate-pdf", opt={}, kw="rotate pdf", also=["rotate pdf pages", "rotate pdf and save", "rotate pdf online free", "fix upside down pdf"],
+  title="Rotate PDF pages and save them permanently, free", h1="Rotate PDF",
+  desc="Turn sideways or upside-down PDF pages the right way and save it permanently. Rotate all pages or just some. Free, private, no upload.",
+  summary="Fix sideways and upside-down PDF pages for good.",
+  lead="Scanned a page sideways, or got a PDF that opens upside down? Rotate all pages or just the wrong ones, and save the fix permanently.",
+  answer="To rotate a PDF, choose it above, pick 90° clockwise, 180° or 90° anticlockwise, type the pages to turn (or leave blank for all), and tap Rotate PDF. The saved file stays rotated in every app. Nothing is uploaded.",
+  body="""<h2>How to rotate pages</h2>
+<ol><li>Choose the PDF.</li><li>Pick the rotation: 90° clockwise, 180° (upside down) or 90° anticlockwise.</li>
+<li>Type the pages that need turning, like <code>2, 4-6</code>, or leave it blank to rotate every page.</li><li>Tap <strong>Rotate PDF</strong> and download.</li></ol>
+<h2>Rotate in a viewer vs rotate the file</h2>
+<p>Most PDF viewers can turn a page on screen, but the next person who opens the file sees it sideways again. Rotating here changes the page itself, so it opens the right way everywhere: email, print, upload portals and phones.</p>
+<p>For multi-page scans where only some pages are wrong, rotate just those pages. If a whole scan is sideways, leave Pages blank.</p>
+{{cta}}
+""" + PDFPRIV + """<p>Scanning documents on your phone? Sealcloak's <a href="{{root}}features/private-camera-and-scanner">document scanner</a> makes PDFs inside an encrypted vault.</p>""",
+  faq=[{"q": "How do I rotate a PDF and save it?", "a": "Choose the PDF above, pick the rotation and pages, tap Rotate PDF and download. The new file stays rotated in every app and when printed."},
+       {"q": "Can I rotate only one page?", "a": "Yes. Type that page number in the Pages box. Other pages stay as they are."},
+       {"q": "Does rotating change quality?", "a": "No. Only the page orientation changes; the content is untouched and text stays selectable."},
+       {"q": "Is the PDF uploaded?", "a": "No. It's rotated in your browser on your own device and never sent anywhere."}])
+
+pdftool(slug="delete-pdf-pages", tool="delete-pdf-pages", opt={}, kw="delete pages from pdf", also=["remove pages from pdf", "delete pdf pages online free", "remove blank page pdf"],
+  title="Delete pages from a PDF: remove pages free, no upload", h1="Delete pages from a PDF",
+  desc="Remove blank, duplicate or private pages from a PDF before you share it. Type the pages to delete and download. Free, and the PDF stays on your device.",
+  summary="Remove unwanted or private pages before sharing.",
+  lead="Drop blank scans, duplicate pages, or pages with details you don't want to share, and send a cleaner PDF.",
+  answer="To delete pages from a PDF, choose it above, type the pages to remove (for example 2, 7-9), and tap Remove pages. You get a new PDF without them; the original isn't changed. Everything happens on your device.",
+  body="""<h2>How to remove pages</h2>
+<ol><li>Choose the PDF; you'll see its page count.</li><li>Type the pages to remove, such as <code>3</code> or <code>2, 7-9</code>.</li><li>Tap <strong>Remove pages</strong> and download the edited PDF.</li></ol>
+<h2>Share only what's needed</h2>
+<p>Documents often carry more than the recipient needs. A rental application rarely needs every page of a bank statement; a form might only need the signed page. Removing extra pages is a simple privacy habit: less information shared is less information that can leak, be forwarded or be misused.</p>
+<p>To keep specific pages instead of deleting, use <a href="{{root}}tools/split-pdf">split PDF</a>.</p>
+{{cta}}
+""" + PDFPRIV + """<p>Before sharing, also <a href="{{root}}tools/remove-pdf-metadata">remove the PDF's hidden metadata</a>, such as author name and software.</p>""",
+  faq=[{"q": "How do I delete a page from a PDF for free?", "a": "Choose the PDF above, type the page number in 'Pages to remove' and tap Remove pages. Download the new PDF without that page."},
+       {"q": "Can I delete several pages at once?", "a": "Yes. Type pages and ranges separated by commas, such as 2, 5, 7-9."},
+       {"q": "Is the original PDF changed?", "a": "No. You download a new copy without the removed pages; your original file stays as it was."},
+       {"q": "Is my PDF uploaded?", "a": "No. Pages are removed in your browser on your own device, and the PDF never leaves it."}])
+
+pdftool(slug="pdf-to-jpg", tool="pdf-to-jpg", opt={}, kw="pdf to jpg", also=["convert pdf to jpg", "pdf to image", "pdf to png", "save pdf page as image"],
+  title="PDF to JPG: turn PDF pages into images, free and private", h1="PDF to JPG",
+  desc="Convert each page of a PDF into a sharp JPG or PNG image, ready to share or upload. Free, no sign-up, and the PDF is converted on your device.",
+  summary="Turn PDF pages into JPG or PNG images.",
+  lead="Some forms and apps only accept images. Turn each page of a PDF into a high-quality JPG or PNG in a couple of taps.",
+  answer="To convert a PDF to JPG, choose it above, pick the quality and JPG or PNG, and tap Convert to images. Each page becomes its own image with a download button. The conversion happens on your device, not on a server.",
+  body="""<h2>How to convert</h2>
+<ol><li>Choose the PDF.</li><li>Pick a quality: Standard for screens, High for most uses, Very high for printing or zooming.</li>
+<li>Choose JPG (smaller) or PNG (sharpest text).</li><li>Tap <strong>Convert to images</strong> and download the pages you need.</li></ol>
+<h2>Which format to choose</h2>
+<ul><li><strong>JPG:</strong> smaller files, best for scans and photos, accepted everywhere.</li><li><strong>PNG:</strong> crisp text and lines, larger files.</li></ul>
+<p>If a form needs a small file, run the image through <a href="{{root}}tools/compress-image">compress image</a> afterwards. To go the other way, use <a href="{{root}}tools/jpg-to-pdf">JPG to PDF</a>.</p>
+{{cta}}
+""" + PDFPRIV,
+  faq=[{"q": "How do I convert a PDF to JPG for free?", "a": "Choose the PDF above, pick the quality and format, and tap Convert to images. Each page becomes a JPG you can download."},
+       {"q": "Can I convert just one page?", "a": "Every page is converted, and each has its own download button, so download only the ones you need. Or split the PDF first."},
+       {"q": "Why does the text look blurry?", "a": "Choose High or Very high quality, or PNG, for sharper text. Standard quality is sized for phone screens."},
+       {"q": "Is my PDF uploaded?", "a": "No. Pages are rendered into images in your browser on your own device."}])
+
+pdftool(slug="compress-pdf", tool="compress-pdf", opt={}, kw="compress pdf", also=["reduce pdf size", "compress pdf online free", "pdf compressor", "make pdf smaller for email"],
+  title="Compress PDF: reduce PDF file size, free and without upload", h1="Compress PDF",
+  desc="Shrink large PDFs, especially scans and photo-heavy files, so they fit email and upload limits. Free, works on your phone, and nothing is uploaded.",
+  summary="Make scanned and photo-heavy PDFs much smaller.",
+  lead="Scanned documents and photo-heavy PDFs can be enormous. Compress them so they fit email attachments and upload limits on forms and portals.",
+  answer="To compress a PDF, choose it above, keep Recommended compression (or Strong for smaller files), and tap Compress PDF. You'll see the new size; if the PDF is already compact, the original is kept. Everything happens on your device.",
+  body="""<h2>How it works</h2>
+<p>The tool redraws each page as a well-compressed image and builds a new, smaller PDF. That's exactly what shrinks scans and photo-heavy documents the most, often by 50 to 90%. The trade-off is that text in the compressed copy can't be selected or searched, so keep the original for editing.</p>
+<h2>Choose a level</h2>
+<ul><li><strong>Recommended:</strong> good balance, readable on any screen and printable.</li><li><strong>Strong:</strong> smallest files, fine for viewing on screens.</li>
+<li><strong>Light:</strong> sharper pages, smaller savings.</li></ul>
+<h2>Steps</h2>
+<ol><li>Choose the PDF.</li><li>Pick a compression level.</li><li>Tap <strong>Compress PDF</strong>, check the new size, and download.</li></ol>
+{{cta}}
+""" + PDFPRIV + """<p>If a portal needs a specific size, try Strong, or <a href="{{root}}tools/delete-pdf-pages">remove pages</a> you don't need first.</p>""",
+  faq=[{"q": "How do I reduce a PDF's size for email?", "a": "Choose the PDF above and tap Compress PDF. Scans often shrink by more than half; if it's still too big, use Strong compression."},
+       {"q": "Will compression make my PDF blurry?", "a": "Recommended keeps pages clear for reading and printing. Strong is softer but still readable on screen. Light keeps the most detail."},
+       {"q": "Why can't I select text after compressing?", "a": "Pages are rebuilt as images to save the most space. Keep your original PDF if you need searchable or editable text."},
+       {"q": "Is my PDF uploaded?", "a": "No. It's compressed in your browser on your own device and never leaves it."}])
+
+pdftool(slug="remove-pdf-metadata", tool="pdf-metadata", opt={}, kw="remove pdf metadata", also=["pdf metadata remover", "remove author from pdf", "pdf properties remove", "clean pdf metadata"],
+  title="Remove PDF metadata: author, software and dates, free", h1="Remove PDF metadata",
+  desc="See and remove the hidden details inside a PDF, such as author name, title, software and dates, before you share it. Free, and the PDF is never uploaded.",
+  summary="Strip author, software and dates from a PDF.",
+  lead="PDFs quietly carry details about who made them: your name as author, your organisation, the software used, and when it was created and edited. See them here, and remove them.",
+  answer="To remove PDF metadata, choose the PDF above. You'll see its hidden properties, such as author, title and software. Tap Remove metadata to download a clean copy without them. The PDF is cleaned on your device and never uploaded.",
+  body="""<h2>What a PDF can reveal</h2>
+<ul><li><strong>Author:</strong> often your full name or your computer's user name.</li><li><strong>Title and subject:</strong> sometimes an old draft name or internal reference.</li>
+<li><strong>Creator and producer:</strong> the app and version that made it.</li><li><strong>Created and modified dates</strong>, to the second.</li>
+<li><strong>XMP metadata:</strong> a second, hidden copy of these details, plus editing history in some files.</li></ul>
+<h2>When to clean a PDF</h2>
+<ul><li>Sending a CV, a complaint or a tip where your name or employer shouldn't appear in the file.</li><li>Publishing documents online.</li>
+<li>Sharing forms or letters drafted on a work computer.</li></ul>
+<h2>Steps</h2>
+<ol><li>Choose the PDF and review what it contains.</li><li>Tap <strong>Remove metadata</strong>.</li><li>Download the clean copy and share that one.</li></ol>
+{{cta}}
+""" + PDFPRIV + """<p>Photos carry hidden data too: <a href="{{root}}tools/remove-photo-location">remove the location from photos</a> before sharing them.</p>""",
+  faq=[{"q": "How do I remove the author name from a PDF?", "a": "Choose the PDF above and tap Remove metadata. The clean copy has no author, title, subject, software or dates in its properties."},
+       {"q": "Does removing metadata change the document?", "a": "No. Pages, text and images stay exactly the same; only the hidden properties are removed."},
+       {"q": "Does it remove text I can see on the page?", "a": "No. Metadata is the hidden information about the file. Names printed on the page itself stay; remove those pages or edit the document if needed."},
+       {"q": "Is my PDF uploaded?", "a": "No. It's cleaned in your browser on your own device and never sent to a server."}])
+
+tool(slug="encrypt-text", tool="encrypt-text", opt={}, kw="encrypt text", also=["encrypt message with password", "text encryption online", "aes encrypt text", "decrypt text online"],
+  title="Encrypt text with a password: AES-256, free and private", nav="Encrypt text", h1="Encrypt text with a password",
+  desc="Turn a message into unreadable text with a password, and decrypt it again. AES-256-GCM in your browser. Free, and nothing you type is ever sent anywhere.",
+  summary="Lock a message with a password, AES-256-GCM.",
+  lead="Send a private note, an address or a code through any chat or email as scrambled text that only someone with the password can read.",
+  answer="To encrypt text, type your message and a password above and tap Encrypt. Copy the result, which starts with sc1., and send it anywhere. The recipient pastes it here with the same password and taps Decrypt. Encryption uses AES-256-GCM in your browser.",
+  body="""<h2>How to use it</h2>
+<ol><li>Type or paste your message.</li><li>Choose a strong password; a <a href="{{root}}tools/password-generator">random passphrase</a> is easy to share by phone.</li>
+<li>Tap <strong>Encrypt</strong> and copy the result.</li><li>Send it by chat or email, and share the password a different way.</li><li>To read it, paste the encrypted text here, type the password and tap <strong>Decrypt</strong>.</li></ol>
+<h2>How secure is it?</h2>
+<p>Your password is stretched into a key with PBKDF2-SHA256 over 600,000 rounds and a random salt, and the message is encrypted with AES-256-GCM, which also detects any change to the encrypted text. With a strong password, the message can't realistically be read without it. A weak password is the main risk, so check it with the <a href="{{root}}tools/password-strength-checker">password strength checker</a>.</p>
+{{cta}}
+<h2>Private by design</h2><p>Everything happens in this browser tab using your browser's built-in Web Crypto. Your message and password are never sent to a server or stored. For files instead of text, use <a href="{{root}}tools/encrypt-file">encrypt a file</a>.</p>""",
+  faq=[{"q": "Is it safe to encrypt text online?", "a": "Here, yes: the text is encrypted in your browser and never sent anywhere. Be careful with sites that process your text on their servers."},
+       {"q": "What encryption does it use?", "a": "AES-256-GCM, with the key derived from your password using PBKDF2-SHA256 and 600,000 iterations with a random salt."},
+       {"q": "What if I forget the password?", "a": "The message can't be decrypted. There's no reset or backdoor, which is what keeps it private."},
+       {"q": "Can the recipient decrypt it on their phone?", "a": "Yes. They open this page in any modern browser, paste the text, type the password and tap Decrypt."}])
+
+tool(slug="password-strength-checker", tool="password-strength", opt={}, kw="password strength checker", also=["how strong is my password", "password checker", "test password strength", "how long to crack my password"],
+  title="Password strength checker: how long to crack your password?", nav="Password strength checker", h1="Password strength checker",
+  desc="See how strong a password really is, how long it could take to crack, and what makes it weak. Checked in your browser; the password is never sent anywhere.",
+  summary="See how long a password would take to crack.",
+  lead="Type a password to see how strong it really is, roughly how long it would take to crack, and which common patterns make it weaker than it looks.",
+  answer="Type a password above to see its strength, an estimate of how long it would take to crack, and specific weaknesses such as common words, sequences or years. The check runs in your browser, and the password is never sent or stored.",
+  body="""<h2>What the checker looks at</h2>
+<ul><li><strong>Length</strong> and the <strong>variety</strong> of characters: lowercase, capitals, digits and symbols.</li>
+<li><strong>Common passwords</strong>, including ones with a number or symbol tacked on.</li><li><strong>Sequences</strong> like 1234, abcd and qwerty, and <strong>repeated characters</strong>.</li>
+<li><strong>Years and dates</strong>, which attackers try early.</li><li><strong>Predictable patterns</strong>, like a capital letter, a word, then numbers.</li></ul>
+<h2>Reading the result</h2>
+<p>The estimate assumes two attacks. "From a stolen password database" means an attacker with fast hardware guessing offline, the worst case after a data breach. "Guessing online" means trying passwords on a login page, which is far slower because sites limit attempts. Strong passwords hold up against both.</p>
+{{cta}}
+<h2>Private by design</h2><p>The checker runs entirely in your browser. What you type isn't sent anywhere, saved or logged. Even so, it's best practice to check a password that's similar to yours rather than your real one. Need a better one? Use the <a href="{{root}}tools/password-generator">password generator</a>, and see <a href="{{root}}tools/password-generator/how-long-should-a-password-be">how long a password should be</a>.</p>""",
+  faq=[{"q": "Is it safe to type my password into a strength checker?", "a": "This checker runs in your browser and never sends what you type anywhere. Still, testing a similar password rather than your real one is a good habit."},
+       {"q": "What makes a password strong?", "a": "Length and randomness. 16 or more random characters, or a passphrase of five or more random words, is strong. Avoid words, names, dates and patterns."},
+       {"q": "How long does it take to crack an 8-character password?", "a": "If it's a common word with a number, almost instantly. Even 8 random characters can fall in hours to days against fast offline cracking."},
+       {"q": "Why is my password weak even with symbols?", "a": "Symbols in predictable places, like a capital first letter and ! at the end, don't add much. Attackers try those patterns first."}])
+
+tool(slug="hash-generator", tool="hash", opt={}, kw="sha-256 checksum", also=["hash generator", "md5 checksum", "verify file checksum", "sha256 hash generator online"],
+  title="SHA-256 and MD5 checksum: hash text or files, free", nav="Hash and checksum", h1="SHA-256 and MD5 checksum generator",
+  desc="Get the SHA-256, SHA-1, SHA-512 and MD5 checksum of any file or text, and verify a download matches. Runs in your browser; files are never uploaded.",
+  summary="Checksums for files and text, and verify downloads.",
+  lead="Check that a download hasn't been changed or corrupted, or get the fingerprint of any file or text. Paste an expected checksum to compare automatically.",
+  answer="To get a file's checksum, drop it above; you'll see its MD5, SHA-1, SHA-256 and SHA-512 hashes. To verify a download, paste the checksum the publisher gives into the compare box; a green match means the file is identical. Nothing is uploaded.",
+  body="""<h2>How to verify a download</h2>
+<ol><li>Find the checksum on the publisher's download page, usually labelled SHA-256.</li><li>Paste it into <strong>Compare with</strong>.</li>
+<li>Drop the downloaded file above.</li><li>A ✓ match means the file is exactly what the publisher released.</li></ol>
+<h2>Which algorithm?</h2>
+<div class="table-wrap"><table><thead><tr><th>Algorithm</th><th>Use today</th></tr></thead><tbody>
+<tr><td>SHA-256</td><td>The standard choice for verifying downloads</td></tr><tr><td>SHA-512</td><td>Also secure; longer output</td></tr>
+<tr><td>SHA-1</td><td>Legacy; not safe against deliberate tampering</td></tr><tr><td>MD5</td><td>Legacy; fine for spotting accidental corruption only</td></tr></tbody></table></div>
+{{cta}}
+<h2>Private by design</h2><p>Files and text are hashed in your browser with its built-in Web Crypto (and a small MD5 routine), so even large files never leave your device. Encryption is a different thing from hashing: to lock a file with a password, use <a href="{{root}}tools/encrypt-file">encrypt a file</a>.</p>""",
+  faq=[{"q": "How do I check a file's SHA-256 checksum?", "a": "Drop the file above and read the SHA-256 line. To verify it, paste the expected checksum into the compare box and look for the match message."},
+       {"q": "What's the difference between hashing and encryption?", "a": "A hash is a one-way fingerprint that can't be turned back into the file. Encryption scrambles data so it can be unlocked with a key or password."},
+       {"q": "Is MD5 still safe?", "a": "Not for security: it can be deliberately forged. It's still fine for spotting accidental corruption. Use SHA-256 to verify downloads."},
+       {"q": "Is my file uploaded?", "a": "No. It's hashed in your browser on your own device, however large it is."}])
+
 # ---------------------------------------------------------------- write
 # ---------------------------------------------------------------- security
 tool(slug="password-generator", tool="password", opt={"kind": "chars"}, kw="password generator",
@@ -535,7 +735,7 @@ for t in T:
     # How-to steps (from the page's first numbered list) and what the tool does, for HowTo and WebApplication rich results
     ol = re.search(r"<ol>([\s\S]*?)</ol>", t["body"])
     meta["steps"] = [re.sub(r"\s+", " ", re.sub(r"<[^>]+>", "", li)).strip() for li in re.findall(r"<li>([\s\S]*?)</li>", ol.group(1))] if ol else []
-    meta["category"] = "SecurityApplication" if t["tool"] in ("password", "encrypt") else "DesignApplication" if t["tool"] in ("qr",) else "MultimediaApplication"
+    meta["category"] = "SecurityApplication" if t["tool"] in ("password", "encrypt", "encrypt-text", "password-strength", "hash") else "BusinessApplication" if "pdf" in t["tool"] else "DesignApplication" if t["tool"] in ("qr",) else "MultimediaApplication"
     meta["features"] = ["Runs entirely in your browser", "Files are never uploaded", "No sign-up", "No watermark", "Free"]
     html = SKELETON.format(meta=json.dumps(meta, indent=2, ensure_ascii=False), h1=t["h1"], lead=t["lead"], tool=t["tool"],
                            opt=json.dumps(t["opt"]), answer=t["answer"], body=t["body"])

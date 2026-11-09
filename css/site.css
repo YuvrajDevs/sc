@@ -551,3 +551,17 @@ a.card:hover { border-color: var(--accent); transform: translateY(-2px); }
   .mock-trio .mock, .mock-fx * { animation: none !important; }
   .fx-cover, .fx-dot, .fx-finger, .fx-tap, .fx-press, .fx-ok, .fx-badge { opacity: 0 !important; }
 }
+.pdf-thumb { display: grid; place-items: center; font: 700 12px/1 var(--mono); color: var(--on-accent); background: var(--accent); }
+.pdf-info { margin-bottom: 14px; }
+.pdf-info[hidden] { display: none; }
+.meter { height: 10px; border-radius: 99px; background: var(--bg); border: 1px solid var(--border); overflow: hidden; }
+.meter span { display: block; height: 100%; width: 0; transition: width .2s ease, background .2s ease; }
+.pw-verdict { margin: 12px 0 6px; }
+.pw-notes { margin: 0; padding-inline-start: 20px; font-size: 14px; }
+.hash-out { margin-top: 14px; display: grid; gap: 8px; }
+.hash-row { display: grid; grid-template-columns: 80px 1fr auto; gap: 10px; align-items: center; padding: 10px 12px; border: 1px solid var(--border); border-radius: 12px; background: var(--surface); }
+.hash-row span { font: 600 13px/1 var(--mono); color: var(--dim); }
+.hash-row code { font: 13px/1.4 var(--mono); word-break: break-all; color: var(--text); }
+.hash-row.match { border-color: #46a758; }
+.hash-out .ok { color: #46a758; } .hash-out .bad { color: #e5484d; }
+.enc-out { white-space: pre-wrap; }
