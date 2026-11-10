@@ -1,27 +1,8 @@
 {
-  "updated": "2026-11-09T03:35:28.160Z",
+  "updated": "2026-11-10T03:43:30.098Z",
   "queries": 438,
   "phrases": 3132,
   "queue": [
-    {
-      "keyword": "hidden folder android",
-      "type": "guide",
-      "score": 121,
-      "sources": [
-        "google",
-        "bing"
-      ],
-      "variants": [
-        "how can you find hidden folder on android",
-        "hidden photo folder android",
-        "how to make a hidden folder android",
-        "hidden file and hidden folder",
-        "hidden app folder android",
-        "hidden file and folder",
-        "how to hidden folder android",
-        "android hidden folder"
-      ]
-    },
     {
       "keyword": "xiaomi app lock forgot password",
       "type": "guide",
@@ -117,25 +98,6 @@
       ]
     },
     {
-      "keyword": "secret photo album",
-      "type": "guide",
-      "score": 72,
-      "sources": [
-        "google",
-        "bing"
-      ],
-      "variants": [
-        "pv secret photo album",
-        "secret photo album app",
-        "secret photo album android",
-        "secret photo album samsung",
-        "secret photo album sa",
-        "secret photo album apple",
-        "how to make secret photo album on samsung",
-        "how to do a photo album"
-      ]
-    },
-    {
       "keyword": "hide watched videos youtube",
       "type": "guide",
       "score": 70,
@@ -152,25 +114,6 @@
         "hide unavailable videos youtube",
         "how to hide videos on youtube channel",
         "how to hide videos in youtube"
-      ]
-    },
-    {
-      "keyword": "samsung hidden photos",
-      "type": "guide",
-      "score": 67,
-      "sources": [
-        "google",
-        "bing"
-      ],
-      "variants": [
-        "samsung hidden photos folder",
-        "how to see hidden photos in samsung gallery",
-        "samsung hidden photos app",
-        "how to find hidden photos on samsung",
-        "does samsung have hidden photos",
-        "best hidden photos app",
-        "samsung hidden photos album",
-        "how to find hidden photos on samsung phone"
       ]
     },
     {
@@ -266,7 +209,7 @@
     {
       "keyword": "app lock kaise kare",
       "type": "guide",
-      "score": 57,
+      "score": 58,
       "sources": [
         "google",
         "bing"
@@ -528,24 +471,6 @@
       ]
     },
     {
-      "keyword": "oneplus hidden photos",
-      "type": "guide",
-      "score": 39,
-      "sources": [
-        "google"
-      ],
-      "variants": [
-        "hidden photos in oneplus",
-        "oneplus hidden photos folder",
-        "hidden photos in oneplus nord 2",
-        "oneplus hidden photos password",
-        "oneplus hidden photos location",
-        "oneplus hidden photos password forgot",
-        "hidden photos in oneplus gallery",
-        "oneplus hidden photos recovery"
-      ]
-    },
-    {
       "keyword": "xiaomi app lock",
       "type": "guide",
       "score": 38,
@@ -727,22 +652,6 @@
       "variants": []
     },
     {
-      "keyword": "xiaomi hidden photos",
-      "type": "guide",
-      "score": 31,
-      "sources": [
-        "google"
-      ],
-      "variants": [
-        "hidden photos xiaomi",
-        "hidden photos in xiaomi",
-        "xiaomi hidden photos location",
-        "view hidden photos xiaomi",
-        "show hidden photos xiaomi",
-        "xiaomi gallery hidden photos"
-      ]
-    },
-    {
       "keyword": "app lock enabled",
       "type": "guide",
       "score": 29,
@@ -756,7 +665,7 @@
       ]
     },
     {
-      "keyword": "app lock vip",
+      "keyword": "app lock application",
       "type": "guide",
       "score": 29,
       "sources": [
@@ -766,18 +675,14 @@
       "variants": []
     },
     {
-      "keyword": "realme private photos hidden folder",
+      "keyword": "app lock vip",
       "type": "guide",
       "score": 29,
       "sources": [
-        "google"
+        "google",
+        "bing"
       ],
-      "variants": [
-        "realme hidden photos",
-        "hidden photos in realme",
-        "hidden photos in realme phone",
-        "realme phone hidden photos"
-      ]
+      "variants": []
     },
     {
       "keyword": "wyvern private hospital photos",
@@ -811,16 +716,6 @@
       ]
     },
     {
-      "keyword": "app lock application",
-      "type": "guide",
-      "score": 27,
-      "sources": [
-        "google",
-        "bing"
-      ],
-      "variants": []
-    },
-    {
       "keyword": "hide video length youtube",
       "type": "guide",
       "score": 27,
@@ -835,23 +730,6 @@
         "hide video length",
         "hide video duration youtube",
         "hide youtube video length"
-      ]
-    },
-    {
-      "keyword": "vivo hidden photos",
-      "type": "guide",
-      "score": 27,
-      "sources": [
-        "google"
-      ],
-      "variants": [
-        "vivo hidden photos password forgot",
-        "vivo hidden photos location",
-        "vivo hidden photos password",
-        "hidden apps vivo",
-        "hidden photos in vivo",
-        "hidden apps vivo phone",
-        "hidden photos in vivo phone"
       ]
     },
     {
@@ -893,6 +771,16 @@
         "station gallery lock haven pa",
         "bike gallery lock haven"
       ]
+    },
+    {
+      "keyword": "app lock apple",
+      "type": "guide",
+      "score": 26,
+      "sources": [
+        "google",
+        "bing"
+      ],
+      "variants": []
     },
     {
       "keyword": "private photoshoot",
@@ -943,32 +831,6 @@
         "app lock ms authenticator",
         "microsoft authenticator app app lock"
       ]
-    },
-    {
-      "keyword": "redmi hidden photos",
-      "type": "guide",
-      "score": 25,
-      "sources": [
-        "google"
-      ],
-      "variants": [
-        "redmi hidden photos recovery",
-        "redmi phone hidden photos",
-        "redmi a5 hidden photos",
-        "hidden photos in redmi",
-        "hidden photos in redmi note 13",
-        "hidden photos in redmi note 14"
-      ]
-    },
-    {
-      "keyword": "app lock apple",
-      "type": "guide",
-      "score": 24,
-      "sources": [
-        "google",
-        "bing"
-      ],
-      "variants": []
     },
     {
       "keyword": "app lock llc",
@@ -1129,35 +991,6 @@
       ]
     },
     {
-      "keyword": "poco hidden photos",
-      "type": "guide",
-      "score": 21,
-      "sources": [
-        "google"
-      ],
-      "variants": [
-        "poco f7 hidden photos",
-        "hidden photos in poco",
-        "poco x7 pro hidden photos"
-      ]
-    },
-    {
-      "keyword": "pixel hidden photos",
-      "type": "guide",
-      "score": 21,
-      "sources": [
-        "google"
-      ],
-      "variants": [
-        "hidden photos in pixel",
-        "hidden photos in google pixel",
-        "google pixel hidden photos",
-        "pixel 7 hidden photos",
-        "pixel 8 hidden photos",
-        "pixel 9 hidden photos"
-      ]
-    },
-    {
       "keyword": "galaxy lock onix",
       "type": "guide",
       "score": 20,
@@ -1253,35 +1086,11 @@
       ]
     },
     {
-      "keyword": "nothing phone hidden photos",
-      "type": "guide",
-      "score": 20,
-      "sources": [
-        "google"
-      ],
-      "variants": [
-        "nothing phone 3a hidden photos",
-        "hidden photos in nothing phone",
-        "how to see hidden photos in nothing phone 3a",
-        "how to see hidden photos in nothing phone 2a",
-        "how to see hidden photos in nothing phone"
-      ]
-    },
-    {
       "keyword": "how to encrypt a picture",
       "type": "guide",
       "score": 19,
       "sources": [
         "bing"
-      ],
-      "variants": []
-    },
-    {
-      "keyword": "hidden photos tecno",
-      "type": "guide",
-      "score": 19,
-      "sources": [
-        "google"
       ],
       "variants": []
     },
@@ -1294,33 +1103,6 @@
       ],
       "variants": [
         "private photographer near me"
-      ]
-    },
-    {
-      "keyword": "app lock old version",
-      "type": "guide",
-      "score": 19,
-      "sources": [
-        "google",
-        "bing"
-      ],
-      "variants": [
-        "app lock old",
-        "gallery lock old version 2018",
-        "gallery lock old version 2022",
-        "app lock old version 2020"
-      ]
-    },
-    {
-      "keyword": "motorola hidden photos",
-      "type": "guide",
-      "score": 19,
-      "sources": [
-        "google"
-      ],
-      "variants": [
-        "hidden photos in motorola",
-        "does motorola have hidden photos"
       ]
     },
     {
@@ -1470,18 +1252,6 @@
       "variants": [
         "private photo editor ai",
         "private ai photo editor"
-      ]
-    },
-    {
-      "keyword": "infinix hidden photos",
-      "type": "guide",
-      "score": 18,
-      "sources": [
-        "google"
-      ],
-      "variants": [
-        "hidden photos in infinix",
-        "infinix smart 10 hidden photos"
       ]
     },
     {
@@ -1692,18 +1462,6 @@
       "variants": [
         "lock photo kaise dekhe",
         "gallery lock se photo kaise nikale"
-      ]
-    },
-    {
-      "keyword": "oppo hidden photos",
-      "type": "guide",
-      "score": 17,
-      "sources": [
-        "google"
-      ],
-      "variants": [
-        "hidden photos in oppo",
-        "oppo a54 hidden photos"
       ]
     },
     {
@@ -1991,6 +1749,185 @@
         "veeva vault crm app",
         "veeva vault desktop app"
       ]
+    },
+    {
+      "keyword": "hide apps jailbreak tweak",
+      "type": "guide",
+      "score": 15,
+      "sources": [
+        "google"
+      ],
+      "variants": [
+        "hide apps jailbreak"
+      ]
+    },
+    {
+      "keyword": "how to calculate vaulted ceiling area",
+      "type": "guide",
+      "score": 15,
+      "sources": [
+        "bing"
+      ],
+      "variants": [
+        "how to calculate vaulted ceiling height"
+      ]
+    },
+    {
+      "keyword": "nothing phone app lock",
+      "type": "guide",
+      "score": 15,
+      "sources": [
+        "google"
+      ],
+      "variants": [
+        "nothing phone 3a app lock",
+        "nothing phone 1 app lock",
+        "nothing phone 2a app lock",
+        "nothing phone 2 app lock"
+      ]
+    },
+    {
+      "keyword": "private photographer near me prices",
+      "type": "guide",
+      "score": 15,
+      "sources": [
+        "bing"
+      ],
+      "variants": [
+        "private photographer near me for portraits",
+        "private photographer near me for weddings"
+      ]
+    },
+    {
+      "keyword": "where can i upload private photos",
+      "type": "guide",
+      "score": 15,
+      "sources": [
+        "bing"
+      ],
+      "variants": [
+        "where to hide private photos",
+        "where can i print private photos"
+      ]
+    },
+    {
+      "keyword": "photo vault not free anymore",
+      "type": "guide",
+      "score": 14,
+      "sources": [
+        "google"
+      ],
+      "variants": []
+    },
+    {
+      "keyword": "commerce gallery lockhart tx",
+      "type": "guide",
+      "score": 14,
+      "sources": [
+        "bing"
+      ],
+      "variants": []
+    },
+    {
+      "keyword": "savithri photos house private limited",
+      "type": "guide",
+      "score": 14,
+      "sources": [
+        "bing"
+      ],
+      "variants": []
+    },
+    {
+      "keyword": "hidden photo jewellery",
+      "type": "guide",
+      "score": 14,
+      "sources": [
+        "google"
+      ],
+      "variants": [
+        "hidden photo jewellery uk"
+      ]
+    },
+    {
+      "keyword": "private photos with santa near me",
+      "type": "guide",
+      "score": 14,
+      "sources": [
+        "google"
+      ],
+      "variants": [
+        "private santa photos near me"
+      ]
+    },
+    {
+      "keyword": "tecno app lock",
+      "type": "guide",
+      "score": 14,
+      "sources": [
+        "google"
+      ],
+      "variants": [
+        "tecno app lock remove",
+        "app lock tecno",
+        "tecno spark app lock"
+      ]
+    },
+    {
+      "keyword": "hide video background",
+      "type": "guide",
+      "score": 14,
+      "sources": [
+        "google"
+      ],
+      "variants": [
+        "hide background w101 video",
+        "hide background video recorder"
+      ]
+    },
+    {
+      "keyword": "hide video call app",
+      "type": "guide",
+      "score": 14,
+      "sources": [
+        "google"
+      ],
+      "variants": [
+        "hide video call button android messages",
+        "hide video call",
+        "hide apps call"
+      ]
+    },
+    {
+      "keyword": "vault apparel",
+      "type": "guide",
+      "score": 14,
+      "sources": [
+        "google",
+        "bing"
+      ],
+      "variants": []
+    },
+    {
+      "keyword": "app lock box",
+      "type": "guide",
+      "score": 14,
+      "sources": [
+        "bing"
+      ],
+      "variants": [
+        "ap lock box"
+      ]
+    },
+    {
+      "keyword": "app lock microsoft",
+      "type": "guide",
+      "score": 14,
+      "sources": [
+        "bing"
+      ],
+      "variants": [
+        "app lock microsoft edge"
+      ]
     }
   ],
   "alreadyCovered": [
@@ -2212,7 +2149,7 @@
     {
       "keyword": "app lock android",
       "type": "guide",
-      "score": 180,
+      "score": 179,
       "sources": [
         "bing",
         "google"
@@ -2367,6 +2304,26 @@
       "coveredBy": "compare/sealcloak-vs-calculator-vault"
     },
     {
+      "keyword": "hidden folder android",
+      "type": "guide",
+      "score": 121,
+      "sources": [
+        "google",
+        "bing"
+      ],
+      "variants": [
+        "how can you find hidden folder on android",
+        "hidden photo folder android",
+        "how to make a hidden folder android",
+        "hidden file and hidden folder",
+        "hidden app folder android",
+        "hidden file and folder",
+        "how to hidden folder android",
+        "android hidden folder"
+      ],
+      "coveredBy": "guides/samsung-hidden-photos"
+    },
+    {
       "keyword": "private space android 15",
       "type": "guide",
       "score": 112,
@@ -2510,6 +2467,26 @@
       "coveredBy": "guides/how-to-hide-photos-on-android"
     },
     {
+      "keyword": "secret photo album",
+      "type": "guide",
+      "score": 72,
+      "sources": [
+        "google",
+        "bing"
+      ],
+      "variants": [
+        "pv secret photo album",
+        "secret photo album app",
+        "secret photo album android",
+        "secret photo album samsung",
+        "secret photo album sa",
+        "secret photo album apple",
+        "how to make secret photo album on samsung",
+        "how to do a photo album"
+      ],
+      "coveredBy": "guides/samsung-hidden-photos"
+    },
+    {
       "keyword": "how to hide whatsapp",
       "type": "guide",
       "score": 69,
@@ -2527,6 +2504,26 @@
         "how to hide whatsapp photos in android"
       ],
       "coveredBy": "guides/hide-apps-on-android"
+    },
+    {
+      "keyword": "samsung hidden photos",
+      "type": "guide",
+      "score": 67,
+      "sources": [
+        "google",
+        "bing"
+      ],
+      "variants": [
+        "samsung hidden photos folder",
+        "how to see hidden photos in samsung gallery",
+        "samsung hidden photos app",
+        "how to find hidden photos on samsung",
+        "does samsung have hidden photos",
+        "best hidden photos app",
+        "samsung hidden photos album",
+        "how to find hidden photos on samsung phone"
+      ],
+      "coveredBy": "guides/samsung-hidden-photos"
     },
     {
       "keyword": "hide photos in redmi",
@@ -2568,6 +2565,25 @@
       "coveredBy": "compare/sealcloak-vs-google-photos-locked-folder"
     },
     {
+      "keyword": "gallery lock kaise lagaye",
+      "type": "guide",
+      "score": 58,
+      "sources": [
+        "google"
+      ],
+      "variants": [
+        "app lock kaise lagaye",
+        "gallery lock kaise tode",
+        "gallery lock kaise hataye",
+        "lock photo kaise lagaye",
+        "motorola app lock kaise lagaye",
+        "gallery me lock kaise lagaye",
+        "gallery lock password kaise lagaye",
+        "gallery mein lock kaise lagaye"
+      ],
+      "coveredBy": "guides/gallery-lock-android"
+    },
+    {
       "keyword": "how to hide apps in motorola",
       "type": "guide",
       "score": 58,
@@ -2586,25 +2602,6 @@
         "hide apps on motorola"
       ],
       "coveredBy": "guides/hide-apps-on-android"
-    },
-    {
-      "keyword": "gallery lock kaise lagaye",
-      "type": "guide",
-      "score": 58,
-      "sources": [
-        "google"
-      ],
-      "variants": [
-        "app lock kaise lagaye",
-        "gallery lock kaise tode",
-        "gallery lock kaise hataye",
-        "lock photo kaise lagaye",
-        "motorola app lock kaise lagaye",
-        "gallery me lock kaise lagaye",
-        "gallery lock password kaise lagaye",
-        "gallery mein lock kaise lagaye"
-      ],
-      "coveredBy": "guides/gallery-lock-android"
     },
     {
       "keyword": "android encrypt phone photos",
@@ -2731,6 +2728,25 @@
       "coveredBy": "compare/sealcloak-vs-files-by-google-safe-folder"
     },
     {
+      "keyword": "oneplus hidden photos",
+      "type": "guide",
+      "score": 39,
+      "sources": [
+        "google"
+      ],
+      "variants": [
+        "hidden photos in oneplus",
+        "oneplus hidden photos folder",
+        "hidden photos in oneplus nord 2",
+        "oneplus hidden photos password",
+        "oneplus hidden photos location",
+        "oneplus hidden photos password forgot",
+        "hidden photos in oneplus gallery",
+        "oneplus hidden photos recovery"
+      ],
+      "coveredBy": "guides/samsung-hidden-photos"
+    },
+    {
       "keyword": "hide photos in iqoo",
       "type": "guide",
       "score": 37,
@@ -2825,75 +2841,6 @@
         "xiaomi hide photos"
       ],
       "coveredBy": "guides/hide-apps-on-android"
-    },
-    {
-      "keyword": "hide photos in poco x3",
-      "type": "guide",
-      "score": 31,
-      "sources": [
-        "google"
-      ],
-      "variants": [
-        "hide photos in poco phone",
-        "hide photos in poco",
-        "poco hide photos",
-        "poco f6 hide photos",
-        "how to hide photos in poco c71",
-        "how to hide photos in poco f7"
-      ],
-      "coveredBy": "guides/how-to-hide-photos-on-android"
-    },
-    {
-      "keyword": "hide photos in pixel",
-      "type": "guide",
-      "score": 31,
-      "sources": [
-        "google"
-      ],
-      "variants": [
-        "pixel 7 hide photos",
-        "hide photos in pixel 9",
-        "pixel hide photos",
-        "hide photos in pixel 9a",
-        "how to hide photos in pixel 10",
-        "how to hide photos in pixel 7",
-        "how to hide photos in pixel 10a"
-      ],
-      "coveredBy": "guides/how-to-hide-photos-on-android"
-    },
-    {
-      "keyword": "hide photos in infinix",
-      "type": "guide",
-      "score": 31,
-      "sources": [
-        "google"
-      ],
-      "variants": [
-        "hide photos in infinix smart 8",
-        "infinix hide photos",
-        "how to hide photos in infinix smart 10",
-        "how to hide photos in infinix smart 9",
-        "how to hide photos in infinix phone",
-        "how to hide photos in infinix hot 10",
-        "how to see hide photos in infinix"
-      ],
-      "coveredBy": "guides/how-to-hide-photos-on-android"
-    },
-    {
-      "keyword": "calculator lock hide app photo",
-      "type": "guide",
-      "score": 31,
-      "sources": [
-        "google",
-        "bing"
-      ],
-      "variants": [
-        "calculator lock - photo vault",
-        "gallery lock hide app photo",
-        "photo lock hide app",
-        "photo lock app - hide pictures"
-      ],
-      "coveredBy": "compare/sealcloak-vs-calculator-lock"
     }
   ]
 }
