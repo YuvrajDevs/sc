@@ -1,7 +1,7 @@
 {
-  "updated": "2026-11-10T03:43:30.098Z",
+  "updated": "2026-11-14T03:43:15.494Z",
   "queries": 438,
-  "phrases": 3132,
+  "phrases": 3130,
   "queue": [
     {
       "keyword": "xiaomi app lock forgot password",
@@ -57,25 +57,6 @@
         "photo video locker",
         "photo locker calculator",
         "photo locker file"
-      ]
-    },
-    {
-      "keyword": "photo vault password reset",
-      "type": "guide",
-      "score": 99,
-      "sources": [
-        "bing",
-        "google"
-      ],
-      "variants": [
-        "photo vault password recovery",
-        "photo vault app password reset",
-        "photo vault forgot password",
-        "how to reset photo vault password",
-        "how to recover photo vault password",
-        "photo vault lost password",
-        "how to reset photo vault app password",
-        "photo vault how to recover password"
       ]
     },
     {
@@ -209,7 +190,7 @@
     {
       "keyword": "app lock kaise kare",
       "type": "guide",
-      "score": 58,
+      "score": 57,
       "sources": [
         "google",
         "bing"
@@ -485,20 +466,6 @@
       ]
     },
     {
-      "keyword": "hide video title vlc",
-      "type": "guide",
-      "score": 38,
-      "sources": [
-        "google",
-        "bing"
-      ],
-      "variants": [
-        "hide video name vlc",
-        "hide vlc video title",
-        "vlc hide video name"
-      ]
-    },
-    {
       "keyword": "how to hide profile picture on whatsapp",
       "type": "guide",
       "score": 38,
@@ -519,6 +486,20 @@
       "variants": [
         "hide apps on home and apps screens samsung",
         "hide apps on home and apps screens in hindi"
+      ]
+    },
+    {
+      "keyword": "hide video title vlc",
+      "type": "guide",
+      "score": 37,
+      "sources": [
+        "google",
+        "bing"
+      ],
+      "variants": [
+        "hide video name vlc",
+        "hide vlc video title",
+        "vlc hide video name"
       ]
     },
     {
@@ -665,16 +646,6 @@
       ]
     },
     {
-      "keyword": "app lock application",
-      "type": "guide",
-      "score": 29,
-      "sources": [
-        "google",
-        "bing"
-      ],
-      "variants": []
-    },
-    {
       "keyword": "app lock vip",
       "type": "guide",
       "score": 29,
@@ -714,6 +685,16 @@
         "hide videos amazon prime",
         "how to hide videos on amazon prime"
       ]
+    },
+    {
+      "keyword": "app lock application",
+      "type": "guide",
+      "score": 27,
+      "sources": [
+        "google",
+        "bing"
+      ],
+      "variants": []
     },
     {
       "keyword": "hide video length youtube",
@@ -773,16 +754,6 @@
       ]
     },
     {
-      "keyword": "app lock apple",
-      "type": "guide",
-      "score": 26,
-      "sources": [
-        "google",
-        "bing"
-      ],
-      "variants": []
-    },
-    {
       "keyword": "private photoshoot",
       "type": "guide",
       "score": 25,
@@ -831,6 +802,16 @@
         "app lock ms authenticator",
         "microsoft authenticator app app lock"
       ]
+    },
+    {
+      "keyword": "app lock apple",
+      "type": "guide",
+      "score": 24,
+      "sources": [
+        "google",
+        "bing"
+      ],
+      "variants": []
     },
     {
       "keyword": "app lock llc",
@@ -1106,21 +1087,6 @@
       ]
     },
     {
-      "keyword": "photo vault deleted photo recovery",
-      "type": "guide",
-      "score": 19,
-      "sources": [
-        "google"
-      ],
-      "variants": [
-        "photo vault trash recovery",
-        "photo vault app recovery without backup",
-        "photo vault recovery without backup",
-        "photo vault recovery online",
-        "photo vault app deleted photo recovery"
-      ]
-    },
-    {
       "keyword": "photo vault your premium has expired",
       "type": "guide",
       "score": 19,
@@ -1341,20 +1307,6 @@
         "bing"
       ],
       "variants": []
-    },
-    {
-      "keyword": "photo vault how to recover photos",
-      "type": "guide",
-      "score": 17,
-      "sources": [
-        "google"
-      ],
-      "variants": [
-        "how to recover photos from photo vault",
-        "how to recover vault app photos",
-        "how to recover calculator vault photos",
-        "photo vault recover deleted photos"
-      ]
     },
     {
       "keyword": "hide apps quest 3",
@@ -1928,6 +1880,42 @@
       "variants": [
         "app lock microsoft edge"
       ]
+    },
+    {
+      "keyword": "hide video game consoles",
+      "type": "guide",
+      "score": 14,
+      "sources": [
+        "google"
+      ],
+      "variants": [
+        "hide and paint video game",
+        "hide and seek game video"
+      ]
+    },
+    {
+      "keyword": "private jet photos interior",
+      "type": "guide",
+      "score": 14,
+      "sources": [
+        "google"
+      ],
+      "variants": [
+        "private jet interiors photos",
+        "head on private jet photos"
+      ]
+    },
+    {
+      "keyword": "gallery lock lagane ka tarika",
+      "type": "guide",
+      "score": 13,
+      "sources": [
+        "google"
+      ],
+      "variants": [
+        "gallery per lock lagane ka tarika",
+        "app lock lagane ka tarika"
+      ]
     }
   ],
   "alreadyCovered": [
@@ -2054,7 +2042,7 @@
     {
       "keyword": "hide apps on android",
       "type": "guide",
-      "score": 261,
+      "score": 260,
       "sources": [
         "bing",
         "google"
@@ -2131,25 +2119,9 @@
       "coveredBy": "guides/lock-folder-android"
     },
     {
-      "keyword": "hide apps on desktop",
-      "type": "guide",
-      "score": 180,
-      "sources": [
-        "bing"
-      ],
-      "variants": [
-        "hide apps desktop",
-        "hide apps from desktop",
-        "hide desktop icons",
-        "how to hide apps on desktop without deleting",
-        "how to hide apps on desktop"
-      ],
-      "coveredBy": "guides/hide-apps-on-android"
-    },
-    {
       "keyword": "app lock android",
       "type": "guide",
-      "score": 179,
+      "score": 182,
       "sources": [
         "bing",
         "google"
@@ -2165,6 +2137,22 @@
         "app lock in mobile"
       ],
       "coveredBy": "guides/gallery-lock-android"
+    },
+    {
+      "keyword": "hide apps on desktop",
+      "type": "guide",
+      "score": 180,
+      "sources": [
+        "bing"
+      ],
+      "variants": [
+        "hide apps desktop",
+        "hide apps from desktop",
+        "hide desktop icons",
+        "how to hide apps on desktop without deleting",
+        "how to hide apps on desktop"
+      ],
+      "coveredBy": "guides/hide-apps-on-android"
     },
     {
       "keyword": "how to hide pictures",
@@ -2363,9 +2351,29 @@
       "coveredBy": "compare/sealcloak-vs-calculator-lock"
     },
     {
+      "keyword": "photo vault password reset",
+      "type": "guide",
+      "score": 99,
+      "sources": [
+        "bing",
+        "google"
+      ],
+      "variants": [
+        "photo vault password recovery",
+        "photo vault app password reset",
+        "photo vault forgot password",
+        "how to reset photo vault password",
+        "how to recover photo vault password",
+        "photo vault lost password",
+        "how to reset photo vault app password",
+        "photo vault how to recover password"
+      ],
+      "coveredBy": "guides/photo-vault-password-reset"
+    },
+    {
       "keyword": "app lock password",
       "type": "guide",
-      "score": 97,
+      "score": 94,
       "sources": [
         "google",
         "bing"
@@ -2395,7 +2403,7 @@
         "hide videos in gallery",
         "how to hide videos in gallery",
         "hide gallery app",
-        "hide gallery xiaomi",
+        "how to hide gallery in xiaomi",
         "how to hide gallery in teams",
         "hide gallery in teams",
         "how to hide gallery in redmi"
@@ -2565,25 +2573,6 @@
       "coveredBy": "compare/sealcloak-vs-google-photos-locked-folder"
     },
     {
-      "keyword": "gallery lock kaise lagaye",
-      "type": "guide",
-      "score": 58,
-      "sources": [
-        "google"
-      ],
-      "variants": [
-        "app lock kaise lagaye",
-        "gallery lock kaise tode",
-        "gallery lock kaise hataye",
-        "lock photo kaise lagaye",
-        "motorola app lock kaise lagaye",
-        "gallery me lock kaise lagaye",
-        "gallery lock password kaise lagaye",
-        "gallery mein lock kaise lagaye"
-      ],
-      "coveredBy": "guides/gallery-lock-android"
-    },
-    {
       "keyword": "how to hide apps in motorola",
       "type": "guide",
       "score": 58,
@@ -2602,6 +2591,25 @@
         "hide apps on motorola"
       ],
       "coveredBy": "guides/hide-apps-on-android"
+    },
+    {
+      "keyword": "gallery lock kaise lagaye",
+      "type": "guide",
+      "score": 58,
+      "sources": [
+        "google"
+      ],
+      "variants": [
+        "app lock kaise lagaye",
+        "gallery lock kaise tode",
+        "gallery lock kaise hataye",
+        "lock photo kaise lagaye",
+        "motorola app lock kaise lagaye",
+        "gallery me lock kaise lagaye",
+        "gallery lock password kaise lagaye",
+        "gallery mein lock kaise lagaye"
+      ],
+      "coveredBy": "guides/gallery-lock-android"
     },
     {
       "keyword": "android encrypt phone photos",
@@ -2825,22 +2833,6 @@
         "gallery lock old version"
       ],
       "coveredBy": "guides/gallery-lock-android"
-    },
-    {
-      "keyword": "hide photos xiaomi",
-      "type": "guide",
-      "score": 34,
-      "sources": [
-        "google"
-      ],
-      "variants": [
-        "hide apps xiaomi",
-        "hide photos in xiaomi",
-        "how to hide apps in xiaomi",
-        "hide app xiaomi",
-        "xiaomi hide photos"
-      ],
-      "coveredBy": "guides/hide-apps-on-android"
     }
   ]
 }
