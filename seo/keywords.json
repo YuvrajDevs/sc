@@ -1,27 +1,8 @@
 {
-  "updated": "2026-11-14T03:43:15.494Z",
+  "updated": "2026-11-15T03:43:21.059Z",
   "queries": 438,
   "phrases": 3130,
   "queue": [
-    {
-      "keyword": "xiaomi app lock forgot password",
-      "type": "guide",
-      "score": 110,
-      "sources": [
-        "google",
-        "bing"
-      ],
-      "variants": [
-        "gallery lock password forgot",
-        "gallery lock forgot password",
-        "oppo app lock forgot password",
-        "forgot app lock password oppo",
-        "oneplus app lock forgot password",
-        "nothing phone app lock password forgot",
-        "gallery lock app password forgot",
-        "app lock xlock forgot password"
-      ]
-    },
     {
       "keyword": "hide photo and video",
       "type": "guide",
@@ -62,7 +43,7 @@
     {
       "keyword": "app lock setting",
       "type": "guide",
-      "score": 93,
+      "score": 95,
       "sources": [
         "google",
         "bing"
@@ -190,7 +171,7 @@
     {
       "keyword": "app lock kaise kare",
       "type": "guide",
-      "score": 57,
+      "score": 58,
       "sources": [
         "google",
         "bing"
@@ -292,23 +273,6 @@
         "hide zoom video panel",
         "hide video panel zoom shortcut",
         "zoom hide video participants"
-      ]
-    },
-    {
-      "keyword": "redmi app lock",
-      "type": "guide",
-      "score": 45,
-      "sources": [
-        "google",
-        "bing"
-      ],
-      "variants": [
-        "redmi 9 app lock",
-        "how to remove app lock in redmi",
-        "app lock redmi",
-        "redmi app lock remove",
-        "app lock redmi phone",
-        "redmi app lock unlock"
       ]
     },
     {
@@ -449,20 +413,6 @@
         "vivo app lock unlock",
         "poco app lock unlock",
         "lock unlock picture"
-      ]
-    },
-    {
-      "keyword": "xiaomi app lock",
-      "type": "guide",
-      "score": 38,
-      "sources": [
-        "google",
-        "bing"
-      ],
-      "variants": [
-        "app lock xiaomi",
-        "xiaomi app lock reset",
-        "how to lock app xiaomi"
       ]
     },
     {
@@ -1916,6 +1866,39 @@
         "gallery per lock lagane ka tarika",
         "app lock lagane ka tarika"
       ]
+    },
+    {
+      "keyword": "private photo album",
+      "type": "guide",
+      "score": 13,
+      "sources": [
+        "bing"
+      ],
+      "variants": [
+        "how to private photo album"
+      ]
+    },
+    {
+      "keyword": "where are my hidden photos on android",
+      "type": "guide",
+      "score": 13,
+      "sources": [
+        "google"
+      ],
+      "variants": [
+        "what are hidden photos"
+      ]
+    },
+    {
+      "keyword": "lock photo edit",
+      "type": "guide",
+      "score": 13,
+      "sources": [
+        "google"
+      ],
+      "variants": [
+        "edit lock screen photo"
+      ]
     }
   ],
   "alreadyCovered": [
@@ -2042,7 +2025,7 @@
     {
       "keyword": "hide apps on android",
       "type": "guide",
-      "score": 260,
+      "score": 261,
       "sources": [
         "bing",
         "google"
@@ -2082,7 +2065,7 @@
     {
       "keyword": "app lock in samsung",
       "type": "guide",
-      "score": 211,
+      "score": 208,
       "sources": [
         "google",
         "bing"
@@ -2119,9 +2102,25 @@
       "coveredBy": "guides/lock-folder-android"
     },
     {
+      "keyword": "hide apps on desktop",
+      "type": "guide",
+      "score": 180,
+      "sources": [
+        "bing"
+      ],
+      "variants": [
+        "hide apps desktop",
+        "hide apps from desktop",
+        "hide desktop icons",
+        "how to hide apps on desktop without deleting",
+        "how to hide apps on desktop"
+      ],
+      "coveredBy": "guides/hide-apps-on-android"
+    },
+    {
       "keyword": "app lock android",
       "type": "guide",
-      "score": 182,
+      "score": 179,
       "sources": [
         "bing",
         "google"
@@ -2137,22 +2136,6 @@
         "app lock in mobile"
       ],
       "coveredBy": "guides/gallery-lock-android"
-    },
-    {
-      "keyword": "hide apps on desktop",
-      "type": "guide",
-      "score": 180,
-      "sources": [
-        "bing"
-      ],
-      "variants": [
-        "hide apps desktop",
-        "hide apps from desktop",
-        "hide desktop icons",
-        "how to hide apps on desktop without deleting",
-        "how to hide apps on desktop"
-      ],
-      "coveredBy": "guides/hide-apps-on-android"
     },
     {
       "keyword": "how to hide pictures",
@@ -2331,6 +2314,26 @@
       "coveredBy": "compare/sealcloak-vs-android-private-space"
     },
     {
+      "keyword": "xiaomi app lock forgot password",
+      "type": "guide",
+      "score": 110,
+      "sources": [
+        "google",
+        "bing"
+      ],
+      "variants": [
+        "gallery lock password forgot",
+        "gallery lock forgot password",
+        "oppo app lock forgot password",
+        "forgot app lock password oppo",
+        "oneplus app lock forgot password",
+        "nothing phone app lock password forgot",
+        "gallery lock app password forgot",
+        "app lock xlock forgot password"
+      ],
+      "coveredBy": "guides/xiaomi-app-lock-forgot-password"
+    },
+    {
       "keyword": "app lock calculator",
       "type": "guide",
       "score": 107,
@@ -2373,7 +2376,7 @@
     {
       "keyword": "app lock password",
       "type": "guide",
-      "score": 94,
+      "score": 97,
       "sources": [
         "google",
         "bing"
@@ -2573,6 +2576,25 @@
       "coveredBy": "compare/sealcloak-vs-google-photos-locked-folder"
     },
     {
+      "keyword": "gallery lock kaise lagaye",
+      "type": "guide",
+      "score": 58,
+      "sources": [
+        "google"
+      ],
+      "variants": [
+        "app lock kaise lagaye",
+        "gallery lock kaise tode",
+        "gallery lock kaise hataye",
+        "lock photo kaise lagaye",
+        "motorola app lock kaise lagaye",
+        "gallery me lock kaise lagaye",
+        "gallery lock password kaise lagaye",
+        "gallery mein lock kaise lagaye"
+      ],
+      "coveredBy": "guides/gallery-lock-android"
+    },
+    {
       "keyword": "how to hide apps in motorola",
       "type": "guide",
       "score": 58,
@@ -2591,25 +2613,6 @@
         "hide apps on motorola"
       ],
       "coveredBy": "guides/hide-apps-on-android"
-    },
-    {
-      "keyword": "gallery lock kaise lagaye",
-      "type": "guide",
-      "score": 58,
-      "sources": [
-        "google"
-      ],
-      "variants": [
-        "app lock kaise lagaye",
-        "gallery lock kaise tode",
-        "gallery lock kaise hataye",
-        "lock photo kaise lagaye",
-        "motorola app lock kaise lagaye",
-        "gallery me lock kaise lagaye",
-        "gallery lock password kaise lagaye",
-        "gallery mein lock kaise lagaye"
-      ],
-      "coveredBy": "guides/gallery-lock-android"
     },
     {
       "keyword": "android encrypt phone photos",
@@ -2691,6 +2694,24 @@
       "coveredBy": "compare/sealcloak-vs-calculator-vault"
     },
     {
+      "keyword": "redmi app lock",
+      "type": "guide",
+      "score": 45,
+      "sources": [
+        "google",
+        "bing"
+      ],
+      "variants": [
+        "redmi 9 app lock",
+        "how to remove app lock in redmi",
+        "app lock redmi",
+        "redmi app lock remove",
+        "app lock redmi phone",
+        "redmi app lock unlock"
+      ],
+      "coveredBy": "guides/xiaomi-app-lock-forgot-password"
+    },
+    {
       "keyword": "hide apps huawei",
       "type": "guide",
       "score": 43,
@@ -2755,6 +2776,21 @@
       "coveredBy": "guides/samsung-hidden-photos"
     },
     {
+      "keyword": "xiaomi app lock",
+      "type": "guide",
+      "score": 38,
+      "sources": [
+        "google",
+        "bing"
+      ],
+      "variants": [
+        "app lock xiaomi",
+        "xiaomi app lock reset",
+        "how to lock app xiaomi"
+      ],
+      "coveredBy": "guides/xiaomi-app-lock-forgot-password"
+    },
+    {
       "keyword": "hide photos in iqoo",
       "type": "guide",
       "score": 37,
@@ -2788,51 +2824,6 @@
         "hide apps password change"
       ],
       "coveredBy": "guides/hide-apps-on-android"
-    },
-    {
-      "keyword": "hide apps store",
-      "type": "guide",
-      "score": 35,
-      "sources": [
-        "bing"
-      ],
-      "variants": [
-        "hide app store",
-        "hide apps app store"
-      ],
-      "coveredBy": "guides/hide-apps-on-android"
-    },
-    {
-      "keyword": "hide whatsapp photos from gallery",
-      "type": "guide",
-      "score": 34,
-      "sources": [
-        "google"
-      ],
-      "variants": [
-        "how to hide whatsapp photos from gallery",
-        "hide whatsapp photos from gallery android",
-        "how to hide whatsapp photos from someone",
-        "hide whatsapp photos from someone",
-        "how to hide photos from gallery in oppo",
-        "remove whatsapp photos from gallery",
-        "how to hide whatsapp photos from gallery android",
-        "how to hide photos from gallery in oneplus"
-      ],
-      "coveredBy": "scenarios/kids-using-my-phone"
-    },
-    {
-      "keyword": "the old lock up gallery",
-      "type": "guide",
-      "score": 34,
-      "sources": [
-        "bing"
-      ],
-      "variants": [
-        "the old lock up gallery cromford",
-        "gallery lock old version"
-      ],
-      "coveredBy": "guides/gallery-lock-android"
     }
   ]
 }
