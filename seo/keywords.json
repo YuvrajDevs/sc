@@ -1,7 +1,7 @@
 {
-  "updated": "2026-11-15T03:43:21.059Z",
+  "updated": "2026-11-16T03:43:32.070Z",
   "queries": 438,
-  "phrases": 3130,
+  "phrases": 3129,
   "queue": [
     {
       "keyword": "hide photo and video",
@@ -43,7 +43,7 @@
     {
       "keyword": "app lock setting",
       "type": "guide",
-      "score": 95,
+      "score": 96,
       "sources": [
         "google",
         "bing"
@@ -81,7 +81,7 @@
     {
       "keyword": "motorola app lock",
       "type": "guide",
-      "score": 67,
+      "score": 68,
       "sources": [
         "google",
         "bing"
@@ -89,10 +89,10 @@
       "variants": [
         "app lock on motorola",
         "app lock in motorola phone",
+        "app lock in motorola",
         "app lock motorola",
         "motorola app lock settings",
         "how to app lock in motorola",
-        "app lock in motorola",
         "how to enable app lock in motorola",
         "motorola app lock feature"
       ]
@@ -171,7 +171,7 @@
     {
       "keyword": "app lock kaise kare",
       "type": "guide",
-      "score": 58,
+      "score": 57,
       "sources": [
         "google",
         "bing"
@@ -185,23 +185,6 @@
         "nothing phone me app lock kaise kare",
         "app lock kaise change kare",
         "photo gallery kaise lock kare"
-      ]
-    },
-    {
-      "keyword": "best private photo storage app",
-      "type": "guide",
-      "score": 55,
-      "sources": [
-        "google",
-        "bing"
-      ],
-      "variants": [
-        "private photo app",
-        "private photo storage",
-        "best private photo app",
-        "best private photo storage",
-        "private photo app android",
-        "best private photo app android"
       ]
     },
     {
@@ -355,19 +338,6 @@
         "remove lock screen photo",
         "lock screen photo today",
         "set photo on lock screen"
-      ]
-    },
-    {
-      "keyword": "private photo sharing app",
-      "type": "guide",
-      "score": 41,
-      "sources": [
-        "bing"
-      ],
-      "variants": [
-        "private photo sharing app for family",
-        "private photo sharing websites",
-        "best private photo sharing app"
       ]
     },
     {
@@ -525,23 +495,6 @@
       ],
       "variants": [
         "app lock github android"
-      ]
-    },
-    {
-      "keyword": "private photo delete recovery app",
-      "type": "guide",
-      "score": 34,
-      "sources": [
-        "google"
-      ],
-      "variants": [
-        "private photo recovery app",
-        "private zone photo recovery",
-        "hide photo delete recovery",
-        "private photo vault recovery",
-        "private safe photo recovery",
-        "hide photo delete recovery app",
-        "private photo delete recovery"
       ]
     },
     {
@@ -853,34 +806,6 @@
       ]
     },
     {
-      "keyword": "private photo gallery",
-      "type": "guide",
-      "score": 22,
-      "sources": [
-        "bing"
-      ],
-      "variants": [
-        "photo gallery on my phone",
-        "photo gallery on my phone android",
-        "create private photo album on my gallery",
-        "photo gallery mobile app",
-        "private gallery app",
-        "how to photo gallery",
-        "photo gallery in my phone"
-      ]
-    },
-    {
-      "keyword": "private photo studio home",
-      "type": "guide",
-      "score": 22,
-      "sources": [
-        "bing"
-      ],
-      "variants": [
-        "private jet photo studio"
-      ]
-    },
-    {
       "keyword": "lock photo video",
       "type": "guide",
       "score": 22,
@@ -1159,18 +1084,6 @@
       ]
     },
     {
-      "keyword": "private photo editor",
-      "type": "guide",
-      "score": 18,
-      "sources": [
-        "google"
-      ],
-      "variants": [
-        "private photo editor ai",
-        "private ai photo editor"
-      ]
-    },
-    {
       "keyword": "photo chupane wala lock",
       "type": "guide",
       "score": 18,
@@ -1403,19 +1316,6 @@
       ]
     },
     {
-      "keyword": "private photo kaise chupaye",
-      "type": "guide",
-      "score": 17,
-      "sources": [
-        "google"
-      ],
-      "variants": [
-        "private photo kaise rakhe",
-        "private photo kaise rakhen",
-        "private photo kaise kare"
-      ]
-    },
-    {
       "keyword": "microsoft pictures gallery for lock screen",
       "type": "guide",
       "score": 16,
@@ -1625,18 +1525,6 @@
       "variants": [
         "oppo private photos view",
         "how to view hidden photos in gallery"
-      ]
-    },
-    {
-      "keyword": "private photo couple pose",
-      "type": "guide",
-      "score": 15,
-      "sources": [
-        "google"
-      ],
-      "variants": [
-        "hide photo pose for couple",
-        "private couple photo ideas"
       ]
     },
     {
@@ -1868,17 +1756,6 @@
       ]
     },
     {
-      "keyword": "private photo album",
-      "type": "guide",
-      "score": 13,
-      "sources": [
-        "bing"
-      ],
-      "variants": [
-        "how to private photo album"
-      ]
-    },
-    {
       "keyword": "where are my hidden photos on android",
       "type": "guide",
       "score": 13,
@@ -1898,6 +1775,104 @@
       ],
       "variants": [
         "edit lock screen photo"
+      ]
+    },
+    {
+      "keyword": "private album not showing in redmi",
+      "type": "guide",
+      "score": 13,
+      "sources": [
+        "google"
+      ],
+      "variants": [
+        "private album redmi"
+      ]
+    },
+    {
+      "keyword": "hide video link discord",
+      "type": "guide",
+      "score": 13,
+      "sources": [
+        "google"
+      ],
+      "variants": [
+        "hide video discord",
+        "hide video preview discord",
+        "hide video discord overlay"
+      ]
+    },
+    {
+      "keyword": "hide photo dp",
+      "type": "guide",
+      "score": 13,
+      "sources": [
+        "google"
+      ],
+      "variants": [
+        "hide photo boy dp",
+        "hide photo dp girl",
+        "hide photo girl dp"
+      ]
+    },
+    {
+      "keyword": "locke at east side gallery",
+      "type": "guide",
+      "score": 12,
+      "sources": [
+        "bing"
+      ],
+      "variants": []
+    },
+    {
+      "keyword": "vault vs dome",
+      "type": "compare",
+      "score": 12,
+      "sources": [
+        "google",
+        "bing"
+      ],
+      "variants": []
+    },
+    {
+      "keyword": "create 2nd phone for privacy",
+      "type": "guide",
+      "score": 12,
+      "sources": [
+        "bing"
+      ],
+      "variants": []
+    },
+    {
+      "keyword": "app lock photo protection",
+      "type": "guide",
+      "score": 12,
+      "sources": [
+        "bing"
+      ],
+      "variants": [
+        "app lock protection"
+      ]
+    },
+    {
+      "keyword": "hidden photos elmwood trail",
+      "type": "guide",
+      "score": 12,
+      "sources": [
+        "google"
+      ],
+      "variants": [
+        "hidden photos elmwood"
+      ]
+    },
+    {
+      "keyword": "lock photos & videos vault",
+      "type": "guide",
+      "score": 12,
+      "sources": [
+        "google"
+      ],
+      "variants": [
+        "lock photos and videos vault"
       ]
     }
   ],
@@ -2025,7 +2000,7 @@
     {
       "keyword": "hide apps on android",
       "type": "guide",
-      "score": 261,
+      "score": 260,
       "sources": [
         "bing",
         "google"
@@ -2065,7 +2040,7 @@
     {
       "keyword": "app lock in samsung",
       "type": "guide",
-      "score": 208,
+      "score": 211,
       "sources": [
         "google",
         "bing"
@@ -2120,7 +2095,7 @@
     {
       "keyword": "app lock android",
       "type": "guide",
-      "score": 179,
+      "score": 178,
       "sources": [
         "bing",
         "google"
@@ -2376,7 +2351,7 @@
     {
       "keyword": "app lock password",
       "type": "guide",
-      "score": 97,
+      "score": 96,
       "sources": [
         "google",
         "bing"
@@ -2642,6 +2617,24 @@
       "coveredBy": "scenarios/lost-phone-private-photos"
     },
     {
+      "keyword": "best private photo storage app",
+      "type": "guide",
+      "score": 55,
+      "sources": [
+        "google",
+        "bing"
+      ],
+      "variants": [
+        "private photo app",
+        "private photo storage",
+        "best private photo app",
+        "best private photo storage",
+        "private photo app android",
+        "best private photo app android"
+      ],
+      "coveredBy": "guides/best-private-photo-storage-app"
+    },
+    {
       "keyword": "hide apps apple",
       "type": "guide",
       "score": 53,
@@ -2744,6 +2737,20 @@
       "coveredBy": "guides/how-to-hide-photos-on-android"
     },
     {
+      "keyword": "private photo sharing app",
+      "type": "guide",
+      "score": 41,
+      "sources": [
+        "bing"
+      ],
+      "variants": [
+        "private photo sharing app for family",
+        "private photo sharing websites",
+        "best private photo sharing app"
+      ],
+      "coveredBy": "guides/best-private-photo-storage-app"
+    },
+    {
       "keyword": "vault vs safe",
       "type": "compare",
       "score": 39,
@@ -2789,41 +2796,6 @@
         "how to lock app xiaomi"
       ],
       "coveredBy": "guides/xiaomi-app-lock-forgot-password"
-    },
-    {
-      "keyword": "hide photos in iqoo",
-      "type": "guide",
-      "score": 37,
-      "sources": [
-        "google"
-      ],
-      "variants": [
-        "iqoo hide photos",
-        "how to hide photos in iqoo neo 10r",
-        "how to hide photos in iqoo neo 10",
-        "how to hide photos in iqoo z9 5g",
-        "how to hide photos in iqoo z10",
-        "how to hide photos in iqoo phone",
-        "how to hide photos in iqoo z10x",
-        "how to hide photos in iqoo z10r"
-      ],
-      "coveredBy": "guides/how-to-hide-photos-on-android"
-    },
-    {
-      "keyword": "hide apps without password",
-      "type": "guide",
-      "score": 36,
-      "sources": [
-        "google"
-      ],
-      "variants": [
-        "hide apps password reset",
-        "hide apps password forgot",
-        "hide apps password",
-        "hide photos with password",
-        "hide apps password change"
-      ],
-      "coveredBy": "guides/hide-apps-on-android"
     }
   ]
 }
