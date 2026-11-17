@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-16T03:43:32.070Z",
+  "updated": "2026-11-17T03:43:16.776Z",
   "queries": 438,
   "phrases": 3129,
   "queue": [
@@ -43,7 +43,7 @@
     {
       "keyword": "app lock setting",
       "type": "guide",
-      "score": 96,
+      "score": 95,
       "sources": [
         "google",
         "bing"
@@ -171,7 +171,7 @@
     {
       "keyword": "app lock kaise kare",
       "type": "guide",
-      "score": 57,
+      "score": 58,
       "sources": [
         "google",
         "bing"
@@ -386,20 +386,9 @@
       ]
     },
     {
-      "keyword": "how to hide profile picture on whatsapp",
-      "type": "guide",
-      "score": 38,
-      "sources": [
-        "bing"
-      ],
-      "variants": [
-        "how to hide profile photo in whatsapp"
-      ]
-    },
-    {
       "keyword": "hide apps on home and apps screens",
       "type": "guide",
-      "score": 38,
+      "score": 39,
       "sources": [
         "google"
       ],
@@ -411,7 +400,7 @@
     {
       "keyword": "hide video title vlc",
       "type": "guide",
-      "score": 37,
+      "score": 38,
       "sources": [
         "google",
         "bing"
@@ -420,6 +409,17 @@
         "hide video name vlc",
         "hide vlc video title",
         "vlc hide video name"
+      ]
+    },
+    {
+      "keyword": "how to hide profile picture on whatsapp",
+      "type": "guide",
+      "score": 38,
+      "sources": [
+        "bing"
+      ],
+      "variants": [
+        "how to hide profile photo in whatsapp"
       ]
     },
     {
@@ -453,19 +453,6 @@
       "variants": [
         "app lock timer android",
         "app lock with timer"
-      ]
-    },
-    {
-      "keyword": "vault alternatives",
-      "type": "compare",
-      "score": 36,
-      "sources": [
-        "google",
-        "bing"
-      ],
-      "variants": [
-        "vault app alternatives",
-        "app vault alternatives"
       ]
     },
     {
@@ -1874,6 +1861,17 @@
       "variants": [
         "lock photos and videos vault"
       ]
+    },
+    {
+      "keyword": "gallery te lock korbo kivabe",
+      "type": "guide",
+      "score": 12,
+      "sources": [
+        "google"
+      ],
+      "variants": [
+        "gallery lock korbo kivabe"
+      ]
     }
   ],
   "alreadyCovered": [
@@ -1900,7 +1898,7 @@
     {
       "keyword": "hide videos and photos",
       "type": "guide",
-      "score": 1066,
+      "score": 1065,
       "sources": [
         "google",
         "bing"
@@ -2000,7 +1998,7 @@
     {
       "keyword": "hide apps on android",
       "type": "guide",
-      "score": 260,
+      "score": 262,
       "sources": [
         "bing",
         "google"
@@ -2011,9 +2009,9 @@
         "how to hide apps",
         "hide apps app",
         "hide apps in android",
+        "how to hide apps on android",
         "best hide apps",
-        "best hide app for android",
-        "hide your apps"
+        "best hide app for android"
       ],
       "coveredBy": "guides/hide-apps-on-android"
     },
@@ -2135,7 +2133,7 @@
     {
       "keyword": "hide apps samsung",
       "type": "guide",
-      "score": 136,
+      "score": 137,
       "sources": [
         "bing",
         "google"
@@ -2442,9 +2440,9 @@
       ],
       "variants": [
         "hide photos in vivo",
+        "hide apps in vivo",
         "hide apps vivo",
         "how to hide app in vivo",
-        "hide apps in vivo",
         "hide apps vivo phone",
         "hide photos in vivo y20",
         "hide app vivo",
@@ -2492,6 +2490,25 @@
       "coveredBy": "guides/hide-apps-on-android"
     },
     {
+      "keyword": "hide photos in redmi",
+      "type": "guide",
+      "score": 68,
+      "sources": [
+        "google"
+      ],
+      "variants": [
+        "hide photos in redmi note 13",
+        "hide apps redmi",
+        "how to hide photos in redmi",
+        "hide photos in redmi note 11",
+        "how to hide an app in redmi",
+        "hide apps in redmi",
+        "how to hide apps in redmi phone",
+        "redmi hide photos"
+      ],
+      "coveredBy": "guides/how-to-hide-photos-on-android"
+    },
+    {
       "keyword": "samsung hidden photos",
       "type": "guide",
       "score": 67,
@@ -2510,25 +2527,6 @@
         "how to find hidden photos on samsung phone"
       ],
       "coveredBy": "guides/samsung-hidden-photos"
-    },
-    {
-      "keyword": "hide photos in redmi",
-      "type": "guide",
-      "score": 67,
-      "sources": [
-        "google"
-      ],
-      "variants": [
-        "hide photos in redmi note 13",
-        "hide apps redmi",
-        "how to hide photos in redmi",
-        "hide photos in redmi note 11",
-        "how to hide an app in redmi",
-        "how to hide apps in redmi phone",
-        "redmi hide photos",
-        "hide photos redmi"
-      ],
-      "coveredBy": "guides/how-to-hide-photos-on-android"
     },
     {
       "keyword": "app lock screen",
@@ -2551,25 +2549,6 @@
       "coveredBy": "compare/sealcloak-vs-google-photos-locked-folder"
     },
     {
-      "keyword": "gallery lock kaise lagaye",
-      "type": "guide",
-      "score": 58,
-      "sources": [
-        "google"
-      ],
-      "variants": [
-        "app lock kaise lagaye",
-        "gallery lock kaise tode",
-        "gallery lock kaise hataye",
-        "lock photo kaise lagaye",
-        "motorola app lock kaise lagaye",
-        "gallery me lock kaise lagaye",
-        "gallery lock password kaise lagaye",
-        "gallery mein lock kaise lagaye"
-      ],
-      "coveredBy": "guides/gallery-lock-android"
-    },
-    {
       "keyword": "how to hide apps in motorola",
       "type": "guide",
       "score": 58,
@@ -2588,6 +2567,25 @@
         "hide apps on motorola"
       ],
       "coveredBy": "guides/hide-apps-on-android"
+    },
+    {
+      "keyword": "gallery lock kaise lagaye",
+      "type": "guide",
+      "score": 58,
+      "sources": [
+        "google"
+      ],
+      "variants": [
+        "app lock kaise lagaye",
+        "gallery lock kaise tode",
+        "gallery lock kaise hataye",
+        "lock photo kaise lagaye",
+        "motorola app lock kaise lagaye",
+        "gallery me lock kaise lagaye",
+        "gallery lock password kaise lagaye",
+        "gallery mein lock kaise lagaye"
+      ],
+      "coveredBy": "guides/gallery-lock-android"
     },
     {
       "keyword": "android encrypt phone photos",
