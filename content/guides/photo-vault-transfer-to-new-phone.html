@@ -1,0 +1,155 @@
+<!--meta {
+  "title": "Photo vault transfer to new phone: move hidden photos safely",
+  "navTitle": "Photo vault transfer to new phone",
+  "description": "Moving your photo vault to a new phone? Safe steps for Google Photos Locked Folder, Samsung Secure Folder, Safe folder and vault apps, without losing a file.",
+  "keyword": "photo vault transfer to new phone",
+  "alsoTargets": [
+    "photo vault transfer to computer",
+    "photo vault usb transfer",
+    "photo vault wireless transfer",
+    "move hidden photos to new phone",
+    "transfer locked folder to new phone"
+  ],
+  "summary": "Move hidden photos to a new phone without losing them or leaving them exposed.",
+  "date": "2026-11-25",
+  "readMins": 10,
+  "nav": "guides",
+  "steps": [
+    "Keep the old phone as it is until the new one is checked",
+    "Find out how your vault moves: account, built-in transfer or backup file",
+    "Make a backup or turn on the vault's own sync",
+    "Copy the backup to the new phone by cable, computer or a sync folder",
+    "Install or set up the vault on the new phone and restore",
+    "Count your files and open a few before wiping the old phone"
+  ],
+  "faq": [
+    {
+      "q": "Will my hidden photos move to a new phone automatically?",
+      "a": "Usually not. Most vaults keep their files in private, encrypted storage that Android's phone-to-phone copy skips. Google Photos Locked Folder only moves if Locked Folder backup was on, and Samsung Secure Folder needs Smart Switch with Secure Folder selected. Check before you reset the old phone."
+    },
+    {
+      "q": "Can I copy my vault's folder to the new phone with a file manager?",
+      "a": "It's rarely enough. Encrypted vault files are tied to keys stored on the old phone or in the app, so a raw copy won't open. Google even warns not to copy Files by Google Safe folder files from an old phone to a new one. Use the vault's own backup or transfer option."
+    },
+    {
+      "q": "How do I do a photo vault transfer to a computer?",
+      "a": "Make the vault's backup file on the phone, connect the phone to a computer with a USB cable, choose File transfer on the phone, and copy the backup file across. An encrypted backup file can sit on the computer safely; unencrypted photos you export are readable by anyone using that computer."
+    },
+    {
+      "q": "How do I move a Sealcloak vault to a new phone?",
+      "a": "In Sealcloak's Settings, under Backup, tap Export backup and lock it with your recovery phrase or a passphrase. Copy the file to the new phone, install Sealcloak, tap Restore from a backup and enter the same phrase or passphrase."
+    },
+    {
+      "q": "What if my old phone is already lost or reset?",
+      "a": "Then only a copy made beforehand can help: a vault backup file, the vault's cloud sync, or Locked Folder backup if it was on. Without one, files that were only inside the old phone's vault are normally gone."
+    }
+  ]
+} -->
+<section class="panel">
+  <div class="panel-inner wrap">
+    <article class="article">
+      <div class="meta">Guide · 10 min read</div>
+      <h1>Photo vault transfer to new phone: move hidden photos safely</h1>
+      <p class="lead">A new phone is exciting until you remember the photo vault. Hidden photos are the one thing the usual "copy everything" setup often leaves behind, and you may only notice after the old phone is wiped. This guide shows how a photo vault transfer to a new phone really works for the common choices, in an order that never puts your files at risk.</p>
+      <div class="answer">
+        <div class="eyebrow">Quick answer</div>
+        <p>Don't reset or trade in the old phone yet. Hidden photos rarely move with Android's normal phone-to-phone copy, so use your vault's own route: Locked Folder backup in Google Photos, Smart Switch with Secure Folder selected on Samsung, or the vault app's backup file. Copy the backup to the new phone by cable, computer or a sync folder, restore it, and check your files open before you wipe the old phone.</p>
+      </div>
+      <div class="prose">
+        <h2>Why hidden photos get left behind</h2>
+        <p>When you set up a new Android phone, the setup wizard offers to copy apps and data from the old one, by cable or over Wi-Fi. That copy brings your contacts, settings, normal photos and most app data. Vaults are different on purpose.</p>
+        <ul>
+          <li><strong>They live in private, encrypted storage.</strong> A vault's files are usually encrypted with keys kept on that phone. Copying the files without the keys gives you unreadable data.</li>
+          <li><strong>Many vaults opt out of automatic backup.</strong> A privacy app that lets Android copy its storage to the cloud would defeat its purpose, so many don't.</li>
+          <li><strong>Built-in vaults have their own rules.</strong> Google Photos, Samsung and Files by Google each handle their private folders differently, and the defaults catch people out.</li>
+        </ul>
+        <p>So the one rule before anything else: <strong>keep the old phone exactly as it is until the new one has been checked.</strong> Don't factory reset it, don't uninstall the vault, and don't hand it in for trade-in yet.</p>
+
+        <h2>Step-by-step: transfer a photo vault to a new phone</h2>
+        <p>These steps work for almost any vault. The sections after them give the details for specific apps.</p>
+        <ol>
+          <li><strong>Charge both phones and leave the old one alone.</strong> Keep it switched on, unlocked when needed, and connected to Wi-Fi. If the new phone's setup asks to copy data, let it, but don't count on it for the vault.</li>
+          <li><strong>Find out how your vault moves.</strong> Open its settings and look for words like Backup, Export, Transfer or Sync. There are three kinds: vaults that sync to an account, built-in folders with a maker's transfer tool, and offline vaults that make a backup file.</li>
+          <li><strong>Make the copy.</strong> Turn on the account sync and wait until it says everything is uploaded, or run the maker's transfer, or export a backup file. Note the password, phrase or passphrase the backup needs.</li>
+          <li><strong>Move the backup file if there is one.</strong> Use a USB cable to a computer, a USB-C memory stick, or a folder your cloud drive app syncs. An encrypted backup file is safe to pass through these, as long as its key travels separately.</li>
+          <li><strong>Set up the vault on the new phone and restore.</strong> Install the same app, sign in or choose its restore option, and point it at the backup.</li>
+          <li><strong>Check before you wipe.</strong> Compare the number of photos and videos, open a few of each, and check documents and any second vault. Only then reset the old phone. Our guide to <a href="{{root}}scenarios/selling-old-phone-delete-photos">deleting photos before selling a phone</a> covers that last part.</li>
+        </ol>
+
+        <h2>How the common vaults move</h2>
+        <p>Every vault takes one of a few routes. Find yours in the table, then read its section below.</p>
+        <div class="table-wrap"><table>
+          <thead><tr><th>Vault</th><th>How it moves</th><th>Encrypted in transit</th><th>Catch</th></tr></thead>
+          <tbody>
+            <tr><td>Google Photos Locked Folder</td><td>Back up Locked Folder, then sign in on the new phone</td><td>Stored with Google</td><td>If backup was off, items stay on the old phone and are lost on reset</td></tr>
+            <tr><td>Samsung Secure Folder</td><td>Smart Switch, with Secure Folder selected</td><td>Direct phone to phone</td><td>Samsung says Secure Folder backup is no longer available; Galaxy to Galaxy only</td></tr>
+            <tr><td>Files by Google Safe folder</td><td>Move files out, transfer, add them back</td><td>No, while out of the folder</td><td>No Drive backup; Google warns against copying its encrypted files</td></tr>
+            <tr><td>Vault apps with an account</td><td>Sign in on the new phone and sync</td><td>Depends on the app</td><td>A company holds copies of your private photos</td></tr>
+            <tr><td>Offline vault apps, such as Sealcloak</td><td>Encrypted backup file you copy and restore</td><td>Yes, the file stays encrypted</td><td>You move the file yourself and must keep its key</td></tr>
+          </tbody>
+        </table></div>
+
+        <h2>Google Photos Locked Folder</h2>
+        <p>Google's help page explains that Locked Folder items stay only on the device unless you turn on backup for them, and that they're deleted if you factory reset the phone, uninstall or clear data for Google Photos, or lose the device. Backup has been available since 2023, but it may be off.</p>
+        <ol>
+          <li>On the old phone, open Google Photos, tap your profile picture, then <strong>Photos settings</strong> and <strong>Backup</strong>.</li>
+          <li>Turn on <strong>Back up Locked Folder</strong> and confirm with your screen lock.</li>
+          <li>Wait until backup finishes on Wi-Fi.</li>
+          <li>On the new phone, sign in to Google Photos with the same Google account and open <strong>Collections</strong> or <strong>Library</strong>, then <strong>Locked Folder</strong>.</li>
+        </ol>
+        <p>The trade-off is that your most private photos are now stored with Google and open from any device signed in to that account. If you don't want that, move the items out of Locked Folder, copy them to the new phone by cable, and move them back in, then delete the loose copies on both phones.</p>
+
+        <h2>Samsung Secure Folder</h2>
+        <p>Samsung's support page now says data backup is no longer available for Secure Folder, and points to Smart Switch to move it to a new phone. It also notes that restoring an older Secure Folder backup from inside Secure Folder isn't available on Android 16 with One UI 8 or higher.</p>
+        <ol>
+          <li>Open Smart Switch on both Galaxy phones and connect them with a USB cable or wirelessly.</li>
+          <li>When choosing what to copy, check that <strong>Secure Folder</strong> is selected; don't assume it's included.</li>
+          <li>Unlock Secure Folder when asked, finish the transfer, then open Secure Folder on the new phone and look through it.</li>
+        </ol>
+        <p>Moving to a phone from another brand? Smart Switch can't take Secure Folder there. You'd need to move files out of Secure Folder, copy them across and protect them again on the new phone. For more on Samsung's private options, see <a href="{{root}}guides/samsung-hidden-photos">Samsung hidden photos</a>.</p>
+
+        <h2>Files by Google Safe folder</h2>
+        <p>Safe folder has no Google Drive backup, and Google's help page specifically warns against copying encrypted Safe folder files from an old phone to a new one, or using a memory card with Safe folder files from another phone, because the files can become unreadable. The safe route is to move files out of Safe folder, transfer them like any other file, then add them back to Safe folder on the new phone. While they're out, they're protected only by the phone's screen lock, so do it in one sitting.</p>
+
+        {{cta}}
+
+        <h2>Moving a Sealcloak vault</h2>
+        <p>Sealcloak has no account and no internet permission, so there's no sign-in to restore from and nothing in the cloud. That's the point: your photos never leave the phone unless you move them. Moving them is done with an <a href="{{root}}features/encrypted-backups">encrypted backup</a>, a single file that stays encrypted wherever you put it.</p>
+        <ol>
+          <li>On the old phone, open the vault, go to <strong>Settings</strong>, and under <strong>Backup</strong> tap <strong>Export backup</strong>.</li>
+          <li>Choose <strong>Use my recovery phrase</strong> or a passphrase of at least 8 characters.</li>
+          <li>Pick where to save the file and wait for <strong>Backup verified</strong>; the app reads the file back to check it.</li>
+          <li>Copy the file to the new phone by cable, through a computer, or via a folder your cloud drive app syncs.</li>
+          <li>On the new phone, install Sealcloak, tap <strong>Restore from a backup</strong>, set a pattern and note the new vault's recovery phrase.</li>
+          <li>Choose the backup file and enter its phrase or passphrase.</li>
+        </ol>
+        <p>Restoring the same backup twice doesn't create duplicates, because files already in the vault are skipped. If you use more than one vault, each one has its own pattern and its own <a href="{{root}}features/recovery-phrase">recovery phrase</a>, so back up and restore each. Because every file is encrypted with AES-256-GCM before it's written, the backup file is safe to pass through a computer or cloud folder; the <a href="{{root}}security">security page</a> explains how the keys work.</p>
+        <p>One honest limit: if the old phone is lost and you never made a backup, there is no copy anywhere, and nobody, including the developer, can get those files back. Scheduled backups, weekly or monthly into a folder you choose, are the fix for that.</p>
+
+        <h2>Photo vault transfer to a computer, USB or wireless</h2>
+        <p>People often search for these when the two phones can't talk to each other directly. Each works, with one rule: move encrypted backup files, not exported photos, whenever you can.</p>
+        <ul>
+          <li><strong>To a computer.</strong> Plug the phone in with a USB cable, pull down the notification shade, tap the USB notice and choose <strong>File transfer</strong>. Copy the backup file to the computer, then from the computer to the new phone. This is also a good place to keep a second copy.</li>
+          <li><strong>USB stick.</strong> A USB-C memory stick, or an adapter for a normal one, lets you save the backup straight to it from the Files app and plug it into the new phone.</li>
+          <li><strong>Wireless.</strong> Quick Share (Nearby Share on older phones) sends a file between nearby Android phones without a cable. A cloud drive works too; an encrypted backup file there is unreadable without its key.</li>
+        </ul>
+        <p>If your vault can only export plain photos, export them right before the transfer, move them in one go, re-add them to the vault on the new phone, and then delete every loose copy, including any in the gallery's trash or recycle bin.</p>
+
+        <h2>Mistakes to avoid</h2>
+        <ul>
+          <li><strong>Resetting the old phone first.</strong> It's the most common way hidden photos are lost for good. Wipe it only after you've opened files on the new phone.</li>
+          <li><strong>Uninstalling the vault to "reinstall it on the new phone".</strong> Uninstalling usually deletes the vault's files with it.</li>
+          <li><strong>Copying the vault's raw folder.</strong> Encrypted files without their keys won't open. Use the app's own backup or transfer.</li>
+          <li><strong>Storing the key with the file.</strong> A backup and its phrase in the same cloud folder is only as private as that folder. Keep the phrase on paper.</li>
+          <li><strong>Forgetting second vaults.</strong> Decoy vaults, other patterns and memory cards each need their own copy.</li>
+          <li><strong>Panicking if it looks empty.</strong> If the new vault opens empty, check you're signed in to the same account or entered the right pattern, and see <a href="{{root}}guides/photo-vault-not-working">photo vault not working</a> before trying anything drastic.</li>
+        </ul>
+
+        <h2>Bottom line</h2>
+        <p>A photo vault transfer to a new phone is easy once you know which route your vault takes: an account sync, a maker's tool like Smart Switch, or a backup file you move yourself. Keep the old phone untouched, make the copy, restore it, and check your files before wiping anything. If you'd rather your photos never touch a company's server, an offline vault with encrypted backup files gives you a way to move phones without giving anyone else a copy. See <a href="{{root}}how-it-works">how Sealcloak works</a> if that suits you.</p>
+        {{faq}}
+      </div>
+      {{related}}
+    </article>
+  </div>
+</section>
